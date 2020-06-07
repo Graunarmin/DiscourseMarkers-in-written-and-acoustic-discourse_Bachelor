@@ -5,10 +5,13 @@ class CorpusParser:
 
     def __init__(self, filename):
         self.filename = filename
+        self.currentCity = None
         #{"cityName":{'Ctr':123, 'Signatures':{123,345,567,789}}}
         self.cities = {}
-        self.show_names = {}
-        self.irregularObjects = []
+        self.current_show = None
+        self.show_counter = 0
+        self.irregular_json = None
+        self.firstEntry = True;
 
     def read_lines(self):
         '''read in the file line by line, processing each line before loading the next one'''
@@ -36,7 +39,8 @@ class CorpusParser:
                     self.process_json(json_object)
                     json_object = None
 
-        self.process_output()
+        with open("shows.json", 'a') as outfile:
+            outfile.write("}")
 
     def process_json(self, json_object):
         '''load the string as json and extract the needed information'''
@@ -61,24 +65,39 @@ class CorpusParser:
 
     def extract_shownames(self, json_obj):
         '''extract show_name-information and write them to a file'''
+
         try:
-            if json_obj["show_name"] in self.show_names:
-                self.show_names[json_obj["show_name"]] += 1
-            else:
-                self.show_names[json_obj["show_name"]] = 1
+            if json_obj["show_name"] != self.current_show:
+                self.start_new_show(json_obj)
+                
+            self.show_counter += 1
+
         except KeyError as key:
             json_obj["ShowKeyError"] = format(key)
-            self.irregularObjects.append(json_obj)
-
-    def process_output(self):
-        #write_json("cities.json", self.show_names)
-        self.write_json("shows.json", self.show_names)
-        self.write_json("irregular_objects.json", self.irregularObjects)
+            self.write_json("irregularObjects.json",json_obj)
+    
+    def start_new_show(self, json_obj):
+        '''a new show is about to start. Time to write the collected data into a file and start fresh'''
+        if self.current_show is not None:
+            self.write_json("shows.json", {self.current_show : self.show_counter})
+        else:
+            with open("shows.json", 'w') as outfile:
+                outfile.write("{")
+        self.current_show = json_obj["show_name"]
+        self.show_counter = 0
 
     def write_json(self, out_filename, data):
         '''write json-object to file'''
-        with open(out_filename, 'w') as outfile:
-            json.dump(data, outfile,indent=2)
+        with open(out_filename, 'a') as outfile:
+            text = json.dumps(data)
+            #json.dump(data, outfile,indent=2)
+            #format the first entry correctly
+            if self.firstEntry:
+                outfile.write(text.replace("{","").replace("}",""))
+                self.firstEntry = False
+            #following entries need a comma to separate them
+            else:
+                outfile.write(text.replace("{",",\n").replace("}",""))
 
     '''Helper functions to determine wheter the string is a completed json-object'''
 
