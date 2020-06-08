@@ -1,9 +1,13 @@
 import json
 import sys
 
+'''use main.py to execute the code with keyword 'parser' '''
 class CorpusParser:
 
-    def __init__(self, filename):
+    def __init__(self, filename, arguments):
+        #ToDo:
+        #use arguments to specify what should be extracted, e.g. show_names or cities
+
         self.filename = filename
         self.currentCity = None
         #{"cityName":{'Ctr':123, 'Signatures':{123,345,567,789}}}
