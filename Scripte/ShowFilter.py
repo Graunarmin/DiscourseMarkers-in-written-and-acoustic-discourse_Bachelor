@@ -4,7 +4,7 @@ class ShowFilter:
 
     def __init__(self):
         self.in_file = "../bigData/shows.json"
-        self.out_file = "../bigData/filtered_shows.json"
+        self.out_file = "../data/filtered_shows.json"
         self.filtered_shows = {}
 
     def read_in_shows(self):

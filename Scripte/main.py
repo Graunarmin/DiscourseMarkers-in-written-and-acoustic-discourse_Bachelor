@@ -17,7 +17,7 @@ def main():
     if function == "parser":
         file = sys.argv[2]
         arguments = sys.argv[3]
-        parser = CorpusParser(file, arguments)
+        parser = cp.CorpusParser(file, arguments)
         parser.read_lines()
 
     elif function == "filter":
