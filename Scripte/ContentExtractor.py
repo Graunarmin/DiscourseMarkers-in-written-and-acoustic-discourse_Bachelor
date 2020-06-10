@@ -27,8 +27,6 @@ class ContentExtractor():
     def read_lines(self):
         '''read in the file line by line, processing each line before loading the next one'''
 
-        json_object = None
-
         with open(self.data_filename) as file:
             for row in file:
                 line = json.loads(row)
