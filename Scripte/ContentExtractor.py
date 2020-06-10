@@ -42,14 +42,14 @@ class ContentExtractor():
         #   {show1:{content1:audioID1, content2:audioID2,...}, show2:{...},...}
         try:
             if line["show_name"] in self.show_names:
-                if self.content[line["show_name"]]:
+                if line["show_name"] in self.content:
                     self.content[line["show_name"]][line["content"]] = line["audio_chunk_id"]
                 else:
                     self.content[line["show_name"]] = {line["content"]:line["audio_chunk_id"]}
             else: 
                 pass
         except KeyError as k_error:
-            #add some error handling
+            #print("Key Error: ", format(k_error))
             pass
 
     def write_json(self):
