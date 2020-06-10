@@ -31,7 +31,7 @@ class SimpleCorpusParser:
         #after processing and writing everything into the outfile: 
         with open(self.out_file, 'a') as outfile:
             #add the last show which gets not added before because the writing gets only triggered if a new show comes up
-            self.write_json({self.current_show : [self.current_callsign, self.snippet_counter]})
+            self.write_json(self.out_file, {self.current_show : [self.current_callsign, self.snippet_counter]})
             #and finally add the closing bracket
             outfile.write("}")
         
@@ -54,14 +54,14 @@ class SimpleCorpusParser:
 
         except KeyError as key:
             json_obj["ShowKeyError"] = format(key)
-            self.write_json("irregularObjects.json",json_obj)
+            self.write_json("irregularObjects.json", json_obj)
     
     def start_new_show(self, json_obj):
         '''a new show is about to start. Time to write the collected data into a file and start fresh'''
 
         #write data of this show to file
         if self.current_show is not None:
-            self.write_json({self.current_show : [self.current_callsign, self.snippet_counter]})
+            self.write_json(self.out_file, {self.current_show : [self.current_callsign, self.snippet_counter]})
         else:
             with open(self.out_file, 'w') as outfile:
                 outfile.write("{")
@@ -74,9 +74,9 @@ class SimpleCorpusParser:
         self.callsigns.add(json_obj["callsign"])
         self.snippet_counter = 0
 
-    def write_json(self, data):
+    def write_json(self, target_file, data):
         '''write json-object to file'''
-        with open(self.out_file, 'a') as outfile:
+        with open(target_file, 'a') as outfile:
             text = json.dumps(data)
 
             #format the first entry correctly
@@ -91,8 +91,6 @@ class SimpleCorpusParser:
     def write_metadata(self):
         with open (self.meta_file, 'w') as metafile:
             json.dump({"total_entries":self.entry_ctr, "total_callsigns":len(self.callsigns), "total_shows":len(self.shows)}, metafile, indent=2)
-            print(self.callsigns)
-            print(self.shows)
 def main():
     parser = SimpleCorpusParser(sys.argv[1])
 
