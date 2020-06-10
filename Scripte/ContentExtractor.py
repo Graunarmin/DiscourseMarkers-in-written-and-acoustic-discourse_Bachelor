@@ -31,7 +31,7 @@ class ContentExtractor():
 
         with open(self.data_filename) as file:
             for row in file:
-                line = json.loads(row)
+                line = json.load(row)
                 self.get_content(line)
         
         self.write_json()
