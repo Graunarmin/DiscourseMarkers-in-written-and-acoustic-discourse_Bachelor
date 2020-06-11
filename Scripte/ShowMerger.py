@@ -24,8 +24,7 @@ class ShowMerger:
                     
 
         self.merge_shows(shows)
-        print(self.merged_shows)
-        #self.write_output()
+        self.write_output()
 
 
     def merge_shows(self, shows):
