@@ -31,7 +31,7 @@ class SimpleCorpusParser:
             for row in file:
                 json_object = json.loads(row)
 
-                self.metadata.add_entry()
+                self.metadata.add_entry(1)
                 self.process_json(json_object)
 
         '''
@@ -40,11 +40,8 @@ class SimpleCorpusParser:
         gets only triggered if a new show comes up
         '''
         self.write_json({self.current_show : [self.current_callsign, self.snippet_counter]})
-        self.metadata.add_show(self.current_show, self.current_callsign, self.snippet_counter) 
-
-        #and finally add the closing bracket
-        with open(self.out_file, 'a') as outfile:
-            outfile.write("}")
+        self.metadata.add_show(1) 
+        self.metadata.add_callsign(self.current_callsign)
         
         self.metadata.write_metadata()
 
@@ -66,6 +63,7 @@ class SimpleCorpusParser:
 
                 #in any case: increase the snippet counter
                 self.snippet_counter += 1
+                self.metadata.add_regular_entry(1)
             else:
                 self.metadata.add_irregular_entry() 
         except KeyError as key:
@@ -77,12 +75,10 @@ class SimpleCorpusParser:
         #write data of this show to file
         if self.current_show is not None:
             self.write_json({self.current_show : [self.current_callsign, self.snippet_counter]})
-        else:
-            with open(self.out_file, 'w') as outfile:
-                outfile.write("{")
 
         '''Metadata'''
-        self.metadata.add_new_show(json_obj["callsign"], self.snippet_counter)
+        self.metadata.add_show(1)
+        self.metadata.add_callsign(json_obj["callsign"])
         
         '''set showname and callsign to the new ones and counter to 0'''
         self.current_show = json_obj["show_name"]
@@ -92,16 +88,8 @@ class SimpleCorpusParser:
     def write_json(self, data):
         '''write json-object to file'''
         with open(self.out_file, 'a') as outfile:
-            text = json.dumps(data)
-
-            #format the first entry correctly
-            if self.firstEntry:
-                outfile.write(text.replace("{","").replace("}",""))
-                self.firstEntry = False
-
-            #following entries need a comma to separate them
-            else:
-                outfile.write(text.replace("{",",\n").replace("}",""))
+            text = json.dump(data, outfile)
+            outfile.write("\n")
 
 def main():
     '''Argument 1: data file, here radiotalk.json'''

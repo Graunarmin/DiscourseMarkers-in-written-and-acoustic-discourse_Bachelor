@@ -16,25 +16,31 @@ class ShowMerger:
 
     def read_in_shows(self):
         '''read in all shows as json object'''
-
+        shows = []
         with open(self.in_file) as file:
-            shows = json.load(file)
+            for row in file:
+                show = json.loads(row)
+                shows.append(show)
+                    
 
         self.merge_shows(shows)
-        self.write_output()
+        print(self.merged_shows)
+        #self.write_output()
 
 
     def merge_shows(self, shows):
         '''go through json and put them all into a dict:
             if the entry already exists, only add to counter'''
 
-        for key in shows:
-            if key in self.merged_shows:
-                self.merged_shows[key][total] += shows[key][1]
-            else:
-                self.merged_shows[key] = {}
-                self.merged_shows[key]["total"] = shows[key][1]
-                self.merged_shows[key]["callsign"] = shows[key][0]
+        for show in shows:
+            for key in show:
+                if key in self.merged_shows:
+                    self.merged_shows[key][total] += show[key][1]
+                    print(shows[key][1])
+                else:
+                    self.merged_shows[key] = {}
+                    self.merged_shows[key]["total"] = show[key][1]
+                    self.merged_shows[key]["callsign"] = show[key][0]
     
     def write_output(self):
         '''write output to json or pickle or csv'''

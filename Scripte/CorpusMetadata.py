@@ -13,26 +13,18 @@ class CorpusMetadata():
         self.shows = 0
         self.callsigns = set()
 
-    def add_entry(self):
-        self.entry_ctr += 1
-    
-    def add_entries(self, number):
+    def add_entry(self, number):
         self.entry_ctr += number
 
-    def add_irregular_entry(self):
-        self.irregular_entry_ctr += 1
+    def add_irregular_entry(self, number):
+        self.irregular_entry_ctr += number
     
-    def add_regular_entry(self):
-        self.regular_entry_counter += 1
+    def add_regular_entry(self, number):
+        self.regular_entry_counter += number
     
     def add_callsign(self, callsign):
-        self.callsigns.add(callsign)
-
-    def add_new_show(self, callsign, snippets):
         #sets only add an entry if it's not already contained
-        self.add_show(1)
-        self.add_callsign(callsign)
-        self.regular_entry_counter += snippets
+        self.callsigns.add(callsign)
 
     def add_show(self, number):
         self.shows += number
