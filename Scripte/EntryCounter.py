@@ -2,6 +2,9 @@ import sys
 import json
 
 class EntryCounter:
+    '''
+    Counts the irregular entries
+    '''
     
     def __init__(self, data):
         self.data_file = data
@@ -13,7 +16,7 @@ class EntryCounter:
         with open(self.data_file) as file:
             for row in file:
                 self.entry_ctr += 1
-                json_object = json.loads(row)
+                json_object = json.load(row)
                 self.key_errors.add(json_object["ShowKeyError"])
         
         self.write_data()

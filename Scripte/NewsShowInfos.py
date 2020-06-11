@@ -3,7 +3,10 @@ import json
 import pickle
 import sys
 
-class ContentExtractor():
+class NewsShowInfos():
+    '''
+    Extract Content, additional Info and metadata from the news shows
+    '''
 
     def __init__(self, shows, data):
         self.csv_filename = shows
@@ -57,7 +60,7 @@ class ContentExtractor():
             pass
 
     def write_json(self):
-        with open("../data/snippets.json", 'w') as outfile:
+        with open("../data/news_snippets.json", 'w') as outfile:
             json.dump(self.content, outfile, indent=2)
 
     def write_metadata(self):
@@ -75,7 +78,7 @@ def main():
     Argument 2: json file that contains all the data (radiotalk.json)
     '''
 
-    extractor = ContentExtractor(sys.argv[1], sys.argv[2])
+    extractor = NewsShowInfos(sys.argv[1], sys.argv[2])
 
 if __name__ == '__main__':
     main()
