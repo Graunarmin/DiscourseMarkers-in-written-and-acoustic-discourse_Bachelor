@@ -28,7 +28,7 @@ class CorpusMetadata():
     def add_callsign(self, callsign):
         self.callsigns.add(callsign)
 
-    def add_show(self, callsign, snippets):
+    def add_new_show(self, callsign, snippets):
         #sets only add an entry if it's not already contained
         self.add_show(1)
         self.add_callsign(callsign)

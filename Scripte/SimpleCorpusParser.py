@@ -82,7 +82,7 @@ class SimpleCorpusParser:
                 outfile.write("{")
 
         '''Metadata'''
-        self.metadata.add_show(json_obj["callsign"], self.snippet_counter)
+        self.metadata.add_new_show(json_obj["callsign"], self.snippet_counter)
         
         '''set showname and callsign to the new ones and counter to 0'''
         self.current_show = json_obj["show_name"]
