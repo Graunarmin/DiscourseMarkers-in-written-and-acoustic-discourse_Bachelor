@@ -65,9 +65,9 @@ class SimpleCorpusParser:
                 self.snippet_counter += 1
                 self.metadata.add_regular_entry(1)
             else:
-                self.metadata.add_irregular_entry() 
+                self.metadata.add_irregular_entry(1) 
         except KeyError as key:
-            self.metadata.add_irregular_entry()
+            self.metadata.add_irregular_entry(1)
     
     def start_new_show(self, json_obj):
         '''a new show is about to start. Time to write the collected data into a file and start fresh'''
