@@ -17,15 +17,13 @@ class EntryCounter:
             for row in file:
                 self.entry_ctr += 1
                 json_object = json.loads(row)
-                self.key_errors.add(json_object["ShowKeyError"])
+                #self.key_errors.add(json_object["ShowKeyError"])
         
         self.write_data()
     
     def write_data(self):
         with open("../data/ireggular_metadata.json", 'w') as metafile:
-            json.dump({"Total Entries": self.entry_ctr, 
-                        "Different Errors":len(self.key_errors), 
-                        "Errors": self.key_errors},
+            json.dump({"Total Entries": self.entry_ctr},
                         metafile,
                         indent=2)
 
