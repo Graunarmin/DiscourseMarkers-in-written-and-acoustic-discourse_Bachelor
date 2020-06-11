@@ -100,6 +100,7 @@ class SimpleCorpusParser:
                         metafile, 
                         indent=2)
 def main():
+    '''Argument 1: data file, here radiotalk.json'''
     parser = SimpleCorpusParser(sys.argv[1])
 
 if __name__ == '__main__':

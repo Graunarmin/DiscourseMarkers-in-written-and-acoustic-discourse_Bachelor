@@ -22,7 +22,7 @@ class ShowFilter:
 
     def filter_shows(self, shows):
         '''go through json and put them all into a dict:
-                if the entry already exists, only add to counter'''
+            if the entry already exists, only add to counter'''
 
         for key in shows:
             if key in self.filtered_shows:
@@ -39,6 +39,10 @@ class ShowFilter:
 
 
 def main():
+    '''
+    Argument 1: file with all the shows (../data/all_shows.json)
+    Argument 2: out file name (../data/filtered_shows.json)
+    '''
     show_filter = ShowFilter(sys.argv[1], sys.argv[2])
 
 if __name__ == '__main__':

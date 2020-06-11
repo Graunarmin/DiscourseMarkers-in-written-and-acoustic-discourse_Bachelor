@@ -27,6 +27,10 @@ class EntryCounter:
                         indent=2)
 
 def main():
+    '''
+    Argument: file with data (radiotalk.json)
+    '''
+    
     counter = EntryCounter(sys.argv[1])
 
 if __name__ == '__main__':

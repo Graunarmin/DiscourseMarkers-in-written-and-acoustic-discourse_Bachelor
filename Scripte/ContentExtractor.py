@@ -8,6 +8,9 @@ class ContentExtractor():
     def __init__(self, shows, data):
         self.csv_filename = shows
         self.data_filename = data
+        self.show_ctr = 0
+        self.snippets = 0
+        self.callsigns = set()
         self.show_names = []
         self.read_csv()
         self.content = {}
@@ -33,6 +36,7 @@ class ContentExtractor():
                 self.get_content(line)
         
         self.write_json()
+        self.write_metadata()
 
     def get_content(self, line):
         #for each show name: 
@@ -44,6 +48,8 @@ class ContentExtractor():
                     self.content[line["show_name"]][line["content"]] = line["audio_chunk_id"]
                 else:
                     self.content[line["show_name"]] = {line["content"]:line["audio_chunk_id"]}
+                self.snippets += 1
+                self.callsigns.add(line["callsign"])
             else: 
                 pass
         except KeyError as k_error:
@@ -54,8 +60,21 @@ class ContentExtractor():
         with open("../data/snippets.json", 'w') as outfile:
             json.dump(self.content, outfile, indent=2)
 
+    def write_metadata(self):
+        with open("../data/news_shows_meta.json", 'w') as metafile:
+            json.dump({"total_news_shows":len(self.show_names),
+                        "total_snippets": self.snippets,
+                        "total_callsigns": len(self.callsigns),
+                        "all_callsigns": list(self.callsigns)},
+                        metafile,
+                        indent=2)
+
 def main():
-    
+    '''
+    Argument 1: csv file that contains all relevant show names (../data/news_shows.csv)
+    Argument 2: json file that contains all the data (radiotalk.json)
+    '''
+
     extractor = ContentExtractor(sys.argv[1], sys.argv[2])
 
 if __name__ == '__main__':
