@@ -12,8 +12,8 @@ class SimpleCorpusParser:
 
     def __init__(self, data):
         self.data_file = data
-        self.out_file = "../data/all_showsT.json"
-        self.meta_file = "../data/metadataT.json"
+        self.out_file = "../data/all_shows.json"
+        self.meta_file = "../data/metadata.json"
 
         self.metadata = CM.CorpusMetadata(self.meta_file)
 
@@ -21,7 +21,7 @@ class SimpleCorpusParser:
         self.current_show = None
         self.current_callsign = None
         self.snippet_counter = 0
-        
+
         self.read_lines()
 
     def read_lines(self):
