@@ -1,5 +1,6 @@
 import sys
 import json
+import CorpusMetadata as CM
 
 class MetadataFilteredShows:
     
@@ -9,23 +10,28 @@ class MetadataFilteredShows:
         self.snippets = 0
         self.callsigns = set()
 
+        self.meta_file = "../data/merged_shows_metadataT.json"
+        self.metadata = CM.CorpusMetadata(self.meta_file)
+
         self.count_entries()
 
     def count_entries(self):
         with open(self.data_file) as file:
             self.shows = json.load(file)
         
-        self.count_callsigns()
+        self.metadata.add_show(len(self.shows))
         self.count_snippets()
-        self.write_data()
+        self.count_callsigns()
+        self.metadata.write_metadata()
+        #self.write_data()
 
     def count_snippets(self):
         for show in self.shows:
-            self.snippets += self.shows[show]["total"]
+            self.metadata.add_entries(self.shows[show]["total"])
 
     def count_callsigns(self):
         for show in self.shows:
-            self.callsigns.add(self.shows[show]["callsign"])
+            self.metadata.add_callsign(self.shows[show]["callsign"])
 
     def write_data(self):
         with open("../data/merged_shows_metadata.json", 'w') as metafile:

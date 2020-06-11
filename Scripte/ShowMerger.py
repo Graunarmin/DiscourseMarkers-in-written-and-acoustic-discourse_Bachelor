@@ -1,5 +1,6 @@
 import json
 import sys
+import CorpusMetadata as CM
 
 class ShowMerger:
     '''
@@ -10,7 +11,7 @@ class ShowMerger:
         self.in_file = data
         self.out_file = outfile
         self.merged_shows = {}
-        
+
         self.read_in_shows()
 
     def read_in_shows(self):

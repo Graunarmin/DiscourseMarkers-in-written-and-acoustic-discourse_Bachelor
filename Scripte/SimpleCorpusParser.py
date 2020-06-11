@@ -66,7 +66,8 @@ class SimpleCorpusParser:
 
                 #in any case: increase the snippet counter
                 self.snippet_counter += 1
-                
+            else:
+                self.metadata.add_irregular_entry() 
         except KeyError as key:
             self.metadata.add_irregular_entry()
     
@@ -81,7 +82,7 @@ class SimpleCorpusParser:
                 outfile.write("{")
 
         '''Metadata'''
-        self.metadata.add_show(json_obj["show_name"],json_obj["callsign"], self.snippet_counter)
+        self.metadata.add_show(json_obj["callsign"], self.snippet_counter)
         
         '''set showname and callsign to the new ones and counter to 0'''
         self.current_show = json_obj["show_name"]
