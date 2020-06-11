@@ -4,7 +4,7 @@ import CorpusMetadata as CM
 
 class ShowMerger:
     '''
-    Merge shows with the same name
+    Merge shows with the same name, add their numbers of snippets together
     '''
 
     def __init__(self, data, outfile):

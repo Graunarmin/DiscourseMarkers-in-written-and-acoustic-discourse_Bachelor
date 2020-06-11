@@ -2,7 +2,7 @@ import json
 
 class CorpusMetadata():
     '''
-    extract the Metadata from radiotalk.json
+    extract the Metadata, use as module in other classes
     '''
     
     def __init__(self, filename):

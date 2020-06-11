@@ -2,6 +2,7 @@ import csv
 import json
 import pickle
 import sys
+import CorpusMetadata as CM
 
 class NewsShowInfos():
     '''
@@ -11,27 +12,32 @@ class NewsShowInfos():
     def __init__(self, shows, data):
         self.csv_filename = shows
         self.data_filename = data
-        self.show_ctr = 0
-        self.snippets = 0
-        self.callsigns = set()
+        self.filename_metadata = "../data/news_shows_metadata.json"
+        self.metadata = CM.CorpusMetadata(self.filename_metadata)
+
         self.show_names = []
         self.read_csv()
+        
         self.content = {}
         self.read_lines()   
-        #piece together snippets from the same audiochunk:
-        #year-month-day/callsign/timestamp(?)/snippetID
 
     def read_csv(self):
-        #read in the csv-file
+        '''read in the csv-file to create a list of all relevant show names'''
+
         with open(self.csv_filename, 'r') as csv_file:
             show_reader= csv.reader(csv_file, delimiter = ';')
-            #for each show name: 
-            #   get content + audio_chunk_id
+
+            #for each show name: get content + audio_chunk_id
             for row in show_reader:
                 self.show_names.append(row[1])
+        
+        self.metadata.add_show(len(self.show_names))
     
     def read_lines(self):
-        '''read in the file line by line, processing each line before loading the next one'''
+        '''
+        read in the data file line by line, 
+        processing each line before loading the next one
+        '''
 
         with open(self.data_filename) as file:
             for row in file:
@@ -42,17 +48,23 @@ class NewsShowInfos():
         self.write_metadata()
 
     def get_content(self, line):
-        #for each show name: 
-        #   go through the data and extract the "content" + the "audio_chunk_id":
-        #   {show1:{content1:audioID1, content2:audioID2,...}, show2:{...},...}
+        '''
+        for each show name: 
+           go through the data and extract the "content" + the "audio_chunk_id":
+           {show1:{content1:audioID1, content2:audioID2,...}, show2:{...},...}
+        '''
+
         try:
             if line["show_name"] in self.show_names:
                 if line["show_name"] in self.content:
                     self.content[line["show_name"]][line["content"]] = line["audio_chunk_id"]
                 else:
                     self.content[line["show_name"]] = {line["content"]:line["audio_chunk_id"]}
-                self.snippets += 1
-                self.callsigns.add(line["callsign"])
+
+                ''' Metadata '''
+                self.metadata.add_entry(1)
+                self.metadata.add_callsign(line["callsign"])
+
             else: 
                 pass
         except KeyError as k_error:
@@ -62,15 +74,6 @@ class NewsShowInfos():
     def write_json(self):
         with open("../data/news_snippets.json", 'w') as outfile:
             json.dump(self.content, outfile, indent=2)
-
-    def write_metadata(self):
-        with open("../data/news_shows_meta.json", 'w') as metafile:
-            json.dump({"total_news_shows":len(self.show_names),
-                        "total_snippets": self.snippets,
-                        "total_callsigns": len(self.callsigns),
-                        "all_callsigns": list(self.callsigns)},
-                        metafile,
-                        indent=2)
 
 def main():
     '''
