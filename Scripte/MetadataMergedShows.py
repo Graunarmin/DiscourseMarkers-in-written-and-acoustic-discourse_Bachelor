@@ -2,7 +2,11 @@ import sys
 import json
 import CorpusMetadata as CM
 
-class MetadataFilteredShows:
+class MetadataMergedShows:
+    '''
+    Extract Metadata from the merged show list using the CorpusMetadata module
+    Argument: File with data, here: ../data/merged_shows.json"
+    '''
     
     def __init__(self, data):
         self.data_file = data
@@ -10,7 +14,7 @@ class MetadataFilteredShows:
         self.snippets = 0
         self.callsigns = set()
 
-        self.meta_file = "../data/merged_shows_metadataT.json"
+        self.meta_file = "../data/merged_shows_metadata.json"
         self.metadata = CM.CorpusMetadata(self.meta_file)
 
         self.load_entries()

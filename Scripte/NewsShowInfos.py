@@ -45,7 +45,7 @@ class NewsShowInfos():
                 self.get_content(line)
         
         self.write_json()
-        self.write_metadata()
+        self.metadata.write_metadata()
 
     def get_content(self, line):
         '''
