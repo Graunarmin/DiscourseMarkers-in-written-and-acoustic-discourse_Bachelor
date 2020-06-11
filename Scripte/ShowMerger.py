@@ -35,7 +35,7 @@ class ShowMerger:
         for show in shows:
             for key in show:
                 if key in self.merged_shows:
-                    self.merged_shows[key][total] += show[key][1]
+                    self.merged_shows[key]["total"] += show[key][1]
                     print(shows[key][1])
                 else:
                     self.merged_shows[key] = {}
