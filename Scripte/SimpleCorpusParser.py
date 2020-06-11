@@ -90,7 +90,11 @@ class SimpleCorpusParser:
     
     def write_metadata(self):
         with open (self.meta_file, 'w') as metafile:
-            json.dump({"total_entries":self.entry_ctr, "total_callsigns":len(self.callsigns), "total_shows":len(self.shows)}, metafile, indent=2)
+            json.dump({"total_entries":self.entry_ctr, 
+                        "total_callsigns":len(self.callsigns), 
+                        "total_shows":len(self.shows)}, 
+                        metafile, 
+                        indent=2)
 def main():
     parser = SimpleCorpusParser(sys.argv[1])
 
