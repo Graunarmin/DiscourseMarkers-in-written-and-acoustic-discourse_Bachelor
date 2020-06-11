@@ -28,7 +28,7 @@ class MetadataFilteredShows:
             self.callsigns.add(self.shows[show]["callsign"])
 
     def write_data(self):
-        with open("../data/filtered_metadata.json", 'w') as metafile:
+        with open("../data/merged_shows_metadata.json", 'w') as metafile:
             json.dump({"total_shows": len(self.shows), 
                         "total_snipptes": self.snippets, 
                         "total_callsigns": len(self.callsigns),
@@ -38,7 +38,7 @@ class MetadataFilteredShows:
 
 def main():
     '''
-    Argument: File with data, here: ../data/filtered_shows.json"
+    Argument: File with data, here: ../data/merged_shows.json"
     '''
 
     metadata = MetadataFilteredShows(sys.argv[1])
