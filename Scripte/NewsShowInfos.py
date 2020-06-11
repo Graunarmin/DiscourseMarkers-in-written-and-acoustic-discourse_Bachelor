@@ -12,7 +12,7 @@ class NewsShowInfos():
     def __init__(self, shows, data):
         self.csv_filename = shows
         self.data_filename = data
-        self.filename_metadata = "../data/news_shows_metadata.json"
+        self.filename_metadata = "../data/metadata/news_shows_metadata.json"
         self.metadata = CM.CorpusMetadata(self.filename_metadata)
 
         self.show_names = []

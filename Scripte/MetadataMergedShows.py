@@ -14,7 +14,7 @@ class MetadataMergedShows:
         self.snippets = 0
         self.callsigns = set()
 
-        self.meta_file = "../data/merged_shows_metadata.json"
+        self.meta_file = "../data/metadata/merged_shows_metadata.json"
         self.metadata = CM.CorpusMetadata(self.meta_file)
 
         self.load_entries()

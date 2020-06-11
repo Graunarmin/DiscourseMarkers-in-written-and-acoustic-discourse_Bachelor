@@ -13,7 +13,7 @@ class SimpleCorpusParser:
     def __init__(self, data):
         self.data_file = data
         self.out_file = "../data/all_shows.json"
-        self.meta_file = "../data/metadata.json"
+        self.meta_file = "../data/metadata/radioTalk_metadata.json"
 
         self.metadata = CM.CorpusMetadata(self.meta_file)
 
