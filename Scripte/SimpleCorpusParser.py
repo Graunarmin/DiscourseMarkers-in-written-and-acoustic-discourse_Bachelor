@@ -54,7 +54,7 @@ class SimpleCorpusParser:
 
         except KeyError as key:
             json_obj["ShowKeyError"] = format(key)
-            self.write_json("irregularObjects.json", json_obj)
+            self.write_irrgular_entries(json_obj)
     
     def start_new_show(self, json_obj):
         '''a new show is about to start. Time to write the collected data into a file and start fresh'''
@@ -73,6 +73,10 @@ class SimpleCorpusParser:
         self.current_callsign = json_obj["callsign"]
         self.callsigns.add(json_obj["callsign"])
         self.snippet_counter = 0
+
+    def write_irrgular_entries(self, json_obj):
+        with open("irregular_objects.json", 'a') as file:
+            json.dump(json_obj, file, indent=2)
 
     def write_json(self, target_file, data):
         '''write json-object to file'''
