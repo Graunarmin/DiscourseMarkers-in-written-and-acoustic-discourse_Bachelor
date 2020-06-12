@@ -72,7 +72,7 @@ class NewsShowInfos():
             pass
 
     def write_json(self):
-        with open("../data/news_snippets.json", 'w') as outfile:
+        with open("../bigData/news_snippets.json", 'w') as outfile:
             json.dump(self.content, outfile, indent=2)
 
 def main():
