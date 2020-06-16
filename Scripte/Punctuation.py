@@ -13,6 +13,8 @@ class Punctuation():
         with open (self.data_file) as file:
             for row in file:
                 json_object = json.loads(row)
+                for show in json_object:
+                    pass
 
                 self.add_punctuation(json_object)
 

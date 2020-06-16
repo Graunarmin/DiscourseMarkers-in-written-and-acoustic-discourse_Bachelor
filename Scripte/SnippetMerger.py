@@ -7,26 +7,23 @@ class SnippetMerger():
         self.snippet_file = data
         self.out_file = out
         self.separate = seperate
-        self.snippets = None
-        self.sorted_by_audio_id = dict()
         self.current_show = None
-        self.texts = {}
 
         self.read_in_snippets()
 
     def read_in_snippets(self):
         with open (self.snippet_file) as file:
-            self.snippets = json.load(file)
-            for show in self.snippets:
+            snippets = json.load(file)
+            for show in snippets:
                 self.current_show = show
-                self.merge_snippets(self.snippets[show])
+                self.merge_snippets(snippets[show])
     
     def merge_snippets(self, content):
         '''
         sort all the snippets of the current show into a dict, 
         keys are the IDs of the audio_chunks the snippets belong to.
         '''
-        self.sorted_by_audio_id.clear()
+        sorted_by_audio_id = {}
         for snippet in content:
             #make a dict with the dates as keys
             #Then sort the respective snippets by the last part of the id
@@ -34,37 +31,35 @@ class SnippetMerger():
             audio_id = "/".join(audio_chunk_id[:len(audio_chunk_id)-1])
             snippet_id = audio_chunk_id[len(audio_chunk_id)-1]
 
-            if audio_id in self.sorted_by_audio_id:
-                self.sorted_by_audio_id[audio_id][snippet_id] = snippet
+            if audio_id in sorted_by_audio_id:
+                sorted_by_audio_id[audio_id][snippet_id] = snippet
             else:
-                self.sorted_by_audio_id[audio_id] = {}
-                self.sorted_by_audio_id[audio_id][snippet_id] = snippet
+                sorted_by_audio_id[audio_id] = {}
+                sorted_by_audio_id[audio_id][snippet_id] = snippet
         #now all the snippets should be sorted under their respective id,
         #but they are not in the correct order yet.
-        self.sort_snippets()
+        self.sort_snippets(sorted_by_audio_id)
         
     
-    def sort_snippets(self):
+    def sort_snippets(self, sorted_by_audio_id):
         '''
         Sort each audio_chunk entry by the snippet id, so they are in the order they were said
         and merge them together to a string
         '''
-        self.texts.clear()
-        for audio_id in self.sorted_by_audio_id:
-            sorted_content = sorted(self.sorted_by_audio_id[audio_id].items())
-            self.texts = {}
+        whole_texts = {}
+        for audio_id in sorted_by_audio_id:
+            sorted_content = sorted(sorted_by_audio_id[audio_id].items())
             text = ""
             for snippet_tuple in sorted_content:
                 text += snippet_tuple[1].strip()
                 text += self.separate + " "
-            self.texts[audio_id] = text
-
-        self.write_show_content()   
+            whole_texts[audio_id] = text
+        self.write_show_content(whole_texts)   
     
-    def write_show_content(self):
+    def write_show_content(self, texts):
         with open(self.out_file, 'a') as outfile:
             json.dump({self.current_show : 
-                        self.texts},
+                        texts},
                         outfile)
             outfile.write("\n")
 
