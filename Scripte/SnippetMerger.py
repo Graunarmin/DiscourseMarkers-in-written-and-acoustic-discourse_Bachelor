@@ -3,9 +3,10 @@ import sys
 
 class SnippetMerger():
 
-    def __init__(self, data, out):
+    def __init__(self, data, out, seperate):
         self.snippet_file = data
         self.out_file = out
+        self.separate = seperate
         self.snippets = None
         self.sorted_by_audio_id = dict()
         self.current_show = None
@@ -57,7 +58,7 @@ class SnippetMerger():
             text = ""
             for snippet_tuple in sorted_content:
                 text += snippet_tuple[1].strip()
-                text += ". "
+                text += self.separate + " "
             self.texts[audio_id] = text
 
         self.write_show_content()   
@@ -69,14 +70,20 @@ class SnippetMerger():
                         outfile)
             outfile.write("\n")
 
+def process_input(user_in):
+    if user_in[3] == "y":
+        return([user_in[1], user_in[2], "."])
+    elif user_in[3] == "n":
+        return([user_in[1], user_in[2], ""])
 
 def main():
     '''
     Argument 1: json file that contains all the snippets (../bigData/news_snippets.json)
     Argument 2: out file name (../bigData/news_texts.json)
+    Argument 3: if the text is to be separated by full-stops, type y, otherwise type n
     '''
-
-    merger = SnippetMerger(sys.argv[1], sys.argv[2])
+    user_in = process_input(sys.argv)
+    merger = SnippetMerger(user_in[0], user_in[1], user_in[2])
 
 if __name__ == '__main__':
     main()      
