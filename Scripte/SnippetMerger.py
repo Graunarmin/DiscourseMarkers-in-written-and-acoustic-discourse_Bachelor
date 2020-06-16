@@ -28,7 +28,7 @@ class SnippetMerger():
             #make a dict with the dates as keys
             #Then sort the respective snippets by the last part of the id
             audio_chunk_id = content[snippet].split("/")
-            audio_id = "/".join(audio_chunk_id[:len(audio_chunk_id)-1])
+            audio_id = "/".join(audio_chunk_id[:len(audio_chunk_id)-2])
             snippet_id = audio_chunk_id[len(audio_chunk_id)-1]
 
             if audio_id in sorted_by_audio_id:

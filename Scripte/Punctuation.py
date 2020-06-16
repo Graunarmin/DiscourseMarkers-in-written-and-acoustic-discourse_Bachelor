@@ -8,6 +8,8 @@ class Punctuation():
         self.data_file = data
         self.outfile = outfile
         self.segmenter = DeepSegment('en')
+
+        self.load_json_objects()
         
 
     def load_json_objects(self):
@@ -17,16 +19,17 @@ class Punctuation():
                 #there is only one key (show) in everey json,
                 #but we still need to "loop" to get it
                 for show in json_object:
+                    texts = ""
+                    texts = self.add_punctuation(json_object[show])
 
-                    json_object[show] = self.add_punctuation(json_object[show])
-                        
-                    self.write_show_content(json_object)
+                    print("writing ...")  
+                    self.write_show_content(show, texts)
 
     def add_punctuation(self, json_obj):
 
         texts = {}
         for date in json_obj:
-            sentences = self.segmenter.segment(json_obj[date])
+            sentences = self.segmenter.segment_long(json_obj[date])
             text = ""
             for sentence in sentences:
                 text += sentence
@@ -35,9 +38,9 @@ class Punctuation():
         
         return texts
 
-    def write_show_content(self, show):
+    def write_show_content(self, show, texts):
         with open(self.outfile, 'a') as outfile:
-            json.dump(show)
+            json.dump({show: texts}, outfile)
             outfile.write("\n")
 
 
