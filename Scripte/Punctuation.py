@@ -1,6 +1,8 @@
 from deepsegment import DeepSegment
 import json
 import sys
+import warnings
+
 
 class Punctuation():
 
@@ -22,11 +24,12 @@ class Punctuation():
                     texts = ""
                     texts = self.add_punctuation(json_object[show])
 
-                    print("writing ...")  
+                    print("Writing " , show) 
                     self.write_show_content(show, texts)
 
     def add_punctuation(self, json_obj):
 
+        warnings.filterwarnings("ignore")
         texts = {}
         for date in json_obj:
             sentences = self.segmenter.segment_long(json_obj[date],n_window=len(json_obj[date]))
