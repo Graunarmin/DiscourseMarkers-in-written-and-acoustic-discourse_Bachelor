@@ -29,7 +29,7 @@ class Punctuation():
 
         texts = {}
         for date in json_obj:
-            sentences = self.segmenter.segment_long(json_obj[date])
+            sentences = self.segmenter.segment_long(json_obj[date],n_window=len(json_obj[date]))
             text = ""
             for sentence in sentences:
                 text += sentence
