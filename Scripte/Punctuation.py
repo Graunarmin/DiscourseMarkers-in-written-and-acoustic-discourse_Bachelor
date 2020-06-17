@@ -2,8 +2,6 @@ from deepsegment import DeepSegment
 import json
 import sys
 import logging
-logging.getLogger("imported_module").setLevel(logging.ERROR)
-
 
 class Punctuation():
 
@@ -11,6 +9,7 @@ class Punctuation():
         self.data_file = data
         self.outfile = outfile
         self.segmenter = DeepSegment('en')
+        logging.getLogger("imported_module").setLevel(logging.ERROR)
 
         self.load_json_objects()
         
