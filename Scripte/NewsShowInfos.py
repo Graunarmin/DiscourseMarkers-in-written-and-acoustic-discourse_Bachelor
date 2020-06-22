@@ -44,6 +44,11 @@ class NewsShowInfos():
                 line = json.loads(row)
                 self.get_content(line)
         
+        #write python-readable version
+        for show in self.content:
+            self.write_show(show, self.content[show])
+        
+        #write a more human-readable version
         self.write_json()
         self.metadata.write_metadata()
 
@@ -74,6 +79,10 @@ class NewsShowInfos():
     def write_json(self):
         with open("../bigData/news_snippets.json", 'w') as outfile:
             json.dump(self.content, outfile, indent=2)
+
+    def write_show(self, show, content):
+        with open("../bigData/news_snippets_data.json", 'a') as outfile:
+            json.dump({show : content}, outfile)
 
 def main():
     '''
