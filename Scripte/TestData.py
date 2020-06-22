@@ -40,6 +40,7 @@ class TestData():
             #     line = json.loads(row)
             #     #there is only one key but to get it we still need to "loop"
             for show in data:
+                print(show)
                 if show in self.show_names:
                     self.add_show(show,data[show])
             self.write_json()
@@ -71,6 +72,7 @@ class TestData():
                 return sorted(sorted_by_audio_id[audio_id].items())
 
     def write_json(self):
+        print("writing")
         with open (self.out_file, 'w') as outfile:
             json.dump(self.test_data, outfile, indent=2)
 
@@ -78,7 +80,7 @@ class TestData():
 def main():
     '''
     Argument 1: csv file that contains all relevant show names (../data/TestData_news-shows.csv)
-    Argument 2: json file that contains all the data (../bigData/news_snippets_data.json)
+    Argument 2: json file that contains all the data (../bigData/news_snippets.json)
     Argument 3: outfile name
     '''
 
