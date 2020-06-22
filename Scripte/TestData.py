@@ -69,7 +69,7 @@ class TestData():
             #get the first chunk that has 20 or more snippets
             if len(sorted_by_audio_id[audio_id]) >= 20:
                 #and sort them according to their snippet_id
-                return sorted(sorted_by_audio_id[audio_id].items())
+                return sorted(int(sorted_by_audio_id[audio_id].items()))
 
     def write_json(self):
         print("writing")
