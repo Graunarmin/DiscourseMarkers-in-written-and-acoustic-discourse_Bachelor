@@ -34,14 +34,15 @@ class TestData():
         processing each line before loading the next one
         '''
         with open(self.data_file) as file:
-            #each show is one json object (= one line)
-            for row in file:
-                line = json.loads(row)
-                #there is only one key but to get it we still need to "loop"
-                for show in line:
-                    if show in self.show_names:
-                        self.add_show(show,line)
-                self.write_json()
+            data = json.load(file)
+            # #each show is one json object (= one line)
+            # for row in file:
+            #     line = json.loads(row)
+            #     #there is only one key but to get it we still need to "loop"
+            for show in line:
+                if show in self.show_names:
+                    self.add_show(show,line)
+            self.write_json()
 
     def add_show(self, show, content):
         sorted_by_audio_id = {}
