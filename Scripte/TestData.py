@@ -53,7 +53,7 @@ class TestData():
             audio_chunk_id = content[snippet].split("/")
             audio_id = "/".join(audio_chunk_id[:len(audio_chunk_id)-2])
             time = audio_chunk_id[len(audio_chunk_id)-2]
-            snippet_id = audio_chunk_id[len(audio_chunk_id)-1]
+            snippet_id = int(audio_chunk_id[len(audio_chunk_id)-1])
 
             if audio_id in sorted_by_audio_id:
                 sorted_by_audio_id[audio_id][snippet_id] = snippet
@@ -69,7 +69,7 @@ class TestData():
             #get the first chunk that has 20 or more snippets
             if len(sorted_by_audio_id[audio_id]) >= 20:
                 #and sort them according to their snippet_id
-                return sorted(int(sorted_by_audio_id[audio_id].items()))
+                return sorted(sorted_by_audio_id[audio_id].items())
 
     def write_json(self):
         print("writing")
