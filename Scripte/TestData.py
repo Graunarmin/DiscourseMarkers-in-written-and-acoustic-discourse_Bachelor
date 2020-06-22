@@ -34,14 +34,14 @@ class TestData():
         processing each line before loading the next one
         '''
         with open(self.data_file) as file:
-            data = json.load(file)
-            # for row in file:
-            #     line = json.loads(row)
-            #     #there is only one key but to get it we still need to "loop"
-            for show in file:
-                if show in self.show_names:
-                    self.add_show(show,line)
-            self.write_json()
+            #each show is one json object (= one line)
+            for row in file:
+                line = json.loads(row)
+                #there is only one key but to get it we still need to "loop"
+                for show in line:
+                    if show in self.show_names:
+                        self.add_show(show,line)
+                self.write_json()
 
     def add_show(self, show, content):
         sorted_by_audio_id = {}
@@ -77,7 +77,7 @@ class TestData():
 def main():
     '''
     Argument 1: csv file that contains all relevant show names (../data/TestData_news-shows.csv)
-    Argument 2: json file that contains all the data (../bigData/news_snippets.json)
+    Argument 2: json file that contains all the data (../bigData/news_snippets_data.json)
     Argument 3: outfile name
     '''
 

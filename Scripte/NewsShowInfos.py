@@ -52,6 +52,8 @@ class NewsShowInfos():
         self.write_json()
         self.metadata.write_metadata()
 
+        print("Done")
+
     def get_content(self, line):
         '''
         for each show name: 
@@ -83,6 +85,7 @@ class NewsShowInfos():
     def write_show(self, show, content):
         with open("../bigData/news_snippets_data.json", 'a') as outfile:
             json.dump({show : content}, outfile)
+            outfile.write("\n")
 
 def main():
     '''
