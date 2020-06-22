@@ -39,9 +39,9 @@ class TestData():
             # for row in file:
             #     line = json.loads(row)
             #     #there is only one key but to get it we still need to "loop"
-            for show in line:
+            for show in data:
                 if show in self.show_names:
-                    self.add_show(show,line)
+                    self.add_show(show,data[show])
             self.write_json()
 
     def add_show(self, show, content):

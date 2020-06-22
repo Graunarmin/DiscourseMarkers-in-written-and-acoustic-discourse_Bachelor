@@ -45,8 +45,8 @@ class NewsShowInfos():
                 self.get_content(line)
         
         #write python-readable version
-        for show in self.content:
-            self.write_show(show, self.content[show])
+        # for show in self.content:
+        #     self.write_show(show, self.content[show])
         
         #write a more human-readable version
         self.write_json()
