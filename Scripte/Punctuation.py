@@ -16,8 +16,31 @@ def create_text(snippet_list, delimiter):
     return text
 
 
+def create_short_texts(snippet_list, delimiter, max_length):
+    """
+    merge the snippets to strings that don't contain more than max_length words
+    returns a list of texts
+    """
+    current_length = 0
+    texts = []
+    text = ""
+    for snippet_tuple in snippet_list:
+        new_length = len(snippet_tuple[1].split(" "))
+        if (current_length + new_length) <= max_length:
+            current_length += new_length
+            text += snippet_tuple[1]
+            text += delimiter
+        else:
+            texts.append(text)
+            current_length = new_length
+            text = snippet_tuple[1]
+            text += delimiter
+
+    return texts
+
+
 def write_output(data, out_file):
-    with open(out_file, 'a') as outfile:
+    with open(out_file, 'w') as outfile:
         json.dump(data, outfile, indent=2)
 
 
@@ -33,6 +56,8 @@ class Punctuation:
         self.simple_out = "../data/punctuation/simple_punct.json"
         self.deep_data = {}
         self.deep_out = "../data/punctuation/deep_punct.json"
+        self.bert = bp.BertPunctuation()
+        self.max_length = 3
         self.bert_data = {}
         self.bert_out = "../data/punctuation/bert_punct.json"
 
@@ -91,10 +116,14 @@ class Punctuation:
         """
         add punctuation using the pre-trained BERT
         """
-        # first put all snippets together separated by [MASK]
-        text = create_text(content, " [Mask] ")
-        punct = bp.BertPunctuation()
-        self.bert_data[show] = punct.punctuate_text(text)
+        punctuated_text = ""
+        # first put snippets together separated by [MASK]
+        # but not too many as BERT can't handle more than 512 tokens at once?
+        texts = create_short_texts(content, " [MASK] ", 400)
+        for text in texts:
+            punctuated_text += self.bert.punctuate_text(text)
+
+        self.bert_data[show] = punctuated_text
 
 
 # ---------------- MAIN --------------------

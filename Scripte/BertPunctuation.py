@@ -9,7 +9,8 @@ def format_text(text_list):
     """
     text = " ".join(text_list)
     text = text.replace(" . ", ". ")
-    text += "."
+    text = text.replace(" , ", ", ")
+    # text += "."
     return text
 
 
@@ -27,18 +28,19 @@ class BertPunctuation:
         # Load pre-trained model (weights)
         self.model = BertForMaskedLM.from_pretrained('bert-base-uncased')
         self.model.eval()
+        self.max_length = 400
 
     def punctuate_text(self, string):
         """
-        add punctuation to string using the pre-trained BERT
+        adds punctuation to given string using the pre-trained BERT and returns the string
         """
-        tokenized_text = self.tokenize(string)
+        tokenized_text = self.__tokenize(string)
 
-        # Tokenizer splits auf things words like "can't" to "can", "##t" so for putting it back together
+        # Tokenizer splits words like "can't" to "can", "##t" so for putting it back together
         # in a human-readable way we need to use the text split by whitespaces
         text_list = string.split(" ")
 
-        predictions = self.predict_tokens(tokenized_text)
+        predictions = self.__predict_tokens(tokenized_text)
         prediction_index = 0
 
         # replace [MASK]s with predicted tokens
@@ -49,41 +51,19 @@ class BertPunctuation:
 
         return format_text(text_list)
 
-    def tokenize(self, string):
+    def __tokenize(self, string):
         """
         use BERT tokenizer to tokenize the string
         """
         return self.tokenizer.tokenize(string)
 
-    def predict_tokens(self, tokenized_text):
+    def __predict_tokens(self, tokenized_text):
         """
         Predict the tokens at [MASK]
         """
 
         # Create the segments tensors.
-        tensors = self.create_tensors(tokenized_text)
-        tokens_tensor = tensors[0]
-        segments_tensors = tensors[1]
-
-        # Predict all tokens
-        with torch.no_grad():
-            predictions = self.model(tokens_tensor, segments_tensors)
-
-        predicted_tokens = []
-        for word in tokenized_text:
-            if '[MASK]' in word:
-                masked_index = tokenized_text.index(word)
-                predicted_index = torch.argmax(predictions[0, masked_index]).item()
-                predicted_token = self.tokenizer.convert_ids_to_tokens([predicted_index])[0]
-                predicted_tokens.append(predicted_token)
-
-        return predicted_tokens
-
-    def create_tensors(self, tokenized_text):
-        """
-        Create the segments tensors.
-        """
-        # Converts a token string (or a sequence of tokens) in a single integer id (or a sequence of ids),
+        # converts a token string (or a sequence of tokens) in a single integer id (or a sequence of ids),
         indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
 
         # creates a list of zeros of the length of the tokenized text
@@ -93,4 +73,16 @@ class BertPunctuation:
         tokens_tensor = torch.tensor([indexed_tokens])
         segments_tensors = torch.tensor([segments_ids])
 
-        return [tokens_tensor, segments_tensors]
+        # Predict all tokens
+        with torch.no_grad():
+            predictions = self.model(tokens_tensor, segments_tensors)
+
+        predicted_tokens = []
+        for index, word in enumerate(tokenized_text):
+            if '[MASK]' in word:
+                masked_index = index
+                predicted_index = torch.argmax(predictions[0, masked_index]).item()
+                predicted_token = self.tokenizer.convert_ids_to_tokens([predicted_index])[0]
+                predicted_tokens.append(predicted_token)
+
+        return predicted_tokens
