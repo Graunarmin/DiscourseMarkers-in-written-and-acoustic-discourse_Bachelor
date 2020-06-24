@@ -21,14 +21,19 @@ class BertPunctuation:
         tokenized_text = self.tokenizer.tokenize(string)
         indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokenized_text)
 
+        # Create the segments tensors.
         segments_ids = [0] * len(tokenized_text)
 
+        # Convert inputs to PyTorch tensors
         tokens_tensor = torch.tensor([indexed_tokens])
-        segments_tensor = torch.tensor([segments_ids])
+        segments_tensors = torch.tensor([segments_ids])
 
+        # Predict all tokens
         with torch.no_grad():
-            predictions = self.model(tokens_tensor, segments_tensor)
+            predictions = self.model(tokens_tensor, segments_tensors)
 
         masked_index = tokenized_text.index('[MASK]')
-        predicted_index = torch.argmax(predictions[0][0][masked_index]).items()
+        predicted_index = torch.argmax(predictions[0][0][masked_index]).item()
         predicted_token = self.tokenizer.convert_ids_to_tokens([predicted_index])[0]
+
+        print(predicted_token)
