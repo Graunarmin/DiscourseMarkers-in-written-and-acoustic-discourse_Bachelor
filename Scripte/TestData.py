@@ -11,7 +11,7 @@ def sort_snippets(sorted_by_audio_id):
     """
     for audio_id in sorted_by_audio_id:
         # get the first chunk that has 20 or more snippets
-        if 20 <= len(sorted_by_audio_id[audio_id]) <= 40:
+        if 20 <= len(sorted_by_audio_id[audio_id]) <= 50:
             # and sort them according to their snippet_id
             return sorted(sorted_by_audio_id[audio_id].items())
 
