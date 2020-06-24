@@ -1,6 +1,5 @@
 import json
 import sys
-import SimplePunctuation
 import DeepSegmentPunctuation as dsp
 import BertPunctuation as bp
 
