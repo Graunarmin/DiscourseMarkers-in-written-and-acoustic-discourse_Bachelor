@@ -30,7 +30,7 @@ class BertPunctuation:
         self.model.eval()
         self.max_length = 400
 
-    def punctuate_text(self, string):
+    def punctuate_text(self, string, mask):
         """
         adds punctuation to given string using the pre-trained BERT and returns the string
         """
@@ -40,13 +40,13 @@ class BertPunctuation:
         # in a human-readable way we need to use the text split by whitespaces
         text_list = string.split(" ")
 
-        predictions = self.__predict_tokens(tokenized_text)
+        predictions = self.__predict_tokens(tokenized_text, mask)
         prediction_index = 0
 
         # replace [MASK]s with predicted tokens
-        for word in text_list:
-            if '[MASK]' in word:
-                text_list[text_list.index(word)] = predictions[prediction_index]
+        for index, word in enumerate(text_list):
+            if mask in word:
+                text_list[index] = predictions[prediction_index]
                 prediction_index += 1
 
         return format_text(text_list)
@@ -57,7 +57,7 @@ class BertPunctuation:
         """
         return self.tokenizer.tokenize(string)
 
-    def __predict_tokens(self, tokenized_text):
+    def __predict_tokens(self, tokenized_text, mask):
         """
         Predict the tokens at [MASK]
         """
@@ -79,7 +79,7 @@ class BertPunctuation:
 
         predicted_tokens = []
         for index, word in enumerate(tokenized_text):
-            if '[MASK]' in word:
+            if mask in word:
                 masked_index = index
                 predicted_index = torch.argmax(predictions[0, masked_index]).item()
                 predicted_token = self.tokenizer.convert_ids_to_tokens([predicted_index])[0]

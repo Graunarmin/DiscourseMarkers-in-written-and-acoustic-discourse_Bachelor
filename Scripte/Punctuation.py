@@ -36,6 +36,7 @@ def create_short_texts(snippet_list, delimiter, max_length):
             text = snippet_tuple[1]
             text += delimiter
 
+    texts.append(text)
     return texts
 
 
@@ -57,7 +58,6 @@ class Punctuation:
         self.deep_data = {}
         self.deep_out = "../data/punctuation/deep_punct.json"
         self.bert = bp.BertPunctuation()
-        self.max_length = 3
         self.bert_data = {}
         self.bert_out = "../data/punctuation/bert_punct.json"
 
@@ -121,7 +121,7 @@ class Punctuation:
         # but not too many as BERT can't handle more than 512 tokens at once?
         texts = create_short_texts(content, " [MASK] ", 400)
         for text in texts:
-            punctuated_text += self.bert.punctuate_text(text)
+            punctuated_text += self.bert.punctuate_text(text, '[MASK]')
 
         self.bert_data[show] = punctuated_text
 
