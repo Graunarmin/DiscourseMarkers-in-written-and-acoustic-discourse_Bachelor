@@ -1,4 +1,4 @@
-import DeepSegmentPunctuation as dsp
+import Punctuation.DeepSegmentPunctuation as dsp
 import json
 import sys
 import logging

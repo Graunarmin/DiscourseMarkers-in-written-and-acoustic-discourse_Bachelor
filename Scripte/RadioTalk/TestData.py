@@ -90,6 +90,7 @@ class TestData:
             json.dump(self.test_data, outfile, indent=2)
 
 
+# --------------- MAIN -----------------
 def main():
     """
     Argument 1: csv file that contains all relevant show names (../data/TestData_news-shows.csv)
