@@ -1,34 +1,24 @@
 import feedparser
 
 
-class RssReader:
+def get_genre(rss_link):
     """
-    Reads the rss feed of a given link
-    Can return a list of genres of that feed
+    Returns a list of tags (genres) of the show
+    https://pythonhosted.org/feedparser/reference-feed-tags.html
     """
 
-    def __init__(self):
-        self.feed_info = []
-
-    def read_rss(self, rss_link):
-        news_feed = feedparser.parse(rss_link)
-        self.feed_info = news_feed.feed
-
-    def get_genre(self):
-        """
-        Returns a list of tags (genres) of the show
-        https://pythonhosted.org/feedparser/reference-feed-tags.html
-        """
-        tags = []
-        for tag in self.feed_info.tags:
-            tags.append(self.feed_info.tags[tag].term)
-        return tags
+    feed_info = read_rss(rss_link)
+    tags = []
+    for tag in feed_info.tags:
+        tags.append(feed_info.tags[tag].term)
+    return tags
 
 
-def main():
-    reader = RssReader("https://anchor.fm/s/cf7b7a8/podcast/rss")
-    reader.get_genre()
-
-
-if __name__ == '__main__':
-    main()
+def read_rss(rss_link):
+    """
+    Reads rss feed from link and returns the 'feed' field,
+    a dictionary of data about the feed
+    https://pythonhosted.org/feedparser/reference-feed.html
+    """
+    news_feed = feedparser.parse(rss_link)
+    return news_feed.feed
