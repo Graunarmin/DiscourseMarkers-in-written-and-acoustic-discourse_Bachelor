@@ -16,7 +16,7 @@ class Analyzer:
 
     def read_in_metadata(self):
         rss_links = []
-        with open(self.metadata_file, 'r') as tsv_file:
+        with open(self.metadata_file, 'r', encoding='utf_8') as tsv_file:
             data_reader = csv.reader(tsv_file, delimiter="\t")
             for row in data_reader:
                 rss_links.append({"show_name": row[1], "show_uri": row[0], "rss_link": row[5]})
