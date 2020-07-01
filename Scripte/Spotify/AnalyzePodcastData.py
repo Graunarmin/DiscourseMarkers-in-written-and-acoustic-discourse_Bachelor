@@ -15,7 +15,7 @@ class Analyzer:
         self.get_genres()
 
     def read_in_metadata(self):
-        rss_links = []
+        rss_links = {}
         with open(self.metadata_file, 'r', encoding='utf_8') as tsv_file:
             data_reader = csv.reader(tsv_file, delimiter="\t")
             for row in data_reader:
