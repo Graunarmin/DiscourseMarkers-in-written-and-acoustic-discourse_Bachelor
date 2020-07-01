@@ -19,9 +19,12 @@ class Analyzer:
         with open(self.metadata_file, 'r', encoding='utf_8') as tsv_file:
             data_reader = csv.reader(tsv_file, delimiter="\t")
             for row in data_reader:
-                rss_links.append({"show_name": row[1], "show_uri": row[0], "rss_link": row[5]})
+                if row[1] in rss_links:
+                    rss_links[row[1]]["episodes"] += 1
+                else:
+                    rss_links[row[1]] = {"show_uri": row[0], "rss_link": row[5], "episodes": 1}
 
-        # write_json(rss_links, self.links_outfile)
+        write_json(rss_links, self.links_outfile)
         return rss_links
 
     def get_genres(self):
@@ -35,19 +38,20 @@ class Analyzer:
             '''
             for each genre that was found: add it to the dict or increase the counter
             also add a list of all shows that have this genre
-            genres = {GenreX: {"counter": 2, "shows": [Show1, Show2]}, GenreY:{...},...}
+            genres = {GenreX: {"counter": 2, "shows": {"show1":{"show_uri":uri, "episodes":3}}}, GenreY:{...},...}
             '''
             for tag in entry["genre"]:
                 if tag in genres:
                     genres[tag]["counter"] += 1
-                    genres[tag]["shows"].append({entry["show_name"]: entry["show_uri"]})
+                    genres[tag]["shows"][entry] = {"show_uri": entry["show_uri"], "episodes": entry["episodes"]}
                 else:
                     genres[tag] = {}
                     genres[tag]["counter"] = 1
-                    genres[tag]["shows"] = []
-                    genres[tag]["shows"].append({entry["show_name"]: entry["show_uri"]})
+                    genres[tag]["shows"] = {}
+                    genres[tag]["shows"][entry] = {"show_uri": entry["show_uri"], "episodes": entry["episodes"]}
 
         write_json(genres, self.genre_outfile)
+        write_json(self.rss_links, self.genre_outfile.replace("links", "links2"))
 
 
 # ------ STATIC FUNKTIONS -------
