@@ -10,7 +10,9 @@ class Analyzer:
     def __init__(self, meta):
         self.metadata_file = meta
         self.links_outfile = "../../data/Spotify/rss_links.json"
+        self.links_genre_outfile = "../../data/Spotify/rss_links_genre.json"
         self.genre_outfile = "../../data/Spotify/genres.json"
+        self.genre_short_outfile = "../../data/Spotify/genres_short.json"
         self.rss_links = self.read_in_metadata()
         self.get_genres()
 
@@ -37,6 +39,7 @@ class Analyzer:
         we have of each genre
         """
         genres = {}
+        genre_list = set()
         for entry in self.rss_links:
             link = self.rss_links[entry]["rss_link"]
             self.rss_links[entry]["genre"] = rss.get_genre(link)
@@ -54,6 +57,7 @@ class Analyzer:
                     genres[tag]["shows"][entry] = {"show_uri": self.rss_links[entry]["show_uri"],
                                                    "episodes": self.rss_links[entry]["episodes"]}
                 else:
+                    genre_list.add(tag)
                     genres[tag] = {}
                     genres[tag]["counter"] = 1
                     genres[tag]["shows"] = {}
@@ -61,8 +65,9 @@ class Analyzer:
                                                    "episodes": self.rss_links[entry]["episodes"]}
 
         write_json(genres, self.genre_outfile)
+        write_json(list(genre_list), self.genre_short_outfile)
         # write the rss_links to another file, now with added genre-information
-        write_json(self.rss_links, self.link_outfile.replace("links", "links2"))
+        write_json(self.rss_links, self.links2_outfile)
 
 
 # ------ STATIC FUNKTIONS -------
