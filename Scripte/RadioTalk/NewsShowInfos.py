@@ -1,8 +1,7 @@
 import csv
 import json
-import pickle
 import sys
-import RadioTalk.CorpusMetadata as CM
+import CorpusMetadata as CM
 
 
 # --------- STATIC FUNCTIONS -----------

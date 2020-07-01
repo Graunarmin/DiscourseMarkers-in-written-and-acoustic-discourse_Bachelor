@@ -1,4 +1,4 @@
-import Punctuation.DeepSegmentPunctuation as dsp
+import DeepSegmentPunctuation as dsp
 import json
 import sys
 import logging
@@ -24,7 +24,6 @@ class FirstTryPunctuation:
                 # there is only one key (show) in every json,
                 # but we still need to "loop" to get it
                 for show in json_object:
-                    texts = ""
                     texts = self.process_data(json_object[show])
 
                     print("Writing ", show)

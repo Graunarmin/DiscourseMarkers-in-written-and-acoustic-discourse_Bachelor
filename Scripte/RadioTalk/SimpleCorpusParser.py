@@ -1,6 +1,6 @@
 import json
 import sys
-import RadioTalk.CorpusMetadata as CM
+import CorpusMetadata as CM
 
 
 class SimpleCorpusParser:

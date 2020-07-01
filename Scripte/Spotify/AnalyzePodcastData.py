@@ -15,6 +15,10 @@ class Analyzer:
         self.get_genres()
 
     def read_in_metadata(self):
+        """
+        read in the metadata from metadata.tsv and write a file with the shownames as keys.
+        Their value is a dictionary with the show_uri, the rss_link and the number of episodes
+        """
         rss_links = {}
         with open(self.metadata_file, 'r', encoding='utf_8') as tsv_file:
             data_reader = csv.reader(tsv_file, delimiter="\t")
@@ -29,7 +33,8 @@ class Analyzer:
 
     def get_genres(self):
         """
-        add the genres to a dict with a counter so we can count how many shows we have of each genre
+        add the genres to a dict with a counter so we can count how many shows (and episodes)
+        we have of each genre
         """
         genres = {}
         for entry in self.rss_links:
@@ -38,7 +43,10 @@ class Analyzer:
             '''
             for each genre that was found: add it to the dict or increase the counter
             also add a list of all shows that have this genre
-            genres = {GenreX: {"counter": 2, "shows": {"show1":{"show_uri":uri, "episodes":3}}}, GenreY:{...},...}
+            genres = {
+                      GenreX: {"counter": 2, "shows": {"show1":{"show_uri":uri, "episodes":3}}}, 
+                      GenreY:{...},...
+                      }
             '''
             for tag in self.rss_links[entry]["genre"]:
                 if tag in genres:
@@ -53,6 +61,7 @@ class Analyzer:
                                                    "episodes": self.rss_links[entry]["episodes"]}
 
         write_json(genres, self.genre_outfile)
+        # write the rss_links to another file, now with added genre-information
         write_json(self.rss_links, self.genre_outfile.replace("links", "links2"))
 
 

@@ -1,7 +1,7 @@
 import json
 import sys
-import Punctuation.DeepSegmentPunctuation as dsp
-import Punctuation.BertPunctuation as bp
+import DeepSegmentPunctuation as dsp
+import BertPunctuation as bp
 
 
 # ---------------- STATIC FUNCTIONS --------------------

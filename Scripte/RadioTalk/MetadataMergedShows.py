@@ -1,6 +1,6 @@
 import sys
 import json
-import RadioTalk.CorpusMetadata as CM
+import CorpusMetadata as CM
 
 
 class MetadataMergedShows:
