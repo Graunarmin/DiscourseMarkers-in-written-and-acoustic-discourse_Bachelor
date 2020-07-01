@@ -43,12 +43,14 @@ class Analyzer:
             for tag in self.rss_links[entry]["genre"]:
                 if tag in genres:
                     genres[tag]["counter"] += 1
-                    genres[tag]["shows"][entry] = {"show_uri": entry["show_uri"], "episodes": entry["episodes"]}
+                    genres[tag]["shows"][entry] = {"show_uri": self.rss_links[entry]["show_uri"],
+                                                   "episodes": self.rss_links[entry]["episodes"]}
                 else:
                     genres[tag] = {}
                     genres[tag]["counter"] = 1
                     genres[tag]["shows"] = {}
-                    genres[tag]["shows"][entry] = {"show_uri": entry["show_uri"], "episodes": entry["episodes"]}
+                    genres[tag]["shows"][entry] = {"show_uri": self.rss_links[entry]["show_uri"],
+                                                   "episodes": self.rss_links[entry]["episodes"]}
 
         write_json(genres, self.genre_outfile)
         write_json(self.rss_links, self.genre_outfile.replace("links", "links2"))
