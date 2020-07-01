@@ -62,7 +62,7 @@ class Analyzer:
 
         write_json(genres, self.genre_outfile)
         # write the rss_links to another file, now with added genre-information
-        write_json(self.rss_links, self.genre_outfile.replace("links", "links2"))
+        write_json(self.rss_links, self.link_outfile.replace("links", "links2"))
 
 
 # ------ STATIC FUNKTIONS -------
