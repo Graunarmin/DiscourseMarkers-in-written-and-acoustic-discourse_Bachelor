@@ -33,14 +33,14 @@ class Analyzer:
         """
         genres = {}
         for entry in self.rss_links:
-            link = entry["rss_link"]
-            entry["genre"] = rss.get_genre(link)
+            link = self.rss_links[entry]["rss_link"]
+            self.rss_links[entry]["genre"] = rss.get_genre(link)
             '''
             for each genre that was found: add it to the dict or increase the counter
             also add a list of all shows that have this genre
             genres = {GenreX: {"counter": 2, "shows": {"show1":{"show_uri":uri, "episodes":3}}}, GenreY:{...},...}
             '''
-            for tag in entry["genre"]:
+            for tag in self.rss_links[entry]["genre"]:
                 if tag in genres:
                     genres[tag]["counter"] += 1
                     genres[tag]["shows"][entry] = {"show_uri": entry["show_uri"], "episodes": entry["episodes"]}
