@@ -65,9 +65,9 @@ class Analyzer:
                                                    "episodes": self.rss_links[entry]["episodes"]}
 
         write_json(genres, self.genre_outfile)
-        write_json(list(genre_list), self.genre_short_outfile)
+        write_json(sorted(list(genre_list)), self.genre_short_outfile)
         # write the rss_links to another file, now with added genre-information
-        write_json(self.rss_links, self.links2_outfile)
+        write_json(self.rss_links, self.links_genre_outfile)
 
 
 # ------ STATIC FUNKTIONS -------
