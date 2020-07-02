@@ -1,0 +1,686 @@
+{
+  "total_genres": 353,
+  "total_shows": 18169,
+  "total_episodes": 104713,
+  "relevant_genres": {
+    "total": 6,
+    "genres": {
+      "Business News": {
+        "counter": 4,
+        "shows": {
+          "Jon Taffer: No Excuses": {
+            "show_uri": "spotify:show:2c04iZbAAIYmZrTIRgggNc",
+            "episodes": 13
+          },
+          "Talk Freight ": {
+            "show_uri": "spotify:show:2oXVs3hLIutvG3aMr6Lg8s",
+            "episodes": 2
+          },
+          "The Script-Notes Show": {
+            "show_uri": "spotify:show:0xKEKXwe4rwisxTCgGtwh4",
+            "episodes": 1
+          },
+          "#5Things": {
+            "show_uri": "spotify:show:6oXVXJViYbHbJz5rJz7Mel",
+            "episodes": 2
+          }
+        }
+      },
+      "Daily News": {
+        "counter": 3,
+        "shows": {
+          "Flip the Switch": {
+            "show_uri": "spotify:show:4VwR1QnXnEmwfofhXx8PFY",
+            "episodes": 2
+          },
+          "TheDailyDose": {
+            "show_uri": "spotify:show:3DzXxptwbmAepePO0M81Zg",
+            "episodes": 1
+          },
+          "An Amateur Observation": {
+            "show_uri": "spotify:show:3ljzXOKebzcQ6sdVKmzD0H",
+            "episodes": 1
+          }
+        }
+      },
+      "News": {
+        "counter": 98,
+        "shows": {
+          "Political Scandals ": {
+            "show_uri": "spotify:show:2KBfl8eidzorW02RzQf9K8",
+            "episodes": 20
+          },
+          "The Whole 9 Yards": {
+            "show_uri": "spotify:show:3lE2wmcsPKloWaSflHmGLE",
+            "episodes": 7
+          },
+          "Jemele Hill is Unbothered": {
+            "show_uri": "spotify:show:1SXD1U55jqbK9HHoPvdbsw",
+            "episodes": 83
+          },
+          "The Cut on Tuesdays": {
+            "show_uri": "spotify:show:6I73b0kVHO6bg3FOmFUpdA",
+            "episodes": 65
+          },
+          "Kings Pulse: A Sacramento Kings Podcast": {
+            "show_uri": "spotify:show:63vGA37mcOYr7a2FISJouG",
+            "episodes": 66
+          },
+          "Autonomous Cars with Marc Hoag": {
+            "show_uri": "spotify:show:7yPBxLJUkqWguIFTzhstZU",
+            "episodes": 29
+          },
+          "Crimetown": {
+            "show_uri": "spotify:show:5C9yXrX999QNS1Q62IlXvc",
+            "episodes": 48
+          },
+          "Mr. America ": {
+            "show_uri": "spotify:show:2BXDsjwgbf9iTBCkeBAySP",
+            "episodes": 1
+          },
+          "The Bucket Podcast": {
+            "show_uri": "spotify:show:1KQOSBwMcv0yt6AGI8xljG",
+            "episodes": 3
+          },
+          "The Run Amuck Podcast": {
+            "show_uri": "spotify:show:3PgnW5zp5a3zZ1Teu7Iwxa",
+            "episodes": 5
+          },
+          "Variant Podcast": {
+            "show_uri": "spotify:show:6FjjZb0smK4FtB8ubCf8WJ",
+            "episodes": 6
+          },
+          "Undone": {
+            "show_uri": "spotify:show:1DpjNPz2R1uJoBABi8TAMm",
+            "episodes": 12
+          },
+          "The Decade Wrapped": {
+            "show_uri": "spotify:show:4C9SyDbX6N7HfgxYAVs9NP",
+            "episodes": 10
+          },
+          "Talks With Dutch & Link": {
+            "show_uri": "spotify:show:3huob57n0LuxdjeNEpqKVe",
+            "episodes": 1
+          },
+          "The Miami Corridor Podcast ": {
+            "show_uri": "spotify:show:2V4ynJLjKQsgV0yQD7Ovz5",
+            "episodes": 8
+          },
+          "Tyrone Eagle Eye News Podcasts": {
+            "show_uri": "spotify:show:0KXrf1dWq8qdNLiNiuP5se",
+            "episodes": 2
+          },
+          "The Hand-off": {
+            "show_uri": "spotify:show:2JhYNIGrmMe01U3arvQU8x",
+            "episodes": 4
+          },
+          "Carlos and Marc\u2019s Podcast ": {
+            "show_uri": "spotify:show:1OWxWeLYhsZwQmcagCc9NQ",
+            "episodes": 8
+          },
+          "Tea Time UNFILTERED With Lovelyti ": {
+            "show_uri": "spotify:show:0TkS08s5KaxQX5pyjtrK8T",
+            "episodes": 16
+          },
+          "That One Vato's Podcast": {
+            "show_uri": "spotify:show:43jmqaUdf0aVUbee2lvwDI",
+            "episodes": 4
+          },
+          "LATE NIGHT THOUGHTS": {
+            "show_uri": "spotify:show:07wAypDRu8HvXRnB2lLFyi",
+            "episodes": 1
+          },
+          "Cruzz Cntrl Podcast": {
+            "show_uri": "spotify:show:0Lu08iNRbvgosa7ZuCTjxD",
+            "episodes": 1
+          },
+          "Waterloo Warriors Armchair Quarterback": {
+            "show_uri": "spotify:show:77nHX2A2eKjByYrxewXHT9",
+            "episodes": 6
+          },
+          "Flagrant 2": {
+            "show_uri": "spotify:show:7lCoYUl7dscoRVzt3QO2Ql",
+            "episodes": 18
+          },
+          "Thirst Aid Kit": {
+            "show_uri": "spotify:show:7zuxJZkpFwNAQN8GN6Hyda",
+            "episodes": 23
+          },
+          "Roman Thru Life": {
+            "show_uri": "spotify:show:6vHLbxSmjfzmckXmk8kG9h",
+            "episodes": 3
+          },
+          "Conviction": {
+            "show_uri": "spotify:show:2XquJlPU9ibLYZMH0ZzFwA",
+            "episodes": 11
+          },
+          "Pwns Media": {
+            "show_uri": "spotify:show:3CErBBzx4XukMM3RVEOfCB",
+            "episodes": 1
+          },
+          "The Michael Decon Program": {
+            "show_uri": "spotify:show:1faGhT2N78uzUOJ8rZFWZA",
+            "episodes": 1
+          },
+          "RC STUFF": {
+            "show_uri": "spotify:show:7JgOJyuulFqeg3mZ2GjUyO",
+            "episodes": 2
+          },
+          "I Believe USMNT Podcast ": {
+            "show_uri": "spotify:show:3PDoqSQhVS6k3qM9cpMtg1",
+            "episodes": 2
+          },
+          "Jon Taffer: No Excuses": {
+            "show_uri": "spotify:show:2c04iZbAAIYmZrTIRgggNc",
+            "episodes": 13
+          },
+          "Nfl weekly news": {
+            "show_uri": "spotify:show:4U77aY43YsnO6v0cKNv0my",
+            "episodes": 1
+          },
+          "What's Trending?": {
+            "show_uri": "spotify:show:0lBpq1qzcr8kKrtXm3HcC0",
+            "episodes": 2
+          },
+          "Uncivil": {
+            "show_uri": "spotify:show:3ZFCdzRJWGMhok1x69IHRU",
+            "episodes": 12
+          },
+          "Too Sweet Talk": {
+            "show_uri": "spotify:show:38yuEva2dT5fGv6IPKw0kx",
+            "episodes": 1
+          },
+          "The CDJ Podcast": {
+            "show_uri": "spotify:show:4T78KLZoaWeCbIiBrLPNAz",
+            "episodes": 7
+          },
+          "Usa Today Sports news": {
+            "show_uri": "spotify:show:6lpHdVAAZHLJUK4ZkpZ9pn",
+            "episodes": 1
+          },
+          "Pedrocuz": {
+            "show_uri": "spotify:show:0QDX7thBqkKHCFjDifru4N",
+            "episodes": 9
+          },
+          "One Nil Football Podcast": {
+            "show_uri": "spotify:show:1FzG6Bewrnr6GhysVT8aRf",
+            "episodes": 6
+          },
+          "I\u2019ve Heard Worse From Better With BMT": {
+            "show_uri": "spotify:show:1XERL0CauSN9QTeRgfBwHW",
+            "episodes": 5
+          },
+          "UP SUPER LATE": {
+            "show_uri": "spotify:show:6dAksNowV7kLJacGZxEBKz",
+            "episodes": 2
+          },
+          "2MADGEEKS ": {
+            "show_uri": "spotify:show:1NlaFJIMWZ4AyGo1W3cWxM",
+            "episodes": 1
+          },
+          "22 Yarns with Gaurav Kapur": {
+            "show_uri": "spotify:show:43mTFxSHXF7Xtvjx4TF0Dc",
+            "episodes": 13
+          },
+          "The Sports Desk by Times of Malta ": {
+            "show_uri": "spotify:show:2Akp5XXnwNCpANhBqvSz5s",
+            "episodes": 1
+          },
+          "Weakly Update": {
+            "show_uri": "spotify:show:6WCGCMNj82qaVQjMMTU2iK",
+            "episodes": 8
+          },
+          "Some Like it Hot": {
+            "show_uri": "spotify:show:681xXTsrsmNW1h0bGGG9rB",
+            "episodes": 2
+          },
+          "Talk Freight ": {
+            "show_uri": "spotify:show:2oXVs3hLIutvG3aMr6Lg8s",
+            "episodes": 2
+          },
+          "No Feels Podcast": {
+            "show_uri": "spotify:show:4qy9ofq2Su1UEObfdnLoze",
+            "episodes": 3
+          },
+          "Technology Labs": {
+            "show_uri": "spotify:show:1G02YyxN5Dfs8wLI8nBisH",
+            "episodes": 1
+          },
+          "Running on Empty ": {
+            "show_uri": "spotify:show:0ZUAmm0BddLAk8BXQTJwJf",
+            "episodes": 10
+          },
+          "BirdsoverBoys Podcast": {
+            "show_uri": "spotify:show:34QTNqJyIU3uGgxVT7hphL",
+            "episodes": 6
+          },
+          "Knicks Rewind Podcast": {
+            "show_uri": "spotify:show:7Fe5eGI0UGAXu759FugNDo",
+            "episodes": 5
+          },
+          "3Bawls Basketball Podcast": {
+            "show_uri": "spotify:show:6Eiqut8Ar4k9vy9qeGq5qE",
+            "episodes": 1
+          },
+          "Guzman\u2019s World": {
+            "show_uri": "spotify:show:4UpzLXx3kKpr83DtXpDoTk",
+            "episodes": 3
+          },
+          "Small Room": {
+            "show_uri": "spotify:show:4xhN2dtNtz5QcqSZ1SA6s5",
+            "episodes": 1
+          },
+          "FADE OUT: A Podcast ": {
+            "show_uri": "spotify:show:18iwKz9R1uQcv8dH4kJvLs",
+            "episodes": 1
+          },
+          "Bollywood Gupshup": {
+            "show_uri": "spotify:show:5Bz7dEhAhmAkaqO0ZYILoO",
+            "episodes": 5
+          },
+          "TwinTalkYanks": {
+            "show_uri": "spotify:show:7qAt6if5XDSv6JUnu4vVLL",
+            "episodes": 1
+          },
+          "The Script-Notes Show": {
+            "show_uri": "spotify:show:0xKEKXwe4rwisxTCgGtwh4",
+            "episodes": 1
+          },
+          "Run The Fade": {
+            "show_uri": "spotify:show:0Pv0jr5aShbKPMZ2WSbO4i",
+            "episodes": 1
+          },
+          "Literally:A Podcast": {
+            "show_uri": "spotify:show:1TfOxIYMSwSd1hj4q8WlYP",
+            "episodes": 3
+          },
+          "Speak Now": {
+            "show_uri": "spotify:show:6UTGax384j0NNqqiAPJCnV",
+            "episodes": 1
+          },
+          "Fan Wonderland": {
+            "show_uri": "spotify:show:7hJqJL39OIsIZsEnoIxOsM",
+            "episodes": 4
+          },
+          "Behind the Bull": {
+            "show_uri": "spotify:show:7pDunPM1uYeaaweNU64m2V",
+            "episodes": 3
+          },
+          "Lemme Tell You": {
+            "show_uri": "spotify:show:2xEn90vLXTh4SfSC0HpGyN",
+            "episodes": 2
+          },
+          "The Wire - Fantasy Football Podcast": {
+            "show_uri": "spotify:show:3WD7Mb9Y0ivfI2RKI3tMMq",
+            "episodes": 1
+          },
+          "GoLive - Best of 3": {
+            "show_uri": "spotify:show:1c7ypzfnZ1veRaWrdwDWbw",
+            "episodes": 1
+          },
+          "Podkarsh with H": {
+            "show_uri": "spotify:show:1EnEkn6oJg3oJ5pnk17lPt",
+            "episodes": 1
+          },
+          "Without A Country": {
+            "show_uri": "spotify:show:25op0P0LRoUyYQD5kVwaPp",
+            "episodes": 3
+          },
+          "Browns part ways with general manager John Dorsey": {
+            "show_uri": "spotify:show:5k1d8IGORceIoA8iQI5CCJ",
+            "episodes": 1
+          },
+          "Up-to-the-minute NBA news.": {
+            "show_uri": "spotify:show:4PXBfGcWO82UhsSgcnZjKH",
+            "episodes": 1
+          },
+          "The Big Fat Indian Ghotala": {
+            "show_uri": "spotify:show:0TbZLEvRcQNoFzWQFHddJ1",
+            "episodes": 3
+          },
+          "The Nerd^2 Pod": {
+            "show_uri": "spotify:show:3Foge1Ej1P8Az4gVuFVeaF",
+            "episodes": 1
+          },
+          "Just Talk'n Sports": {
+            "show_uri": "spotify:show:3qeHaFWk5tvr8heJPNR6WF",
+            "episodes": 1
+          },
+          "#5Things": {
+            "show_uri": "spotify:show:6oXVXJViYbHbJz5rJz7Mel",
+            "episodes": 2
+          },
+          "Flip the Switch": {
+            "show_uri": "spotify:show:4VwR1QnXnEmwfofhXx8PFY",
+            "episodes": 2
+          },
+          "Latest news update.": {
+            "show_uri": "spotify:show:45krUib4gxBCKUgnx8uqlW",
+            "episodes": 1
+          },
+          "Monachopsis with Paige": {
+            "show_uri": "spotify:show:5n9ulGJyHB5QlqJC9o7vME",
+            "episodes": 1
+          },
+          "Bald Top Wave Podcast ": {
+            "show_uri": "spotify:show:3GnywcYnN7FnG7WggjM94A",
+            "episodes": 1
+          },
+          "For The Culture": {
+            "show_uri": "spotify:show:4Evhiidp93yh0M2EVTb9Cu",
+            "episodes": 1
+          },
+          "Let\u2019s talk about it..": {
+            "show_uri": "spotify:show:3F9u4KWOC2dC5tq5ZzU5BM",
+            "episodes": 1
+          },
+          "The Crazy Train": {
+            "show_uri": "spotify:show:4jzKN3oxS6WnBWevZOuove",
+            "episodes": 3
+          },
+          "crack-a-can": {
+            "show_uri": "spotify:show:6h233oVvTFWVax3rWIeFRJ",
+            "episodes": 1
+          },
+          "Let's Talk Sport": {
+            "show_uri": "spotify:show:2N1CFSKiiMo23F8qZ80eRN",
+            "episodes": 2
+          },
+          "AllDatNoise Podcast": {
+            "show_uri": "spotify:show:5iyRtS7DW3MKIOUkd4BG38",
+            "episodes": 1
+          },
+          "Zone10": {
+            "show_uri": "spotify:show:3c7yUVLOhZXSFCgSyeS6th",
+            "episodes": 1
+          },
+          "The Mister(ess) of Pop Culture \ud83d\udda4": {
+            "show_uri": "spotify:show:4G3q8B3St2GB9pM365Oi9N",
+            "episodes": 1
+          },
+          "Double S talks": {
+            "show_uri": "spotify:show:4a6OCFzmK6Js8TZiPPJVFZ",
+            "episodes": 1
+          },
+          "TheDailyDose": {
+            "show_uri": "spotify:show:3DzXxptwbmAepePO0M81Zg",
+            "episodes": 1
+          },
+          "An Amateur Observation": {
+            "show_uri": "spotify:show:3ljzXOKebzcQ6sdVKmzD0H",
+            "episodes": 1
+          },
+          "Red Tail Talk Show": {
+            "show_uri": "spotify:show:3i0vRZjhnNc34GIuQoX4nU",
+            "episodes": 1
+          },
+          "Coast 2 Coast Fantasy Football": {
+            "show_uri": "spotify:show:7un8U7APSIRbPw5OmBDLBe",
+            "episodes": 2
+          },
+          "The Endo Sis Podcast ": {
+            "show_uri": "spotify:show:4QFoNUJiKApLGHnlT7zCeH",
+            "episodes": 1
+          },
+          "MOB RADIO": {
+            "show_uri": "spotify:show:6rEfF5w6AGWnjVKQiKHFte",
+            "episodes": 1
+          },
+          "Bruins Take by CCSN": {
+            "show_uri": "spotify:show:4ZTSKV0JmGT1liYKF9mX7E",
+            "episodes": 1
+          },
+          "Ethan and Mike's Sports Show": {
+            "show_uri": "spotify:show:3yfSSFTurqPGlkqjf94QCx",
+            "episodes": 1
+          },
+          "Millennial Vybe Podcast ": {
+            "show_uri": "spotify:show:0MM0uvptfOiTqWIRsYm31z",
+            "episodes": 1
+          }
+        }
+      },
+      "news": {
+        "counter": 1,
+        "shows": {
+          "Pauly Shore's Random Rants": {
+            "show_uri": "spotify:show:2k5u94g2BHSQFQeHkIBXtR",
+            "episodes": 37
+          }
+        }
+      },
+      "Sports News": {
+        "counter": 25,
+        "shows": {
+          "The Whole 9 Yards": {
+            "show_uri": "spotify:show:3lE2wmcsPKloWaSflHmGLE",
+            "episodes": 7
+          },
+          "Kings Pulse: A Sacramento Kings Podcast": {
+            "show_uri": "spotify:show:63vGA37mcOYr7a2FISJouG",
+            "episodes": 66
+          },
+          "Waterloo Warriors Armchair Quarterback": {
+            "show_uri": "spotify:show:77nHX2A2eKjByYrxewXHT9",
+            "episodes": 6
+          },
+          "Flagrant 2": {
+            "show_uri": "spotify:show:7lCoYUl7dscoRVzt3QO2Ql",
+            "episodes": 18
+          },
+          "I Believe USMNT Podcast ": {
+            "show_uri": "spotify:show:3PDoqSQhVS6k3qM9cpMtg1",
+            "episodes": 2
+          },
+          "Nfl weekly news": {
+            "show_uri": "spotify:show:4U77aY43YsnO6v0cKNv0my",
+            "episodes": 1
+          },
+          "Too Sweet Talk": {
+            "show_uri": "spotify:show:38yuEva2dT5fGv6IPKw0kx",
+            "episodes": 1
+          },
+          "Usa Today Sports news": {
+            "show_uri": "spotify:show:6lpHdVAAZHLJUK4ZkpZ9pn",
+            "episodes": 1
+          },
+          "One Nil Football Podcast": {
+            "show_uri": "spotify:show:1FzG6Bewrnr6GhysVT8aRf",
+            "episodes": 6
+          },
+          "22 Yarns with Gaurav Kapur": {
+            "show_uri": "spotify:show:43mTFxSHXF7Xtvjx4TF0Dc",
+            "episodes": 13
+          },
+          "The Sports Desk by Times of Malta ": {
+            "show_uri": "spotify:show:2Akp5XXnwNCpANhBqvSz5s",
+            "episodes": 1
+          },
+          "BirdsoverBoys Podcast": {
+            "show_uri": "spotify:show:34QTNqJyIU3uGgxVT7hphL",
+            "episodes": 6
+          },
+          "3Bawls Basketball Podcast": {
+            "show_uri": "spotify:show:6Eiqut8Ar4k9vy9qeGq5qE",
+            "episodes": 1
+          },
+          "TwinTalkYanks": {
+            "show_uri": "spotify:show:7qAt6if5XDSv6JUnu4vVLL",
+            "episodes": 1
+          },
+          "Behind the Bull": {
+            "show_uri": "spotify:show:7pDunPM1uYeaaweNU64m2V",
+            "episodes": 3
+          },
+          "The Wire - Fantasy Football Podcast": {
+            "show_uri": "spotify:show:3WD7Mb9Y0ivfI2RKI3tMMq",
+            "episodes": 1
+          },
+          "GoLive - Best of 3": {
+            "show_uri": "spotify:show:1c7ypzfnZ1veRaWrdwDWbw",
+            "episodes": 1
+          },
+          "Browns part ways with general manager John Dorsey": {
+            "show_uri": "spotify:show:5k1d8IGORceIoA8iQI5CCJ",
+            "episodes": 1
+          },
+          "Up-to-the-minute NBA news.": {
+            "show_uri": "spotify:show:4PXBfGcWO82UhsSgcnZjKH",
+            "episodes": 1
+          },
+          "Just Talk'n Sports": {
+            "show_uri": "spotify:show:3qeHaFWk5tvr8heJPNR6WF",
+            "episodes": 1
+          },
+          "Latest news update.": {
+            "show_uri": "spotify:show:45krUib4gxBCKUgnx8uqlW",
+            "episodes": 1
+          },
+          "Let's Talk Sport": {
+            "show_uri": "spotify:show:2N1CFSKiiMo23F8qZ80eRN",
+            "episodes": 2
+          },
+          "Red Tail Talk Show": {
+            "show_uri": "spotify:show:3i0vRZjhnNc34GIuQoX4nU",
+            "episodes": 1
+          },
+          "Bruins Take by CCSN": {
+            "show_uri": "spotify:show:4ZTSKV0JmGT1liYKF9mX7E",
+            "episodes": 1
+          },
+          "Ethan and Mike's Sports Show": {
+            "show_uri": "spotify:show:3yfSSFTurqPGlkqjf94QCx",
+            "episodes": 1
+          }
+        }
+      },
+      "Tech News": {
+        "counter": 4,
+        "shows": {
+          "Autonomous Cars with Marc Hoag": {
+            "show_uri": "spotify:show:7yPBxLJUkqWguIFTzhstZU",
+            "episodes": 29
+          },
+          "AI Ireland Podcast": {
+            "show_uri": "spotify:show:0BSnufcpLFsqIepZmJN0Pp",
+            "episodes": 1
+          },
+          "RC STUFF": {
+            "show_uri": "spotify:show:7JgOJyuulFqeg3mZ2GjUyO",
+            "episodes": 2
+          },
+          "Technology Labs": {
+            "show_uri": "spotify:show:1G02YyxN5Dfs8wLI8nBisH",
+            "episodes": 1
+          }
+        }
+      }
+    }
+  },
+  "relevant_shows": {
+    "total": 100,
+    "shows": [
+      "#5Things",
+      "22 Yarns with Gaurav Kapur",
+      "2MADGEEKS ",
+      "3Bawls Basketball Podcast",
+      "AI Ireland Podcast",
+      "AllDatNoise Podcast",
+      "An Amateur Observation",
+      "Autonomous Cars with Marc Hoag",
+      "Bald Top Wave Podcast ",
+      "Behind the Bull",
+      "BirdsoverBoys Podcast",
+      "Bollywood Gupshup",
+      "Browns part ways with general manager John Dorsey",
+      "Bruins Take by CCSN",
+      "Carlos and Marc\u2019s Podcast ",
+      "Coast 2 Coast Fantasy Football",
+      "Conviction",
+      "Crimetown",
+      "Cruzz Cntrl Podcast",
+      "Double S talks",
+      "Ethan and Mike's Sports Show",
+      "FADE OUT: A Podcast ",
+      "Fan Wonderland",
+      "Flagrant 2",
+      "Flip the Switch",
+      "For The Culture",
+      "GoLive - Best of 3",
+      "Guzman\u2019s World",
+      "I Believe USMNT Podcast ",
+      "I\u2019ve Heard Worse From Better With BMT",
+      "Jemele Hill is Unbothered",
+      "Jon Taffer: No Excuses",
+      "Just Talk'n Sports",
+      "Kings Pulse: A Sacramento Kings Podcast",
+      "Knicks Rewind Podcast",
+      "LATE NIGHT THOUGHTS",
+      "Latest news update.",
+      "Lemme Tell You",
+      "Let's Talk Sport",
+      "Let\u2019s talk about it..",
+      "Literally:A Podcast",
+      "MOB RADIO",
+      "Millennial Vybe Podcast ",
+      "Monachopsis with Paige",
+      "Mr. America ",
+      "Nfl weekly news",
+      "No Feels Podcast",
+      "One Nil Football Podcast",
+      "Pauly Shore's Random Rants",
+      "Pedrocuz",
+      "Podkarsh with H",
+      "Political Scandals ",
+      "Pwns Media",
+      "RC STUFF",
+      "Red Tail Talk Show",
+      "Roman Thru Life",
+      "Run The Fade",
+      "Running on Empty ",
+      "Small Room",
+      "Some Like it Hot",
+      "Speak Now",
+      "Talk Freight ",
+      "Talks With Dutch & Link",
+      "Tea Time UNFILTERED With Lovelyti ",
+      "Technology Labs",
+      "That One Vato's Podcast",
+      "The Big Fat Indian Ghotala",
+      "The Bucket Podcast",
+      "The CDJ Podcast",
+      "The Crazy Train",
+      "The Cut on Tuesdays",
+      "The Decade Wrapped",
+      "The Endo Sis Podcast ",
+      "The Hand-off",
+      "The Miami Corridor Podcast ",
+      "The Michael Decon Program",
+      "The Mister(ess) of Pop Culture \ud83d\udda4",
+      "The Nerd^2 Pod",
+      "The Run Amuck Podcast",
+      "The Script-Notes Show",
+      "The Sports Desk by Times of Malta ",
+      "The Whole 9 Yards",
+      "The Wire - Fantasy Football Podcast",
+      "TheDailyDose",
+      "Thirst Aid Kit",
+      "Too Sweet Talk",
+      "TwinTalkYanks",
+      "Tyrone Eagle Eye News Podcasts",
+      "UP SUPER LATE",
+      "Uncivil",
+      "Undone",
+      "Up-to-the-minute NBA news.",
+      "Usa Today Sports news",
+      "Variant Podcast",
+      "Waterloo Warriors Armchair Quarterback",
+      "Weakly Update",
+      "What's Trending?",
+      "Without A Country",
+      "Zone10",
+      "crack-a-can"
+    ]
+  },
+  "relevant_episodes": 685
+}
