@@ -16,13 +16,21 @@ def get_genre(rss_link):
     return tags
 
 
+def get_description(rss_link):
+    feed = read_rss(rss_link)
+    if hasattr(feed, "summary"):
+        return feed.summary
+    else:
+        return "none"
+
+
 def read_rss(rss_link):
     """
     Reads rss feed from link and returns the 'feed' field,
     a dictionary of data about the feed
     https://pythonhosted.org/feedparser/reference-feed.html
     """
-    print(rss_link)
+    # print(rss_link)
     news_feed = feedparser.parse(rss_link)
     # print(news_feed.feed)
     return news_feed.feed
