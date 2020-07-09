@@ -4,15 +4,18 @@ import sys
 
 class PodcastMetadata:
 
-    def __init__(self, filename):
-        self.data_file = filename
-        self.out_file = "../../data/Spotify/podcats_metadata.json"
+    def __init__(self):
+        self.data_file = "../../data/Spotify/genres.json"
+        self.out_file = "../../data/Spotify/podcast_metadata.json"
+        # self.out_file = "../../data/Spotify/metadata_alternative_genres.json"
         self.all_genres = 0
         self.all_shows = set()
         self.all_episodes = 0
 
         self.relevant_genres = {"Business News": None, "Daily News": None, "News": None,
                                 "news": None, "Sports News": None, "Tech News": None}
+
+        # self.relevant_genres = {"Documentary": None, "Earth Siences": None, "History": None, "Science": None}
         self.relevant_shows = {}
         self.relevant_episodes = 0
 
@@ -44,7 +47,7 @@ class PodcastMetadata:
 
             self.write_data()
 
-    def write_data(self,):
+    def write_data(self, ):
         with open(self.out_file, 'w') as metadata:
             json.dump({"total_genres": self.all_genres,
                        "total_shows": len(self.all_shows),
@@ -61,9 +64,9 @@ class PodcastMetadata:
 # ------------ MAIN -------------
 def main():
     """
-    Argument 1: file that contains all genres with meta infos (here: "../../data/Spotify/genres.json")
+    Get metadata about the dataset and the relevant shows / genres
     """
-    metadata = PodcastMetadata(sys.argv[1])
+    metadata = PodcastMetadata()
     metadata.read_data()
 
 

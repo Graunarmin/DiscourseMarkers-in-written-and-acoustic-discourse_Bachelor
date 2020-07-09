@@ -1,0 +1,2037 @@
+{
+  "total_genres": 358,
+  "total_shows": 18168,
+  "total_episodes": 104851,
+  "relevant_genres": {
+    "total": 4,
+    "genres": {
+      "Documentary": {
+        "counter": 31,
+        "shows": {
+          "21 Days with mxmtoon": {
+            "show_uri": "spotify:show:7k2gNSLZnopnh6pcvkQACK",
+            "episodes": 8
+          },
+          "Cycling Matters Podcast": {
+            "show_uri": "spotify:show:3NF26ijiCiMSbGg8Ctgzku",
+            "episodes": 8
+          },
+          "Mogul": {
+            "show_uri": "spotify:show:4okzhZKxw5lSXcADxVxNRj",
+            "episodes": 33
+          },
+          "Modern Electrician": {
+            "show_uri": "spotify:show:6gDJrxI17NmfUMVrceudJF",
+            "episodes": 7
+          },
+          "Women of the Military": {
+            "show_uri": "spotify:show:0oI19QBrORAidITBjpkGGC",
+            "episodes": 4
+          },
+          "Conviction": {
+            "show_uri": "spotify:show:2XquJlPU9ibLYZMH0ZzFwA",
+            "episodes": 11
+          },
+          "My Year in Mensa": {
+            "show_uri": "spotify:show:0HOAQQu2JglNvaTQXsCyC1",
+            "episodes": 5
+          },
+          "The Social X Change Project": {
+            "show_uri": "spotify:show:1FhgRLd37wHjP62ao7FplL",
+            "episodes": 1
+          },
+          "Audiophiles": {
+            "show_uri": "spotify:show:4OLlE94k3UlXGdkTk7IdWS",
+            "episodes": 3
+          },
+          "Mind The Gap Podcast": {
+            "show_uri": "spotify:show:0sNGnRZQCi8CGR2uITIjzn",
+            "episodes": 4
+          },
+          "Hey Hun": {
+            "show_uri": "spotify:show:4AXb2dVrIMYfv8WiGYbzAf",
+            "episodes": 1
+          },
+          "The Death Dialogues Project Podcast": {
+            "show_uri": "spotify:show:634sQX4NMfMF61U960Q9ng",
+            "episodes": 7
+          },
+          "Maybe the Best of Things: A Podcast with Tanner Mangum": {
+            "show_uri": "spotify:show:0R829ZOjUSKoK24MskSe49",
+            "episodes": 3
+          },
+          "Gypsy Rose Blanchard Case": {
+            "show_uri": "spotify:show:1w2ETyllMtnwdpE5ICF8Mu",
+            "episodes": 1
+          },
+          "Long Lost: An Investigative History Series": {
+            "show_uri": "spotify:show:3KclI3Og3SSgDvVtoPzrbP",
+            "episodes": 6
+          },
+          "The Glenn Williams Show": {
+            "show_uri": "spotify:show:7sPeIx54V8hCxSrVJXNLlM",
+            "episodes": 1
+          },
+          "The Real World with Darrell Terrell ": {
+            "show_uri": "spotify:show:2KZWIgdAlQqA9S5u1khjBF",
+            "episodes": 1
+          },
+          "Kitten it w Gus": {
+            "show_uri": "spotify:show:3r94aCCKxc0SbU3DBgETRm",
+            "episodes": 1
+          },
+          "The Big Fat Indian Ghotala": {
+            "show_uri": "spotify:show:0TbZLEvRcQNoFzWQFHddJ1",
+            "episodes": 3
+          },
+          "HIDDEN: The Voices Of Young Carers": {
+            "show_uri": "spotify:show:1fYFG8pFFcbeARsdrFIS9T",
+            "episodes": 1
+          },
+          "Podcast Number 54": {
+            "show_uri": "spotify:show:0EY6xoH9mwuhxLFh34GaWc",
+            "episodes": 1
+          },
+          "Channeling in with Chanelle ": {
+            "show_uri": "spotify:show:2S39GtykFQJfZN1eq9hxbm",
+            "episodes": 2
+          },
+          "The Jarsh Show": {
+            "show_uri": "spotify:show:1wXJSBY8tkp6Qzp1Q9bLsu",
+            "episodes": 3
+          },
+          "Class Dismissed": {
+            "show_uri": "spotify:show:7Ieeo24W6b6ZUiXYkZpy9k",
+            "episodes": 1
+          },
+          "The AM Perspective": {
+            "show_uri": "spotify:show:54RONBsLqEaroEK5z7GRSh",
+            "episodes": 2
+          },
+          "THE ARTISTS ( indie filmmakers podcast)": {
+            "show_uri": "spotify:show:7fIMCE6tj46ZSfwfiTKGL9",
+            "episodes": 2
+          },
+          "Black and White Judies": {
+            "show_uri": "spotify:show:6CNyFBx2CFv1nrWhMIa6do",
+            "episodes": 1
+          },
+          "D.I.N.K.S": {
+            "show_uri": "spotify:show:564DSaqyx4GT9FaDrjZSLl",
+            "episodes": 1
+          },
+          "Black Equity Podcast": {
+            "show_uri": "spotify:show:6d07VpBRVuaLEVSQzGODM4",
+            "episodes": 1
+          },
+          "The Boys": {
+            "show_uri": "spotify:show:45nUNTYfv49FzZ7nETgsmc",
+            "episodes": 1
+          },
+          "Work The Dirt": {
+            "show_uri": "spotify:show:7vzrv5KyF2RvRj13GhqayT",
+            "episodes": 1
+          }
+        }
+      },
+      "Earth Siences": null,
+      "History": {
+        "counter": 156,
+        "shows": {
+          "Mythology": {
+            "show_uri": "spotify:show:1g056e2x0Y9AwW6CQF3qA5",
+            "episodes": 68
+          },
+          "Unsolved Murders: True Crime Stories": {
+            "show_uri": "spotify:show:6Mk7Wk6cmrgXWnitO3NdYe",
+            "episodes": 194
+          },
+          "Political Scandals ": {
+            "show_uri": "spotify:show:2KBfl8eidzorW02RzQf9K8",
+            "episodes": 20
+          },
+          "Today in True Crime ": {
+            "show_uri": "spotify:show:2GmNzw8t4uG70rn4XG9zcC",
+            "episodes": 195
+          },
+          "Parcast Presents: March Mysteries": {
+            "show_uri": "spotify:show:3j3GybU9u03zLYqLUOSfPB",
+            "episodes": 193
+          },
+          "That's Weird": {
+            "show_uri": "spotify:show:35XtrzxYog7yazLuyZIjIT",
+            "episodes": 31
+          },
+          "Survival": {
+            "show_uri": "spotify:show:5JDHqI4nZe36mcOZI05sYI",
+            "episodes": 45
+          },
+          "Cults": {
+            "show_uri": "spotify:show:4JbxNUkWfveKC0xnKrK7tX",
+            "episodes": 134
+          },
+          "Female Criminals": {
+            "show_uri": "spotify:show:7GCKl0vXV9T7GDd2YDbwVa",
+            "episodes": 110
+          },
+          "Not Guilty": {
+            "show_uri": "spotify:show:0tnf9RnSMzA82ZVWMZ0sWE",
+            "episodes": 42
+          },
+          "Historical Figures": {
+            "show_uri": "spotify:show:3iFwYwzabLKsSktBhUVCjn",
+            "episodes": 86
+          },
+          "Con Artists ": {
+            "show_uri": "spotify:show:6s8xzsIn1JIvEv0X9sa7sb",
+            "episodes": 41
+          },
+          "Hostage": {
+            "show_uri": "spotify:show:07Do1GFU3Y4htyVQbp0uuC",
+            "episodes": 86
+          },
+          "Unexplained Mysteries": {
+            "show_uri": "spotify:show:1Xe0dRpQCrwi59H2CJWtYf",
+            "episodes": 106
+          },
+          "Natural Disasters ": {
+            "show_uri": "spotify:show:2vPbtummXL9L4UbLiezZmh",
+            "episodes": 28
+          },
+          "Nevertheless She Existed": {
+            "show_uri": "spotify:show:5xiinQWwbMpjAyHTlhbccc",
+            "episodes": 27
+          },
+          "Kingpins": {
+            "show_uri": "spotify:show:3IZ9inzkM6YjDv1lEuCcig",
+            "episodes": 80
+          },
+          "Anarchopac": {
+            "show_uri": "spotify:show:6G00ZFXRjlQBZOBSTRdeav",
+            "episodes": 3
+          },
+          "Serial Killers": {
+            "show_uri": "spotify:show:4ruq7mH0jg1sFi8KQhnGb8",
+            "episodes": 146
+          },
+          "Dog Tales ": {
+            "show_uri": "spotify:show:6Cg6ZBmPpcq8GFgFdGLKxV",
+            "episodes": 17
+          },
+          "Crimes of Passion": {
+            "show_uri": "spotify:show:5PFgy6lc8UvYIjDsaaO3dN",
+            "episodes": 67
+          },
+          "Drifting On Memories": {
+            "show_uri": "spotify:show:1LiB5EU9OpG5MMtkbmkVGQ",
+            "episodes": 6
+          },
+          "Black History Buff Podcast": {
+            "show_uri": "spotify:show:6CDExrHONAzUy8ksCgXsYy",
+            "episodes": 19
+          },
+          "Thick & Thin": {
+            "show_uri": "spotify:show:6lRgb3fNRoqYh1k7qMvEaW",
+            "episodes": 42
+          },
+          "Haunted Places": {
+            "show_uri": "spotify:show:72EZYVXVAzjJH9UGgeQ2hH",
+            "episodes": 151
+          },
+          "Where Was This In History Class?": {
+            "show_uri": "spotify:show:5kWTP7pP9sV7EgfZMeINUJ",
+            "episodes": 3
+          },
+          "Famous Fates": {
+            "show_uri": "spotify:show:4r157jjrIV0bzS6UxhN07i",
+            "episodes": 46
+          },
+          "The Fantastic History Of Food": {
+            "show_uri": "spotify:show:2CfNtOfcwbuHKaqDcx2sBc",
+            "episodes": 5
+          },
+          "Vulgar History": {
+            "show_uri": "spotify:show:0xmlVmdhWg1HBBpSQkeqZV",
+            "episodes": 4
+          },
+          "Conspiracy Theories": {
+            "show_uri": "spotify:show:5RdShpOtxKO3ZWohR2M6Sv",
+            "episodes": 108
+          },
+          "Extraterrestrial": {
+            "show_uri": "spotify:show:4Y1qqhrzpgNcIkVRajAOdr",
+            "episodes": 49
+          },
+          "Toki Ukamea: The story of William Mariner": {
+            "show_uri": "spotify:show:7gctf0DJrEcHewYQXafr8A",
+            "episodes": 5
+          },
+          "Undone": {
+            "show_uri": "spotify:show:1DpjNPz2R1uJoBABi8TAMm",
+            "episodes": 12
+          },
+          "Assassinations": {
+            "show_uri": "spotify:show:0GV1EPX2lvNnkNwnzZgF3F",
+            "episodes": 60
+          },
+          "Boosier Podcast ": {
+            "show_uri": "spotify:show:66KJY21RtBeRe62fwPAUGz",
+            "episodes": 2
+          },
+          "Reformations": {
+            "show_uri": "spotify:show:1bKyBlILPgSeVY813XYJx2",
+            "episodes": 1
+          },
+          "Myths, History, and DnD": {
+            "show_uri": "spotify:show:5ejY8aZSfyzoO2gERE1dLQ",
+            "episodes": 8
+          },
+          "Mogul": {
+            "show_uri": "spotify:show:4okzhZKxw5lSXcADxVxNRj",
+            "episodes": 33
+          },
+          "The Dark Side Of": {
+            "show_uri": "spotify:show:0at0IZJtlav1KQDxaTsmj6",
+            "episodes": 45
+          },
+          "Parcast Daily": {
+            "show_uri": "spotify:show:5aVyefIiIBeciQNgPGDOX4",
+            "episodes": 15
+          },
+          "Villains ": {
+            "show_uri": "spotify:show:5g3bKExpQ6rYwxTV4e0Tap",
+            "episodes": 23
+          },
+          "GONE": {
+            "show_uri": "spotify:show:1P5ywuAliiRdTKbZPTvf2p",
+            "episodes": 53
+          },
+          "Espionage": {
+            "show_uri": "spotify:show:4HL2j5zc7B3ywwxzvtCszF",
+            "episodes": 45
+          },
+          "Benny pod": {
+            "show_uri": "spotify:show:6lO6gnSlZdUJTuQ4Jg9kK9",
+            "episodes": 1
+          },
+          "Ad Vincere Mundi": {
+            "show_uri": "spotify:show:2VaI1g8xumndG9QFPmhAvu",
+            "episodes": 2
+          },
+          "Historical Hookups": {
+            "show_uri": "spotify:show:4F2PMwrcflikzQnxAsn5QO",
+            "episodes": 2
+          },
+          "Love Will Tear Us Apart": {
+            "show_uri": "spotify:show:1e9xn088BCUUErPjgKqzf7",
+            "episodes": 2
+          },
+          "Women of the Military": {
+            "show_uri": "spotify:show:0oI19QBrORAidITBjpkGGC",
+            "episodes": 4
+          },
+          "Medical Mysteries ": {
+            "show_uri": "spotify:show:52qDuV6WDfgnaLdbDmKpUi",
+            "episodes": 32
+          },
+          "Legendary Lasses": {
+            "show_uri": "spotify:show:7l4e9EDlsbfDp3d0QTHE2z",
+            "episodes": 2
+          },
+          "Brass Tacks History": {
+            "show_uri": "spotify:show:2DInULXf5cYyAdI2TtZvLx",
+            "episodes": 2
+          },
+          "Great Women of Business": {
+            "show_uri": "spotify:show:7I8VlvCJWvznnVtdfewP7A",
+            "episodes": 13
+          },
+          "Ancient Gods and Demons": {
+            "show_uri": "spotify:show:1FZtvqXV7YGeqposmRXyHQ",
+            "episodes": 7
+          },
+          "Vietnam War History": {
+            "show_uri": "spotify:show:2zVjPyjb6wuoIyp2EQeRCj",
+            "episodes": 1
+          },
+          "The Battle of Gettysburg Podcast": {
+            "show_uri": "spotify:show:0Q3ZDfNbo4iloYXZoONeO4",
+            "episodes": 9
+          },
+          "Bloody Beaver": {
+            "show_uri": "spotify:show:7gMX9BO0CQQmERpzqAEZrL",
+            "episodes": 5
+          },
+          "Sports Criminals ": {
+            "show_uri": "spotify:show:4xx4i1EW7563ORnwbNvtL1",
+            "episodes": 28
+          },
+          "Secret Societies ": {
+            "show_uri": "spotify:show:7MIIBWDGXvzZthqznedAKR",
+            "episodes": 8
+          },
+          "Dictators ": {
+            "show_uri": "spotify:show:5JwUl9pJUndHkbiiJTKRqg",
+            "episodes": 3
+          },
+          "Angkor Wat?": {
+            "show_uri": "spotify:show:7xDOmZqVKdHq78J5bbZv2o",
+            "episodes": 1
+          },
+          "Uncivil": {
+            "show_uri": "spotify:show:3ZFCdzRJWGMhok1x69IHRU",
+            "episodes": 12
+          },
+          "Pee-Wee History": {
+            "show_uri": "spotify:show:3XYDgZx5vHyl6rWBTt0u2E",
+            "episodes": 1
+          },
+          "NIOD Rewind Podcast on War & Violence": {
+            "show_uri": "spotify:show:0wCuyO657e61DUWDwxYrjk",
+            "episodes": 1
+          },
+          "American Girls": {
+            "show_uri": "spotify:show:0q14aUbVF3rTacMkXccqPT",
+            "episodes": 21
+          },
+          "Half Baked History": {
+            "show_uri": "spotify:show:71PItCk06L6ntHzIkMeEl0",
+            "episodes": 2
+          },
+          "Extremes Season 2": {
+            "show_uri": "spotify:show:7BkK3pxARwmhw3bXEKPPsn",
+            "episodes": 2
+          },
+          "HOW TWO MEDIEVAL": {
+            "show_uri": "spotify:show:3VeJZzcp83TUC6WUEWb9Lk",
+            "episodes": 2
+          },
+          "The Haunted Halls of West Virginia University": {
+            "show_uri": "spotify:show:0MQQJsCWHyarJX8orlFjiz",
+            "episodes": 5
+          },
+          "The Human History Podcast: The Ancients": {
+            "show_uri": "spotify:show:25VLneFYsTATjxMezVpWSC",
+            "episodes": 4
+          },
+          "Good Enough Guess": {
+            "show_uri": "spotify:show:3QKDj083JRgNxJjvIXigpB",
+            "episodes": 1
+          },
+          "Mardi Gras Beyond The Beads": {
+            "show_uri": "spotify:show:7FDOXSTV9HTQtURhFe0qxo",
+            "episodes": 1
+          },
+          "MOV History and Haunts": {
+            "show_uri": "spotify:show:196HyJgr0KCiHymM7u8dgn",
+            "episodes": 4
+          },
+          "Sisterly History Mysteries": {
+            "show_uri": "spotify:show:6t7DFlD3UWlcnGRUUieVz5",
+            "episodes": 1
+          },
+          "Wicked History": {
+            "show_uri": "spotify:show:4D1kUUCVtdrZJUWsoLC2YO",
+            "episodes": 5
+          },
+          "Clintwood Back In The Day": {
+            "show_uri": "spotify:show:3kfVtXfNPY0Z98QYPBAv0R",
+            "episodes": 1
+          },
+          "That's all Ancient History now!": {
+            "show_uri": "spotify:show:2225HicVmhSoyvjB9Ye5je",
+            "episodes": 1
+          },
+          "Weird Historian": {
+            "show_uri": "spotify:show:5EfzInmCgwmypFOAdOHbtu",
+            "episodes": 1
+          },
+          "Lore & Legend : Tales From Our Mythic Past": {
+            "show_uri": "spotify:show:09JNKFBXC4LbEFdNejO34g",
+            "episodes": 2
+          },
+          "A Tap On The Wrist": {
+            "show_uri": "spotify:show:37krWy7JNymswooJ5SpEDv",
+            "episodes": 1
+          },
+          "World of Warriors": {
+            "show_uri": "spotify:show:7BXf2tKawzpVq7aX0ukgzp",
+            "episodes": 1
+          },
+          "Summerhill HistoryGuy": {
+            "show_uri": "spotify:show:2ahNe2NOZlvgSmgX4Zszqu",
+            "episodes": 5
+          },
+          "Twice Removed": {
+            "show_uri": "spotify:show:7vHqMwiTFlivWCb1XwxKEC",
+            "episodes": 9
+          },
+          "Talking shit and making coffee": {
+            "show_uri": "spotify:show:1BZElVl8jZt1UykPKc7ETY",
+            "episodes": 1
+          },
+          "History Does You": {
+            "show_uri": "spotify:show:6RnL3W0weLvAJyZC1cIu8K",
+            "episodes": 1
+          },
+          "Curious Connecticut": {
+            "show_uri": "spotify:show:10rK8C7wURXWEaQqVyFtYL",
+            "episodes": 2
+          },
+          "The Harassment of Hitler ": {
+            "show_uri": "spotify:show:5pfB2Wki0ocUmUR3k7wxUE",
+            "episodes": 1
+          },
+          "History with Mrs. Krause": {
+            "show_uri": "spotify:show:2WdhsoXWun4p2kqTpMHUNy",
+            "episodes": 1
+          },
+          "Tabi-Tabi Podcast": {
+            "show_uri": "spotify:show:64xYiqmuBwFS6q5pcuCQZJ",
+            "episodes": 5
+          },
+          "Criminal Prints": {
+            "show_uri": "spotify:show:3ItnqUK5THAZKDrIPJg0PZ",
+            "episodes": 9
+          },
+          "Simon Bolivar": {
+            "show_uri": "spotify:show:1PeYHi29Xz2GPaoEJWsooO",
+            "episodes": 1
+          },
+          "Lectures with Mr. Judy": {
+            "show_uri": "spotify:show:0cZcK8pCajXiSnOCWzHpBp",
+            "episodes": 6
+          },
+          "USA true stranger history.": {
+            "show_uri": "spotify:show:4LxhElCBHzl9Gg85RJzbU6",
+            "episodes": 1
+          },
+          "Historia Obscura": {
+            "show_uri": "spotify:show:2BmKTV4IAQFM4Drm0ar3GW",
+            "episodes": 2
+          },
+          "WW2 Memories": {
+            "show_uri": "spotify:show:1U9QvHVg9m2Q8Sx4595bLZ",
+            "episodes": 2
+          },
+          "Nazi Coffee Room": {
+            "show_uri": "spotify:show:2CZeMpXywYmWy53SV2kWEm",
+            "episodes": 1
+          },
+          "Burks at Loyola - The Podcast": {
+            "show_uri": "spotify:show:7f9WfvcDmxIsLdbQzPt3Lv",
+            "episodes": 2
+          },
+          "Muzzle Blasts": {
+            "show_uri": "spotify:show:6kh9pEEvDSPM0Ef93z2HmF",
+            "episodes": 1
+          },
+          "Farbeyond ": {
+            "show_uri": "spotify:show:5bED2f6FAn3wFp7SttczJZ",
+            "episodes": 2
+          },
+          "Kerabigx": {
+            "show_uri": "spotify:show:1wSWfixZh9DdAkvK52Aj9a",
+            "episodes": 1
+          },
+          "Revving Up History": {
+            "show_uri": "spotify:show:2JqBhaixuo5VwB1i6rBAEP",
+            "episodes": 3
+          },
+          "The Nigerian History Podcast": {
+            "show_uri": "spotify:show:3t1CsuH5drONEcAJxjg6m1",
+            "episodes": 2
+          },
+          "New Orleans History": {
+            "show_uri": "spotify:show:3JMLhio2Ld1TNm0k49f9Ep",
+            "episodes": 1
+          },
+          "American most terrific history ever.": {
+            "show_uri": "spotify:show:47uWhg028luRTiDBVMjdS9",
+            "episodes": 1
+          },
+          "Beneath The Staircase ": {
+            "show_uri": "spotify:show:2wn3kP1SqdX6o0IJtPxe0U",
+            "episodes": 2
+          },
+          "The Untold History of the United States.": {
+            "show_uri": "spotify:show:3tgbfCmiPd66Bpctp3fzYx",
+            "episodes": 1
+          },
+          "World Geography": {
+            "show_uri": "spotify:show:0qKuChzR9dWZy4CN74vxRk",
+            "episodes": 1
+          },
+          "The History Bros": {
+            "show_uri": "spotify:show:5FuNemnP50vwKKHEhxCGzx",
+            "episodes": 2
+          },
+          "THE MARATHA EMPIRE": {
+            "show_uri": "spotify:show:4BnDoHfFwaTpd6EQRbNpTI",
+            "episodes": 1
+          },
+          "Adolf Hitler Talk Show": {
+            "show_uri": "spotify:show:5nUuZO4H0fhLki5MKq9CrF",
+            "episodes": 1
+          },
+          "Weimar Germany 1919 to 1923": {
+            "show_uri": "spotify:show:2DRj6YPHxS1ShDB8tv5L1o",
+            "episodes": 1
+          },
+          "Men who escaped Aushwitz ": {
+            "show_uri": "spotify:show:3TTVgKoO2K8PkWf5YV5Znp",
+            "episodes": 1
+          },
+          "The Past Crusade": {
+            "show_uri": "spotify:show:0RQ82fTwmU34eLOcwd3ATY",
+            "episodes": 1
+          },
+          "THE1LVZ UNLEASHED": {
+            "show_uri": "spotify:show:1ymON16BBKh5ggkKaPwMy8",
+            "episodes": 1
+          },
+          "Bloodborne's Existential Journey": {
+            "show_uri": "spotify:show:5WuZiJK8DzKbdEqwkxMmtE",
+            "episodes": 1
+          },
+          "The Farthest Reaches": {
+            "show_uri": "spotify:show:2I52lQSOy6JNsolYuFKj6I",
+            "episodes": 1
+          },
+          "The roaring 1920s radio show": {
+            "show_uri": "spotify:show:4hMYunMlsMJ3xiLDe69Ver",
+            "episodes": 1
+          },
+          "The Broken History Podcast ": {
+            "show_uri": "spotify:show:4VuSbRVkxBqbaqvozTAZHz",
+            "episodes": 1
+          },
+          "UNCLE JULZ": {
+            "show_uri": "spotify:show:6wvmE5zbBiCnBTEUaTbU8g",
+            "episodes": 1
+          },
+          "Conspiracy or Just a Coincidence?": {
+            "show_uri": "spotify:show:1UatqcZAB1r5vrSRymy8Vt",
+            "episodes": 1
+          },
+          "Countries That Don't Exist Anymore": {
+            "show_uri": "spotify:show:4zR9E0tv7qAOCTIVXTvKsa",
+            "episodes": 2
+          },
+          "Drunk History- World Religions": {
+            "show_uri": "spotify:show:31fz2diu0EJ1oKTnMBYkPe",
+            "episodes": 1
+          },
+          "Northman's Tales": {
+            "show_uri": "spotify:show:6Qw9MU7QIj4GxXQKHIQdA0",
+            "episodes": 3
+          },
+          "The Best History Blogs": {
+            "show_uri": "spotify:show:3o02sFI6AzCpOms4hcefVQ",
+            "episodes": 1
+          },
+          "Ava\u2019s take on history": {
+            "show_uri": "spotify:show:2Ow2nbOhY2TtFPJqB1ssiv",
+            "episodes": 1
+          },
+          "The Indian Storyteller": {
+            "show_uri": "spotify:show:61RReUsRFIgowxIbjKweOy",
+            "episodes": 1
+          },
+          "Khan Conquers Again": {
+            "show_uri": "spotify:show:3MMEHupzefARKc0y9i4CXq",
+            "episodes": 1
+          },
+          "History for Kids": {
+            "show_uri": "spotify:show:1cqm2LQceIcanlunHbN4kc",
+            "episodes": 1
+          },
+          "History Under Your Feet": {
+            "show_uri": "spotify:show:5i0JMXCgw8fNTPYC4NDJmC",
+            "episodes": 1
+          },
+          "Great American Speeches": {
+            "show_uri": "spotify:show:55sn8YLrwbZYnYaw89zc72",
+            "episodes": 1
+          },
+          "LARIOS": {
+            "show_uri": "spotify:show:3dvuDCEroXCoFUpehDWYRj",
+            "episodes": 1
+          },
+          "InfoCast 5000": {
+            "show_uri": "spotify:show:6BMPiOePTJBEL1MpvjOrJn",
+            "episodes": 1
+          },
+          "The Genealogical Gentleman": {
+            "show_uri": "spotify:show:1lXPX1ojco5UAcKA510xW4",
+            "episodes": 1
+          },
+          "Tank Nuts": {
+            "show_uri": "spotify:show:7fVXB9ZZV4Fi3QjDk43tHJ",
+            "episodes": 2
+          },
+          "The Arab-Israeli Conflict: Explained": {
+            "show_uri": "spotify:show:6iqmJjQii9tkRNAb7QSpGV",
+            "episodes": 1
+          },
+          "JASS/Women Fight for Rights": {
+            "show_uri": "spotify:show:26Iy1ezLGveOfwPzAZHRzJ",
+            "episodes": 1
+          },
+          "Queen V: The Life of Queen Victoria": {
+            "show_uri": "spotify:show:11HFht21srz4Z9FxhDh49l",
+            "episodes": 1
+          },
+          "Who was Alexander the great?": {
+            "show_uri": "spotify:show:1enhXHS24pPV0Zjyi5dRzJ",
+            "episodes": 1
+          },
+          "Native Hawaiian": {
+            "show_uri": "spotify:show:6ANU1F4YtdgldTBNudSXAA",
+            "episodes": 1
+          },
+          "vietnam war ": {
+            "show_uri": "spotify:show:1ToiENQsTK80O9iGB00ZEE",
+            "episodes": 1
+          },
+          "The Nebraska History Podcast With Luke Dorris": {
+            "show_uri": "spotify:show:6CHQLX6WYBC9PSqGmK6y3S",
+            "episodes": 1
+          },
+          "How the Hong Kong Protests Relate to the Middle Ages": {
+            "show_uri": "spotify:show:7ubKH1qwY18yrpMUpoetmI",
+            "episodes": 1
+          },
+          "Dissecting History": {
+            "show_uri": "spotify:show:3IVIJo3HyeuATvJIiuZbyE",
+            "episodes": 1
+          },
+          "The Pitts : Stories from the Depths": {
+            "show_uri": "spotify:show:2RmOMiO6txtyyGyRSB9J17",
+            "episodes": 1
+          },
+          "Laurens Lore": {
+            "show_uri": "spotify:show:6SPVkl9nT78389JDcRlP6e",
+            "episodes": 1
+          },
+          "When We Were Young ": {
+            "show_uri": "spotify:show:4CgpjUaRMeukHZSmV39Moe",
+            "episodes": 1
+          },
+          "The History Podcast hosted by Jason Thomason": {
+            "show_uri": "spotify:show:1XaY3VgHbv5YjlRGq6lVDT",
+            "episodes": 1
+          },
+          "DreadTalk": {
+            "show_uri": "spotify:show:0BG0jUcbwykZVQzKMOuxpE",
+            "episodes": 1
+          },
+          "APUSH Deep Dives": {
+            "show_uri": "spotify:show:26RaouKCzddDY60v4IbmAk",
+            "episodes": 2
+          },
+          "Oldest Stories": {
+            "show_uri": "spotify:show:5PGrkXrRpTug5N4r1FRf4Y",
+            "episodes": 1
+          },
+          "FBI History ": {
+            "show_uri": "spotify:show:2ANv0TRBkKgzTMpIqHLrA4",
+            "episodes": 1
+          },
+          "Double Helix History ": {
+            "show_uri": "spotify:show:2tTA2xYpcS5YuTIXzXakTu",
+            "episodes": 1
+          },
+          "Ye Olde Tea": {
+            "show_uri": "spotify:show:33wSIpo6aTZNZIJOh17xoS",
+            "episodes": 1
+          },
+          "SCP-049 PODCAST": {
+            "show_uri": "spotify:show:2IFUvMkmmXjl4PL2ZNL4Be",
+            "episodes": 1
+          },
+          "Fictorical": {
+            "show_uri": "spotify:show:2yvrDZCUICLTcQiFfvCuhX",
+            "episodes": 1
+          },
+          "History Blogs": {
+            "show_uri": "spotify:show:5hfcd2tkIz0d3r5NUXk3mD",
+            "episodes": 1
+          },
+          "Three History Nymphs": {
+            "show_uri": "spotify:show:2BUOgjsWtj21D644yY1dzV",
+            "episodes": 1
+          }
+        }
+      },
+      "Science": {
+        "counter": 215,
+        "shows": {
+          "Just the Zoo of Us": {
+            "show_uri": "spotify:show:65tFpuBodBJAokryEYlhF3",
+            "episodes": 25
+          },
+          "A-Pod Cast For Killer Whales": {
+            "show_uri": "spotify:show:5XVpwbZzmMhxk2yqDf6gTI",
+            "episodes": 6
+          },
+          "Launch Escape: Space Podcast": {
+            "show_uri": "spotify:show:3tnWkgjrHcOoIirYDQsphL",
+            "episodes": 2
+          },
+          "Behavior Bitches": {
+            "show_uri": "spotify:show:06DN2th96dYmRtHEQFNKTo",
+            "episodes": 33
+          },
+          "The Orthobullets Podcast": {
+            "show_uri": "spotify:show:0I22C9iyvVT3M6DEILuD9F",
+            "episodes": 362
+          },
+          "Keeping Up with Public Health": {
+            "show_uri": "spotify:show:5yIWM8CP6rDdiCa2VUIPW9",
+            "episodes": 11
+          },
+          "Alpha Male Strategies": {
+            "show_uri": "spotify:show:3Z2DiiMgsKo9h6EfuWkVPY",
+            "episodes": 238
+          },
+          "Natural Disasters ": {
+            "show_uri": "spotify:show:2vPbtummXL9L4UbLiezZmh",
+            "episodes": 28
+          },
+          "Soil Sense": {
+            "show_uri": "spotify:show:7amrLwNYVMDxT9ohDuqQsE",
+            "episodes": 16
+          },
+          "Dope Labs": {
+            "show_uri": "spotify:show:3pCF6hcNsAHKlKAillCOuZ",
+            "episodes": 27
+          },
+          "Under The Tooth ": {
+            "show_uri": "spotify:show:6qCk3kxYKAnvErVf9TwoXh",
+            "episodes": 2
+          },
+          "Dr. Chapa\u2019s ObGyn Pearls. ": {
+            "show_uri": "spotify:show:4rqGaRY0PExux3cyyYZxM2",
+            "episodes": 137
+          },
+          "What On Earth: The Sustainable Podcast": {
+            "show_uri": "spotify:show:1ANaiJknRax9DyqJUSSDrZ",
+            "episodes": 11
+          },
+          "Every Little Thing": {
+            "show_uri": "spotify:show:2dY2l2v95zz9HTlYvDSAdA",
+            "episodes": 101
+          },
+          "The Multidimensional Journey": {
+            "show_uri": "spotify:show:1GZfVcvD56zroTjSWLdgPl",
+            "episodes": 5
+          },
+          "Project Botany": {
+            "show_uri": "spotify:show:74pH2wDJMJ84dR16WTAMQN",
+            "episodes": 8
+          },
+          "Biology for Bastards": {
+            "show_uri": "spotify:show:6hj26idFRLheiJslz2ozfQ",
+            "episodes": 54
+          },
+          "Getting Mouthy ": {
+            "show_uri": "spotify:show:0PLwTuWg46pIx4ogN9ytpF",
+            "episodes": 14
+          },
+          "Extraterrestrial": {
+            "show_uri": "spotify:show:4Y1qqhrzpgNcIkVRajAOdr",
+            "episodes": 49
+          },
+          "Deep Astronomy": {
+            "show_uri": "spotify:show:6hT8NSuIjiZcgejbO6ulvc",
+            "episodes": 15
+          },
+          "The Physio Matters Podcast": {
+            "show_uri": "spotify:show:72sUWnfUI0ybSs16YEWvc4",
+            "episodes": 19
+          },
+          "The Dissenter": {
+            "show_uri": "spotify:show:6u7adYbnx4jKTRxsMnh06Y",
+            "episodes": 7
+          },
+          "Shots of Science Vs": {
+            "show_uri": "spotify:show:3yxUnWt3TJWXaKuRU2sLOg",
+            "episodes": 22
+          },
+          "The Raindrop": {
+            "show_uri": "spotify:show:3doQK3PsMmt5lLqTLpwtiQ",
+            "episodes": 3
+          },
+          "Our Journey to Medicine": {
+            "show_uri": "spotify:show:1dxSeJ2SAbM5VFtGqqp5jc",
+            "episodes": 4
+          },
+          "THE FRCR TWO B PODCAST ": {
+            "show_uri": "spotify:show:30G3SfbxyqmRE8yR9WjRp9",
+            "episodes": 5
+          },
+          "EnviroMENTAL": {
+            "show_uri": "spotify:show:7eeD7E5a8RKNjjwV0DZSck",
+            "episodes": 8
+          },
+          "Wild Animals": {
+            "show_uri": "spotify:show:1M5daW5fcOtXOjYkHkrZQF",
+            "episodes": 5
+          },
+          "Science Vs": {
+            "show_uri": "spotify:show:5lY4b5PGOvMuOYOjOVEcb9",
+            "episodes": 97
+          },
+          "The Habitat": {
+            "show_uri": "spotify:show:51zf1djWRn5v5HynVupSlU",
+            "episodes": 9
+          },
+          "The Weirdest Thing I Learned This Week": {
+            "show_uri": "spotify:show:1l3aIVJ1FVrHSixsgrJ1f4",
+            "episodes": 46
+          },
+          "Beyond Reality Paranormal Podcast": {
+            "show_uri": "spotify:show:5ge4BXYxuOjPxBadTJknEx",
+            "episodes": 18
+          },
+          "Environmentalk": {
+            "show_uri": "spotify:show:2Y6WGCvXt31TCUltyJCVXR",
+            "episodes": 1
+          },
+          "Premed Memory Training": {
+            "show_uri": "spotify:show:7l1FOtWHzZnhracksxVDe9",
+            "episodes": 1
+          },
+          "Otomentor": {
+            "show_uri": "spotify:show:1pSCnjJm0qZDZ0h2JIRe45",
+            "episodes": 8
+          },
+          "Today's RDH Dental Hygiene Podcast": {
+            "show_uri": "spotify:show:73ZP96vesMzM5lw34Us0Vp",
+            "episodes": 6
+          },
+          "Real Time With Jayson": {
+            "show_uri": "spotify:show:2xhy7fZFZKh3sJqzogDM83",
+            "episodes": 9
+          },
+          "Antarcticast": {
+            "show_uri": "spotify:show:6PhJ6q5trgOuhqpP7zzqE6",
+            "episodes": 3
+          },
+          "Home Health Occupational Therapy Explorer ": {
+            "show_uri": "spotify:show:3WDgvVRwgwqQxsg6IKEnyJ",
+            "episodes": 1
+          },
+          "Science Dose ": {
+            "show_uri": "spotify:show:6gld1hBIxiLxzSBSTgxOcs",
+            "episodes": 4
+          },
+          "SocioTap": {
+            "show_uri": "spotify:show:2KDglSd6xZU6BntF0E72mj",
+            "episodes": 2
+          },
+          "Beautiful Humans: The Social ChangeCast": {
+            "show_uri": "spotify:show:35SrzscMDFPVC7OmKN3LAa",
+            "episodes": 1
+          },
+          "Two Bees in a Podcast ": {
+            "show_uri": "spotify:show:1rIh9tQ4jh4ejxarZuPye8",
+            "episodes": 4
+          },
+          "Science Quantum Physics Through Ayurveda Flow & Expansion.": {
+            "show_uri": "spotify:show:6QVJVMadmIVu04zjamlMDK",
+            "episodes": 11
+          },
+          "Emotional Anatomy - Intelligent Design": {
+            "show_uri": "spotify:show:59PUscaLF1xzUVg8jQRpwb",
+            "episodes": 3
+          },
+          "Let's think Earth: Season 11; Season of Ava": {
+            "show_uri": "spotify:show:17Nzvb20NMfESUDkE8Qw0n",
+            "episodes": 2
+          },
+          "Refreshments and Narcotics \u2122\ufe0f Podcast": {
+            "show_uri": "spotify:show:6gIdouNNE7VZ8N01zcIWVj",
+            "episodes": 25
+          },
+          "Dancing in the Moment": {
+            "show_uri": "spotify:show:3TZCPKoQpbvnWigVdq48Uu",
+            "episodes": 3
+          },
+          "Samanthaaa": {
+            "show_uri": "spotify:show:2TjptLx9uQUaHhp6YB8jhW",
+            "episodes": 1
+          },
+          "The Caffeinated Backpacker": {
+            "show_uri": "spotify:show:4Du0LbXvi8I6Lwna133rbv",
+            "episodes": 2
+          },
+          "Evolving with Mr. V": {
+            "show_uri": "spotify:show:1vw49bYmLK4vecIvJswlnZ",
+            "episodes": 21
+          },
+          "DML": {
+            "show_uri": "spotify:show:4IV0oQsXDZl7PO6cfwauQW",
+            "episodes": 1
+          },
+          "Science Denial": {
+            "show_uri": "spotify:show:3lGjQDn7xiZdiTEwTbkjjL",
+            "episodes": 3
+          },
+          "Sprouting in STEM": {
+            "show_uri": "spotify:show:1YxNuzlhAEdFiCtaFMODnb",
+            "episodes": 2
+          },
+          "Podcast Boraxs": {
+            "show_uri": "spotify:show:0gpPd17MPP1QMoX7dOve8I",
+            "episodes": 3
+          },
+          "The Astroholic Explains": {
+            "show_uri": "spotify:show:6dbgVUYZDYQ95Uci2RlCFN",
+            "episodes": 2
+          },
+          "AQA GCSE Chemistry Revision ": {
+            "show_uri": "spotify:show:5tY52Wqnlz9NoOOwna5S28",
+            "episodes": 2
+          },
+          "Nursology": {
+            "show_uri": "spotify:show:2XEdKBz5paziP13AfjyqXz",
+            "episodes": 1
+          },
+          "The Modern Medic": {
+            "show_uri": "spotify:show:3qhzO6vDpBQ4g9kNFYooHw",
+            "episodes": 6
+          },
+          "Economics In Ten": {
+            "show_uri": "spotify:show:44pI1bcAKbrA2fLZpwJF4X",
+            "episodes": 8
+          },
+          "The Behavior Trap": {
+            "show_uri": "spotify:show:5idIqfgozWzh3LyhwpS6wL",
+            "episodes": 3
+          },
+          "The Controversial Exchange": {
+            "show_uri": "spotify:show:6t5kMLBUyv8sbPGLqal8SF",
+            "episodes": 8
+          },
+          "Crazy Sockz EMTz": {
+            "show_uri": "spotify:show:5BFzpWijHEnEkNxGhvLtBM",
+            "episodes": 6
+          },
+          "#dobetter Pod": {
+            "show_uri": "spotify:show:6frbM7OHrMrHJ0QAz4GNe2",
+            "episodes": 4
+          },
+          "The Poddy Mullet": {
+            "show_uri": "spotify:show:3luslHHztKk9hzTeJzNvpK",
+            "episodes": 3
+          },
+          "Criminal Behaviorology": {
+            "show_uri": "spotify:show:5VM7Sjv762u7nb91YWGczZ",
+            "episodes": 6
+          },
+          "Black Cloud Society": {
+            "show_uri": "spotify:show:3Uo4j7atnTP8VnrHleAJFt",
+            "episodes": 4
+          },
+          "RadCast": {
+            "show_uri": "spotify:show:2fFP14NeFI7oc3A5RBzfSW",
+            "episodes": 6
+          },
+          "Statistics for the Social Sciences": {
+            "show_uri": "spotify:show:3NA20RWdSNIWlQ3j3j40Gv",
+            "episodes": 11
+          },
+          "Indirect Message": {
+            "show_uri": "spotify:show:1kqShC3n6G3ab4WfkhFhol",
+            "episodes": 10
+          },
+          "EMT A to Z ": {
+            "show_uri": "spotify:show:7De6851EDFeLKZx4CFACCx",
+            "episodes": 1
+          },
+          "GRADitude: The Grad School Guide for Student Physical Therapists": {
+            "show_uri": "spotify:show:3BhwSc6ZE21088L3Sb7ZzF",
+            "episodes": 8
+          },
+          "The Weathermen": {
+            "show_uri": "spotify:show:5YZs67qIhLZnlbYl0MwU6Y",
+            "episodes": 3
+          },
+          "iCRAGorama": {
+            "show_uri": "spotify:show:5nbQ9l56hehrmzKj6LuGmD",
+            "episodes": 4
+          },
+          "Songs 4 FRCR: Radiology FRCR 2A Revision": {
+            "show_uri": "spotify:show:3FA7poT1MNGUp50VjkzbkB",
+            "episodes": 12
+          },
+          "Authentic Biochemistry": {
+            "show_uri": "spotify:show:02oYQ2WL7raDmbW1DoA777",
+            "episodes": 4
+          },
+          "Bonds bond ": {
+            "show_uri": "spotify:show:2O2w1CQdhkbm3MDGndhdcT",
+            "episodes": 1
+          },
+          "The Lawmlette Podcast": {
+            "show_uri": "spotify:show:3iyHzou2fNKF4fdV9JBPw5",
+            "episodes": 2
+          },
+          "Folk Talk ": {
+            "show_uri": "spotify:show:6eTtlwZZiycKw21ViQKSqB",
+            "episodes": 1
+          },
+          "Open Your Mind: Psychology ": {
+            "show_uri": "spotify:show:1YOvLqCfjMOXabXC8earb3",
+            "episodes": 9
+          },
+          "Dr Jekyll and Mr Hyde ": {
+            "show_uri": "spotify:show:0BhfvBUyGAeO3CrxvFQ10w",
+            "episodes": 1
+          },
+          "The Wholistic Medicine Woman Podcast": {
+            "show_uri": "spotify:show:29vZwp9YKKP4V8hfvGECB3",
+            "episodes": 1
+          },
+          "Dark Geometry": {
+            "show_uri": "spotify:show:5o6Yy2z9HQYSJp6cE3rOZn",
+            "episodes": 1
+          },
+          "The Cyclo Edition": {
+            "show_uri": "spotify:show:0ZzTZLzFbCy5HG3sxfysPB",
+            "episodes": 2
+          },
+          "RockTape Podcast": {
+            "show_uri": "spotify:show:5PxZU80MlDMre0uIH4Bu2N",
+            "episodes": 4
+          },
+          "Talk It Thru Podcasts": {
+            "show_uri": "spotify:show:36ya5PbFOo5VhxTXWxkeyu",
+            "episodes": 2
+          },
+          "Twice Removed": {
+            "show_uri": "spotify:show:7vHqMwiTFlivWCb1XwxKEC",
+            "episodes": 9
+          },
+          "The La Crosse Thinkers Podcast": {
+            "show_uri": "spotify:show:3yWEoq4VJYoCs4CQaU2DKE",
+            "episodes": 1
+          },
+          "Meditate Awake": {
+            "show_uri": "spotify:show:4en5xhj6TehL2j49NCTzZf",
+            "episodes": 2
+          },
+          "From the Earth to the Moon: A Retrospective Podcast on The Apollo Program": {
+            "show_uri": "spotify:show:4kEqp4NHVj5yj52KJtjVVb",
+            "episodes": 4
+          },
+          "She Opts Out ": {
+            "show_uri": "spotify:show:56VwCfCEVmp06oQGIVBscP",
+            "episodes": 1
+          },
+          "Let\u2019s save the world together ": {
+            "show_uri": "spotify:show:1q9YA8Z4NqqBWRrt2WiZPU",
+            "episodes": 1
+          },
+          "No Refills": {
+            "show_uri": "spotify:show:1Jkkt08ldBcA8jqgHUl52T",
+            "episodes": 4
+          },
+          "Samoan Scientist Podcast": {
+            "show_uri": "spotify:show:69TVCEjXVHAnepZ2uSZM9o",
+            "episodes": 6
+          },
+          "The Entheogenic Midwife": {
+            "show_uri": "spotify:show:29FupYiykkuS4IeePyTU9n",
+            "episodes": 1
+          },
+          "Sleepin' Beauties": {
+            "show_uri": "spotify:show:3Mj8rRpiuX6VoA46Y58rzQ",
+            "episodes": 1
+          },
+          "White Rice For Black People": {
+            "show_uri": "spotify:show:4I7xAadwnU6ER4gPOi1wV8",
+            "episodes": 2
+          },
+          "Supercluster": {
+            "show_uri": "spotify:show:64ltupUuQJhuJsUqEMxCeh",
+            "episodes": 7
+          },
+          "Climate Scientists": {
+            "show_uri": "spotify:show:7dCPcUbvKCgnWzcZZa3jS6",
+            "episodes": 3
+          },
+          "Cody Creelman, Cow Vet": {
+            "show_uri": "spotify:show:2I452igaHkGDWW3Qf4AZA7",
+            "episodes": 7
+          },
+          "Fey-Sci and Friends": {
+            "show_uri": "spotify:show:63Fgj3WxHnIPpqLSk9yqBG",
+            "episodes": 3
+          },
+          "APPT SNP Podcast": {
+            "show_uri": "spotify:show:5rMIlXkq9TzIWCPrlArIy1",
+            "episodes": 1
+          },
+          "Depressing Physics": {
+            "show_uri": "spotify:show:58d4HOrmNutTPI3mhg5UzM",
+            "episodes": 2
+          },
+          "realmelo": {
+            "show_uri": "spotify:show:3oGrZf2p1I85yKFzgcfy6d",
+            "episodes": 4
+          },
+          "The Periodic Bagel": {
+            "show_uri": "spotify:show:68RtZpG1i7r3EicLrRI2i1",
+            "episodes": 12
+          },
+          "SDM's Wild World": {
+            "show_uri": "spotify:show:4YkLpsL7gB67iQfxhrfnrS",
+            "episodes": 1
+          },
+          "Top 10 American Inventions on science That Changed the World .": {
+            "show_uri": "spotify:show:1zEZdE9zx80Z6F4p0e4qnr",
+            "episodes": 1
+          },
+          "Electronix Addicts: Engineering Podcast": {
+            "show_uri": "spotify:show:1hInldO62WlXmJk2aqgiEC",
+            "episodes": 1
+          },
+          "SCP Codex": {
+            "show_uri": "spotify:show:2xrN452aVH2rlqMxMSDlmQ",
+            "episodes": 4
+          },
+          "Our Science": {
+            "show_uri": "spotify:show:6KsV2jo6eaNqfgX8rY3Fit",
+            "episodes": 2
+          },
+          "Exploring the Horizon": {
+            "show_uri": "spotify:show:4dYNnn0IlD7GWlMt2iORo9",
+            "episodes": 1
+          },
+          "Medicine ReMixed": {
+            "show_uri": "spotify:show:0Bj67aq2zuHbxZ072je6Px",
+            "episodes": 2
+          },
+          "The Chernobyl Catastrophe Podcast": {
+            "show_uri": "spotify:show:1nAmndXMzqVUbxPUWP1S1J",
+            "episodes": 1
+          },
+          "Inevitable Change\u2728": {
+            "show_uri": "spotify:show:2r7r4xBl3PzZZE65vwFC6p",
+            "episodes": 5
+          },
+          "Let's Clear The Air: THE Zodiac Podcast": {
+            "show_uri": "spotify:show:4Erf9nKAKtSVkasCln3u25",
+            "episodes": 1
+          },
+          "First Time Listeners": {
+            "show_uri": "spotify:show:1uWrnAjywECBJ6Uz2UEuUV",
+            "episodes": 1
+          },
+          "The Mom and the Millennial": {
+            "show_uri": "spotify:show:0rghLek0700lhW5ItHKdH7",
+            "episodes": 1
+          },
+          "Leaving Cert Biology Revision ": {
+            "show_uri": "spotify:show:3yG2gcToT17HCqINx1Pgec",
+            "episodes": 6
+          },
+          "Paramedicine.com": {
+            "show_uri": "spotify:show:5xrgmQept3pCHem0Yhjq14",
+            "episodes": 3
+          },
+          "Anthropological Theory: A podcast created by anthropology students": {
+            "show_uri": "spotify:show:6aA7JmxyWRiRqtVXPAMajr",
+            "episodes": 6
+          },
+          "Medical Terminology Standardization ": {
+            "show_uri": "spotify:show:1NPQWxQeseInfvVxUbMdgJ",
+            "episodes": 1
+          },
+          "Cultured Meat and Future Food Podcast": {
+            "show_uri": "spotify:show:3LIfMv5g2o8H7TslQewBaa",
+            "episodes": 4
+          },
+          "Tiny House Podcast": {
+            "show_uri": "spotify:show:6ycmvsTa7Cnk76zhc4nbBI",
+            "episodes": 1
+          },
+          "BrainSTEM Podcast": {
+            "show_uri": "spotify:show:5iHXpo0bVSojNggfHzvt1K",
+            "episodes": 1
+          },
+          "Dose Makes The Poison: The Toxcast": {
+            "show_uri": "spotify:show:1Zmkaj0XoQ1L4p4AhN6vq2",
+            "episodes": 4
+          },
+          "Carbon Neutral Lent Podcast": {
+            "show_uri": "spotify:show:66PDR12dQZR2s2Y1dTaf2d",
+            "episodes": 2
+          },
+          "Linguistics After Dark": {
+            "show_uri": "spotify:show:7KmypR70TEU3sGDH4uerdr",
+            "episodes": 1
+          },
+          "Born Free Podcast": {
+            "show_uri": "spotify:show:0sN3ojzN4M6Pa5jF9t6Ryo",
+            "episodes": 2
+          },
+          "Teh Tarik Podcast": {
+            "show_uri": "spotify:show:5KhZajMC0TSCP9QmdL6Twc",
+            "episodes": 1
+          },
+          "Manifestor's Gift": {
+            "show_uri": "spotify:show:5WSAmafGjjS8XoOWCBykOA",
+            "episodes": 3
+          },
+          "An Astrophysicist In A Car Getting Coffee": {
+            "show_uri": "spotify:show:5nfsbUQ9VgY4EcXNvvXXx5",
+            "episodes": 1
+          },
+          "For Whom the Cell Tolls: Biology, Cancer, and Other Stories About Life": {
+            "show_uri": "spotify:show:6KySzlxOJT2blYQbiMoPa2",
+            "episodes": 7
+          },
+          "We're Not Zombies": {
+            "show_uri": "spotify:show:22hwlgTkINnK9XGV7MfxmV",
+            "episodes": 1
+          },
+          "Forensic Psychology": {
+            "show_uri": "spotify:show:1GVvUXrTLT31q3Jse40kMw",
+            "episodes": 1
+          },
+          "Here Comes the Sun": {
+            "show_uri": "spotify:show:4JfLmFlHiXrh8l41u3q4Sb",
+            "episodes": 1
+          },
+          "5AM somewhere": {
+            "show_uri": "spotify:show:2ujrACwMfLa9YZZ6b9JaI1",
+            "episodes": 2
+          },
+          "Coffee Tea and AI": {
+            "show_uri": "spotify:show:1vPaKxbc7SQGB5Eq57riQ8",
+            "episodes": 1
+          },
+          "The NASS Podcast": {
+            "show_uri": "spotify:show:0F6bZdKBFMD8jIoXIchIle",
+            "episodes": 1
+          },
+          "Blueberry": {
+            "show_uri": "spotify:show:5yqcLXJgzsx86AWpoRidVi",
+            "episodes": 1
+          },
+          "PodMD": {
+            "show_uri": "spotify:show:55rkMJu2PhMZrlu6jbjyKJ",
+            "episodes": 1
+          },
+          "Western Isles Weather ": {
+            "show_uri": "spotify:show:3RofgboyJRzkhw8PfQSaNb",
+            "episodes": 1
+          },
+          "ABA Ultimate Showdown!": {
+            "show_uri": "spotify:show:0FUV0bDwonUBhRdfdSHS0w",
+            "episodes": 1
+          },
+          "Rare Disease, Cell & Gene Therapy Weekly RoundUp": {
+            "show_uri": "spotify:show:22F6Cg8hwvhbJeZCZjXWae",
+            "episodes": 2
+          },
+          "Real Science Real Life": {
+            "show_uri": "spotify:show:6FxQOOGRNJ2AtOkeCWdJT3",
+            "episodes": 2
+          },
+          "Breaking Math Podcast": {
+            "show_uri": "spotify:show:2All747WhUp3IdgLpPEf2i",
+            "episodes": 14
+          },
+          "panic attacks": {
+            "show_uri": "spotify:show:2GXuk9BbI4nvo3GgEg1XB4",
+            "episodes": 1
+          },
+          "Existence of Life at Universe": {
+            "show_uri": "spotify:show:5AeuX0slEHP6W7qGskN2HX",
+            "episodes": 1
+          },
+          "The Paleo Podcast ": {
+            "show_uri": "spotify:show:5oNisao3YXFVfdThPh2xC0",
+            "episodes": 2
+          },
+          "The Crescive Method": {
+            "show_uri": "spotify:show:7buQvszwzFj6OIt25brtiz",
+            "episodes": 2
+          },
+          "Rambling About Rivers": {
+            "show_uri": "spotify:show:7AbkrMaDISm8UpX0Bk1qcx",
+            "episodes": 3
+          },
+          "Brainscape": {
+            "show_uri": "spotify:show:4xm16tF5ib3w4FWWz0ZOAg",
+            "episodes": 2
+          },
+          "The Medical School Podcast": {
+            "show_uri": "spotify:show:1ADHHdWviasnfMNjwPJ8nA",
+            "episodes": 4
+          },
+          "Entheogen-DMT The Spirit Molecule ": {
+            "show_uri": "spotify:show:5Ptm3leDwJIklftFjioWfG",
+            "episodes": 1
+          },
+          "The Nawicast": {
+            "show_uri": "spotify:show:3eDgpzufVYPqoZtbsXjkyY",
+            "episodes": 1
+          },
+          "ispeak4thetrees": {
+            "show_uri": "spotify:show:2mJxfrQRuKMcjTbkqrNBD1",
+            "episodes": 2
+          },
+          "Sea-stainably Minded": {
+            "show_uri": "spotify:show:2kQ74EsYhJYDjSyQbdKdSH",
+            "episodes": 2
+          },
+          "Secret Menu Project": {
+            "show_uri": "spotify:show:1izo2iQ7B3YpSAMoJ5WGLn",
+            "episodes": 1
+          },
+          "Journal of Applied Physiology": {
+            "show_uri": "spotify:show:7imWJhNe5FlZYOQNC32TLt",
+            "episodes": 1
+          },
+          "MyThreeCats.com Podcast Series": {
+            "show_uri": "spotify:show:1CFArLi6NQzjQes4QYNP2W",
+            "episodes": 1
+          },
+          "The Blood Evidence": {
+            "show_uri": "spotify:show:4ymYkiDhznGzvJjYGrcchO",
+            "episodes": 1
+          },
+          "Lefteris asks science": {
+            "show_uri": "spotify:show:24XX8ks843csbDyNQobk22",
+            "episodes": 1
+          },
+          "Behind the Microscope": {
+            "show_uri": "spotify:show:6EkAV2xex1otADSS3IvVBi",
+            "episodes": 2
+          },
+          "Alicia\u2019s Key to a simple life": {
+            "show_uri": "spotify:show:3NtAZCgubNvTcTgF74v2Wt",
+            "episodes": 2
+          },
+          "The Amazing Case": {
+            "show_uri": "spotify:show:5dgObwf2Fkt2B3OBFASvPx",
+            "episodes": 1
+          },
+          "~ASMR~": {
+            "show_uri": "spotify:show:026r15Asxc2vQ3Is91otVy",
+            "episodes": 1
+          },
+          "Shark-Cast": {
+            "show_uri": "spotify:show:5Oz814VBDCklfq6yNo2Fop",
+            "episodes": 1
+          },
+          "It's A Brain Thing": {
+            "show_uri": "spotify:show:28r3cKdOurjFZECEslXgC2",
+            "episodes": 1
+          },
+          "The Hidden Tigers of Southeast Asia": {
+            "show_uri": "spotify:show:5WRz5mhb28khsalbGvG2NA",
+            "episodes": 1
+          },
+          "TRiPPiE Education": {
+            "show_uri": "spotify:show:10UYzOuvGtVkWRrmsVJXV1",
+            "episodes": 5
+          },
+          "How To STL": {
+            "show_uri": "spotify:show:6HIFP0clh0RXrM7O1doUc2",
+            "episodes": 1
+          },
+          "PermaJam Regenerative Culture Podcast": {
+            "show_uri": "spotify:show:4D4S1vkVnoUvIBLlqVFdVS",
+            "episodes": 1
+          },
+          "Understanding Pychopaths": {
+            "show_uri": "spotify:show:1vBaeduMIVkgSH07FfRIt3",
+            "episodes": 1
+          },
+          "Knowledge You Never Knew You Needed": {
+            "show_uri": "spotify:show:1X8am6h5OWpt0Z5bQVyPoP",
+            "episodes": 1
+          },
+          "Science With Shweta": {
+            "show_uri": "spotify:show:28DAnHzOfbUoRkpj5OMqVI",
+            "episodes": 1
+          },
+          "Immersive Chemistry Podcast": {
+            "show_uri": "spotify:show:5W9ekXvFJfqfjBbe7vsm53",
+            "episodes": 1
+          },
+          " True Paranormal Experiences \ud83d\udc7b": {
+            "show_uri": "spotify:show:7AIwLXV5bXXk4EKKKC1ccm",
+            "episodes": 1
+          },
+          "CBD Deep Dive": {
+            "show_uri": "spotify:show:3S4neGTN11G0CbnJzvzK5s",
+            "episodes": 1
+          },
+          "Scientists are People Too ": {
+            "show_uri": "spotify:show:66hZJEvBByYo9vvMuegcod",
+            "episodes": 1
+          },
+          "Catch The Fever Fishing Podcast": {
+            "show_uri": "spotify:show:0OGTEpUgesXgm3r9HApSS2",
+            "episodes": 5
+          },
+          "Avatar Awakening": {
+            "show_uri": "spotify:show:6LWiY1bMNBKwuQ73aoWLpQ",
+            "episodes": 1
+          },
+          "What The Hetrick!?": {
+            "show_uri": "spotify:show:0ijZ47eHyilDd7r8YkqbB6",
+            "episodes": 2
+          },
+          "Sasquatch The Legend The Podcast": {
+            "show_uri": "spotify:show:3JxFh4jLEoyClbSss9tZ0d",
+            "episodes": 1
+          },
+          "Most Beautiful Flowers of the world ": {
+            "show_uri": "spotify:show:016ajgeQXdEb0MiGLPgo6F",
+            "episodes": 2
+          },
+          "Apologize": {
+            "show_uri": "spotify:show:1rkvnxnkjjBLWpMPuxtp2Y",
+            "episodes": 1
+          },
+          "The Habit Podcast": {
+            "show_uri": "spotify:show:2fJvUtjkBQ2QiR09UkJ3Ow",
+            "episodes": 1
+          },
+          "NinjAnatomy": {
+            "show_uri": "spotify:show:3LXIzhzK5nTu6Pz1Cul7hu",
+            "episodes": 1
+          },
+          "Wild Thing": {
+            "show_uri": "spotify:show:1VPwCbhiPfJbzm1fVpPBCg",
+            "episodes": 2
+          },
+          "Sporlan HVACR Podcast": {
+            "show_uri": "spotify:show:14SDi8JoZKlSo5C46CWKYM",
+            "episodes": 1
+          },
+          "The Plastic Purge": {
+            "show_uri": "spotify:show:7lH4ab0s0jO8kToUkJJZaF",
+            "episodes": 1
+          },
+          "Ego": {
+            "show_uri": "spotify:show:5NuQfKTnELLGUlPgbt2tmR",
+            "episodes": 1
+          },
+          "This is Rocket Science": {
+            "show_uri": "spotify:show:1nhfebFtoh0dMptCTBRifo",
+            "episodes": 3
+          },
+          "The Moral Science Podcast": {
+            "show_uri": "spotify:show:0GaXHC2UcuErWfKlMl3dcf",
+            "episodes": 1
+          },
+          "Germs and Worms": {
+            "show_uri": "spotify:show:42pDXkLaJQdzsAxONmRWBR",
+            "episodes": 1
+          },
+          "Biology with Hash": {
+            "show_uri": "spotify:show:1SHOuXdcSD5JBOfnRzJS4h",
+            "episodes": 1
+          },
+          "Improbable Research": {
+            "show_uri": "spotify:show:15GNjJfxY1oqUHMUJtzUvy",
+            "episodes": 1
+          },
+          "Rheumatoid Arthritis Disease": {
+            "show_uri": "spotify:show:4wyYE9K7ELrFG6ilfBmfkD",
+            "episodes": 1
+          },
+          "Astrology Signs": {
+            "show_uri": "spotify:show:6nEz3FMtM5ct17ov5SWNwZ",
+            "episodes": 1
+          },
+          "Geology Podcast": {
+            "show_uri": "spotify:show:5lr2vxWeNDi8zVKNMv0Xoy",
+            "episodes": 1
+          },
+          "An Acquired Taste": {
+            "show_uri": "spotify:show:0pylokR5uiCdcoM8SNxBbb",
+            "episodes": 1
+          },
+          "The ADIME Podcast": {
+            "show_uri": "spotify:show:6Od6YsKziC2qJX58XPJ3gK",
+            "episodes": 1
+          },
+          "MDMA-Assisted Psychotherapy ": {
+            "show_uri": "spotify:show:2PASgxTRkBTirJpXD4LVem",
+            "episodes": 1
+          },
+          "Turn On The Light": {
+            "show_uri": "spotify:show:02YaCIkXJfW02NYeDLynLh",
+            "episodes": 1
+          },
+          "Could We Ever...": {
+            "show_uri": "spotify:show:4lRu9gOpUpNCC0U8Z9lxwx",
+            "episodes": 1
+          },
+          "What It Do, What It Is!": {
+            "show_uri": "spotify:show:4LYIGl672Vw0jTHlHfJQjw",
+            "episodes": 1
+          },
+          "Sunflowers": {
+            "show_uri": "spotify:show:2k5GFDMNLQ8mHTHSa3FtE0",
+            "episodes": 1
+          },
+          "Bigger Than Us": {
+            "show_uri": "spotify:show:67nkmjyMAJwvJT77cZvxjI",
+            "episodes": 1
+          },
+          "Mitosis and Meiosis ": {
+            "show_uri": "spotify:show:1wPzJKBfCHv5p61WEOAhCu",
+            "episodes": 1
+          },
+          "The Display of the Future Might Be in Your Contact Lens": {
+            "show_uri": "spotify:show:3wUYUDfjp5Omv7yZIgHeHK",
+            "episodes": 1
+          },
+          "Global Warming: THE TRUTH": {
+            "show_uri": "spotify:show:0MP5lCdoTVETWyOIv1s4UG",
+            "episodes": 1
+          },
+          "The Innovative OT": {
+            "show_uri": "spotify:show:5bWc8lgcOyMZa3GgbrPn1o",
+            "episodes": 1
+          },
+          "Carpool Chemistry": {
+            "show_uri": "spotify:show:77XdGpeqbDUOlbAOe7FYhX",
+            "episodes": 1
+          },
+          "Podasaurus: The Prehistoric Podcast": {
+            "show_uri": "spotify:show:6t3uEtcJxNneCvgC7dkraw",
+            "episodes": 1
+          },
+          "Hoodoo Mama APOTHECARY ": {
+            "show_uri": "spotify:show:1rxfeu67pi2jMKn6nAmFhf",
+            "episodes": 1
+          },
+          "Between Two Pines": {
+            "show_uri": "spotify:show:2t9Kk4FHmiEkjNPJctidN6",
+            "episodes": 1
+          },
+          "10 Awesome New Inventions in USA that You'll Never Hear About .": {
+            "show_uri": "spotify:show:1f0Kj9MZnk8zet8xtsyNDR",
+            "episodes": 1
+          }
+        }
+      }
+    }
+  },
+  "relevant_shows": {
+    "total": 397,
+    "shows": [
+      " True Paranormal Experiences \ud83d\udc7b",
+      "#dobetter Pod",
+      "10 Awesome New Inventions in USA that You'll Never Hear About .",
+      "21 Days with mxmtoon",
+      "5AM somewhere",
+      "A Tap On The Wrist",
+      "A-Pod Cast For Killer Whales",
+      "ABA Ultimate Showdown!",
+      "APPT SNP Podcast",
+      "APUSH Deep Dives",
+      "AQA GCSE Chemistry Revision ",
+      "Ad Vincere Mundi",
+      "Adolf Hitler Talk Show",
+      "Alicia\u2019s Key to a simple life",
+      "Alpha Male Strategies",
+      "American Girls",
+      "American most terrific history ever.",
+      "An Acquired Taste",
+      "An Astrophysicist In A Car Getting Coffee",
+      "Anarchopac",
+      "Ancient Gods and Demons",
+      "Angkor Wat?",
+      "Antarcticast",
+      "Anthropological Theory: A podcast created by anthropology students",
+      "Apologize",
+      "Assassinations",
+      "Astrology Signs",
+      "Audiophiles",
+      "Authentic Biochemistry",
+      "Avatar Awakening",
+      "Ava\u2019s take on history",
+      "Beautiful Humans: The Social ChangeCast",
+      "Behavior Bitches",
+      "Behind the Microscope",
+      "Beneath The Staircase ",
+      "Benny pod",
+      "Between Two Pines",
+      "Beyond Reality Paranormal Podcast",
+      "Bigger Than Us",
+      "Biology for Bastards",
+      "Biology with Hash",
+      "Black Cloud Society",
+      "Black Equity Podcast",
+      "Black History Buff Podcast",
+      "Black and White Judies",
+      "Bloodborne's Existential Journey",
+      "Bloody Beaver",
+      "Blueberry",
+      "Bonds bond ",
+      "Boosier Podcast ",
+      "Born Free Podcast",
+      "BrainSTEM Podcast",
+      "Brainscape",
+      "Brass Tacks History",
+      "Breaking Math Podcast",
+      "Burks at Loyola - The Podcast",
+      "CBD Deep Dive",
+      "Carbon Neutral Lent Podcast",
+      "Carpool Chemistry",
+      "Catch The Fever Fishing Podcast",
+      "Channeling in with Chanelle ",
+      "Class Dismissed",
+      "Climate Scientists",
+      "Clintwood Back In The Day",
+      "Cody Creelman, Cow Vet",
+      "Coffee Tea and AI",
+      "Con Artists ",
+      "Conspiracy Theories",
+      "Conspiracy or Just a Coincidence?",
+      "Conviction",
+      "Could We Ever...",
+      "Countries That Don't Exist Anymore",
+      "Crazy Sockz EMTz",
+      "Crimes of Passion",
+      "Criminal Behaviorology",
+      "Criminal Prints",
+      "Cults",
+      "Cultured Meat and Future Food Podcast",
+      "Curious Connecticut",
+      "Cycling Matters Podcast",
+      "D.I.N.K.S",
+      "DML",
+      "Dancing in the Moment",
+      "Dark Geometry",
+      "Deep Astronomy",
+      "Depressing Physics",
+      "Dictators ",
+      "Dissecting History",
+      "Dog Tales ",
+      "Dope Labs",
+      "Dose Makes The Poison: The Toxcast",
+      "Double Helix History ",
+      "Dr Jekyll and Mr Hyde ",
+      "Dr. Chapa\u2019s ObGyn Pearls. ",
+      "DreadTalk",
+      "Drifting On Memories",
+      "Drunk History- World Religions",
+      "EMT A to Z ",
+      "Economics In Ten",
+      "Ego",
+      "Electronix Addicts: Engineering Podcast",
+      "Emotional Anatomy - Intelligent Design",
+      "Entheogen-DMT The Spirit Molecule ",
+      "EnviroMENTAL",
+      "Environmentalk",
+      "Espionage",
+      "Every Little Thing",
+      "Evolving with Mr. V",
+      "Existence of Life at Universe",
+      "Exploring the Horizon",
+      "Extraterrestrial",
+      "Extremes Season 2",
+      "FBI History ",
+      "Famous Fates",
+      "Farbeyond ",
+      "Female Criminals",
+      "Fey-Sci and Friends",
+      "Fictorical",
+      "First Time Listeners",
+      "Folk Talk ",
+      "For Whom the Cell Tolls: Biology, Cancer, and Other Stories About Life",
+      "Forensic Psychology",
+      "From the Earth to the Moon: A Retrospective Podcast on The Apollo Program",
+      "GONE",
+      "GRADitude: The Grad School Guide for Student Physical Therapists",
+      "Geology Podcast",
+      "Germs and Worms",
+      "Getting Mouthy ",
+      "Global Warming: THE TRUTH",
+      "Good Enough Guess",
+      "Great American Speeches",
+      "Great Women of Business",
+      "Gypsy Rose Blanchard Case",
+      "HIDDEN: The Voices Of Young Carers",
+      "HOW TWO MEDIEVAL",
+      "Half Baked History",
+      "Haunted Places",
+      "Here Comes the Sun",
+      "Hey Hun",
+      "Historia Obscura",
+      "Historical Figures",
+      "Historical Hookups",
+      "History Blogs",
+      "History Does You",
+      "History Under Your Feet",
+      "History for Kids",
+      "History with Mrs. Krause",
+      "Home Health Occupational Therapy Explorer ",
+      "Hoodoo Mama APOTHECARY ",
+      "Hostage",
+      "How To STL",
+      "How the Hong Kong Protests Relate to the Middle Ages",
+      "Immersive Chemistry Podcast",
+      "Improbable Research",
+      "Indirect Message",
+      "Inevitable Change\u2728",
+      "InfoCast 5000",
+      "It's A Brain Thing",
+      "JASS/Women Fight for Rights",
+      "Journal of Applied Physiology",
+      "Just the Zoo of Us",
+      "Keeping Up with Public Health",
+      "Kerabigx",
+      "Khan Conquers Again",
+      "Kingpins",
+      "Kitten it w Gus",
+      "Knowledge You Never Knew You Needed",
+      "LARIOS",
+      "Launch Escape: Space Podcast",
+      "Laurens Lore",
+      "Leaving Cert Biology Revision ",
+      "Lectures with Mr. Judy",
+      "Lefteris asks science",
+      "Legendary Lasses",
+      "Let's Clear The Air: THE Zodiac Podcast",
+      "Let's think Earth: Season 11; Season of Ava",
+      "Let\u2019s save the world together ",
+      "Linguistics After Dark",
+      "Long Lost: An Investigative History Series",
+      "Lore & Legend : Tales From Our Mythic Past",
+      "Love Will Tear Us Apart",
+      "MDMA-Assisted Psychotherapy ",
+      "MOV History and Haunts",
+      "Manifestor's Gift",
+      "Mardi Gras Beyond The Beads",
+      "Maybe the Best of Things: A Podcast with Tanner Mangum",
+      "Medical Mysteries ",
+      "Medical Terminology Standardization ",
+      "Medicine ReMixed",
+      "Meditate Awake",
+      "Men who escaped Aushwitz ",
+      "Mind The Gap Podcast",
+      "Mitosis and Meiosis ",
+      "Modern Electrician",
+      "Mogul",
+      "Most Beautiful Flowers of the world ",
+      "Muzzle Blasts",
+      "My Year in Mensa",
+      "MyThreeCats.com Podcast Series",
+      "Mythology",
+      "Myths, History, and DnD",
+      "NIOD Rewind Podcast on War & Violence",
+      "Native Hawaiian",
+      "Natural Disasters ",
+      "Nazi Coffee Room",
+      "Nevertheless She Existed",
+      "New Orleans History",
+      "NinjAnatomy",
+      "No Refills",
+      "Northman's Tales",
+      "Not Guilty",
+      "Nursology",
+      "Oldest Stories",
+      "Open Your Mind: Psychology ",
+      "Otomentor",
+      "Our Journey to Medicine",
+      "Our Science",
+      "Paramedicine.com",
+      "Parcast Daily",
+      "Parcast Presents: March Mysteries",
+      "Pee-Wee History",
+      "PermaJam Regenerative Culture Podcast",
+      "PodMD",
+      "Podasaurus: The Prehistoric Podcast",
+      "Podcast Boraxs",
+      "Podcast Number 54",
+      "Political Scandals ",
+      "Premed Memory Training",
+      "Project Botany",
+      "Queen V: The Life of Queen Victoria",
+      "RadCast",
+      "Rambling About Rivers",
+      "Rare Disease, Cell & Gene Therapy Weekly RoundUp",
+      "Real Science Real Life",
+      "Real Time With Jayson",
+      "Reformations",
+      "Refreshments and Narcotics \u2122\ufe0f Podcast",
+      "Revving Up History",
+      "Rheumatoid Arthritis Disease",
+      "RockTape Podcast",
+      "SCP Codex",
+      "SCP-049 PODCAST",
+      "SDM's Wild World",
+      "Samanthaaa",
+      "Samoan Scientist Podcast",
+      "Sasquatch The Legend The Podcast",
+      "Science Denial",
+      "Science Dose ",
+      "Science Quantum Physics Through Ayurveda Flow & Expansion.",
+      "Science Vs",
+      "Science With Shweta",
+      "Scientists are People Too ",
+      "Sea-stainably Minded",
+      "Secret Menu Project",
+      "Secret Societies ",
+      "Serial Killers",
+      "Shark-Cast",
+      "She Opts Out ",
+      "Shots of Science Vs",
+      "Simon Bolivar",
+      "Sisterly History Mysteries",
+      "Sleepin' Beauties",
+      "SocioTap",
+      "Soil Sense",
+      "Songs 4 FRCR: Radiology FRCR 2A Revision",
+      "Sporlan HVACR Podcast",
+      "Sports Criminals ",
+      "Sprouting in STEM",
+      "Statistics for the Social Sciences",
+      "Summerhill HistoryGuy",
+      "Sunflowers",
+      "Supercluster",
+      "Survival",
+      "THE ARTISTS ( indie filmmakers podcast)",
+      "THE FRCR TWO B PODCAST ",
+      "THE MARATHA EMPIRE",
+      "THE1LVZ UNLEASHED",
+      "TRiPPiE Education",
+      "Tabi-Tabi Podcast",
+      "Talk It Thru Podcasts",
+      "Talking shit and making coffee",
+      "Tank Nuts",
+      "Teh Tarik Podcast",
+      "That's Weird",
+      "That's all Ancient History now!",
+      "The ADIME Podcast",
+      "The AM Perspective",
+      "The Amazing Case",
+      "The Arab-Israeli Conflict: Explained",
+      "The Astroholic Explains",
+      "The Battle of Gettysburg Podcast",
+      "The Behavior Trap",
+      "The Best History Blogs",
+      "The Big Fat Indian Ghotala",
+      "The Blood Evidence",
+      "The Boys",
+      "The Broken History Podcast ",
+      "The Caffeinated Backpacker",
+      "The Chernobyl Catastrophe Podcast",
+      "The Controversial Exchange",
+      "The Crescive Method",
+      "The Cyclo Edition",
+      "The Dark Side Of",
+      "The Death Dialogues Project Podcast",
+      "The Display of the Future Might Be in Your Contact Lens",
+      "The Dissenter",
+      "The Entheogenic Midwife",
+      "The Fantastic History Of Food",
+      "The Farthest Reaches",
+      "The Genealogical Gentleman",
+      "The Glenn Williams Show",
+      "The Habit Podcast",
+      "The Habitat",
+      "The Harassment of Hitler ",
+      "The Haunted Halls of West Virginia University",
+      "The Hidden Tigers of Southeast Asia",
+      "The History Bros",
+      "The History Podcast hosted by Jason Thomason",
+      "The Human History Podcast: The Ancients",
+      "The Indian Storyteller",
+      "The Innovative OT",
+      "The Jarsh Show",
+      "The La Crosse Thinkers Podcast",
+      "The Lawmlette Podcast",
+      "The Medical School Podcast",
+      "The Modern Medic",
+      "The Mom and the Millennial",
+      "The Moral Science Podcast",
+      "The Multidimensional Journey",
+      "The NASS Podcast",
+      "The Nawicast",
+      "The Nebraska History Podcast With Luke Dorris",
+      "The Nigerian History Podcast",
+      "The Orthobullets Podcast",
+      "The Paleo Podcast ",
+      "The Past Crusade",
+      "The Periodic Bagel",
+      "The Physio Matters Podcast",
+      "The Pitts : Stories from the Depths",
+      "The Plastic Purge",
+      "The Poddy Mullet",
+      "The Raindrop",
+      "The Real World with Darrell Terrell ",
+      "The Social X Change Project",
+      "The Untold History of the United States.",
+      "The Weathermen",
+      "The Weirdest Thing I Learned This Week",
+      "The Wholistic Medicine Woman Podcast",
+      "The roaring 1920s radio show",
+      "Thick & Thin",
+      "This is Rocket Science",
+      "Three History Nymphs",
+      "Tiny House Podcast",
+      "Today in True Crime ",
+      "Today's RDH Dental Hygiene Podcast",
+      "Toki Ukamea: The story of William Mariner",
+      "Top 10 American Inventions on science That Changed the World .",
+      "Turn On The Light",
+      "Twice Removed",
+      "Two Bees in a Podcast ",
+      "UNCLE JULZ",
+      "USA true stranger history.",
+      "Uncivil",
+      "Under The Tooth ",
+      "Understanding Pychopaths",
+      "Undone",
+      "Unexplained Mysteries",
+      "Unsolved Murders: True Crime Stories",
+      "Vietnam War History",
+      "Villains ",
+      "Vulgar History",
+      "WW2 Memories",
+      "We're Not Zombies",
+      "Weimar Germany 1919 to 1923",
+      "Weird Historian",
+      "Western Isles Weather ",
+      "What It Do, What It Is!",
+      "What On Earth: The Sustainable Podcast",
+      "What The Hetrick!?",
+      "When We Were Young ",
+      "Where Was This In History Class?",
+      "White Rice For Black People",
+      "Who was Alexander the great?",
+      "Wicked History",
+      "Wild Animals",
+      "Wild Thing",
+      "Women of the Military",
+      "Work The Dirt",
+      "World Geography",
+      "World of Warriors",
+      "Ye Olde Tea",
+      "iCRAGorama",
+      "ispeak4thetrees",
+      "panic attacks",
+      "realmelo",
+      "vietnam war ",
+      "~ASMR~"
+    ]
+  },
+  "relevant_episodes": 4666
+}
