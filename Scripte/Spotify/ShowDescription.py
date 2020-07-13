@@ -8,9 +8,9 @@ class ShowDescription:
     """
 
     def __init__(self):
-        self.metadata = "../../data/Spotify/podcast_metadata.json"
+        self.metadata = "../../data/Spotify/metadata_alternative_genres.json"
         self.link_data = "../../data/Spotify/rss_links.json"
-        self.outfile = "../../data/Spotify/show_descriptions.json"
+        self.outfile = "../../data/Spotify/alternative_show_descriptions.json"
         self.news_shows = {}
         self.read_data()
 
