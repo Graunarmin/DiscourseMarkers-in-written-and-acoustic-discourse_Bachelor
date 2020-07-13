@@ -14,8 +14,8 @@ class ShowContent:
         return shows
 
     def collect_texts(self):
-        # TODO: go through the directories and match the show_uris with the filenames
-        #   if there is a match: read that json as data and get the text
+        # TODO: go through the directories and match the show_uris with the foldernames ("show_xxx")
+        #   if there is a match: read that/the json(s) in that folder as data and get the text
         #   from data["alternatives"]["transcripts"]
         pass
 
