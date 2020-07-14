@@ -35,6 +35,7 @@ class ShowContent:
         for root, dirs, files in os.walk(self.transcripts_folder):
             for name in dirs:
                 if name in self.shownames:
+                    print(name)
                     new_root = os.path.join(root, name)
                     for n_root, n_dirs, n_files in os.walk(new_root):
                         for file_name in n_files:
