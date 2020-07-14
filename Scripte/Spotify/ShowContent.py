@@ -59,7 +59,7 @@ class ShowContent:
                         if key == "transcript":
                             text += " " + obj[key]
                             # print(text)
-        self.write_episode(text, episode, show)
+        self.write_episode(text.encode('utf-8'), episode, show)
 
     def write_episode(self, text, episode, show):
         # TODO: write the collected contents to a good output format (.txt)
@@ -71,7 +71,7 @@ class ShowContent:
 
         filepath = path + "/" + episode.replace(".json", ".txt")
         with open(filepath, 'w') as outfile:
-            outfile.write(text, encoding='utf-8')
+            outfile.write(text)
 
 
 # ------------ MAIN -------------
