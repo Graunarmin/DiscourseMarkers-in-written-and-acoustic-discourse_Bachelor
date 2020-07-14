@@ -22,7 +22,7 @@ class ShowContent:
         with open(self.data_file, 'r', encoding='utf_8') as file:
             data_reader = csv.reader(file, delimiter=";")
             for row in data_reader:
-                shows[row[1].replace(":", "_")] = {row[0]: row[3]}
+                shows[row[1].replace(":", "_").replace("spotify_", "")] = {row[0]: row[3]}
         return shows
 
     def find_texts(self):
