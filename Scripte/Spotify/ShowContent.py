@@ -70,7 +70,7 @@ class ShowContent:
             os.makedirs(path)
 
         filepath = path + "/" + episode.replace(".json", ".txt")
-        with open(filepath, 'w') as outfile:
+        with open(filepath, 'wb') as outfile:
             outfile.write(text.encode('utf-8'))
 
 
