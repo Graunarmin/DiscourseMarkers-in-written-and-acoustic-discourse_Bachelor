@@ -35,7 +35,7 @@ class ShowContent:
         for root, dirs, files in os.walk(self.transcripts_folder):
             for name in dirs:
                 if name in self.shownames:
-                    print(name)
+                    # print(name)
                     new_root = os.path.join(root, name)
                     for n_root, n_dirs, n_files in os.walk(new_root):
                         for file_name in n_files:
@@ -44,7 +44,7 @@ class ShowContent:
                                 path = datafile.split("/")
                                 show = path[len(path)-2]
                                 episode = path[len(path)-1]
-                                print(datafile)
+                                # print(datafile)
                                 with open(datafile, 'r') as file:
                                     data = json.load(file)
                                     self.collect_texts(data, episode, show)
@@ -71,7 +71,7 @@ class ShowContent:
 
         filepath = path + "/" + episode.replace(".json", ".txt")
         with open(filepath, 'w') as outfile:
-            outfile.write(text)
+            outfile.write(text, encoding='utf-8')
 
 
 # ------------ MAIN -------------
