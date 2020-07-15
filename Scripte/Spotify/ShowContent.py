@@ -6,23 +6,24 @@ import csv
 
 class ShowContent:
 
-    def __init__(self, transcripts, results):
+    def __init__(self, shows, transcripts, results):
 
-        self.data_file = "../../data/Spotify/alternative_shows.csv"
+        self.data_file = shows
         self.transcripts_folder = transcripts
         self.result_folder = results
-        self.shownames = self.read_shownames()
+        self.show_uris = self.read_shownames()
 
     def read_shownames(self):
         """
         read in sha_fow names and respective uris from csv
+        shows = {"show_uri": ["show_name","show_category"], ...}
         """
 
         shows = {}
         with open(self.data_file, 'r', encoding='utf_8') as file:
             data_reader = csv.reader(file, delimiter=";")
             for row in data_reader:
-                shows[row[1].replace(":", "_").replace("spotify_", "")] = {row[0]: row[3]}
+                shows[row[1].replace(":", "_").replace("spotify_", "")] = [row[0], row[4]]
         return shows
 
     def find_texts(self):
@@ -34,7 +35,7 @@ class ShowContent:
 
         for root, dirs, files in os.walk(self.transcripts_folder):
             for name in dirs:
-                if name in self.shownames:
+                if name in self.show_uris:
                     # print(name)
                     new_root = os.path.join(root, name)
                     for n_root, n_dirs, n_files in os.walk(new_root):
@@ -50,7 +51,15 @@ class ShowContent:
                                     self.collect_texts(data, episode, show)
 
     def collect_texts(self, data, episode, show):
-        # TODO: get the text from data["alternatives"]["transcript"]
+        """
+        get the text from data["results"]
+        Format:
+        {"results":[{"alternatives":[{"transcript":"...",...},{...},...]},
+                    {"alternatives":[{"transcript":"...",...},{...},...]},
+                    ...
+                    ]
+        }
+        """
         text = ""
         for item in data["results"]:
             for alternatives in item:
@@ -62,8 +71,10 @@ class ShowContent:
         self.write_episode(text, episode, show)
 
     def write_episode(self, text, episode, show):
-        # TODO: write the collected contents to a good output format (.txt)
-        #   all in one? One file per show? Other?
+        """
+        write the collected contents to output (.txt)
+        """
+        # TODO: which format all in one? One file per show? Per Episode?
 
         path = self.result_folder + "/" + show
         if not os.path.isdir(path):
@@ -77,8 +88,9 @@ class ShowContent:
 # ------------ MAIN -------------
 def main():
     """
-    Argument 1: Root folder that contains all the transcripts subdirs and files
-    Argument 2: Folder where the results should be written
+    Argument 1: csv file that contains the relevant show names und URIs
+    Argument 2: Root folder that contains all the transcripts subdirs and files
+    Argument 3: Folder where the results should be written
     """
     content = ShowContent(sys.argv[1], sys.argv[2])
     content.find_texts()
