@@ -92,7 +92,7 @@ def main():
     Argument 2: Root folder that contains all the transcripts subdirs and files
     Argument 3: Folder where the results should be written
     """
-    content = ShowContent(sys.argv[1], sys.argv[2])
+    content = ShowContent(sys.argv[1], sys.argv[2], sys.argv[3])
     content.find_texts()
 
 
