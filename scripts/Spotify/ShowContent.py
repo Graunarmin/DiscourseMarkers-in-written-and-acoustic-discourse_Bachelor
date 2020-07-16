@@ -15,7 +15,7 @@ class ShowContent:
 
     def read_shownames(self):
         """
-        read in sha_fow names and respective uris from csv
+        read in show_names and respective uris from csv
         shows = {"show_uri": ["show_name","show_category"], ...}
         """
 
