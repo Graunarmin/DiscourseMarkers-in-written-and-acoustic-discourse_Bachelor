@@ -3,7 +3,13 @@ import sys
 import os
 import csv
 
+"""
+Script to retrieve the transcripts of relevant shows from the json files
+and write them to txt files
+"""
 
+
+# ------------ CLASS -------------
 class ShowContent:
 
     def __init__(self, shows, transcripts, results):
@@ -43,8 +49,8 @@ class ShowContent:
                             if ".json" in file_name:
                                 datafile = os.path.join(n_root, file_name)
                                 path = datafile.split("/")
-                                show = path[len(path)-2]
-                                episode = path[len(path)-1]
+                                show = path[len(path) - 2]
+                                episode = path[len(path) - 1]
                                 # print(datafile)
                                 with open(datafile, 'r') as file:
                                     data = json.load(file)
@@ -74,7 +80,6 @@ class ShowContent:
         """
         write the collected contents to output (.txt)
         """
-        # TODO: which format all in one? One file per show? Per Episode?
 
         path = self.result_folder + "/" + show
         if not os.path.isdir(path):

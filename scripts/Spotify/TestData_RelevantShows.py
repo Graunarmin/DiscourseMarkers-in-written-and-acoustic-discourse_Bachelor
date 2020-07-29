@@ -21,7 +21,7 @@ class TestDataRelevantShows:
             data_reader = csv.reader(datafile, delimiter=";")
             for row in data_reader:
                 shows.append(row[1])
-        print(len(shows))
+        # print(len(shows))
         # print(shows)
         return shows
 
