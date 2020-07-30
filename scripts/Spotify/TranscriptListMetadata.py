@@ -64,7 +64,7 @@ class TranscriptListMetadata:
 
     def write_data(self):
         totals = self.count_totals()
-        with open(self.outile, 'wb') as out_file:
+        with open(self.outile, 'w') as out_file:
             json.dump({"shows_total": totals[0],
                        "episodes_total": totals[1],
                        "show_list": self.show_uris},
