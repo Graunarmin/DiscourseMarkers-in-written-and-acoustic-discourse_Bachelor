@@ -57,9 +57,8 @@ class TranscriptListMetadata:
         episodes_total = 0
         for show in self.show_uris:
             shows_total += 1
-            self.show_uris[show]["total_episodes"] = len(self.show[show]["episode_list"])
+            self.show_uris[show]["total_episodes"] = len(self.show_uris[show]["episode_list"])
             episodes_total += self.show_uris[show]["total_episodes"]
-
 
         return [shows_total, episodes_total]
 
