@@ -62,7 +62,7 @@ class TranscriptListMetadata:
                             shows_found[name] = {"name": self.show_uris[name]["name"],
                                                  "genre": self.show_uris[name]["genre"],
                                                  "category": self.show_uris[name]["category"],
-                                                 "total_epiosodes": 0,
+                                                 "total_episodes": 0,
                                                  "episode_list": []}
                             shows_found[name]["episode_list"].append(file_name.replace(".txt", ""))
 
