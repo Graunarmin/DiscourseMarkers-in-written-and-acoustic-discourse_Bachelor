@@ -45,7 +45,7 @@ class TranscriptListMetadata:
                     for file_name in n_files:
                         if ".txt" in file_name:
                             self.show_uris[name]["episode_list"].append(file_name.replace(".txt", ""))
-                self.show_uris[name]["total_episoides"] = len(self.show_uris[name]["episode_list"])
+                    self.show_uris[name]["total_episoides"] = len(self.show_uris[name]["episode_list"])
 
         self.write_data()
 
