@@ -40,11 +40,14 @@ class TranscriptListMetadata:
 
         for root, dirs, files in os.walk(self.transcripts_folder):
             for name in dirs:
-                new_root = os.path.join(root, name)
-                for n_root, n_dirs, n_files in os.walk(new_root):
-                    for file_name in n_files:
-                        if ".txt" in file_name:
-                            self.show_uris[name]["episode_list"].append(file_name.replace(".txt", ""))
+                if name in self.show_uris:
+                    new_root = os.path.join(root, name)
+                    for n_root, n_dirs, n_files in os.walk(new_root):
+                        for file_name in n_files:
+                            if ".txt" in file_name:
+                                self.show_uris[name]["episode_list"].append(file_name.replace(".txt", ""))
+                else:
+                    del self.show_uris[name]
 
         self.write_data()
 
