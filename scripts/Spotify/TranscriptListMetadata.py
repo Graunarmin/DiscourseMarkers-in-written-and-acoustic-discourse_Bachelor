@@ -11,7 +11,7 @@ class TranscriptListMetadata:
         self.datafile = shownames
         self.transcripts_folder = transcripts
         self.outile = out
-        self.show_uris = self.read_shownames()
+        # self.show_uris = self.read_shownames()
 
     def read_shownames(self):
         """
@@ -37,6 +37,7 @@ class TranscriptListMetadata:
         read in shows to determine which show and how many episodes are in each of the two datasets
         (original podcast data and testset)
         """
+        shows_found = {}
 
         for root, dirs, files in os.walk(self.transcripts_folder):
             for name in dirs:
@@ -44,34 +45,32 @@ class TranscriptListMetadata:
                 for n_root, n_dirs, n_files in os.walk(new_root):
                     for file_name in n_files:
                         if ".txt" in file_name:
-                            self.show_uris[name]["episode_list"].append(file_name.replace(".txt", ""))
+                            shows_found[name] = {}
+                            shows_found[name]["episode_list"].append(file_name.replace(".txt", ""))
 
-        self.write_data()
+        self.write_data(shows_found)
 
     @property
-    def count_totals(self):
+    def count_totals(self, data):
         """
         Count how many relevant shows this dataset contains
         and how many episodes in total
         """
         shows_total = 0
         episodes_total = 0
-        for show in self.show_uris:
-            if not self.show_uris[show]["episode_list"]:
-                del self.show_uris[show]
-            else:
-                shows_total += 1
-                self.show_uris[show]["total_episodes"] = len(self.show_uris[show]["episode_list"])
-                episodes_total += self.show_uris[show]["total_episodes"]
+        for show in data:
+            shows_total += 1
+            data[show]["total_episodes"] = len(data[show]["episode_list"])
+            episodes_total += data[show]["total_episodes"]
 
         return [shows_total, episodes_total]
 
-    def write_data(self):
-        totals = self.count_totals
+    def write_data(self, data):
+        totals = self.count_totals(data)
         with open(self.outile, 'w') as out_file:
             json.dump({"shows_total": totals[0],
                        "episodes_total": totals[1],
-                       "show_list": self.show_uris},
+                       "show_list": data},
                       out_file,
                       indent=2)
 
