@@ -4,6 +4,22 @@ import os
 import json
 
 
+# ---------- STATIC FUNCTIONS ---------
+def count_totals(data):
+    """
+    Count how many relevant shows this dataset contains
+    and how many episodes in total
+    """
+    shows_total = 0
+    episodes_total = 0
+    for show in data:
+        shows_total += 1
+        data[show]["total_episodes"] = len(data[show]["episode_list"])
+        episodes_total += data[show]["total_episodes"]
+
+    return [shows_total, episodes_total]
+
+
 # ----------- CLASS ------------
 class TranscriptListMetadata:
 
@@ -52,23 +68,8 @@ class TranscriptListMetadata:
 
         self.write_data(shows_found)
 
-    @property
-    def count_totals(self, data):
-        """
-        Count how many relevant shows this dataset contains
-        and how many episodes in total
-        """
-        shows_total = 0
-        episodes_total = 0
-        for show in data:
-            shows_total += 1
-            data[show]["total_episodes"] = len(data[show]["episode_list"])
-            episodes_total += data[show]["total_episodes"]
-
-        return [shows_total, episodes_total]
-
     def write_data(self, data):
-        totals = self.count_totals(data)
+        totals = count_totals(data)
         with open(self.outile, 'w') as out_file:
             json.dump({"shows_total": totals[0],
                        "episodes_total": totals[1],

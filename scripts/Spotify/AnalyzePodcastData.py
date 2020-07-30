@@ -70,7 +70,7 @@ class Analyzer:
         write_json(self.rss_links, self.links_genre_outfile)
 
 
-# ------ STATIC FUNKTIONS -------
+# ------ STATIC FUNCTIONS -------
 def write_json(data, file):
     with open(file, 'w') as outfile:
         json.dump(data, outfile)
