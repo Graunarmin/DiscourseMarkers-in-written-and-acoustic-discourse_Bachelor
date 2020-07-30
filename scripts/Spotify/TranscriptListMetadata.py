@@ -57,7 +57,7 @@ class TranscriptListMetadata:
         shows_total = 0
         episodes_total = 0
         for show in self.show_uris:
-            if len(self.show_uris[show]["episode_list"]) == 0:
+            if not self.show_uris[show]["episode_list"]:
                 del self.show_uris[show]
             else:
                 shows_total += 1
