@@ -18,7 +18,7 @@ class TranscriptListMetadata:
         read in the relevant shows from the csv file
         """
         shows = {}
-        with open(self.datafile, 'r') as datafile:
+        with open(self.datafile, 'r', encoding='utf_8') as datafile:
             data_reader = csv.reader(datafile, delimiter=";")
             for row in data_reader:
                 shows[row[1].replace(":", "_").replace("spotify_", "")] = {
@@ -37,11 +37,9 @@ class TranscriptListMetadata:
         read in shows to determine which show and how many episodes are in each of the two datasets
         (original podcast data and testset)
         """
-        shows_found = {}
 
         for root, dirs, files in os.walk(self.transcripts_folder):
             for name in dirs:
-                shows_found[name]
                 new_root = os.path.join(root, name)
                 for n_root, n_dirs, n_files in os.walk(new_root):
                     for file_name in n_files:
@@ -64,7 +62,7 @@ class TranscriptListMetadata:
 
     def write_data(self):
         totals = self.count_totals()
-        with open(self.outile, 'w') as out_file:
+        with open(self.outile, 'wb') as out_file:
             json.dump({"shows_total": totals[0],
                        "episodes_total": totals[1],
                        "show_list": self.show_uris},
