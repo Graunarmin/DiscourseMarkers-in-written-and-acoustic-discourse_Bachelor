@@ -40,17 +40,15 @@ class TranscriptListMetadata:
 
         for root, dirs, files in os.walk(self.transcripts_folder):
             for name in dirs:
-                if name in self.show_uris:
-                    new_root = os.path.join(root, name)
-                    for n_root, n_dirs, n_files in os.walk(new_root):
-                        for file_name in n_files:
-                            if ".txt" in file_name:
-                                self.show_uris[name]["episode_list"].append(file_name.replace(".txt", ""))
-                else:
-                    del self.show_uris[name]
+                new_root = os.path.join(root, name)
+                for n_root, n_dirs, n_files in os.walk(new_root):
+                    for file_name in n_files:
+                        if ".txt" in file_name:
+                            self.show_uris[name]["episode_list"].append(file_name.replace(".txt", ""))
 
         self.write_data()
 
+    @property
     def count_totals(self):
         """
         Count how many relevant shows this dataset contains
@@ -59,14 +57,17 @@ class TranscriptListMetadata:
         shows_total = 0
         episodes_total = 0
         for show in self.show_uris:
-            shows_total += 1
-            self.show_uris[show]["total_episodes"] = len(self.show_uris[show]["episode_list"])
-            episodes_total += self.show_uris[show]["total_episodes"]
+            if len(self.show_uris[show]["episode_list"]) == 0:
+                del self.show_uris[show]
+            else:
+                shows_total += 1
+                self.show_uris[show]["total_episodes"] = len(self.show_uris[show]["episode_list"])
+                episodes_total += self.show_uris[show]["total_episodes"]
 
         return [shows_total, episodes_total]
 
     def write_data(self):
-        totals = self.count_totals()
+        totals = self.count_totals
         with open(self.outile, 'w') as out_file:
             json.dump({"shows_total": totals[0],
                        "episodes_total": totals[1],
