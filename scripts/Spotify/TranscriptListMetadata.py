@@ -22,9 +22,11 @@ class TranscriptListMetadata:
             data_reader = csv.reader(datafile, delimiter=";")
             for row in data_reader:
                 shows[row[1].replace(":", "_").replace("spotify_", "")] = {
+                    "name": row[0],
                     "genre": row[2],
                     "category": row[4],
-                    "episode_list": []
+                    "episode_list": [],
+                    "total_episodes": 0
                 }
 
         return shows
@@ -45,6 +47,41 @@ class TranscriptListMetadata:
                     for file_name in n_files:
                         if ".txt" in file_name:
                             self.show_uris[name]["episode_list"].append(file_name.replace(".txt", ""))
+                self.show_uris[name]["total_episoides"] = len(self.show_uris[name]["episode_list"])
+
+    def count_totals(self):
+        """
+        Count how many relevant shows this dataset contains
+        and how many episodes in total
+        """
+        shows_total = 0
+        episodes_total = 0
+        for show in self.show_uris:
+            shows_total += 1
+            episodes_total += self.show_uris[show]["total_episodes"]
+
+        return [shows_total, episodes_total]
 
     def write_data(self):
-        pass
+        totals = self.count_totals()
+        with open(self.outile, 'w') as out_file:
+            json.dump({"shows_total": totals[0],
+                       "episodes_total": totals[1],
+                       "show_list": self.show_uris},
+                      out_file,
+                      indent=2)
+
+
+# ------------ MAIN -------------
+def main():
+    """
+    Argument 1: csv file that contains the relevant show names und URIs
+    Argument 2: Root folder that contains all the transcript subdirs and files (Original and Testset)
+    Argument 3: Outfile name
+    """
+    data = TranscriptListMetadata(sys.argv[1], sys.argv[2], sys.argv[3])
+    data.match_shows()
+
+
+if __name__ == '__main__':
+    main()
