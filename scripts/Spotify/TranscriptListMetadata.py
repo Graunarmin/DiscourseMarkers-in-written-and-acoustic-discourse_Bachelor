@@ -11,7 +11,7 @@ class TranscriptListMetadata:
         self.datafile = shownames
         self.transcripts_folder = transcripts
         self.outile = out
-        # self.show_uris = self.read_shownames()
+        self.show_uris = self.read_shownames()
 
     def read_shownames(self):
         """
@@ -24,9 +24,7 @@ class TranscriptListMetadata:
                 shows[row[1].replace(":", "_").replace("spotify_", "")] = {
                     "name": row[0],
                     "genre": row[2],
-                    "category": row[4],
-                    "episode_list": [],
-                    "total_episodes": 0
+                    "category": row[4]
                 }
 
         return shows
@@ -45,7 +43,11 @@ class TranscriptListMetadata:
                 for n_root, n_dirs, n_files in os.walk(new_root):
                     for file_name in n_files:
                         if ".txt" in file_name:
-                            shows_found[name] = {}
+                            shows_found[name] = {"name": self.show_uris[name]["name"],
+                                                 "genre": self.show_uris[name]["genre"],
+                                                 "category": self.show_uris[name]["category"],
+                                                 "total_epiosodes": 0,
+                                                 "episode_list": []}
                             shows_found[name]["episode_list"].append(file_name.replace(".txt", ""))
 
         self.write_data(shows_found)
