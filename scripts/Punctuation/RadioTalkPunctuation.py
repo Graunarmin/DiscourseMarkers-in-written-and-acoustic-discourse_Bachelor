@@ -46,7 +46,7 @@ def write_output(data, out_file):
 
 
 # ---------------- CLASS --------------------
-class Punctuation:
+class RadioTalkPunctuation:
 
     def __init__(self, data_file):
         self.data_file = data_file
@@ -137,7 +137,7 @@ def main():
     "b" for BERT
     """
 
-    punctuation = Punctuation(sys.argv[1])
+    punctuation = RadioTalkPunctuation(sys.argv[1])
     process_input(sys.argv, punctuation)
 
 

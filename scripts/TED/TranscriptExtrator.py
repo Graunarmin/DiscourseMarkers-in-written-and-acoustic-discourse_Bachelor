@@ -1,5 +1,4 @@
 import os
-import json
 
 
 # ---------- STATIC FUNCTIONS ------------
@@ -18,9 +17,9 @@ class TranscriptExtractor:
     def __init__(self):
         self.speech_folder = "../../../corpora/ted/data/stm/"
         self.begin_tag = "<NA>"
-        self.trancript_path = "../../data/TED/transcripts/raw/"
-        self.simple_punctuation_path = "../../data/TED/transcripts/punctuation/simple/"
-        self.bert_punctuation_path = "../../data/TED/transcripts/punctuation/bert/"
+        self.trancript_path = "../../bigData/TED/transcripts/raw/"
+        self.simple_punctuation_path = "../../bigData/TED/transcripts/punctuation/simple/"
+        self.bert_punctuation_path = "../../bigData/TED/transcripts/punctuation/bert/pre/"
 
     def read_files(self):
         """
@@ -30,8 +29,8 @@ class TranscriptExtractor:
             for file_name in files:
                 if ".stm" in file_name:
                     filepath = os.path.join(root, file_name)
-                    showname = file_name.split("_")[0]
-                    self.extract_transcript(filepath, showname)
+                    name = file_name.split("_")[0]
+                    self.extract_transcript(filepath, name)
 
     def extract_transcript(self, path, name):
         """
