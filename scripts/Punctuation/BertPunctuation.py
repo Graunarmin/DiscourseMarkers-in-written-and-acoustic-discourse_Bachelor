@@ -45,7 +45,7 @@ class BertPunctuation:
 
         # replace [MASK]s with predicted tokens
         for index, word in enumerate(text_list):
-            if mask in word:
+            if word == mask:
                 print("TEXT LIST: ", text_list)
                 print("PREDICTIONS: ", predictions)
                 text_list[index] = predictions[prediction_index]
