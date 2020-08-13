@@ -24,10 +24,12 @@ def create_short_texts(content, mask, max_length):
         if (current_length + new_length) <= max_length:
             current_length += new_length
             text += word
+            text += " "
         else:
             texts.append(text)
             current_length = new_length
             text = word
+            text += " "
 
     texts.append(text)
     return texts
