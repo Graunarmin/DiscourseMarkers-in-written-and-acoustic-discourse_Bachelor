@@ -40,7 +40,7 @@ class TranscriptExtractor:
         filtered out.
         """
         char_list = []
-        with open(path, 'r') as file:
+        with open(path, 'r', encoding='utf_8') as file:
             data = file.read()
             '''text is read in char per char'''
             for char in data:
