@@ -1,4 +1,5 @@
 import os
+import sys
 
 
 # ---------- STATIC FUNCTIONS ------------
@@ -14,8 +15,8 @@ def write_transctipt(text, path, name):
 # ---------- CLASS -----------
 class TranscriptExtractor:
 
-    def __init__(self):
-        self.speech_folder = "../../../corpora/ted/data/stm/"
+    def __init__(self, speeches):
+        self.speech_folder = speeches
         self.begin_tag = "<NA>"
         self.trancript_path = "../../bigData/TED/transcripts/raw/"
         self.simple_punctuation_path = "../../bigData/TED/transcripts/punctuation/simple/"
@@ -110,8 +111,9 @@ class TranscriptExtractor:
 # ------------ MAIN -------------
 def main():
     """
+    Argument 1: Path to the folder that contains the speeches as .stm files
     """
-    extract = TranscriptExtractor()
+    extract = TranscriptExtractor(sys.argv[1])
     extract.read_files()
 
 
