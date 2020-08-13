@@ -31,6 +31,7 @@ class TranscriptExtractor:
                 if ".stm" in file_name:
                     filepath = os.path.join(root, file_name)
                     name = file_name.split("_")[0]
+                    print("NAME: ", name)
                     self.extract_transcript(filepath, name)
 
     def extract_transcript(self, path, name):
