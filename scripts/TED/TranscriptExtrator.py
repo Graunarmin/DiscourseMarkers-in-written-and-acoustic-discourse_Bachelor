@@ -8,8 +8,8 @@ def write_transctipt(text, path, name):
     write the transcripts to files
     """
     filepath = path + name + ".txt"
-    with open(filepath, 'w') as outfile:
-        outfile.write(text)
+    with open(filepath, 'wb') as outfile:
+        outfile.write(text.encode('utf-8'))
 
 
 # ---------- CLASS -----------
