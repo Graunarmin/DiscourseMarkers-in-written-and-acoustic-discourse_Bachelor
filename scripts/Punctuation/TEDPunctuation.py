@@ -9,7 +9,7 @@ def write_result(result, path):
         outfile.write(result)
 
 
-def create_short_texts(content, max_length):
+def create_short_texts(content, mask, max_length):
     """
     merge the snippets to strings that don't contain more than max_length words
     returns a list of texts
@@ -18,6 +18,8 @@ def create_short_texts(content, max_length):
     texts = []
     text = ""
     for word in content:
+        if word == "<unk>":
+            word = mask
         new_length = len(word)
         if (current_length + new_length) <= max_length:
             current_length += new_length
@@ -56,7 +58,7 @@ class TEDPunctuation:
 
     def punctuate(self):
         self.read_transcripts(self.raw_folder, self.add_punctuation_deepsegment)
-        # self.read_transcripts(self.bert_folder, self.add_punctuation_bert)
+        self.read_transcripts(self.bert_folder, self.add_punctuation_bert)
 
     def add_punctuation_deepsegment(self, text, name):
         dsp = DeepSegmentPunctuation.DeepSegmentPunctuation()
@@ -66,10 +68,14 @@ class TEDPunctuation:
         write_result(punct, path)
 
     def add_punctuation_bert(self, text, name):
+        mask = "[MASK]"
         punctuated_text = ""
-        texts = create_short_texts(text.split(" "), 400)
+        texts = create_short_texts(text.split(" "), mask, 400)
         for t in texts:
-            punctuated_text += self.bert.punctuate_text(t, '[MASK]')
+            if mask in t:
+                punctuated_text += self.bert.punctuate_text(t, mask)
+            else:
+                punctuated_text += t
 
         path = self.bert_folder.replace("pre", "punct") + name
         write_result(punctuated_text, path)
