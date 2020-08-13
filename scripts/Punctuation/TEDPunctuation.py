@@ -56,7 +56,7 @@ class TEDPunctuation:
 
     def punctuate(self):
         self.read_transcripts(self.raw_folder, self.add_punctuation_deepsegment)
-        self.read_transcripts(self.bert_folder, self.add_punctuation_bert)
+        # self.read_transcripts(self.bert_folder, self.add_punctuation_bert)
 
     def add_punctuation_deepsegment(self, text, name):
         dsp = DeepSegmentPunctuation.DeepSegmentPunctuation()
