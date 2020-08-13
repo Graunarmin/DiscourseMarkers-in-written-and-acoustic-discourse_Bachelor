@@ -4,7 +4,7 @@ import DeepSegmentPunctuation
 
 
 # ---------- STATIC FUNCTIONS ---------
-def write_result(path, result):
+def write_result(result, path):
     with open(path, 'w') as outfile:
         outfile.write(result)
 
