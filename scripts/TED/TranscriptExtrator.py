@@ -100,7 +100,7 @@ class TranscriptExtractor:
         preprocess text for BERT Punctuation by adding [MASK] at every break
         """
         transcript = " [MASK] ".join(text_list)
-        transcript += "[MASK]"
+        transcript += " [MASK]"
 
         if not os.path.isdir(self.bert_punctuation_path):
             os.makedirs(self.bert_punctuation_path)
