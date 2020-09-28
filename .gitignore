@@ -132,7 +132,7 @@ dmypy.json
 .DS_Store
 
 bigData/
-Plots/Tutorial/
+scripts/Plots/Tutorial/
 
 #PyCharm
 .idea
