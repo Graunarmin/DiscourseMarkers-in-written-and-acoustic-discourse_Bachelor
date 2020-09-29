@@ -5,19 +5,6 @@ import statistics
 
 
 # ----------- STATIC FUNCTIONS ------------
-def draw_plot(x, y, title, x_label):
-    plt.style.use('fivethirtyeight')
-    plt.bar(x, y)
-
-    plt.title(title)
-    plt.xlabel(x_label)
-    # plt.ylabel(y_label)
-
-    plt.tight_layout()
-
-    plt.show()
-
-
 def percentage(part, whole):
     return (float(part) * 100)/(float(whole))
 

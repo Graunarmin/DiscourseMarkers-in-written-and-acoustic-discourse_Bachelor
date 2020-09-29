@@ -14,6 +14,10 @@ def write_transctipt(text, path, name):
 
 # ---------- CLASS -----------
 class TranscriptExtractor:
+    """
+    Extracts the raw texts of the TED-Lium 3 Release .stm files.
+    Can add some (inaccurate) punctuation.
+    """
 
     def __init__(self, speeches):
         self.speech_folder = speeches
