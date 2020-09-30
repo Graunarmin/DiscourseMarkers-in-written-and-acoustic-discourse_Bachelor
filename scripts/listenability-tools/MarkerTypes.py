@@ -37,8 +37,9 @@ class XMLParser:
         self.root = parse_xml(xml_file)
 
     def get_sense(self):
-        outfile = "../../data/listenability-tools/marker-senses.json"
+        outfile = "../../data/listenability-tools/marker-senses_2.json"
         relations_set = set()
+        sense_relations = {}
 
         for entry in self.root:
             word = entry.attrib["word"]
@@ -49,8 +50,14 @@ class XMLParser:
                     relations = relation["sense"].split(".")
                     for rel in relations:
                         relations_set.add(rel)
+                    if rel not in sense_relations:
+                        sense_relations[rel] = [word]
+                    else:
+                        if word not in sense_relations[rel]:
+                            sense_relations[rel].append(word)
 
-        types = sorted(list(relations_set))
+        # types = sorted(list(relations_set))
+        types = sense_relations
         write_list(types, outfile)
 
     def get_cat(self):
@@ -75,7 +82,7 @@ def main():
 
     parser = XMLParser(xmlfile)
     parser.get_sense()
-    parser.get_cat()
+    # parser.get_cat()
 
 
 if __name__ == '__main__':
