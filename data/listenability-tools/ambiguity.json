@@ -1,0 +1,428 @@
+{
+  "once": {
+    "sem_categories": 7
+  },
+  "although": {
+    "sem_categories": 8
+  },
+  "though": {
+    "sem_categories": 23
+  },
+  "but": {
+    "sem_categories": 18
+  },
+  "because": {
+    "sem_categories": 5
+  },
+  "nevertheless": {
+    "sem_categories": 6
+  },
+  "before": {
+    "sem_categories": 5
+  },
+  "for example": {
+    "sem_categories": 2
+  },
+  "until": {
+    "sem_categories": 8
+  },
+  "if": {
+    "sem_categories": 25
+  },
+  "previously": {
+    "sem_categories": 2
+  },
+  "when": {
+    "sem_categories": 24
+  },
+  "and": {
+    "sem_categories": 16
+  },
+  "so": {
+    "sem_categories": 5
+  },
+  "then": {
+    "sem_categories": 13
+  },
+  "while": {
+    "sem_categories": 14
+  },
+  "as long as": {
+    "sem_categories": 5
+  },
+  "however": {
+    "sem_categories": 10
+  },
+  "also": {
+    "sem_categories": 5
+  },
+  "after": {
+    "sem_categories": 4
+  },
+  "separately": {
+    "sem_categories": 3
+  },
+  "still": {
+    "sem_categories": 11
+  },
+  "so that": {
+    "sem_categories": 1
+  },
+  "or": {
+    "sem_categories": 9
+  },
+  "moreover": {
+    "sem_categories": 2
+  },
+  "in addition": {
+    "sem_categories": 1
+  },
+  "instead": {
+    "sem_categories": 4
+  },
+  "on the other hand": {
+    "sem_categories": 5
+  },
+  "as": {
+    "sem_categories": 15
+  },
+  "for instance": {
+    "sem_categories": 2
+  },
+  "nonetheless": {
+    "sem_categories": 4
+  },
+  "unless": {
+    "sem_categories": 2
+  },
+  "meanwhile": {
+    "sem_categories": 7
+  },
+  "yet": {
+    "sem_categories": 16
+  },
+  "since": {
+    "sem_categories": 6
+  },
+  "rather": {
+    "sem_categories": 5
+  },
+  "in fact": {
+    "sem_categories": 9
+  },
+  "indeed": {
+    "sem_categories": 10
+  },
+  "later": {
+    "sem_categories": 2
+  },
+  "ultimately": {
+    "sem_categories": 4
+  },
+  "as a result": {
+    "sem_categories": 1
+  },
+  "either or": {
+    "sem_categories": 3
+  },
+  "therefore": {
+    "sem_categories": 1
+  },
+  "in turn": {
+    "sem_categories": 5
+  },
+  "thus": {
+    "sem_categories": 2
+  },
+  "in particular": {
+    "sem_categories": 2
+  },
+  "further": {
+    "sem_categories": 2
+  },
+  "afterward": {
+    "sem_categories": 1
+  },
+  "next": {
+    "sem_categories": 3
+  },
+  "similarly": {
+    "sem_categories": 1
+  },
+  "besides": {
+    "sem_categories": 4
+  },
+  "if and when": {
+    "sem_categories": 3
+  },
+  "nor": {
+    "sem_categories": 4
+  },
+  "alternatively": {
+    "sem_categories": 2
+  },
+  "whereas": {
+    "sem_categories": 3
+  },
+  "overall": {
+    "sem_categories": 5
+  },
+  "by comparison": {
+    "sem_categories": 3
+  },
+  "till": {
+    "sem_categories": 1
+  },
+  "in contrast": {
+    "sem_categories": 3
+  },
+  "finally": {
+    "sem_categories": 4
+  },
+  "otherwise": {
+    "sem_categories": 3
+  },
+  "as if": {
+    "sem_categories": 3
+  },
+  "thereby": {
+    "sem_categories": 1
+  },
+  "now that": {
+    "sem_categories": 5
+  },
+  "before and after": {
+    "sem_categories": 1
+  },
+  "additionally": {
+    "sem_categories": 1
+  },
+  "meantime": {
+    "sem_categories": 5
+  },
+  "by contrast": {
+    "sem_categories": 3
+  },
+  "if then": {
+    "sem_categories": 5
+  },
+  "likewise": {
+    "sem_categories": 1
+  },
+  "in the end": {
+    "sem_categories": 8
+  },
+  "regardless": {
+    "sem_categories": 1
+  },
+  "thereafter": {
+    "sem_categories": 2
+  },
+  "earlier": {
+    "sem_categories": 2
+  },
+  "in other words": {
+    "sem_categories": 3
+  },
+  "as soon as": {
+    "sem_categories": 2
+  },
+  "except": {
+    "sem_categories": 3
+  },
+  "in short": {
+    "sem_categories": 1
+  },
+  "neither nor": {
+    "sem_categories": 3
+  },
+  "furthermore": {
+    "sem_categories": 1
+  },
+  "lest": {
+    "sem_categories": 2
+  },
+  "as though": {
+    "sem_categories": 2
+  },
+  "specifically": {
+    "sem_categories": 2
+  },
+  "conversely": {
+    "sem_categories": 1
+  },
+  "consequently": {
+    "sem_categories": 1
+  },
+  "as well": {
+    "sem_categories": 1
+  },
+  "much as": {
+    "sem_categories": 4
+  },
+  "plus": {
+    "sem_categories": 1
+  },
+  "hence": {
+    "sem_categories": 1
+  },
+  "by then": {
+    "sem_categories": 4
+  },
+  "accordingly": {
+    "sem_categories": 1
+  },
+  "on the contrary": {
+    "sem_categories": 3
+  },
+  "simultaneously": {
+    "sem_categories": 1
+  },
+  "for": {
+    "sem_categories": 1
+  },
+  "in sum": {
+    "sem_categories": 1
+  },
+  "when and if": {
+    "sem_categories": 1
+  },
+  "insofar as": {
+    "sem_categories": 1
+  },
+  "else": {
+    "sem_categories": 1
+  },
+  "as an alternative": {
+    "sem_categories": 1
+  },
+  "on the one hand on the other hand": {
+    "sem_categories": 1
+  },
+  "because of": {
+    "sem_categories": 1
+  },
+  "aside from": {
+    "sem_categories": 1
+  },
+  "for one": {
+    "sem_categories": 1
+  },
+  "whatever": {
+    "sem_categories": 1
+  },
+  "when/then": {
+    "sem_categories": 1
+  },
+  "at the time": {
+    "sem_categories": 1
+  },
+  "in this way": {
+    "sem_categories": 1
+  },
+  "even so": {
+    "sem_categories": 1
+  },
+  "quite the contrary": {
+    "sem_categories": 1
+  },
+  "everytime": {
+    "sem_categories": 1
+  },
+  "for one thing": {
+    "sem_categories": 1
+  },
+  "despite": {
+    "sem_categories": 1
+  },
+  "instead of": {
+    "sem_categories": 2
+  },
+  "in case": {
+    "sem_categories": 1
+  },
+  "without": {
+    "sem_categories": 3
+  },
+  "even though": {
+    "sem_categories": 1
+  },
+  "with": {
+    "sem_categories": 5
+  },
+  "even if": {
+    "sem_categories": 1
+  },
+  "by the way": {
+    "sem_categories": 2
+  },
+  "given that": {
+    "sem_categories": 3
+  },
+  "in any event": {
+    "sem_categories": 2
+  },
+  "essentially": {
+    "sem_categories": 1
+  },
+  "given": {
+    "sem_categories": 3
+  },
+  "at that point": {
+    "sem_categories": 1
+  },
+  "in essence": {
+    "sem_categories": 1
+  },
+  "in response to": {
+    "sem_categories": 1
+  },
+  "anyway": {
+    "sem_categories": 1
+  },
+  "upon": {
+    "sem_categories": 1
+  },
+  "except that": {
+    "sem_categories": 1
+  },
+  "eventually": {
+    "sem_categories": 1
+  },
+  "at the same time": {
+    "sem_categories": 3
+  },
+  "in addition to": {
+    "sem_categories": 1
+  },
+  "in spite of": {
+    "sem_categories": 1
+  },
+  "in any case": {
+    "sem_categories": 2
+  },
+  "after all": {
+    "sem_categories": 2
+  },
+  "as a result of": {
+    "sem_categories": 1
+  },
+  "irrespective of": {
+    "sem_categories": 1
+  },
+  "rather than": {
+    "sem_categories": 1
+  },
+  "after that": {
+    "sem_categories": 1
+  },
+  "not only/but": {
+    "sem_categories": 1
+  },
+  "whenever": {
+    "sem_categories": 1
+  },
+  "particularly": {
+    "sem_categories": 1
+  }
+}

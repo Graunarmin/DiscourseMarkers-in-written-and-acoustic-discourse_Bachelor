@@ -36,39 +36,20 @@ class XMLParser:
     def __init__(self, xml_file):
         self.root = parse_xml(xml_file)
 
-    def get_sense(self):
-        outfile = "../../data/listenability-tools/marker-senses_wWords.json"
-        sense_relations = {}
+    def get_number_of_senses(self):
+        outfile = "../../data/listenability-tools/ambiguity.json"
+        senses = {}
 
         for entry in self.root:
             word = entry.attrib["word"]
-            # print(entry.tag, entry.attrib)
+            senses[word] = {}
+            senses[word]["sem_categories"] = 0
             for syn in entry.findall("syn"):
                 for sem in syn.findall("sem"):
-                    relation = sem.find("pdtb2_relation").attrib
-                    relations = relation["sense"].split(".")
-                    for rel in relations:
-                        if rel not in sense_relations:
-                            print("not yet in list: " + rel)
-                            sense_relations[rel] = [word]
-                        else:
-                            if word not in sense_relations[rel]:
-                                sense_relations[rel].append(word)
+                    senses[word]["sem_categories"] += 1
 
-        types = sense_relations
+        types = senses
         write_list(types, outfile)
-
-    def get_cat(self):
-        outfile = "../../data/listenability-tools/marker-categories.json"
-        cats = set()
-        for entry in self.root:
-            word = entry.attrib["word"]
-            # print(entry.tag, entry.attrib)
-            for syn in entry.findall("syn"):
-                for category in syn.findall("cat"):
-                    cats.add(category.text)
-        categories = sorted(list(cats))
-        write_list(categories, outfile)
 
 
 # ------------ MAIN -------------
@@ -79,8 +60,7 @@ def main():
     xmlfile = "../../data/listenability-tools/en_dimlex.xml"
 
     parser = XMLParser(xmlfile)
-    parser.get_sense()
-    # parser.get_cat()
+    parser.get_number_of_senses()
 
 
 if __name__ == '__main__':
