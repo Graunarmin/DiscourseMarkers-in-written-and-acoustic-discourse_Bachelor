@@ -1,0 +1,218 @@
+{
+  "once": {
+    "Temporal": 80,
+    "Contingency": 4
+  },
+  "although": {
+    "Comparison": 327,
+    "Expansion": 1
+  },
+  "but": {
+    "Comparison": 3215,
+    "Contingency": 1,
+    "Expansion": 90,
+    "Temporal": 2
+  },
+  "until": {
+    "Temporal": 141,
+    "Expansion": 3,
+    "Contingency": 18
+  },
+  "if": {
+    "Comparison": 48,
+    "Contingency": 1174,
+    "Expansion": 1
+  },
+  "previously": {
+    "Comparison": 2,
+    "Temporal": 47
+  },
+  "when": {
+    "Contingency": 182,
+    "Expansion": 2,
+    "Comparison": 12,
+    "Temporal": 793
+  },
+  "and": {
+    "Expansion": 2905,
+    "Contingency": 68,
+    "Comparison": 22,
+    "Temporal": 5
+  },
+  "then": {
+    "Expansion": 14,
+    "Comparison": 3,
+    "Contingency": 6,
+    "Temporal": 317
+  },
+  "while": {
+    "Temporal": 202,
+    "Comparison": 516,
+    "Expansion": 63
+  },
+  "as long as": {
+    "Contingency": 16,
+    "Temporal": 8
+  },
+  "however": {
+    "Comparison": 483,
+    "Expansion": 2
+  },
+  "also": {
+    "Expansion": 1745,
+    "Temporal": 1
+  },
+  "after": {
+    "Comparison": 2,
+    "Temporal": 575
+  },
+  "still": {
+    "Comparison": 187,
+    "Temporal": 3
+  },
+  "or": {
+    "Expansion": 95,
+    "Contingency": 2,
+    "Comparison": 1
+  },
+  "instead": {
+    "Expansion": 109,
+    "Comparison": 3
+  },
+  "on the other hand": {
+    "Comparison": 36,
+    "Expansion": 1
+  },
+  "as": {
+    "Comparison": 5,
+    "Expansion": 2,
+    "Contingency": 214,
+    "Temporal": 522
+  },
+  "nonetheless": {
+    "Comparison": 26,
+    "Expansion": 1
+  },
+  "unless": {
+    "Contingency": 1,
+    "Expansion": 94
+  },
+  "meanwhile": {
+    "Temporal": 94,
+    "Expansion": 70,
+    "Comparison": 29
+  },
+  "yet": {
+    "Comparison": 98,
+    "Expansion": 3
+  },
+  "since": {
+    "Contingency": 96,
+    "Temporal": 88
+  },
+  "rather": {
+    "Expansion": 13,
+    "Comparison": 4
+  },
+  "in fact": {
+    "Comparison": 6,
+    "Expansion": 76
+  },
+  "indeed": {
+    "Comparison": 1,
+    "Expansion": 99,
+    "Contingency": 4
+  },
+  "later": {
+    "Temporal": 90,
+    "Expansion": 1
+  },
+  "ultimately": {
+    "Temporal": 14,
+    "Expansion": 4
+  },
+  "in turn": {
+    "Temporal": 19,
+    "Contingency": 3,
+    "Expansion": 8
+  },
+  "next": {
+    "Temporal": 6,
+    "Expansion": 1
+  },
+  "besides": {
+    "Expansion": 18,
+    "Comparison": 1
+  },
+  "nor": {
+    "Expansion": 30,
+    "Comparison": 1
+  },
+  "finally": {
+    "Expansion": 20,
+    "Temporal": 12
+  },
+  "as if": {
+    "Comparison": 5,
+    "Expansion": 11
+  },
+  "now that": {
+    "Temporal": 7,
+    "Contingency": 15
+  },
+  "meantime": {
+    "Temporal": 13,
+    "Expansion": 2
+  },
+  "in the end": {
+    "Contingency": 1,
+    "Expansion": 5,
+    "Comparison": 2,
+    "Temporal": 1
+  },
+  "earlier": {
+    "Comparison": 1,
+    "Temporal": 14
+  },
+  "neither nor": {
+    "Expansion": 2,
+    "Comparison": 1
+  },
+  "lest": {
+    "Contingency": 1,
+    "Expansion": 1
+  },
+  "as though": {
+    "Comparison": 3,
+    "Expansion": 2
+  },
+  "much as": {
+    "Expansion": 3,
+    "Comparison": 3
+  },
+  "instead of": {
+    "Comparison": 0,
+    "Expansion": 0
+  },
+  "without": {
+    "Expansion": 0,
+    "Contingency": 0
+  },
+  "with": {
+    "Expansion": 0,
+    "Contingency": 0
+  },
+  "by the way": {
+    "Comparison": 0,
+    "Expansion": 0
+  },
+  "at the same time": {
+    "Temporal": 0,
+    "Expansion": 0,
+    "Comparison": 0
+  },
+  "after all": {
+    "Contingency": 0,
+    "Expansion": 0
+  }
+}

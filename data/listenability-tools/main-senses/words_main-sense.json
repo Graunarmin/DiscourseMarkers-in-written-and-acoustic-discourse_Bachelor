@@ -1,0 +1,1207 @@
+{
+  "once": {
+    "main_sense": "Temporal",
+    "frequncy": 80,
+    "error_rate": 4.761904761904762,
+    "senses": {
+      "Temporal": 80,
+      "Contingency": 4
+    }
+  },
+  "although": {
+    "main_sense": "Comparison",
+    "frequncy": 327,
+    "error_rate": 0.3048780487804878,
+    "senses": {
+      "Comparison": 327,
+      "Expansion": 1
+    }
+  },
+  "though": {
+    "main_sense": "Comparison",
+    "frequncy": 320,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 320
+    }
+  },
+  "but": {
+    "main_sense": "Comparison",
+    "frequncy": 3215,
+    "error_rate": 2.81136638452237,
+    "senses": {
+      "Comparison": 3215,
+      "Contingency": 1,
+      "Expansion": 90,
+      "Temporal": 2
+    }
+  },
+  "because": {
+    "main_sense": "Contingency",
+    "frequncy": 858,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 858
+    }
+  },
+  "nevertheless": {
+    "main_sense": "Comparison",
+    "frequncy": 44,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 44
+    }
+  },
+  "before": {
+    "main_sense": "Temporal",
+    "frequncy": 326,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 326
+    }
+  },
+  "for example": {
+    "main_sense": "Expansion",
+    "frequncy": 196,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 196
+    }
+  },
+  "until": {
+    "main_sense": "Temporal",
+    "frequncy": 141,
+    "error_rate": 12.962962962962964,
+    "senses": {
+      "Temporal": 141,
+      "Expansion": 3,
+      "Contingency": 18
+    }
+  },
+  "if": {
+    "main_sense": "Contingency",
+    "frequncy": 1174,
+    "error_rate": 4.006541291905151,
+    "senses": {
+      "Comparison": 48,
+      "Contingency": 1174,
+      "Expansion": 1
+    }
+  },
+  "previously": {
+    "main_sense": "Temporal",
+    "frequncy": 47,
+    "error_rate": 4.081632653061225,
+    "senses": {
+      "Comparison": 2,
+      "Temporal": 47
+    }
+  },
+  "when": {
+    "main_sense": "Temporal",
+    "frequncy": 793,
+    "error_rate": 19.817997977755308,
+    "senses": {
+      "Contingency": 182,
+      "Expansion": 2,
+      "Comparison": 12,
+      "Temporal": 793
+    }
+  },
+  "and": {
+    "main_sense": "Expansion",
+    "frequncy": 2905,
+    "error_rate": 3.1666666666666665,
+    "senses": {
+      "Expansion": 2905,
+      "Contingency": 68,
+      "Comparison": 22,
+      "Temporal": 5
+    }
+  },
+  "so": {
+    "main_sense": "Contingency",
+    "frequncy": 263,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 263
+    }
+  },
+  "then": {
+    "main_sense": "Temporal",
+    "frequncy": 317,
+    "error_rate": 6.764705882352941,
+    "senses": {
+      "Expansion": 14,
+      "Comparison": 3,
+      "Contingency": 6,
+      "Temporal": 317
+    }
+  },
+  "while": {
+    "main_sense": "Comparison",
+    "frequncy": 516,
+    "error_rate": 33.930857874519845,
+    "senses": {
+      "Temporal": 202,
+      "Comparison": 516,
+      "Expansion": 63
+    }
+  },
+  "as long as": {
+    "main_sense": "Contingency",
+    "frequncy": 16,
+    "error_rate": 33.333333333333336,
+    "senses": {
+      "Contingency": 16,
+      "Temporal": 8
+    }
+  },
+  "however": {
+    "main_sense": "Comparison",
+    "frequncy": 483,
+    "error_rate": 0.41237113402061853,
+    "senses": {
+      "Comparison": 483,
+      "Expansion": 2
+    }
+  },
+  "also": {
+    "main_sense": "Expansion",
+    "frequncy": 1745,
+    "error_rate": 0.0572737686139748,
+    "senses": {
+      "Expansion": 1745,
+      "Temporal": 1
+    }
+  },
+  "after": {
+    "main_sense": "Temporal",
+    "frequncy": 575,
+    "error_rate": 0.3466204506065858,
+    "senses": {
+      "Comparison": 2,
+      "Temporal": 575
+    }
+  },
+  "separately": {
+    "main_sense": "Expansion",
+    "frequncy": 74,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 74
+    }
+  },
+  "still": {
+    "main_sense": "Comparison",
+    "frequncy": 187,
+    "error_rate": 1.5789473684210527,
+    "senses": {
+      "Comparison": 187,
+      "Temporal": 3
+    }
+  },
+  "so that": {
+    "main_sense": "Contingency",
+    "frequncy": 31,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 31
+    }
+  },
+  "or": {
+    "main_sense": "Expansion",
+    "frequncy": 95,
+    "error_rate": 3.061224489795918,
+    "senses": {
+      "Expansion": 95,
+      "Contingency": 2,
+      "Comparison": 1
+    }
+  },
+  "moreover": {
+    "main_sense": "Expansion",
+    "frequncy": 101,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 101
+    }
+  },
+  "in addition": {
+    "main_sense": "Expansion",
+    "frequncy": 165,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 165
+    }
+  },
+  "instead": {
+    "main_sense": "Expansion",
+    "frequncy": 109,
+    "error_rate": 2.6785714285714284,
+    "senses": {
+      "Expansion": 109,
+      "Comparison": 3
+    }
+  },
+  "on the other hand": {
+    "main_sense": "Comparison",
+    "frequncy": 36,
+    "error_rate": 2.7027027027027026,
+    "senses": {
+      "Comparison": 36,
+      "Expansion": 1
+    }
+  },
+  "as": {
+    "main_sense": "Temporal",
+    "frequncy": 522,
+    "error_rate": 29.7442799461642,
+    "senses": {
+      "Comparison": 5,
+      "Expansion": 2,
+      "Contingency": 214,
+      "Temporal": 522
+    }
+  },
+  "for instance": {
+    "main_sense": "Expansion",
+    "frequncy": 98,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 98
+    }
+  },
+  "nonetheless": {
+    "main_sense": "Comparison",
+    "frequncy": 26,
+    "error_rate": 3.7037037037037037,
+    "senses": {
+      "Comparison": 26,
+      "Expansion": 1
+    }
+  },
+  "unless": {
+    "main_sense": "Expansion",
+    "frequncy": 94,
+    "error_rate": 1.0526315789473684,
+    "senses": {
+      "Contingency": 1,
+      "Expansion": 94
+    }
+  },
+  "meanwhile": {
+    "main_sense": "Temporal",
+    "frequncy": 94,
+    "error_rate": 51.295336787564764,
+    "senses": {
+      "Temporal": 94,
+      "Expansion": 70,
+      "Comparison": 29
+    }
+  },
+  "yet": {
+    "main_sense": "Comparison",
+    "frequncy": 98,
+    "error_rate": 2.9702970297029703,
+    "senses": {
+      "Comparison": 98,
+      "Expansion": 3
+    }
+  },
+  "since": {
+    "main_sense": "Contingency",
+    "frequncy": 96,
+    "error_rate": 47.82608695652174,
+    "senses": {
+      "Contingency": 96,
+      "Temporal": 88
+    }
+  },
+  "rather": {
+    "main_sense": "Expansion",
+    "frequncy": 13,
+    "error_rate": 23.529411764705884,
+    "senses": {
+      "Expansion": 13,
+      "Comparison": 4
+    }
+  },
+  "in fact": {
+    "main_sense": "Expansion",
+    "frequncy": 76,
+    "error_rate": 7.317073170731708,
+    "senses": {
+      "Comparison": 6,
+      "Expansion": 76
+    }
+  },
+  "indeed": {
+    "main_sense": "Expansion",
+    "frequncy": 99,
+    "error_rate": 4.8076923076923075,
+    "senses": {
+      "Comparison": 1,
+      "Expansion": 99,
+      "Contingency": 4
+    }
+  },
+  "later": {
+    "main_sense": "Temporal",
+    "frequncy": 90,
+    "error_rate": 1.098901098901099,
+    "senses": {
+      "Temporal": 90,
+      "Expansion": 1
+    }
+  },
+  "ultimately": {
+    "main_sense": "Temporal",
+    "frequncy": 14,
+    "error_rate": 22.22222222222222,
+    "senses": {
+      "Temporal": 14,
+      "Expansion": 4
+    }
+  },
+  "as a result": {
+    "main_sense": "Contingency",
+    "frequncy": 78,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 78
+    }
+  },
+  "either or": {
+    "main_sense": "Expansion",
+    "frequncy": 4,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 4
+    }
+  },
+  "therefore": {
+    "main_sense": "Contingency",
+    "frequncy": 26,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 26
+    }
+  },
+  "in turn": {
+    "main_sense": "Temporal",
+    "frequncy": 19,
+    "error_rate": 36.666666666666664,
+    "senses": {
+      "Temporal": 19,
+      "Contingency": 3,
+      "Expansion": 8
+    }
+  },
+  "thus": {
+    "main_sense": "Contingency",
+    "frequncy": 112,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 112
+    }
+  },
+  "in particular": {
+    "main_sense": "Expansion",
+    "frequncy": 15,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 15
+    }
+  },
+  "further": {
+    "main_sense": "Expansion",
+    "frequncy": 9,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 9
+    }
+  },
+  "afterward": {
+    "main_sense": "Temporal",
+    "frequncy": 11,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 11
+    }
+  },
+  "next": {
+    "main_sense": "Temporal",
+    "frequncy": 6,
+    "error_rate": 14.285714285714286,
+    "senses": {
+      "Temporal": 6,
+      "Expansion": 1
+    }
+  },
+  "similarly": {
+    "main_sense": "Expansion",
+    "frequncy": 18,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 18
+    }
+  },
+  "besides": {
+    "main_sense": "Expansion",
+    "frequncy": 18,
+    "error_rate": 5.2631578947368425,
+    "senses": {
+      "Expansion": 18,
+      "Comparison": 1
+    }
+  },
+  "if and when": {
+    "main_sense": "Contingency",
+    "frequncy": 3,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 3
+    }
+  },
+  "nor": {
+    "main_sense": "Expansion",
+    "frequncy": 30,
+    "error_rate": 3.225806451612903,
+    "senses": {
+      "Expansion": 30,
+      "Comparison": 1
+    }
+  },
+  "alternatively": {
+    "main_sense": "Expansion",
+    "frequncy": 6,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 6
+    }
+  },
+  "whereas": {
+    "main_sense": "Comparison",
+    "frequncy": 5,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 5
+    }
+  },
+  "overall": {
+    "main_sense": "Expansion",
+    "frequncy": 12,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 12
+    }
+  },
+  "by comparison": {
+    "main_sense": "Comparison",
+    "frequncy": 11,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 11
+    }
+  },
+  "till": {
+    "main_sense": "Temporal",
+    "frequncy": 3,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 3
+    }
+  },
+  "in contrast": {
+    "main_sense": "Comparison",
+    "frequncy": 12,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 12
+    }
+  },
+  "finally": {
+    "main_sense": "Expansion",
+    "frequncy": 20,
+    "error_rate": 37.5,
+    "senses": {
+      "Expansion": 20,
+      "Temporal": 12
+    }
+  },
+  "otherwise": {
+    "main_sense": "Expansion",
+    "frequncy": 24,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 24
+    }
+  },
+  "as if": {
+    "main_sense": "Expansion",
+    "frequncy": 11,
+    "error_rate": 31.25,
+    "senses": {
+      "Comparison": 5,
+      "Expansion": 11
+    }
+  },
+  "thereby": {
+    "main_sense": "Contingency",
+    "frequncy": 12,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 12
+    }
+  },
+  "now that": {
+    "main_sense": "Contingency",
+    "frequncy": 15,
+    "error_rate": 31.818181818181817,
+    "senses": {
+      "Temporal": 7,
+      "Contingency": 15
+    }
+  },
+  "before and after": {
+    "main_sense": "Temporal",
+    "frequncy": 1,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 1
+    }
+  },
+  "additionally": {
+    "main_sense": "Expansion",
+    "frequncy": 7,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 7
+    }
+  },
+  "meantime": {
+    "main_sense": "Temporal",
+    "frequncy": 13,
+    "error_rate": 13.333333333333334,
+    "senses": {
+      "Temporal": 13,
+      "Expansion": 2
+    }
+  },
+  "by contrast": {
+    "main_sense": "Comparison",
+    "frequncy": 27,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 27
+    }
+  },
+  "if then": {
+    "main_sense": "Contingency",
+    "frequncy": 38,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 38
+    }
+  },
+  "likewise": {
+    "main_sense": "Expansion",
+    "frequncy": 8,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 8
+    }
+  },
+  "in the end": {
+    "main_sense": "Expansion",
+    "frequncy": 5,
+    "error_rate": 44.44444444444444,
+    "senses": {
+      "Contingency": 1,
+      "Expansion": 5,
+      "Comparison": 2,
+      "Temporal": 1
+    }
+  },
+  "regardless": {
+    "main_sense": "Comparison",
+    "frequncy": 2,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 2
+    }
+  },
+  "thereafter": {
+    "main_sense": "Temporal",
+    "frequncy": 11,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 11
+    }
+  },
+  "earlier": {
+    "main_sense": "Temporal",
+    "frequncy": 14,
+    "error_rate": 6.666666666666667,
+    "senses": {
+      "Comparison": 1,
+      "Temporal": 14
+    }
+  },
+  "in other words": {
+    "main_sense": "Expansion",
+    "frequncy": 17,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 17
+    }
+  },
+  "as soon as": {
+    "main_sense": "Temporal",
+    "frequncy": 20,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 20
+    }
+  },
+  "except": {
+    "main_sense": "Expansion",
+    "frequncy": 10,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 10
+    }
+  },
+  "in short": {
+    "main_sense": "Expansion",
+    "frequncy": 4,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 4
+    }
+  },
+  "neither nor": {
+    "main_sense": "Expansion",
+    "frequncy": 2,
+    "error_rate": 33.333333333333336,
+    "senses": {
+      "Expansion": 2,
+      "Comparison": 1
+    }
+  },
+  "furthermore": {
+    "main_sense": "Expansion",
+    "frequncy": 11,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 11
+    }
+  },
+  "lest": {
+    "main_sense": "Contingency",
+    "frequncy": 1,
+    "error_rate": 50.0,
+    "senses": {
+      "Contingency": 1,
+      "Expansion": 1
+    }
+  },
+  "as though": {
+    "main_sense": "Comparison",
+    "frequncy": 3,
+    "error_rate": 40.0,
+    "senses": {
+      "Comparison": 3,
+      "Expansion": 2
+    }
+  },
+  "specifically": {
+    "main_sense": "Expansion",
+    "frequncy": 10,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 10
+    }
+  },
+  "conversely": {
+    "main_sense": "Comparison",
+    "frequncy": 2,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 2
+    }
+  },
+  "consequently": {
+    "main_sense": "Contingency",
+    "frequncy": 10,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 10
+    }
+  },
+  "as well": {
+    "main_sense": "Expansion",
+    "frequncy": 6,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 6
+    }
+  },
+  "much as": {
+    "main_sense": "Expansion",
+    "frequncy": 3,
+    "error_rate": 50.0,
+    "senses": {
+      "Expansion": 3,
+      "Comparison": 3
+    }
+  },
+  "plus": {
+    "main_sense": "Expansion",
+    "frequncy": 1,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 1
+    }
+  },
+  "hence": {
+    "main_sense": "Contingency",
+    "frequncy": 4,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 4
+    }
+  },
+  "by then": {
+    "main_sense": "Temporal",
+    "frequncy": 7,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 7
+    }
+  },
+  "accordingly": {
+    "main_sense": "Contingency",
+    "frequncy": 5,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 5
+    }
+  },
+  "on the contrary": {
+    "main_sense": "Comparison",
+    "frequncy": 4,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 4
+    }
+  },
+  "simultaneously": {
+    "main_sense": "Temporal",
+    "frequncy": 6,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 6
+    }
+  },
+  "for": {
+    "main_sense": "Contingency",
+    "frequncy": 3,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 3
+    }
+  },
+  "in sum": {
+    "main_sense": "Expansion",
+    "frequncy": 2,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 2
+    }
+  },
+  "when and if": {
+    "main_sense": "Temporal",
+    "frequncy": 1,
+    "error_rate": 0.0,
+    "senses": {
+      "Temporal": 1
+    }
+  },
+  "insofar as": {
+    "main_sense": "Contingency",
+    "frequncy": 1,
+    "error_rate": 0.0,
+    "senses": {
+      "Contingency": 1
+    }
+  },
+  "else": {
+    "main_sense": "Expansion",
+    "frequncy": 1,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 1
+    }
+  },
+  "as an alternative": {
+    "main_sense": "Expansion",
+    "frequncy": 2,
+    "error_rate": 0.0,
+    "senses": {
+      "Expansion": 2
+    }
+  },
+  "on the one hand on the other hand": {
+    "main_sense": "Comparison",
+    "frequncy": 1,
+    "error_rate": 0.0,
+    "senses": {
+      "Comparison": 1
+    }
+  },
+  "because of": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "aside from": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "for one": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "whatever": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "when/then": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "at the time": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0
+    }
+  },
+  "in this way": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "even so": {
+    "main_sense": "Comparison",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Comparison": 0
+    }
+  },
+  "quite the contrary": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "everytime": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0
+    }
+  },
+  "for one thing": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "despite": {
+    "main_sense": "Comparison",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Comparison": 0
+    }
+  },
+  "instead of": {
+    "main_sense": "Comparison",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Comparison": 0,
+      "Expansion": 0
+    }
+  },
+  "in case": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "without": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0,
+      "Contingency": 0
+    }
+  },
+  "even though": {
+    "main_sense": "Comparison",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Comparison": 0
+    }
+  },
+  "with": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0,
+      "Contingency": 0
+    }
+  },
+  "even if": {
+    "main_sense": "Comparison",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Comparison": 0
+    }
+  },
+  "by the way": {
+    "main_sense": "Comparison",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Comparison": 0,
+      "Expansion": 0
+    }
+  },
+  "given that": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "in any event": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "essentially": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "given": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "at that point": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0
+    }
+  },
+  "in essence": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "in response to": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "anyway": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "upon": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0
+    }
+  },
+  "except that": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "eventually": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0
+    }
+  },
+  "at the same time": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0,
+      "Expansion": 0,
+      "Comparison": 0
+    }
+  },
+  "in addition to": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "in spite of": {
+    "main_sense": "Comparison",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Comparison": 0
+    }
+  },
+  "in any case": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "after all": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0,
+      "Expansion": 0
+    }
+  },
+  "as a result of": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "irrespective of": {
+    "main_sense": "Contingency",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Contingency": 0
+    }
+  },
+  "rather than": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "after that": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0
+    }
+  },
+  "not only/but": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  },
+  "whenever": {
+    "main_sense": "Temporal",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Temporal": 0
+    }
+  },
+  "particularly": {
+    "main_sense": "Expansion",
+    "frequncy": 0,
+    "error_rate": 0,
+    "senses": {
+      "Expansion": 0
+    }
+  }
+}

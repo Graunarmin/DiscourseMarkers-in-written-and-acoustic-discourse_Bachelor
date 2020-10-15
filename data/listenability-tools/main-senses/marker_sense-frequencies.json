@@ -1,0 +1,497 @@
+{
+  "once": {
+    "Temporal": 80,
+    "Contingency": 4
+  },
+  "although": {
+    "Comparison": 327,
+    "Expansion": 1
+  },
+  "though": {
+    "Comparison": 320
+  },
+  "but": {
+    "Comparison": 3215,
+    "Contingency": 1,
+    "Expansion": 90,
+    "Temporal": 2
+  },
+  "because": {
+    "Contingency": 858
+  },
+  "nevertheless": {
+    "Comparison": 44
+  },
+  "before": {
+    "Temporal": 326
+  },
+  "for example": {
+    "Expansion": 196
+  },
+  "until": {
+    "Temporal": 141,
+    "Expansion": 3,
+    "Contingency": 18
+  },
+  "if": {
+    "Comparison": 48,
+    "Contingency": 1174,
+    "Expansion": 1
+  },
+  "previously": {
+    "Comparison": 2,
+    "Temporal": 47
+  },
+  "when": {
+    "Contingency": 182,
+    "Expansion": 2,
+    "Comparison": 12,
+    "Temporal": 793
+  },
+  "and": {
+    "Expansion": 2905,
+    "Contingency": 68,
+    "Comparison": 22,
+    "Temporal": 5
+  },
+  "so": {
+    "Contingency": 263
+  },
+  "then": {
+    "Expansion": 14,
+    "Comparison": 3,
+    "Contingency": 6,
+    "Temporal": 317
+  },
+  "while": {
+    "Temporal": 202,
+    "Comparison": 516,
+    "Expansion": 63
+  },
+  "as long as": {
+    "Contingency": 16,
+    "Temporal": 8
+  },
+  "however": {
+    "Comparison": 483,
+    "Expansion": 2
+  },
+  "also": {
+    "Expansion": 1745,
+    "Temporal": 1
+  },
+  "after": {
+    "Comparison": 2,
+    "Temporal": 575
+  },
+  "separately": {
+    "Expansion": 74
+  },
+  "still": {
+    "Comparison": 187,
+    "Temporal": 3
+  },
+  "so that": {
+    "Contingency": 31
+  },
+  "or": {
+    "Expansion": 95,
+    "Contingency": 2,
+    "Comparison": 1
+  },
+  "moreover": {
+    "Expansion": 101
+  },
+  "in addition": {
+    "Expansion": 165
+  },
+  "instead": {
+    "Expansion": 109,
+    "Comparison": 3
+  },
+  "on the other hand": {
+    "Comparison": 36,
+    "Expansion": 1
+  },
+  "as": {
+    "Comparison": 5,
+    "Expansion": 2,
+    "Contingency": 214,
+    "Temporal": 522
+  },
+  "for instance": {
+    "Expansion": 98
+  },
+  "nonetheless": {
+    "Comparison": 26,
+    "Expansion": 1
+  },
+  "unless": {
+    "Contingency": 1,
+    "Expansion": 94
+  },
+  "meanwhile": {
+    "Temporal": 94,
+    "Expansion": 70,
+    "Comparison": 29
+  },
+  "yet": {
+    "Comparison": 98,
+    "Expansion": 3
+  },
+  "since": {
+    "Contingency": 96,
+    "Temporal": 88
+  },
+  "rather": {
+    "Expansion": 13,
+    "Comparison": 4
+  },
+  "in fact": {
+    "Comparison": 6,
+    "Expansion": 76
+  },
+  "indeed": {
+    "Comparison": 1,
+    "Expansion": 99,
+    "Contingency": 4
+  },
+  "later": {
+    "Temporal": 90,
+    "Expansion": 1
+  },
+  "ultimately": {
+    "Temporal": 14,
+    "Expansion": 4
+  },
+  "as a result": {
+    "Contingency": 78
+  },
+  "either or": {
+    "Expansion": 4
+  },
+  "therefore": {
+    "Contingency": 26
+  },
+  "in turn": {
+    "Temporal": 19,
+    "Contingency": 3,
+    "Expansion": 8
+  },
+  "thus": {
+    "Contingency": 112
+  },
+  "in particular": {
+    "Expansion": 15
+  },
+  "further": {
+    "Expansion": 9
+  },
+  "afterward": {
+    "Temporal": 11
+  },
+  "next": {
+    "Temporal": 6,
+    "Expansion": 1
+  },
+  "similarly": {
+    "Expansion": 18
+  },
+  "besides": {
+    "Expansion": 18,
+    "Comparison": 1
+  },
+  "if and when": {
+    "Contingency": 3
+  },
+  "nor": {
+    "Expansion": 30,
+    "Comparison": 1
+  },
+  "alternatively": {
+    "Expansion": 6
+  },
+  "whereas": {
+    "Comparison": 5
+  },
+  "overall": {
+    "Expansion": 12
+  },
+  "by comparison": {
+    "Comparison": 11
+  },
+  "till": {
+    "Temporal": 3
+  },
+  "in contrast": {
+    "Comparison": 12
+  },
+  "finally": {
+    "Expansion": 20,
+    "Temporal": 12
+  },
+  "otherwise": {
+    "Expansion": 24
+  },
+  "as if": {
+    "Comparison": 5,
+    "Expansion": 11
+  },
+  "thereby": {
+    "Contingency": 12
+  },
+  "now that": {
+    "Temporal": 7,
+    "Contingency": 15
+  },
+  "before and after": {
+    "Temporal": 1
+  },
+  "additionally": {
+    "Expansion": 7
+  },
+  "meantime": {
+    "Temporal": 13,
+    "Expansion": 2
+  },
+  "by contrast": {
+    "Comparison": 27
+  },
+  "if then": {
+    "Contingency": 38
+  },
+  "likewise": {
+    "Expansion": 8
+  },
+  "in the end": {
+    "Contingency": 1,
+    "Expansion": 5,
+    "Comparison": 2,
+    "Temporal": 1
+  },
+  "regardless": {
+    "Comparison": 2
+  },
+  "thereafter": {
+    "Temporal": 11
+  },
+  "earlier": {
+    "Comparison": 1,
+    "Temporal": 14
+  },
+  "in other words": {
+    "Expansion": 17
+  },
+  "as soon as": {
+    "Temporal": 20
+  },
+  "except": {
+    "Expansion": 10
+  },
+  "in short": {
+    "Expansion": 4
+  },
+  "neither nor": {
+    "Expansion": 2,
+    "Comparison": 1
+  },
+  "furthermore": {
+    "Expansion": 11
+  },
+  "lest": {
+    "Contingency": 1,
+    "Expansion": 1
+  },
+  "as though": {
+    "Comparison": 3,
+    "Expansion": 2
+  },
+  "specifically": {
+    "Expansion": 10
+  },
+  "conversely": {
+    "Comparison": 2
+  },
+  "consequently": {
+    "Contingency": 10
+  },
+  "as well": {
+    "Expansion": 6
+  },
+  "much as": {
+    "Expansion": 3,
+    "Comparison": 3
+  },
+  "plus": {
+    "Expansion": 1
+  },
+  "hence": {
+    "Contingency": 4
+  },
+  "by then": {
+    "Temporal": 7
+  },
+  "accordingly": {
+    "Contingency": 5
+  },
+  "on the contrary": {
+    "Comparison": 4
+  },
+  "simultaneously": {
+    "Temporal": 6
+  },
+  "for": {
+    "Contingency": 3
+  },
+  "in sum": {
+    "Expansion": 2
+  },
+  "when and if": {
+    "Temporal": 1
+  },
+  "insofar as": {
+    "Contingency": 1
+  },
+  "else": {
+    "Expansion": 1
+  },
+  "as an alternative": {
+    "Expansion": 2
+  },
+  "on the one hand on the other hand": {
+    "Comparison": 1
+  },
+  "because of": {
+    "Contingency": 0
+  },
+  "aside from": {
+    "Expansion": 0
+  },
+  "for one": {
+    "Expansion": 0
+  },
+  "whatever": {
+    "Contingency": 0
+  },
+  "when/then": {
+    "Contingency": 0
+  },
+  "at the time": {
+    "Temporal": 0
+  },
+  "in this way": {
+    "Contingency": 0
+  },
+  "even so": {
+    "Comparison": 0
+  },
+  "quite the contrary": {
+    "Expansion": 0
+  },
+  "everytime": {
+    "Temporal": 0
+  },
+  "for one thing": {
+    "Expansion": 0
+  },
+  "despite": {
+    "Comparison": 0
+  },
+  "instead of": {
+    "Comparison": 0,
+    "Expansion": 0
+  },
+  "in case": {
+    "Contingency": 0
+  },
+  "without": {
+    "Expansion": 0,
+    "Contingency": 0
+  },
+  "even though": {
+    "Comparison": 0
+  },
+  "with": {
+    "Expansion": 0,
+    "Contingency": 0
+  },
+  "even if": {
+    "Comparison": 0
+  },
+  "by the way": {
+    "Comparison": 0,
+    "Expansion": 0
+  },
+  "given that": {
+    "Contingency": 0
+  },
+  "in any event": {
+    "Expansion": 0
+  },
+  "essentially": {
+    "Expansion": 0
+  },
+  "given": {
+    "Contingency": 0
+  },
+  "at that point": {
+    "Temporal": 0
+  },
+  "in essence": {
+    "Expansion": 0
+  },
+  "in response to": {
+    "Contingency": 0
+  },
+  "anyway": {
+    "Expansion": 0
+  },
+  "upon": {
+    "Temporal": 0
+  },
+  "except that": {
+    "Expansion": 0
+  },
+  "eventually": {
+    "Temporal": 0
+  },
+  "at the same time": {
+    "Temporal": 0,
+    "Expansion": 0,
+    "Comparison": 0
+  },
+  "in addition to": {
+    "Expansion": 0
+  },
+  "in spite of": {
+    "Comparison": 0
+  },
+  "in any case": {
+    "Expansion": 0
+  },
+  "after all": {
+    "Contingency": 0,
+    "Expansion": 0
+  },
+  "as a result of": {
+    "Contingency": 0
+  },
+  "irrespective of": {
+    "Contingency": 0
+  },
+  "rather than": {
+    "Expansion": 0
+  },
+  "after that": {
+    "Temporal": 0
+  },
+  "not only/but": {
+    "Expansion": 0
+  },
+  "whenever": {
+    "Temporal": 0
+  },
+  "particularly": {
+    "Expansion": 0
+  }
+}
