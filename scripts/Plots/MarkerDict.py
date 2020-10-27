@@ -112,13 +112,13 @@ class MarkerDict:
                                'median_db': statistics.median(self.marker_occurences[marker]['median_db']),
                                'median_dm': statistics.median(self.marker_occurences[marker]['median_dm']),
                                'median_de': statistics.median(self.marker_occurences[marker]['median_de']),
-                               'mode_total': statistics.mode(self.marker_occurences[marker]['median_total']),
-                               'mode_sb': statistics.mode(self.marker_occurences[marker]['median_sb']),
-                               'mode_sm': statistics.mode(self.marker_occurences[marker]['median_sm']),
-                               'mode_se': statistics.mode(self.marker_occurences[marker]['median_se']),
-                               'mode_db': statistics.mode(self.marker_occurences[marker]['median_db']),
-                               'mode_dm': statistics.mode(self.marker_occurences[marker]['median_dm']),
-                               'mode_de': statistics.mode(self.marker_occurences[marker]['median_de'])
+                               'mode_total': statistics.multimode(self.marker_occurences[marker]['median_total']),
+                               'mode_sb': statistics.multimode(self.marker_occurences[marker]['median_sb']),
+                               'mode_sm': statistics.multimode(self.marker_occurences[marker]['median_sm']),
+                               'mode_se': statistics.multimode(self.marker_occurences[marker]['median_se']),
+                               'mode_db': statistics.multimode(self.marker_occurences[marker]['median_db']),
+                               'mode_dm': statistics.multimode(self.marker_occurences[marker]['median_dm']),
+                               'mode_de': statistics.multimode(self.marker_occurences[marker]['median_de'])
                                }
         csv_doc['total_docs'] = self.doc_count
         csv_doc['total_markers'] = self.marker_count
