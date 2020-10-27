@@ -3,6 +3,7 @@ import pandas as pd
 import ast
 import statistics
 import sys
+from collections import Counter
 
 
 class MarkerDict:
@@ -112,13 +113,13 @@ class MarkerDict:
                                'median_db': statistics.median(self.marker_occurences[marker]['median_db']),
                                'median_dm': statistics.median(self.marker_occurences[marker]['median_dm']),
                                'median_de': statistics.median(self.marker_occurences[marker]['median_de']),
-                               'mode_total': statistics.multimode(self.marker_occurences[marker]['median_total']),
-                               'mode_sb': statistics.multimode(self.marker_occurences[marker]['median_sb']),
-                               'mode_sm': statistics.multimode(self.marker_occurences[marker]['median_sm']),
-                               'mode_se': statistics.multimode(self.marker_occurences[marker]['median_se']),
-                               'mode_db': statistics.multimode(self.marker_occurences[marker]['median_db']),
-                               'mode_dm': statistics.multimode(self.marker_occurences[marker]['median_dm']),
-                               'mode_de': statistics.multimode(self.marker_occurences[marker]['median_de'])
+                               'mode_total': Counter(self.marker_occurences[marker]['median_total']).most_common(1),
+                               'mode_sb': Counter(self.marker_occurences[marker]['median_sb']).most_common(1),
+                               'mode_sm': Counter(self.marker_occurences[marker]['median_sm']).most_common(1),
+                               'mode_se': Counter(self.marker_occurences[marker]['median_se']).most_common(1),
+                               'mode_db': Counter(self.marker_occurences[marker]['median_db']).most_common(1),
+                               'mode_dm': Counter(self.marker_occurences[marker]['median_dm']).most_common(1),
+                               'mode_de': Counter(self.marker_occurences[marker]['median_de']).most_common(1)
                                }
         csv_doc['total_docs'] = self.doc_count
         csv_doc['total_markers'] = self.marker_count
