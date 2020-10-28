@@ -90,46 +90,48 @@ class MarkerDict:
         self.compute_data()
 
     def compute_data(self):
-        csv_doc = {}
+        csv_doc = {'marker': {}, 'stats': {}}
         for marker in self.marker_occurences:
-            csv_doc[marker] = {'total': self.marker_occurences[marker]['total'],
-                               'sent_begin': self.marker_occurences[marker]['sent_begin'],
-                               'sent_middle': self.marker_occurences[marker]['sent_middle'],
-                               'sent_end': self.marker_occurences[marker]['sent_end'],
-                               'doc_begin': self.marker_occurences[marker]['doc_begin'],
-                               'doc_middle': self.marker_occurences[marker]['doc_middle'],
-                               'doc_end': self.marker_occurences[marker]['doc_end'],
-                               'inverse_sum_total': self.marker_occurences[marker]['inverse_sum_total'],
-                               'inverse_sum_sb': self.marker_occurences[marker]['inverse_sum_sb'],
-                               'inverse_sum_sm': self.marker_occurences[marker]['inverse_sum_sm'],
-                               'inverse_sum_se': self.marker_occurences[marker]['inverse_sum_se'],
-                               'inverse_sum_db': self.marker_occurences[marker]['inverse_sum_db'],
-                               'inverse_sum_dm': self.marker_occurences[marker]['inverse_sum_dm'],
-                               'inverse_sum_de': self.marker_occurences[marker]['inverse_sum_de'],
-                               'median_total': statistics.median(self.marker_occurences[marker]['median_total']),
-                               'median_sb': statistics.median(self.marker_occurences[marker]['median_sb']),
-                               'median_sm': statistics.median(self.marker_occurences[marker]['median_sm']),
-                               'median_se': statistics.median(self.marker_occurences[marker]['median_se']),
-                               'median_db': statistics.median(self.marker_occurences[marker]['median_db']),
-                               'median_dm': statistics.median(self.marker_occurences[marker]['median_dm']),
-                               'median_de': statistics.median(self.marker_occurences[marker]['median_de']),
-                               'mode_total': Counter(self.marker_occurences[marker]['median_total']).most_common(1),
-                               'mode_sb': Counter(self.marker_occurences[marker]['median_sb']).most_common(1),
-                               'mode_sm': Counter(self.marker_occurences[marker]['median_sm']).most_common(1),
-                               'mode_se': Counter(self.marker_occurences[marker]['median_se']).most_common(1),
-                               'mode_db': Counter(self.marker_occurences[marker]['median_db']).most_common(1),
-                               'mode_dm': Counter(self.marker_occurences[marker]['median_dm']).most_common(1),
-                               'mode_de': Counter(self.marker_occurences[marker]['median_de']).most_common(1)
-                               }
-        csv_doc['total_docs'] = self.doc_count
-        csv_doc['total_markers'] = self.marker_count
-        csv_doc['different_markers'] = len(self.marker_occurences)
-        csv_doc['total_sb'] = sum([self.marker_occurences[marker]['sent_begin'] for marker in self.marker_occurences])
-        csv_doc['total_sm'] = sum([self.marker_occurences[marker]['sent_middle'] for marker in self.marker_occurences])
-        csv_doc['total_se'] = sum([self.marker_occurences[marker]['sent_end'] for marker in self.marker_occurences])
-        csv_doc['total_db'] = sum([self.marker_occurences[marker]['doc_begin'] for marker in self.marker_occurences])
-        csv_doc['total_dm'] = sum([self.marker_occurences[marker]['doc_middle'] for marker in self.marker_occurences])
-        csv_doc['total_de'] = sum([self.marker_occurences[marker]['doc_end'] for marker in self.marker_occurences])
+            csv_doc['marker'][marker] = {'total': self.marker_occurences[marker]['total'],
+                                         'sent_begin': self.marker_occurences[marker]['sent_begin'],
+                                         'sent_middle': self.marker_occurences[marker]['sent_middle'],
+                                         'sent_end': self.marker_occurences[marker]['sent_end'],
+                                         'doc_begin': self.marker_occurences[marker]['doc_begin'],
+                                         'doc_middle': self.marker_occurences[marker]['doc_middle'],
+                                         'doc_end': self.marker_occurences[marker]['doc_end'],
+                                         'inverse_sum_total': self.marker_occurences[marker]['inverse_sum_total'],
+                                         'inverse_sum_sb': self.marker_occurences[marker]['inverse_sum_sb'],
+                                         'inverse_sum_sm': self.marker_occurences[marker]['inverse_sum_sm'],
+                                         'inverse_sum_se': self.marker_occurences[marker]['inverse_sum_se'],
+                                         'inverse_sum_db': self.marker_occurences[marker]['inverse_sum_db'],
+                                         'inverse_sum_dm': self.marker_occurences[marker]['inverse_sum_dm'],
+                                         'inverse_sum_de': self.marker_occurences[marker]['inverse_sum_de'],
+                                         'median_total': statistics.median(
+                                             self.marker_occurences[marker]['median_total']),
+                                         'median_sb': statistics.median(self.marker_occurences[marker]['median_sb']),
+                                         'median_sm': statistics.median(self.marker_occurences[marker]['median_sm']),
+                                         'median_se': statistics.median(self.marker_occurences[marker]['median_se']),
+                                         'median_db': statistics.median(self.marker_occurences[marker]['median_db']),
+                                         'median_dm': statistics.median(self.marker_occurences[marker]['median_dm']),
+                                         'median_de': statistics.median(self.marker_occurences[marker]['median_de']),
+                                         'mode_total': Counter(
+                                             self.marker_occurences[marker]['median_total']).most_common(1),
+                                         'mode_sb': Counter(self.marker_occurences[marker]['median_sb']).most_common(1),
+                                         'mode_sm': Counter(self.marker_occurences[marker]['median_sm']).most_common(1),
+                                         'mode_se': Counter(self.marker_occurences[marker]['median_se']).most_common(1),
+                                         'mode_db': Counter(self.marker_occurences[marker]['median_db']).most_common(1),
+                                         'mode_dm': Counter(self.marker_occurences[marker]['median_dm']).most_common(1),
+                                         'mode_de': Counter(self.marker_occurences[marker]['median_de']).most_common(1)
+                                         }
+        csv_doc['stats']['total_docs'] = self.doc_count
+        csv_doc['stats']['total_markers'] = self.marker_count
+        csv_doc['stats']['different_markers'] = len(self.marker_occurences)
+        csv_doc['stats']['total_sb'] = sum([self.marker_occurences[marker]['sent_begin'] for marker in self.marker_occurences])
+        csv_doc['stats']['total_sm'] = sum([self.marker_occurences[marker]['sent_middle'] for marker in self.marker_occurences])
+        csv_doc['stats']['total_se'] = sum([self.marker_occurences[marker]['sent_end'] for marker in self.marker_occurences])
+        csv_doc['stats']['total_db'] = sum([self.marker_occurences[marker]['doc_begin'] for marker in self.marker_occurences])
+        csv_doc['stats']['total_dm'] = sum([self.marker_occurences[marker]['doc_middle'] for marker in self.marker_occurences])
+        csv_doc['stats']['total_de'] = sum([self.marker_occurences[marker]['doc_end'] for marker in self.marker_occurences])
 
         self.write_json(csv_doc)
 
