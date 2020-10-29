@@ -3,6 +3,36 @@ import numpy as np
 import pandas as pd
 
 
+def draw_simple_barchart(figuretitle, titles, data, colors):
+    """
+    Creates subplots, each a simple barchart for one set of y values over x values in the specified color
+    :param titles: list of titles
+    :param data: list of [[xvalues1, yvalues1],[xvalues2, yvalues2], ...] for each dataset
+    :param colors: list of colors
+    :return:
+    """
+    plt.style.use('fivethirtyeight')
+
+    fig, axes = plt.subplots(ncols=2, nrows=2, sharey=True)
+    row = 0
+    column = 0
+    for i in range(len(data)):
+        axes[row][column].bar(data[i][0], data[i][1], color=colors[i])
+        axes[row][column].set_title(titles[i])
+
+        if i % 2 == 0:
+            axes[row][column].set_ylabel("Number Sentences")
+
+        column += 1
+        if column == 2:
+            column = 0
+            row += 1
+
+    fig.suptitle(figuretitle)
+    plt.tight_layout()
+    plt.show()
+
+
 def draw_barchart(title, x, y_1, y_1_label,
                   y_2=None, y_2_label=None, y_3=None, y_3_label=None, y_4=None, y_4_label=None,
                   color_1='k', color_2='k', color_3='k', color_4='k',
@@ -77,14 +107,26 @@ def draw_barchart(title, x, y_1, y_1_label,
     plt.show()
 
 
-def draw_piechart(title, slices, labels, colors, angle):
+def draw_piecharts(figuretitle, titles, slices, labels, colors, angle):
     """
     Draws a Piechart of the given data with a title and labels for the slices
     """
-    plt.pie(slices, labels=labels, colors=colors,
-            startangle=angle, autopct='%1.1f%%')
 
-    plt.title(title)
+    fig, axes = plt.subplots(ncols=2, nrows=2, sharey=True)
+    row = 0
+    column = 0
+    for i in range(len(titles)):
+        axes[row][column].pie(slices[i], labels=labels, colors=colors[i],
+                              startangle=angle, autopct='%1.1f%%')
+        axes[row][column].set_title(titles[i])
+
+        column += 1
+        if column == 2:
+            column = 0
+            row += 1
+
+    fig.suptitle(figuretitle)
+
     plt.tight_layout()
     plt.show()
 
@@ -302,28 +344,28 @@ def plot_horizontal_barchart(title, y_values, x_values, x_label,
                                  color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4)
 
 
-def plot_dm_positions_sent_piechart(title, data, labels, colors):
+def plot_dm_position_piechart(title, data, labels, colors):
     """
     Prepares the Data for Piecharts:
     One for each Dataset with slices=[counter_begin, counter_middle, counder_end]
     and one for each Position (Begin, Middle, End) with slices for each dataset
-    :param: data array that contains the datasets
-    :param: array of labels for the datasets
-    :param: array of colors for the datasets
+    :param: data: array that contains the datasets
+    :param: labels: array of labels for the datasets
+    :param: colors: array of colors for the datasets
     :return:
     """
-    # TODO: Change so it can accept 4 datasets!
-    set_labels = ["Sentence Begin", "Sentence Middle", "Sentence End"]
-    # greens, greys, blues
-    set_colors = [['#61D836', '#007B76', '#1DB100'], ['#f2f2f2', '#cecece', '#aba7a7'],
-                  ['#7CACED', '#2657AF', '#6291E7']]
+
+    set_labels = ["begin", "middle", "end"]
     begin_slices = []
     middle_slices = []
     end_slices = []
-    for dataset, label, color in zip(data, labels, set_colors):
+    titles = []
+    slices = []
+    for dataset, label in zip(data, labels):
         begin_slices.append(sum(dataset[0]))
         middle_slices.append(sum(dataset[1]))
         end_slices.append(sum(dataset[2]))
-        set_slices = [sum(dataset[0]), sum(dataset[1]), sum(dataset[2])]
-        set_title = label
-        draw_piechart(set_title, set_slices, set_labels, color, 0)
+        slices.append([sum(dataset[0]), sum(dataset[1]), sum(dataset[2])])
+        titles.append(label)
+
+    draw_piecharts(title, titles, slices, set_labels, colors, 0)

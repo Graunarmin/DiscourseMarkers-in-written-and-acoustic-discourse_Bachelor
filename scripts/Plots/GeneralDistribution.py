@@ -625,7 +625,7 @@ def compute_marker_occurences(data1, data2=None, data3=None, data4=None):
         y_values_2 = []
 
     if data3 is not None:
-        markers_3 = mp.DatasetMarkers(data3).get_total_values()
+        markers_3 = DatasetMarkers(data3).get_total_values()
         y_values_3 = []
 
     if data4 is not None:

@@ -86,6 +86,11 @@ class DatasetScores:
                 hp.percentage(values[1], whole),
                 hp.percentage(values[2], whole)]
 
+    def get_sentence_position_values(self):
+        return [self.scores['dm_pos_sent_begin'].dropna(),
+                self.scores['dm_pos_sent_middle'].dropna(),
+                self.scores['dm_pos_sent_end'].dropna()]
+
     def get_total_dm_positions_document(self):
         """
         Computes the total number of DM at the beginning, the middle and the end
@@ -108,6 +113,11 @@ class DatasetScores:
         return [hp.percentage(values[0], whole),
                 hp.percentage(values[1], whole),
                 hp.percentage(values[2], whole)]
+
+    def get_document_position_values(self):
+        return [self.scores['dm_pos_doc_begin'].dropna(),
+                self.scores['dm_pos_doc_middle'].dropna(),
+                self.scores['dm_pos_doc_end'].dropna()]
 
     def get_sentence_counts(self):
         """
@@ -193,7 +203,7 @@ class DatasetScores:
             statistics[marker]['a_mean'] = self.marker_dict[marker]['total'] / self.total_docs
             statistics[marker]['h_mean'] = self.total_docs / self.marker_dict[marker]['inverse_sum_total']
             statistics[marker]['median'] = self.marker_dict[marker]['median_total']
-            statistics[marker]['mode'] = self.marker_dict[marker]['mode_total'][0]
+            statistics[marker]['mode'] = self.marker_dict[marker]['mode_total'][0][0]
 
         return statistics
 
@@ -223,4 +233,15 @@ class DatasetScores:
             marker_values = [0] * 4
 
         return marker_values
+
+    def get_marker_total(self, marker):
+        """
+        Gets the total number of occurrences for the given marker in the dataset.
+        :param marker:
+        :return: total number of occurrences in the dataset (0 if none)
+        """
+        if marker in self.marker_dict:
+            return self.marker_dict[marker]['total']
+        else:
+            return 0
 
