@@ -3,15 +3,8 @@ import numpy as np
 import pandas as pd
 import statistics
 import ast
+import json
 
-
-# -------- Read in data ----------
-class CorpusData:
-    def __init__(self, spotify_file, ted_file, ny_file, gig_file):
-        self.spotify_data = pd.read_csv(spotify_file)
-        self.ted_data = pd.read_csv(ted_file)
-        self.ny_data = pd.read_csv(ny_file)
-        self.gig_data = pd.read_csv(gig_file)
 
 
 # ----------- Plot the Data ------------
@@ -103,7 +96,7 @@ def draw_piechart(title, slices, labels, colors, angle):
 
 def draw_horizontal_barchart(title, y_data, x_1, label_1, x_label, y_ticks, x_2=None, label_2=None,
                              x_3=None, label_3=None, x_4=None, label_4=None,
-                             color_1='k', color_2='k', color_3='k', color_4='k', ):
+                             color_1='k', color_2='k', color_3='k', color_4='k'):
     """
     Plots a horizontal barchart
     :param title: Titel of the barchart
@@ -129,8 +122,6 @@ def draw_horizontal_barchart(title, y_data, x_1, label_1, x_label, y_ticks, x_2=
 
     y_indexes = y_ticks[0]
 
-    # TODO: add spaces between bars
-    # TODO: add pre-process function for this function?
     if not x_2 and not x_3 and not x_4:
         plt.barh(y_data, x_1, height=width, color=color_1, label=label_1)
 
@@ -155,6 +146,69 @@ def draw_horizontal_barchart(title, y_data, x_1, label_1, x_label, y_ticks, x_2=
     plt.yticks(ticks=y_ticks[0], labels=y_ticks[1])
 
     plt.legend()
+
+    plt.tight_layout()
+    plt.show()
+
+
+def draw_horizontal_subplots(title, y_data, x_1, label_1, x_label, x_2=None, label_2=None,
+                             x_3=None, label_3=None, x_4=None, label_4=None,
+                             color_1='k', color_2='k', color_3='k', color_4='k'):
+    plt.style.use('fivethirtyeight')
+    width = 0.15
+
+    if not x_2 and not x_3 and not x_4:
+        fig, ax = plt.subplots()
+        ax.barh(y_data, x_1, height=width, color=color_1, label=label_1)
+
+        ax.legend()
+        ax.set_title(title)
+        ax.set_xlabel(x_label)
+
+    elif not x_3 and not x_4:
+        fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharey=True)
+        ax1.barh(y_data, x_1, height=width, color=color_1, label=label_1)
+        ax2.barh(y_data, x_2, height=width, color=color_2, label=label_2)
+
+        ax1.legend()
+        ax1.set_title(title)
+        ax1.set_xlabel(x_label)
+
+        ax2.legend()
+        ax2.set_xlabel(x_label)
+
+    elif not x_4:
+        fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, sharey=True)
+        ax1.barh(y_data, x_1, height=width, color=color_1, label=label_1)
+        ax2.barh(y_data, x_2, height=width, color=color_2, label=label_2)
+        ax3.barh(y_data, x_3, height=width, color=color_3, label=label_3)
+
+        ax1.legend()
+        ax1.set_title(title)
+
+        ax2.legend()
+        ax2.set_xlabel(x_label)
+
+        ax3.legend()
+        ax3.set_xlabel(x_label)
+
+    else:
+        fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, sharey=True, sharex=True)
+        ax1.barh(y_data, x_1, height=width, color=color_1, label=label_1)
+        ax2.barh(y_data, x_2, height=width, color=color_2, label=label_2)
+        ax3.barh(y_data, x_3, height=width, color=color_3, label=label_3)
+        ax4.barh(y_data, x_4, height=width, color=color_4, label=label_4)
+
+        ax1.set_title(title)
+        ax1.legend()
+
+        ax2.legend()
+
+        ax3.legend()
+        ax3.set_xlabel(x_label)
+
+        ax4.legend()
+        ax4.set_xlabel(x_label)
 
     plt.tight_layout()
     plt.show()
@@ -198,7 +252,8 @@ def plot_data_barchart(title, y_values, x_labels, y_label,
 
 def plot_horizontal_barchart(title, y_values, x_values, x_label,
                              label_1, label_2=None, label_3=None, label_4=None,
-                             color_1='k', color_2='k', color_3='k', color_4='k'):
+                             color_1='k', color_2='k', color_3='k', color_4='k',
+                             subplot=False):
     """
     :param title: Title of the Barchart
     :param y_values: list of y_values (e.g. all the markers),
@@ -212,23 +267,39 @@ def plot_horizontal_barchart(title, y_values, x_values, x_label,
     :param color_2: color for the second dataset
     :param color_3: color for the third dataset
     :param color_4: color for the fourth dataset
+    :param subplot: indicates whether the data is to be displayed in a single plot (False, default),
+                    or in different subplots(True)
     :return:
     """
 
     y_values = y_values
     x_values_1 = x_values[0]
-    x_values_2 = x_values[1]
-    x_values_3 = x_values[2]
-    x_values_4 = x_values[3]
+    x_values_2 = None
+    if len(x_values) > 1:
+        x_values_2 = x_values[1]
+    x_values_3 = None
+    if len(x_values) > 2:
+        x_values_3 = x_values[2]
+    x_values_4 = None
+    if len(x_values) == 4:
+        x_values_4 = x_values[3]
 
     y_ticks = [np.arange(len(x_values_1)), y_values]
 
-    draw_horizontal_barchart(title, y_values, x_values_1, label_1,
-                             x_label=x_label, y_ticks=y_ticks,
-                             x_2=x_values_2, label_2=label_2,
-                             x_3=x_values_3, label_3=label_3,
-                             x_4=x_values_4, label_4=label_4,
-                             color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4)
+    if subplot:
+        draw_horizontal_subplots(title, y_values, x_values_1, label_1,
+                                 x_label=x_label,
+                                 x_2=x_values_2, label_2=label_2,
+                                 x_3=x_values_3, label_3=label_3,
+                                 x_4=x_values_4, label_4=label_4,
+                                 color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4)
+    else:
+        draw_horizontal_barchart(title, y_values, x_values_1, label_1,
+                                 x_label=x_label, y_ticks=y_ticks,
+                                 x_2=x_values_2, label_2=label_2,
+                                 x_3=x_values_3, label_3=label_3,
+                                 x_4=x_values_4, label_4=label_4,
+                                 color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4)
 
 
 # ---------- General statistical distribution of DM -----------------
@@ -249,7 +320,8 @@ def add_values(values_dict, columns, values, dataset):
 
 def print_dataframe(values_dict, rows):
     """
-    prints the values as a pandas dataframe, which is a more beautiful dict with rows (index) and columns
+    prints the values as a pandas dataframe, which is a more beautiful dict with rows (index)
+    and columns
     :param values_dict: the dictionary to be printed as dataframe
     :param rows: the name of the row that should function als index (row-names)
     :return:
@@ -299,10 +371,10 @@ def compute_statistics(values):
     median_dm_per_sentence = statistics.median(values)
     mode_dm_per_sentence = statistics.mode(values)
 
-    return[min_dm_per_sentence,
-           arith_mean_dm_per_sentence, harmonic_mean_dem_per_sentence,
-           median_dm_per_sentence, mode_dm_per_sentence,
-           max_dm_per_sentence]
+    return [min_dm_per_sentence,
+            arith_mean_dm_per_sentence, harmonic_mean_dem_per_sentence,
+            median_dm_per_sentence, mode_dm_per_sentence,
+            max_dm_per_sentence]
 
 
 def compute_y_values_statics(data_1, label_1=None, data_2=None, label_2=None, data_3=None, label_3=None, data_4=None,
@@ -374,7 +446,9 @@ def compute_dm_per_sentence(data, title, color):
             else:
                 values[dm_counter] += int(doc_counts[dm_counter])
 
+    # x values are the number of dms per sentence
     x_values = []
+    # y values are the number of sentences that contain as many dms.
     y_values = []
     for element in sorted(values.items()):
         x_values.append(element[0])
@@ -509,289 +583,126 @@ def get_position_values(data, flag):
     return markers
 
 
-def get_total_values(data):
-    """
-    Extracts the total number of occurrences for each marker from the given dict
-    Returns a dictionary with the marker as key and the number of occurrences as value
-    :param data: the dictionary to extract the values from
-    :return: a dictionary with the markers as key and the number of occurrences as value
-    """
+def list_all_markers(data1, data2=None, data3=None, data4=None):
+    markers_1 = mp.DatasetMarkers(data1)
+    markers = markers_1.get_markers()
 
-    markers = {}
-    total_markers = 0
-    for doc in data:
-        dm_dict = ast.literal_eval(doc)
-        for marker in dm_dict:
-            markers[marker] = dm_dict[marker]['total']
-            total_markers += dm_dict[marker]['total']
+    if data2 is not None:
+        markers_2 = mp.DatasetMarkers(data2)
+        for marker in markers_2.get_markers():
+            if marker not in markers:
+                markers.append(marker)
 
-    return [markers, total_markers]
+    if data3 is not None:
+        markers_3 = mp.DatasetMarkers(data3)
+        for marker in markers_3.get_markers():
+            if marker not in markers:
+                markers.append(marker)
+
+    if data4 is not None:
+        markers_4 = mp.DatasetMarkers(data4)
+        for marker in markers_4.get_markers():
+            if marker not in markers:
+                markers.append(marker)
+
+    return markers
 
 
-def total_numbers(data_1, data_2=None, data_3=None, data_4=None):
-    """
-    creates a list of all the markers that occur in the data
-    and four lists of values that contain the number of occurences per those markers
-    in the four datasets
-    :param data_1: the 'dm_counts_dict' column of the first dataset
-    :param data_2: the 'dm_counts_dict' column of the second dataset
-    :param data_3: the 'dm_counts_dict' column of the third dataset
-    :param data_4: the 'dm_counts_dict' column of the fourth dataset
-    :return:
-    """
-
+def compute_marker_occurences(data1, data2=None, data3=None, data4=None):
+    markers = list_all_markers(data1, data2, data3, data4)
+    markers_1 = mp.DatasetMarkers(data1).get_total_values()
     y_values_1 = []
-    y_percent_1 = []
-    values = get_total_values(data_1)
-    counts_1 = values[0]
-    total_1 = values[1]
 
+    markers_2 = []
     y_values_2 = None
-    y_percent_2 = None
-    counts_2 = []
+    markers_3 = []
     y_values_3 = None
-    y_percent_3 = None
-    counts_3 = []
+    markers_4 = []
     y_values_4 = None
-    y_percent_4 = None
-    counts_4 = []
 
-    x_values = [marker for marker in counts_1]
-    del values
-    if data_2 is not None:
+    if data2 is not None:
+        markers_2 = mp.DatasetMarkers(data2).get_total_values()
         y_values_2 = []
-        y_percent_2 = []
-        values = get_total_values(data_2)
-        counts_2 = values[0]
-        total_2 = values[1]
-        for marker in counts_2:
-            if marker not in x_values:
-                x_values.append(marker)
-    del values
-    if data_3 is not None:
+
+    if data3 is not None:
+        markers_3 = mp.DatasetMarkers(data3).get_total_values()
         y_values_3 = []
-        y_percent_3 = []
-        values = get_total_values(data_3)
-        counts_3 = values[0]
-        total_3 = values[1]
-        for marker in counts_3:
-            if marker not in x_values:
-                x_values.append(marker)
-    del values
-    if data_4 is not None:
+
+    if data4 is not None:
+        markers_4 = mp.DatasetMarkers(data4).get_total_values()
         y_values_4 = []
-        y_percent_4 = []
-        values = get_total_values(data_4)
-        counts_4 = values[0]
-        total_4 = values[1]
-        for marker in counts_4:
-            if marker not in x_values:
-                x_values.append(marker)
 
-    del values
-
-    for marker in x_values:
-        if marker in counts_1:
-            y_values_1.append(counts_1[marker])
-            y_percent_1.append(counts_1[marker] * 100 / total_1)
+    for marker in markers:
+        if marker in markers_1:
+            y_values_1.append(markers_1[marker])
         else:
             y_values_1.append(0)
-            y_percent_1.append(0)
-        if data_2 is not None:
-            if marker in counts_2:
-                y_values_2.append(counts_2[marker])
-                y_percent_2.append(counts_2[marker] * 100 / total_2)
+        if data2 is not None:
+            if marker in markers_2:
+                y_values_2.append(markers_2[marker])
             else:
                 y_values_2.append(0)
-                y_percent_2.append(0)
-        if data_3 is not None:
-            if marker in counts_3:
-                y_values_3.append(counts_3[marker])
-                y_percent_3.append(counts_3[marker] * 100 / total_3)
+        if data3 is not None:
+            if marker in markers_3:
+                y_values_3.append(markers_3[marker])
             else:
                 y_values_3.append(0)
-                y_percent_3.append(0)
-        if data_4 is not None:
-            if marker in counts_4:
-                y_values_4.append(counts_4[marker])
-                y_percent_4.append(counts_4[marker] * 100 / total_4)
+        if data4 is not None:
+            if marker in markers_4:
+                y_values_4.append(markers_4[marker])
             else:
                 y_values_4.append(0)
-                y_percent_4.append(0)
 
-    del counts_1, counts_2, counts_3, counts_4
-
-    return [x_values,
-            [y_values_1, y_values_2, y_values_3, y_values_4],
-            [y_percent_1, y_percent_2, y_percent_3, y_percent_4]]
+    return [markers, y_values_1, y_values_2, y_values_3, y_values_4]
 
 
-# ------------ MAIN -------------
-def main():
+def compute_marker_percentages(data1, data2=None, data3=None, data4=None):
+    markers = list_all_markers(data1, data2, data3, data4)
+    markers_1 = mp.DatasetMarkers(data1).get_total_percents()
+    y_values_1 = []
 
-    # data = CorpusData("../bigData/listenability-tools/pipeline-output/spotify-scores.csv",
-    #                   "../bigData/listenability-tools/pipeline-output/ted-scores.csv",
-    #                   "../bigData/listenability-tools/pipeline-output/nytimes-scores.csv",
-    #                   "../bigData/listenability-tools/pipeline-output/gigaword-scores.csv")
+    markers_2 = []
+    y_values_2 = None
+    markers_3 = []
+    y_values_3 = None
+    markers_4 = []
+    y_values_4 = None
 
-    data = CorpusData("../../bigData/listenability-tools/new-output/spotify-scores.csv",
-                      "../../bigData/listenability-tools/new-output/ted-scores.csv",
-                      "../../bigData/listenability-tools/new-output/example-scores.csv",
-                      "../../bigData/listenability-tools/new-output/example-scores.csv")
+    if data2 is not None:
+        markers_2 = mp.DatasetMarkers(data2).get_total_percents()
+        y_values_2 = []
 
-    '''01: 
-    Prozentualer Anteil der DM an den Texten, über alle Texte
-    min/mean/max(dm_words_perc)
-    '''
-    # plot_data_barchart("Percent Discourse Markers per Text",
-    #                    compute_y_values_statics(data.spotify_data['dm_words_perc'].dropna(), label_1="Spotify",
-    #                                             data_2=data.ted_data['dm_words_perc'].dropna(), label_2="TED",
-    #                                             data_3=data.ny_data['dm_words_perc'].dropna(), label_3="NYTimes",
-    #                                             data_4=data.gig_data['dm_words_perc'].dropna(), label_4="Gigaword"),
-    #                    ["Min", "A_Mean", "H_Mean", "Median", "Mode", "Max"],
-    #                    "Percent Markers",
-    #                    label_1="Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
-    #                    color_1='#1DB954', color_2='#e62b1e', color_3='#cecece', color_4='#7CACED')
-    #
-    # '''02:
-    # Anzahl der DM pro Text, über alle Texte (nicht sehr aussagekräftig)
-    # min/mean/max(dm_count_doc)
-    # '''
-    # plot_data_barchart("Number of Discourse Markers per Text",
-    #                    compute_y_values_statics(data.spotify_data['dm_count_doc'].dropna(), label_1="Spotify",
-    #                                             data_2=data.ted_data['dm_count_doc'].dropna(), label_2="TED",
-    #                                             data_3=data.ny_data['dm_count_doc'].dropna(), label_3="NYTimes",
-    #                                             data_4=data.gig_data['dm_count_doc'].dropna(), label_4="Gigaword"),
-    #                    ["Min", "A_Mean", "H_Mean", "Median", "Mode", "Max"],
-    #                    "Number Markers",
-    #                    label_1="Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
-    #                    color_1='#1DB954', color_2='#e62b1e', color_3='#cecece', color_4='#7CACED')
-    #
-    # '''03:
-    # Prozentualer Anteil der Sätze, die DM enthalten, an den Texten, über alle Texte
-    # min/mean/max(dm_sentences_perc)
-    # '''
-    # plot_data_barchart("Percent of Sentences with DM per Text",
-    #                    compute_y_values_statics(data.spotify_data['dm_sentences_perc'].dropna(), label_1="Spotify",
-    #                                             data_2=data.ny_data['dm_sentences_perc'].dropna(), label_2="NYTimes",
-    #                                             data_3=data.gig_data['dm_sentences_perc'].dropna(), label_3="Gigaword"),
-    #                    ["Min", "A_Mean", "H_Mean", "Median", "Mode", "Max"],
-    #                    "% Sentences containing DM",
-    #                    label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
-    #                    color_1='#1DB954', color_2='#cecece', color_3='#7CACED')
-    #
-    # '''04:
-    # Anzahl der Sätze, die DM enthalten, über alle Texte (nicht sehr aussagekräftig)
-    # min/mean/max(dm_sentences)
-    # '''
-    # plot_data_barchart("Number of Sentences with DM per Text",
-    #                    compute_y_values_statics(data.spotify_data['dm_sentences'].dropna(), label_1="Spotify",
-    #                                             data_2=data.ny_data['dm_sentences'].dropna(), label_2="NYTimes",
-    #                                             data_3=data.gig_data['dm_sentences'].dropna(), label_3="Gigaword"),
-    #                    ["Min", "A_Mean", "H_Mean", "Median", "Mode", "Max"],
-    #                    "# Sentences containing DM",
-    #                    label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
-    #                    color_1='#1DB954', color_2='#cecece', color_3='#7CACED')
-    #
-    # '''05:
-    # Number of DM per sentence
-    # '''
-    # plot_data_barchart("Number of Discourse Markers per Sentence",
-    #                    compute_y_values_statics(
-    #                        get_sentence_values_for_dataset(data.spotify_data['dm_count_sent'].dropna()),
-    #                        label_1="Spotify",
-    #                        data_2=get_sentence_values_for_dataset(data.ny_data['dm_count_sent'].dropna()),
-    #                        label_2="NYTimes",
-    #                        data_3=get_sentence_values_for_dataset(data.gig_data['dm_count_sent'].dropna()),
-    #                        label_3="Gigaword"
-    #                    ),
-    #                    ["Min", "A_Mean", "H_Mean", "Median", "Mode", "Max"],
-    #                    "# Markers per Sentence",
-    #                    label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
-    #                    color_1='#1DB954', color_2='#cecece', color_3='#7CACED')
-    #
-    # '''06:
-    # Histogram with Number of DM per Sentence per Dataset
-    # '''
-    # compute_dm_per_sentence(data.spotify_data['dm_count_sent'].dropna(), "Spotify", '#1DB954')
-    # compute_dm_per_sentence(data.ny_data['dm_count_sent'].dropna(), "New York Times", '#cecece')
-    # compute_dm_per_sentence(data.gig_data['dm_count_sent'].dropna(), "Gigaword", '#7CACED')
-    #
-    # '''07:
-    # Percentage of DM at certain positions in a sentence
-    # '''
-    # plot_data_barchart("% of DM in a Position in a Sentence",
-    #                    compute_yvalues_positions(
-    #                        [data.spotify_data['dm_pos_sent_begin'].dropna(),
-    #                         data.spotify_data['dm_pos_sent_middle'].dropna(),
-    #                         data.spotify_data['dm_pos_sent_end'].dropna()], label_1="Spotify",
-    #                        data_2=[data.ny_data['dm_pos_sent_begin'].dropna(),
-    #                                data.ny_data['dm_pos_sent_middle'].dropna(),
-    #                                data.ny_data['dm_pos_sent_end'].dropna()], label_2="NYTimes",
-    #                        data_3=[data.gig_data['dm_pos_sent_begin'].dropna(),
-    #                                data.gig_data['dm_pos_sent_middle'].dropna(),
-    #                                data.gig_data['dm_pos_sent_end'].dropna()], label_3="Gigaword",
-    #                        perc=True
-    #                    ),
-    #                    ["Sent. Begin", "Sent. Middle", "Sent. End"],
-    #                    "% DM at Postion",
-    #                    label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
-    #                    color_1='#1DB954', color_2='#cecece', color_3='#7CACED')
-    #
-    # '''08:
-    # Number of DM at certain positions in a sentence
-    # '''
-    # plot_data_barchart("Number of DM at a certain Position in a Sentence",
-    #                    compute_yvalues_positions(
-    #                        [data.spotify_data['dm_pos_sent_begin'].dropna(),
-    #                         data.spotify_data['dm_pos_sent_middle'].dropna(),
-    #                         data.spotify_data['dm_pos_sent_end'].dropna()], label_1="Spotify",
-    #                        data_2=[data.ny_data['dm_pos_sent_begin'].dropna(),
-    #                                data.ny_data['dm_pos_sent_middle'].dropna(),
-    #                                data.ny_data['dm_pos_sent_end'].dropna()], label_2="NYTimes",
-    #                        data_3=[data.gig_data['dm_pos_sent_begin'].dropna(),
-    #                                data.gig_data['dm_pos_sent_middle'].dropna(),
-    #                                data.gig_data['dm_pos_sent_end'].dropna()], label_3="Gigaword"
-    #                    ),
-    #                    ["begin", "middle", "end"],
-    #                    "# DM at Postion",
-    #                    label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
-    #                    color_1='#1DB954', color_2='#cecece', color_3='#7CACED')
-    #
-    # '''09:
-    # Piechart of DM at certain positions in a sentence per Dataset
-    # '''
-    # plot_dm_positions_sent_piechart("Number of DM in a Sentence at Position:",
-    #                                 [[data.spotify_data['dm_pos_sent_begin'].dropna(),
-    #                                   data.spotify_data['dm_pos_sent_middle'].dropna(),
-    #                                   data.spotify_data['dm_pos_sent_end'].dropna()],
-    #                                  [data.ny_data['dm_pos_sent_begin'].dropna(),
-    #                                   data.ny_data['dm_pos_sent_middle'].dropna(),
-    #                                   data.ny_data['dm_pos_sent_end'].dropna()],
-    #                                  [data.gig_data['dm_pos_sent_begin'].dropna(),
-    #                                   data.gig_data['dm_pos_sent_middle'].dropna(),
-    #                                   data.gig_data['dm_pos_sent_end'].dropna()]
-    #                                  ],
-    #                                 ["Spotify Data", "NYTimes Data", "Gigaword Data"],
-    #                                 ['#1DB954', '#cecece', '#7CACED'])
+    if data3 is not None:
+        markers_3 = mp.DatasetMarkers(data3).get_total_percents()
+        y_values_3 = []
 
-    marker_occurences = total_numbers(data.spotify_data['dm_counts_dict'],
-                                      data_2=data.ted_data['dm_counts_dict'],
-                                      data_3=data.ny_data['dm_counts_dict'],
-                                      data_4=data.gig_data['dm_counts_dict'])
+    if data4 is not None:
+        markers_4 = mp.DatasetMarkers(data4).get_total_percents()
+        y_values_4 = []
 
-    plot_horizontal_barchart("Discourse Marker Occurrences",
-                             marker_occurences[0], marker_occurences[1],
-                             "Number of Occurrences",
-                             label_1="Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
-                             color_1='#1DB954', color_2='#e62b1e', color_3='#cecece', color_4='#7CACED')
+    for marker in markers:
+        if marker in markers_1:
+            y_values_1.append(markers_1[marker])
+        else:
+            y_values_1.append(0)
+        if marker in markers_2:
+            y_values_2.append(markers_2[marker])
+        else:
+            y_values_2.append(0)
+        if marker in markers_3:
+            y_values_3.append(markers_3[marker])
+        else:
+            y_values_3.append(0)
+        if marker in markers_4:
+            y_values_4.append(markers_4[marker])
+        else:
+            y_values_4.append(0)
 
-    plot_horizontal_barchart("Discourse Marker Occurrences - Percent",
-                             marker_occurences[0], marker_occurences[2],
-                             "Percent of all markers",
-                             label_1="Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
-                             color_1='#1DB954', color_2='#e62b1e', color_3='#cecece', color_4='#7CACED')
+    return [markers, y_values_1, y_values_2, y_values_3, y_values_4]
 
 
-if __name__ == '__main__':
-    main()
+def compute_marker_statistics(data_1, data_2=None, data_3=None, data_4=None):
+    pass
+
+
+
