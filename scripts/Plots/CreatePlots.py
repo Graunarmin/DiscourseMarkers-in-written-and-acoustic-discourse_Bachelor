@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 
 def draw_simple_barchart(figuretitle, titles, data, colors):
@@ -13,7 +12,7 @@ def draw_simple_barchart(figuretitle, titles, data, colors):
     """
     plt.style.use('fivethirtyeight')
 
-    fig, axes = plt.subplots(ncols=2, nrows=2, sharey=True)
+    fig, axes = plt.subplots(ncols=2, nrows=2)
     row = 0
     column = 0
     for i in range(len(data)):

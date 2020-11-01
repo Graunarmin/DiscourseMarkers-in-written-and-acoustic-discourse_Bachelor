@@ -706,3 +706,24 @@ def compute_marker_statistics(data_1, data_2=None, data_3=None, data_4=None):
 
 
 
+'''10:
+Number of Occurences per Discourse Marker per Dataset
+'''
+marker_occurences = compute_marker_occurences(data.spotify_marker, data.ted_marker,
+                                              data.ny_marker, data.gig_marker)
+plot_horizontal_barchart("Discourse Marker Occurrences",
+                         marker_occurences[0],
+                         [marker_occurences[1], marker_occurences[2],
+                             marker_occurences[3], marker_occurences[4]],
+                         "Number of Occurrences",
+                         label_1="Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
+                         color_1='#1DB954', color_2='#e62b1e', color_3='#FFA700', color_4='#227DFB')
+
+plot_horizontal_barchart("Discourse Marker Occurrences",
+                         marker_occurences[0],
+                         [marker_occurences[1], marker_occurences[2],
+                         marker_occurences[3], marker_occurences[4]],
+                         "Number of Occurrences",
+                         label_1="Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
+                         color_1='#1DB954', color_2='#e62b1e', color_3='#FFA700', color_4='#227DFB',
+                         sub=True)

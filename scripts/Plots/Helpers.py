@@ -57,6 +57,3 @@ def list_all_markers(data1, data2=None, data3=None, data4=None):
                 markers.append(marker)
 
     return markers
-
-
-def

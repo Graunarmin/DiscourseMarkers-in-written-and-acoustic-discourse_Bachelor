@@ -89,6 +89,79 @@ def prepare_marker_subplots(data1, data2, data3, data4):
     return markers, [y_values_1, y_values_2, y_values_3, y_values_4]
 
 
+def most_common_markers_plot(figuretitle, xlabel,
+                             data1, label1, color1, data2=None, label2=None, color2=None,
+                             data3=None, label3=None, color3=None, data4=None, label4=None, color4=None,
+                             share=False):
+    plt.style.use('fivethirtyeight')
+    width = 0.15
+    plt.rc('ytick', labelsize=10)
+    plt.rc('xtick', labelsize=9)
+
+    if not data2 and not data3 and not data4:
+        fig, ax = plt.subplots()
+        ax.barh(data1[0], data1[1], height=width, color=color1, label=label1)
+
+        ax.legend()
+        ax.set_title(label1)
+        ax.set_xlabel(xlabel)
+
+    elif not data3 and not data4:
+        if share:
+            fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=1, sharex=True)
+        else:
+            fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=1)
+        ax1.barh(data1[0], data1[1], height=width, color=color1, label=label1)
+        ax2.barh(data2[0], data2[1], height=width, color=color2, label=label2)
+
+        ax1.set_title(label1)
+        ax1.set_xlabel(xlabel)
+
+        ax2.set_title(label2)
+        ax2.set_xlabel(xlabel)
+
+    elif not data4:
+        if share:
+            fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, sharex=True)
+        else:
+            fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3)
+        ax1.barh(data1[0], data1[1], height=width, color=color1, label=label1)
+        ax2.barh(data2[0], data2[1], height=width, color=color2, label=label2)
+        ax3.barh(data3[0], data3[1], height=width, color=color3, label=label3)
+
+        ax1.set_title(label1)
+
+        ax2.set_title(label2)
+        ax2.set_xlabel(xlabel)
+
+        ax3.set_title(label3)
+
+    else:
+        if share:
+            fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, sharex=True)
+        else:
+            fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2)
+        ax1.barh(data1[0], data1[1], height=width, color=color1, label=label1)
+        ax2.barh(data2[0], data2[1], height=width, color=color2, label=label2)
+        ax3.barh(data3[0], data3[1], height=width, color=color3, label=label3)
+        ax4.barh(data4[0], data4[1], height=width, color=color4, label=label4)
+
+        ax1.set_title(label1)
+
+        ax2.set_title(label2)
+
+        ax3.set_title(label3)
+        ax3.set_xlabel(xlabel)
+
+        ax4.set_title(label4)
+        ax4.set_xlabel(xlabel)
+
+    fig.suptitle(figuretitle)
+
+    plt.tight_layout()
+    plt.show()
+
+
 # --------- MAIN -----------
 def main():
     pass

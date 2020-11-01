@@ -2,12 +2,14 @@ import pandas as pd
 import ast
 import Helpers as hp
 import json
+from collections import Counter
 
 
 class DatasetScores:
 
     def __init__(self, scorefile, jsonfile):
         self.scores = pd.read_csv(scorefile)
+        self.total_sentences = sum(self.scores['sentence_count_doc'])
 
         with open(jsonfile, 'r', encoding='utf-8') as data_json:
             dictionary = json.load(data_json)
@@ -165,7 +167,7 @@ class DatasetScores:
 
         return [x_values, y_values]
 
-# ------- Functionaliyt concerning the marker dictionary with the single markers
+    # ------- Functionaliyt concerning the marker dictionary with the single markers
 
     def get_total_marker_values(self):
         """
@@ -216,6 +218,66 @@ class DatasetScores:
             markers.append(marker)
         return markers
 
+    def get_marker_values_at_position(self, position, average=False, perc=False):
+        """
+        Creates a dict with the marker as key and the position value as value
+        :param position: the position to get the values for: sb, sm, se, db, dm, de
+        :return:
+        """
+
+        markers = {}
+        if position == "sb":
+            for marker in self.marker_dict:
+                if average:
+                    markers[marker] = self.marker_dict[marker]['sent_begin'] / self.total_sentences
+                elif perc:
+                    markers[marker] = self.marker_dict[marker]['sent_begin'] * 100 / self.total_sb
+                else:
+                    markers[marker] = self.marker_dict[marker]['sent_begin']
+        elif position == "sm":
+            for marker in self.marker_dict:
+                if average:
+                    markers[marker] = self.marker_dict[marker]['sent_middle'] / self.total_sentences
+                elif perc:
+                    markers[marker] = self.marker_dict[marker]['sent_middle'] * 100 / self.total_sm
+                else:
+                    markers[marker] = self.marker_dict[marker]['sent_middle']
+        elif position == "se":
+            for marker in self.marker_dict:
+                if average:
+                    markers[marker] = self.marker_dict[marker]['sent_end'] / self.total_sentences
+                elif perc:
+                    markers[marker] = self.marker_dict[marker]['sent_end'] * 100 / self.total_se
+                else:
+                    markers[marker] = self.marker_dict[marker]['sent_end']
+
+        elif position == "db":
+            for marker in self.marker_dict:
+                if average:
+                    markers[marker] = self.marker_dict[marker]['doc_begin'] / self.total_sentences
+                elif perc:
+                    markers[marker] = self.marker_dict[marker]['doc_begin'] * 100 / self.total_db
+                else:
+                    markers[marker] = self.marker_dict[marker]['doc_begin']
+        elif position == "dm":
+            for marker in self.marker_dict:
+                if average:
+                    markers[marker] = self.marker_dict[marker]['doc_middle'] / self.total_sentences
+                elif perc:
+                    markers[marker] = self.marker_dict[marker]['doc_middle'] * 100 / self.total_dm
+                else:
+                    markers[marker] = self.marker_dict[marker]['doc_middle']
+        elif position == "de":
+            for marker in self.marker_dict:
+                if average:
+                    markers[marker] = self.marker_dict[marker]['doc_end'] / self.total_sentences
+                elif perc:
+                    markers[marker] = self.marker_dict[marker]['doc_end'] * 100 / self.total_de
+                else:
+                    markers[marker] = self.marker_dict[marker]['doc_end']
+
+        return markers
+
     def get_all_marker_values(self, marker):
         """
         Creates a List with all the values for a marker:
@@ -224,11 +286,11 @@ class DatasetScores:
         :return:
         """
         if marker in self.marker_dict:
-            marker_values = [#self.marker_dict[marker]['total'],
-                             self.marker_dict[marker]['total'] / self.total_docs,
-                             self.total_docs / self.marker_dict[marker]['inverse_sum_total'],
-                             self.marker_dict[marker]['median_total'],
-                             self.marker_dict[marker]['mode_total'][0][0]]
+            marker_values = [  # self.marker_dict[marker]['total'],
+                self.marker_dict[marker]['total'] / self.total_docs,
+                self.total_docs / self.marker_dict[marker]['inverse_sum_total'],
+                self.marker_dict[marker]['median_total'],
+                self.marker_dict[marker]['mode_total'][0][0]]
         else:
             marker_values = [0] * 4
 
@@ -244,4 +306,19 @@ class DatasetScores:
             return self.marker_dict[marker]['total']
         else:
             return 0
+
+    def get_most_common_markers(self, number, position=None, perc=False, average=False):
+        if position:
+            marker_count = Counter(self.get_marker_values_at_position(position, average=average, perc=perc))
+        elif not position and perc:
+            marker_count = Counter(self.get_total_marker_percents())
+        else:
+            marker_count = Counter(self.get_total_marker_values())
+        markers = []
+        marker_values = []
+        for item in marker_count.most_common(number):
+            markers.append(item[0])
+            marker_values.append(item[1])
+
+        return markers, marker_values
 
