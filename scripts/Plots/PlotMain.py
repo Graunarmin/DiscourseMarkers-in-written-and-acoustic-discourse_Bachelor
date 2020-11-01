@@ -9,11 +9,12 @@ class CorpusData:
                  spotify_scores, spotify_dict,
                  ted_scores, ted_dict,
                  ny_scores, ny_dict,
-                 gig_scores, gig_dict):
-        self.spotify = ds.DatasetScores(spotify_scores, spotify_dict)
-        self.ted = ds.DatasetScores(ted_scores, ted_dict)
-        self.ny = ds.DatasetScores(ny_scores, ny_dict)
-        self.gig = ds.DatasetScores(gig_scores, gig_dict)
+                 gig_scores, gig_dict,
+                 genrelist=None, markertypes=None):
+        self.spotify = ds.DatasetScores(spotify_scores, spotify_dict, genrelist=genrelist, markertypes=markertypes)
+        self.ted = ds.DatasetScores(ted_scores, ted_dict, markertypes=markertypes)
+        self.ny = ds.DatasetScores(ny_scores, ny_dict, markertypes=markertypes)
+        self.gig = ds.DatasetScores(gig_scores, gig_dict, markertypes=markertypes)
 
         # Colors:   [base, darker, lighter]
         self.spotify_color = '#1DB954'
@@ -34,7 +35,9 @@ def main():
                       "../../bigData/listenability-tools/scores/nytimes-scores_short.csv",
                       "../../bigData/listenability-tools/dict/nytimes-dict.json",
                       "../../bigData/listenability-tools/scores/gigaword-scores_short.csv",
-                      "../../bigData/listenability-tools/dict/gigaword-dict.json")
+                      "../../bigData/listenability-tools/dict/gigaword-dict.json",
+                      genrelist="../../data/Spotify/relevant_shows/relevant_shows.csv",
+                      markertypes="../../data/listenability-tools/main-senses/words_main-sense.json")
 
     '''01:
     Prozentualer Anteil der DM an den Texten, über alle Texte
@@ -94,28 +97,28 @@ def main():
                               label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
                               color_1=data.spotify_color, color_2=data.ny_color, color_3=data.gig_color)
 
-    '''05:
-    Number of DM per sentence
-    '''
-    cp.plot_vertical_barchart("Number of Discourse Markers per Sentence",
-                              [data.spotify.get_total_dm_per_sentence_statistics(),
-                               data.ny.get_total_dm_per_sentence_statistics(),
-                               data.gig.get_total_dm_per_sentence_statistics()],
-                              ["Min", "A_Mean", "H_Mean", "Median", "Mode", "Max"],
-                              "# Markers per Sentence",
-                              label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
-                              color_1=data.spotify_color, color_2=data.ny_color, color_3=data.gig_color)
-
-    '''06:
-    Histogram with Number of DM per Sentence per Dataset
-    '''
-    cp.draw_simple_barchart("Number of Discourse Markers per Sentence",
-                            ["Spotify", "NYTimes", "Gigaword"],
-                            [data.spotify.compute_dm_per_sentence(),
-                             data.ny.compute_dm_per_sentence(),
-                             data.gig.compute_dm_per_sentence()],
-                            [data.spotify_color, data.ny_color, data.gig_color])
-
+    # '''05:
+    # Number of DM per sentence
+    # '''
+    # cp.plot_vertical_barchart("Number of Discourse Markers per Sentence",
+    #                           [data.spotify.get_total_dm_per_sentence_statistics(),
+    #                            data.ny.get_total_dm_per_sentence_statistics(),
+    #                            data.gig.get_total_dm_per_sentence_statistics()],
+    #                           ["Min", "A_Mean", "H_Mean", "Median", "Mode", "Max"],
+    #                           "# Markers per Sentence",
+    #                           label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
+    #                           color_1=data.spotify_color, color_2=data.ny_color, color_3=data.gig_color)
+    #
+    # '''06:
+    # Histogram with Number of DM per Sentence per Dataset
+    # '''
+    # cp.draw_simple_barchart("Number of Discourse Markers per Sentence",
+    #                         ["Spotify", "NYTimes", "Gigaword"],
+    #                         [data.spotify.compute_dm_per_sentence(),
+    #                          data.ny.compute_dm_per_sentence(),
+    #                          data.gig.compute_dm_per_sentence()],
+    #                         [data.spotify_color, data.ny_color, data.gig_color])
+    #
     '''07:
     Percentage of DM at certain positions in a sentence
     '''
@@ -139,19 +142,19 @@ def main():
                               "# DM at Postion",
                               label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
                               color_1=data.spotify_color, color_2=data.ny_color, color_3=data.gig_color)
-
-    '''09:
-    Piechart of DM at certain positions in a sentence per Dataset
-    '''
-    cp.plot_dm_position_piechart("Number of DM in a Sentence at Position:",
-                                 [data.spotify.get_sentence_position_values(),
-                                  data.ny.get_sentence_position_values(),
-                                  data.gig.get_sentence_position_values()
-                                  ],
-                                 ["Spotify Data", "NYTimes Data", "Gigaword Data"],
-                                 [data.spotify_shades,
-                                  data.ny_shades,
-                                  data.gig_shades])
+    #
+    # '''09:
+    # Piechart of DM at certain positions in a sentence per Dataset
+    # '''
+    # cp.plot_dm_position_piechart("Number of DM in a Sentence at Position:",
+    #                              [data.spotify.get_sentence_position_values(),
+    #                               data.ny.get_sentence_position_values(),
+    #                               data.gig.get_sentence_position_values()
+    #                               ],
+    #                              ["Spotify Data", "NYTimes Data", "Gigaword Data"],
+    #                              [data.spotify_shades,
+    #                               data.ny_shades,
+    #                               data.gig_shades])
     '''
     Document Positions
     '''
@@ -176,18 +179,18 @@ def main():
                               label_1="Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
                               color_1=data.spotify_color, color_2=data.ted_color,
                               color_3=data.ny_color, color_4=data.gig_color)
-
-    cp.plot_dm_position_piechart("Positions of Discourse Markers in the Documents",
-                                 [data.spotify.get_document_position_values(),
-                                  data.ted.get_document_position_values(),
-                                  data.ny.get_document_position_values(),
-                                  data.gig.get_document_position_values()
-                                  ],
-                                 ["Spotify Data", "TED Data", "NYTimes Data", "Gigaword Data"],
-                                 [data.spotify_shades,
-                                  data.ted_shades,
-                                  data.ny_shades,
-                                  data.gig_shades])
+    #
+    # cp.plot_dm_position_piechart("Positions of Discourse Markers in the Documents",
+    #                              [data.spotify.get_document_position_values(),
+    #                               data.ted.get_document_position_values(),
+    #                               data.ny.get_document_position_values(),
+    #                               data.gig.get_document_position_values()
+    #                               ],
+    #                              ["Spotify Data", "TED Data", "NYTimes Data", "Gigaword Data"],
+    #                              [data.spotify_shades,
+    #                               data.ted_shades,
+    #                               data.ny_shades,
+    #                               data.gig_shades])
 
     '''10:
     Number of Occurences per Discourse Marker per Dataset

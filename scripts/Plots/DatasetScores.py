@@ -1,31 +1,39 @@
 import pandas as pd
 import ast
 import Helpers as hp
+import MarkerTypes as mt
 import json
 from collections import Counter
 
 
 class DatasetScores:
 
-    def __init__(self, scorefile, jsonfile):
+    def __init__(self, scorefile, jsonfile, genrelist=None, markertypes=None):
         self.scores = pd.read_csv(scorefile)
         self.total_sentences = sum(self.scores['sentence_count_doc'])
+
+        if genrelist:
+            self.genres = pd.read_csv(genrelist)['Category']
+            self.discourse_types = pd.read_csv(genrelist)['Type']
+
+        if markertypes:
+            self.marker_types = mt.MarkerTypes(markertypes)
 
         with open(jsonfile, 'r', encoding='utf-8') as data_json:
             dictionary = json.load(data_json)
 
-        self.total_docs = dictionary['stats']['total_docs']
-        self.total_markers = dictionary['stats']['total_markers']
-        self.different_markers = dictionary['stats']['different_markers']
-        self.total_sb = dictionary['stats']['total_sb']
-        self.total_sm = dictionary['stats']['total_sm']
-        self.total_se = dictionary['stats']['total_se']
-        self.total_db = dictionary['stats']['total_db']
-        self.total_dm = dictionary['stats']['total_dm']
-        self.total_de = dictionary['stats']['total_de']
-        self.marker_dict = dictionary['marker']
+            self.total_docs = dictionary['stats']['total_docs']
+            self.total_markers = dictionary['stats']['total_markers']
+            self.different_markers = dictionary['stats']['different_markers']
+            self.total_sb = dictionary['stats']['total_sb']
+            self.total_sm = dictionary['stats']['total_sm']
+            self.total_se = dictionary['stats']['total_se']
+            self.total_db = dictionary['stats']['total_db']
+            self.total_dm = dictionary['stats']['total_dm']
+            self.total_de = dictionary['stats']['total_de']
+            self.marker_dict = dictionary['marker']
 
-        del dictionary
+            del dictionary
 
     def get_total_dm_count_statistics(self):
         """

@@ -55,7 +55,7 @@ class XMLParser:
                         print("No key here: ", k)
                     relations = relation["sense"].split(".")
                     if relations[0] not in main_senses:
-                        main_senses[relations[0]] = {word : frequency}
+                        main_senses[relations[0]] = {word: frequency}
                     else:
                         if word not in main_senses[relations[0]]:
                             main_senses[relations[0]][word] = frequency
