@@ -10,8 +10,8 @@ class CorpusData:
                  ted_scores, ted_dict,
                  ny_scores, ny_dict,
                  gig_scores, gig_dict,
-                 genrelist=None, markertypes=None):
-        self.spotify = ds.DatasetScores(spotify_scores, spotify_dict, genrelist=genrelist, markertypes=markertypes)
+                 markertypes=None):
+        self.spotify = ds.DatasetScores(spotify_scores, spotify_dict, markertypes=markertypes)
         self.ted = ds.DatasetScores(ted_scores, ted_dict, markertypes=markertypes)
         self.ny = ds.DatasetScores(ny_scores, ny_dict, markertypes=markertypes)
         self.gig = ds.DatasetScores(gig_scores, gig_dict, markertypes=markertypes)
@@ -36,7 +36,6 @@ def main():
                       "../../bigData/listenability-tools/dict/nytimes-dict.json",
                       "../../bigData/listenability-tools/scores/gigaword-scores_short.csv",
                       "../../bigData/listenability-tools/dict/gigaword-dict.json",
-                      genrelist="../../data/Spotify/relevant_shows/relevant_shows.csv",
                       markertypes="../../data/listenability-tools/main-senses/words_main-sense.json")
 
     '''01:

@@ -146,7 +146,9 @@ def main():
     Argument 1: data file, here xy-scores.csv
     Argument 2: target out file, here xy-dict.json
     """
-    marker_dict = MarkerDict(sys.argv[1], sys.argv[2])
+    # marker_dict = MarkerDict(sys.argv[1], sys.argv[2])
+    marker_dict = MarkerDict("../../data/Spotify/discourse-types/cooperative-monolog-shows.csv",
+                             "../../data/Spotify/discourse-types/cooperative-monolog-shows_dict.json")
     marker_dict.read_csv()
 
 

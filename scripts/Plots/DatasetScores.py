@@ -8,13 +8,9 @@ from collections import Counter
 
 class DatasetScores:
 
-    def __init__(self, scorefile, jsonfile, genrelist=None, markertypes=None):
+    def __init__(self, scorefile, jsonfile, markertypes=None):
         self.scores = pd.read_csv(scorefile)
         self.total_sentences = sum(self.scores['sentence_count_doc'])
-
-        if genrelist:
-            self.genres = pd.read_csv(genrelist)['Category']
-            self.discourse_types = pd.read_csv(genrelist)['Type']
 
         if markertypes:
             self.marker_types = mt.MarkerTypes(markertypes)
