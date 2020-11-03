@@ -5,6 +5,7 @@ import numpy as np
 def draw_simple_barchart(figuretitle, titles, data, colors):
     """
     Creates subplots, each a simple barchart for one set of y values over x values in the specified color
+    :param figuretitle:
     :param titles: list of titles
     :param data: list of [[xvalues1, yvalues1],[xvalues2, yvalues2], ...] for each dataset
     :param colors: list of colors
@@ -12,7 +13,7 @@ def draw_simple_barchart(figuretitle, titles, data, colors):
     """
     plt.style.use('fivethirtyeight')
 
-    fig, axes = plt.subplots(ncols=2, nrows=2)
+    fig, axes = plt.subplots(ncols=2, nrows=2, sharex=True, sharey=True)
     row = 0
     column = 0
     for i in range(len(data)):
@@ -20,7 +21,7 @@ def draw_simple_barchart(figuretitle, titles, data, colors):
         axes[row][column].set_title(titles[i])
 
         if i % 2 == 0:
-            axes[row][column].set_ylabel("Number Sentences")
+            axes[row][column].set_ylabel("% of all Sentences")
 
         column += 1
         if column == 2:
@@ -34,10 +35,14 @@ def draw_simple_barchart(figuretitle, titles, data, colors):
 
 def draw_barchart(title, x, y_1, y_1_label,
                   y_2=None, y_2_label=None, y_3=None, y_3_label=None, y_4=None, y_4_label=None,
-                  color_1='k', color_2='k', color_3='k', color_4='k',
+                  y_5=None, y_5_label=None,
+                  color_1='k', color_2='k', color_3='k', color_4='k', color_5='k',
                   x_label=None, y_label=None, x_ticks=None, y_ticks=None):
     """
     Draws a Barchart of the given Data
+    :param color_5:
+    :param y_5_label:
+    :param y_5:
     :param title: the title of the plot
     :param x: the array of x values
     :param y_1: the array of the first set of y values
@@ -60,28 +65,35 @@ def draw_barchart(title, x, y_1, y_1_label,
     """
 
     plt.style.use('fivethirtyeight')
-    width = 0.15
+    width = 0.1
 
     '''For two sets of data we need to set the bars a bit appart, otherwise they would overlap'''
     x_indexes = x_ticks[0]
 
-    if not y_2 and not y_3 and not y_4:
+    if not y_2 and not y_3 and not y_4 and not y_5:
         plt.bar(x, y_1, color=color_1)
 
-    elif y_2 and not y_3 and not y_4:
+    elif y_2 and not y_3 and not y_4 and not y_5:
         plt.bar(x_indexes - (width / 4) * 3, y_1, width=width, color=color_1, label=y_1_label)
         plt.bar(x_indexes + (width / 4) * 3, y_2, width=width, color=color_2, label=y_2_label)
 
-    elif not y_4:
+    elif not y_4 and not y_5:
         plt.bar(x_indexes - (width / 4) * 6, y_1, width=width, color=color_1, label=y_1_label)
         plt.bar(x_indexes, y_2, width=width, color=color_2, label=y_2_label)
         plt.bar(x_indexes + (width / 4) * 6, y_3, width=width, color=color_3, label=y_3_label)
 
-    elif y_4:
+    elif not y_5:
         plt.bar(x_indexes - (width / 4) * 9, y_1, width=width, color=color_1, label=y_1_label)
         plt.bar(x_indexes - (width / 4) * 3, y_2, width=width, color=color_2, label=y_2_label)
         plt.bar(x_indexes + (width / 4) * 3, y_3, width=width, color=color_3, label=y_3_label)
         plt.bar(x_indexes + (width / 4) * 9, y_4, width=width, color=color_4, label=y_4_label)
+
+    else:
+        plt.bar(x_indexes - (width / 4) * 12, y_1, width=width, color=color_1, label=y_1_label)
+        plt.bar(x_indexes - (width / 4) * 6, y_2, width=width, color=color_2, label=y_2_label)
+        plt.bar(x_indexes, y_3, width=width, color=color_3, label=y_3_label)
+        plt.bar(x_indexes + (width / 4) * 6, y_4, width=width, color=color_4, label=y_4_label)
+        plt.bar(x_indexes + (width / 4) * 12, y_5, width=width, color=color_5, label=y_5_label)
 
     plt.title(title)
 
@@ -131,10 +143,14 @@ def draw_piecharts(figuretitle, titles, slices, labels, colors, angle):
 
 
 def draw_horizontal_barchart(title, y_data, x_1, label_1, x_label, y_ticks, x_2=None, label_2=None,
-                             x_3=None, label_3=None, x_4=None, label_4=None,
-                             color_1='k', color_2='k', color_3='k', color_4='k'):
+                             x_3=None, label_3=None, x_4=None, label_4=None, x_5=None, label_5=None,
+                             color_1='k', color_2='k', color_3='k', color_4='k', color_5='k'):
     """
     Plots a horizontal barchart
+    :param color_5:
+    :param label_5:
+    :param x_5:
+    :param y_ticks:
     :param title: Titel of the barchart
     :param y_data: The Data to be shown (e.g. a list of all the markers]
     :param x_1: The Numbers for the first dataset (e.g. a list of occurrence-numbers of the markers)
@@ -154,27 +170,34 @@ def draw_horizontal_barchart(title, y_data, x_1, label_1, x_label, y_ticks, x_2=
     """
 
     plt.style.use('fivethirtyeight')
-    width = 0.15
+    width = 0.1
 
     y_indexes = y_ticks[0]
 
-    if not x_2 and not x_3 and not x_4:
+    if not x_2 and not x_3 and not x_4 and not x_5:
         plt.barh(y_data, x_1, height=width, color=color_1, label=label_1)
 
-    elif not x_3 and not x_4:
+    elif not x_3 and not x_4 and not x_5:
         plt.barh(y_indexes - (width / 4) * 3, x_1, height=width, color=color_1, label=label_1)
         plt.barh(y_indexes + (width / 4) * 3, x_2, height=width, color=color_2, label=label_2)
 
-    elif not x_4:
+    elif not x_4 and not x_5:
         plt.barh(y_indexes - (width / 4) * 6, x_1, height=width, color=color_1, label=label_1)
         plt.barh(y_indexes, x_2, height=width, color=color_2, label=label_2)
         plt.barh(y_indexes + (width / 4) * 6, x_3, height=width, color=color_3, label=label_3)
 
-    else:
+    elif not x_5:
         plt.barh(y_indexes - (width / 4) * 9, x_1, height=width, color=color_1, label=label_1)
         plt.barh(y_indexes - (width / 4) * 3, x_2, height=width, color=color_2, label=label_2)
         plt.barh(y_indexes + (width / 4) * 3, x_3, height=width, color=color_3, label=label_3)
         plt.barh(y_indexes + (width / 4) * 9, x_4, height=width, color=color_4, label=label_4)
+
+    else:
+        plt.barh(y_indexes - (width / 4) * 12, x_1, height=width, color=color_1, label=label_1)
+        plt.barh(y_indexes - (width / 4) * 6, x_2, height=width, color=color_2, label=label_2)
+        plt.barh(y_indexes, x_3, height=width, color=color_3, label=label_3)
+        plt.barh(y_indexes + (width / 4) * 6, x_4, height=width, color=color_4, label=label_4)
+        plt.barh(y_indexes + (width / 4) * 12, x_5, height=width, color=color_5, label=label_5)
 
     plt.title(title)
 
@@ -187,64 +210,97 @@ def draw_horizontal_barchart(title, y_data, x_1, label_1, x_label, y_ticks, x_2=
     plt.show()
 
 
-def draw_horizontal_subplots(title, y_data, x_1, label_1, x_label, x_2=None, label_2=None,
-                             x_3=None, label_3=None, x_4=None, label_4=None,
-                             color_1='k', color_2='k', color_3='k', color_4='k'):
+def draw_horizontal_subplots(title, y_data,
+                             x_1, label_1, x_label, x_2=None, label_2=None, x_3=None, label_3=None,
+                             x_4=None, label_4=None, x_5=None, label_5=None,
+                             color_1='k', color_2='k', color_3='k', color_4='k', color_5='k'):
     plt.style.use('fivethirtyeight')
     width = 0.15
 
-    if not x_2 and not x_3 and not x_4:
+    if not x_2 and not x_3 and not x_4 and not x_5:
         fig, ax = plt.subplots()
         ax.barh(y_data, x_1, height=width, color=color_1, label=label_1)
 
-        ax.legend()
-        ax.set_title(title)
+        # ax.legend()
+        ax.set_title(label_1)
         ax.set_xlabel(x_label)
 
-    elif not x_3 and not x_4:
+    elif not x_3 and not x_4 and not x_5:
         fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharey=True)
         ax1.barh(y_data, x_1, height=width, color=color_1, label=label_1)
         ax2.barh(y_data, x_2, height=width, color=color_2, label=label_2)
 
-        ax1.legend()
-        ax1.set_title(title)
+        # ax1.legend()
+        ax1.set_title(label_1)
         ax1.set_xlabel(x_label)
 
-        ax2.legend()
+        # ax2.legend()
+        ax2.set_title(label_2)
         ax2.set_xlabel(x_label)
 
-    elif not x_4:
+    elif not x_4 and not x_5:
         fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, sharey=True)
         ax1.barh(y_data, x_1, height=width, color=color_1, label=label_1)
         ax2.barh(y_data, x_2, height=width, color=color_2, label=label_2)
         ax3.barh(y_data, x_3, height=width, color=color_3, label=label_3)
 
-        ax1.legend()
-        ax1.set_title(title)
+        # ax1.legend()
+        ax1.set_title(label_1)
 
-        ax2.legend()
+        # ax2.legend()
+        ax2.set_title(label_2)
         ax2.set_xlabel(x_label)
 
-        ax3.legend()
+        # ax3.legend()
+        ax3.set_title(label_3)
         ax3.set_xlabel(x_label)
 
-    else:
+    elif not x_5:
         fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, sharey=True, sharex=True)
         ax1.barh(y_data, x_1, height=width, color=color_1, label=label_1)
         ax2.barh(y_data, x_2, height=width, color=color_2, label=label_2)
         ax3.barh(y_data, x_3, height=width, color=color_3, label=label_3)
         ax4.barh(y_data, x_4, height=width, color=color_4, label=label_4)
 
-        ax1.set_title(title)
-        ax1.legend()
+        # ax1.legend()
+        ax1.set_title(label_1)
 
-        ax2.legend()
+        # ax2.legend()
+        ax2.set_title(label_2)
 
-        ax3.legend()
+        # ax3.legend()
+        ax3.set_title(label_3)
         ax3.set_xlabel(x_label)
 
-        ax4.legend()
+        # ax4.legend()
+        ax4.set_title(label_4)
         ax4.set_xlabel(x_label)
+
+    else:
+        fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(nrows=2, ncols=3, sharey=True, sharex=True)
+        ax1.barh(y_data, x_1, height=width, color=color_1, label=label_1)
+        ax2.barh(y_data, x_2, height=width, color=color_2, label=label_2)
+        ax3.barh(y_data, x_3, height=width, color=color_3, label=label_3)
+        ax4.barh(y_data, x_4, height=width, color=color_4, label=label_4)
+        ax5.barh(y_data, x_5, height=width, color=color_5, label=label_5)
+
+        # ax1.legend()
+        ax1.set_title(label_1)
+
+        # ax2.legend()
+        ax2.set_title(label_2)
+
+        # ax3.legend()
+        ax3.set_title(label_3)
+
+        # ax4.legend()
+        ax4.set_title(label_4)
+        ax4.set_xlabel(x_label)
+
+        ax5.set_title(label_5)
+        ax5.set_xlabel(x_label)
+
+    fig.suptitle(title)
 
     plt.tight_layout()
     plt.show()
@@ -252,10 +308,12 @@ def draw_horizontal_subplots(title, y_data, x_1, label_1, x_label, x_2=None, lab
 
 # ------------ PROCESS DATA ----------
 def plot_vertical_barchart(title, y_values, x_labels, y_label,
-                           label_1, label_2=None, label_3=None, label_4=None,
-                           color_1='k', color_2='k', color_3='k', color_4='k'):
+                           label_1, label_2=None, label_3=None, label_4=None, label_5=None,
+                           color_1='k', color_2='k', color_3='k', color_4='k', color_5='k'):
     """
     Prepare the Data for plotting
+    :param label_5:
+    :param color_5:
     :param title: Title of the plot
     :param y_values: Array of the y-value sets that are to be plottet: [data_1,data_2,etc]
     :param x_labels: Array of Labels for the x-ticks
@@ -279,8 +337,11 @@ def plot_vertical_barchart(title, y_values, x_labels, y_label,
     if len(y_values) > 2:
         y_values_3 = y_values[2]
     y_values_4 = None
-    if len(y_values) == 4:
+    if len(y_values) > 3:
         y_values_4 = y_values[3]
+    y_values_5 = None
+    if len(y_values) == 5:
+        y_values_5 = y_values[4]
 
     x_values = np.arange(len(y_values_1))
 
@@ -288,14 +349,17 @@ def plot_vertical_barchart(title, y_values, x_labels, y_label,
                   y_values_1, label_1, y_values_2, y_2_label=label_2,
                   y_label=y_label, x_ticks=[x_values, x_labels],
                   y_3=y_values_3, y_3_label=label_3, y_4=y_values_4, y_4_label=label_4,
-                  color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4)
+                  y_5=y_values_5, y_5_label=label_5,
+                  color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4, color_5=color_5)
 
 
 def plot_horizontal_barchart(title, y_values, x_values, x_label,
-                             label_1, label_2=None, label_3=None, label_4=None,
-                             color_1='k', color_2='k', color_3='k', color_4='k',
+                             label_1, label_2=None, label_3=None, label_4=None, label_5=None,
+                             color_1='k', color_2='k', color_3='k', color_4='k', color_5=None,
                              subplot=False):
     """
+    :param color_5:
+    :param label_5:
     :param title: Title of the Barchart
     :param y_values: list of y_values (e.g. all the markers),
     :param x_values: the values for the x-achsis (e.g. the different numbers of occurrences)
@@ -322,8 +386,11 @@ def plot_horizontal_barchart(title, y_values, x_values, x_label,
     if len(x_values) > 2:
         x_values_3 = x_values[2]
     x_values_4 = None
-    if len(x_values) == 4:
+    if len(x_values) > 3:
         x_values_4 = x_values[3]
+    x_values_5 = None
+    if len(x_values) == 5:
+        x_values_5 = x_values[4]
 
     y_ticks = [np.arange(len(x_values_1)), y_values]
 
@@ -333,14 +400,18 @@ def plot_horizontal_barchart(title, y_values, x_values, x_label,
                                  x_2=x_values_2, label_2=label_2,
                                  x_3=x_values_3, label_3=label_3,
                                  x_4=x_values_4, label_4=label_4,
-                                 color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4)
+                                 x_5=x_values_5, label_5=label_5,
+                                 color_1=color_1, color_2=color_2, color_3=color_3,
+                                 color_4=color_4, color_5=color_5)
     else:
         draw_horizontal_barchart(title, y_values, x_values_1, label_1,
                                  x_label=x_label, y_ticks=y_ticks,
                                  x_2=x_values_2, label_2=label_2,
                                  x_3=x_values_3, label_3=label_3,
                                  x_4=x_values_4, label_4=label_4,
-                                 color_1=color_1, color_2=color_2, color_3=color_3, color_4=color_4)
+                                 x_5=x_values_5, label_5=label_5,
+                                 color_1=color_1, color_2=color_2, color_3=color_3,
+                                 color_4=color_4, color_5=color_5)
 
 
 def plot_dm_position_piechart(title, data, labels, colors):

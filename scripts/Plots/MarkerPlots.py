@@ -90,15 +90,19 @@ def prepare_marker_subplots(data1, data2, data3, data4):
 
 
 def most_common_markers_plot(figuretitle, xlabel,
-                             data1, label1, color1, data2=None, label2=None, color2=None,
-                             data3=None, label3=None, color3=None, data4=None, label4=None, color4=None,
+                             data1, label1, color1,
+                             data2=None, label2=None, color2=None,
+                             data3=None, label3=None, color3=None,
+                             data4=None, label4=None, color4=None,
+                             data5=None, label5=None, color5=None,
                              share=False):
+
     plt.style.use('fivethirtyeight')
-    width = 0.15
+    width = 0.5
     plt.rc('ytick', labelsize=10)
     plt.rc('xtick', labelsize=9)
 
-    if not data2 and not data3 and not data4:
+    if not data2 and not data3 and not data4 and not data5:
         fig, ax = plt.subplots()
         ax.barh(data1[0], data1[1], height=width, color=color1, label=label1)
 
@@ -106,7 +110,7 @@ def most_common_markers_plot(figuretitle, xlabel,
         ax.set_title(label1)
         ax.set_xlabel(xlabel)
 
-    elif not data3 and not data4:
+    elif not data3 and not data4 and not data5:
         if share:
             fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=1, sharex=True)
         else:
@@ -120,7 +124,7 @@ def most_common_markers_plot(figuretitle, xlabel,
         ax2.set_title(label2)
         ax2.set_xlabel(xlabel)
 
-    elif not data4:
+    elif not data4 and not data5:
         if share:
             fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, sharex=True)
         else:
@@ -136,7 +140,7 @@ def most_common_markers_plot(figuretitle, xlabel,
 
         ax3.set_title(label3)
 
-    else:
+    elif not data5:
         if share:
             fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, sharex=True)
         else:
@@ -155,6 +159,28 @@ def most_common_markers_plot(figuretitle, xlabel,
 
         ax4.set_title(label4)
         ax4.set_xlabel(xlabel)
+
+    else:
+        if share:
+            fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(nrows=2, ncols=3, sharex=True)
+        else:
+            fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(nrows=2, ncols=3)
+        ax1.barh(data1[0], data1[1], height=width, color=color1, label=label1)
+        ax2.barh(data2[0], data2[1], height=width, color=color2, label=label2)
+        ax3.barh(data3[0], data3[1], height=width, color=color3, label=label3)
+        ax4.barh(data4[0], data4[1], height=width, color=color4, label=label4)
+        ax5.barh(data5[0], data5[1], height=width, color=color5, label=label5)
+
+        ax1.set_title(label1)
+
+        ax2.set_title(label2)
+
+        ax3.set_title(label3)
+
+        ax4.set_title(label4)
+
+        ax5.set_title(label5)
+        ax5.set_xlabel(xlabel)
 
     fig.suptitle(figuretitle)
 

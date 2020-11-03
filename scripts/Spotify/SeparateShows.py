@@ -4,8 +4,8 @@ import pandas as pd
 def separate_shows_into_genres(genrelist, csvfile):
     """
     Split up the original csv file with the spotify scores
-    firstly in 4 genre-specific files, each containing only the scores for their respective genre,
-    and in 3 discourse-type specific files
+    firstly into 4 genre-specific files, each containing only the scores for their respective genre,
+    and secondly into 3 discourse-type specific files
     :param genrelist: the json list that knows which show belongs to which genre and discourse type
     :param csvfile: the csv file with all the spotify scores
     :return:

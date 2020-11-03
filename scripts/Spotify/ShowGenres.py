@@ -3,7 +3,9 @@ import pandas as pd
 
 def create_new_csv(filepath):
     """
-    Reads in the csv file and writes some specific columns to a new file
+    Reads in the csv file containing all the information about the shows
+    and writes the name, uri, category (genre) and type (discourse type) columns
+    to a new file
     :param filepath:
     :return:
     """

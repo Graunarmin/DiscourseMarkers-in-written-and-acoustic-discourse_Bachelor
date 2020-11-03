@@ -167,20 +167,25 @@ class DatasetScores:
         y_values = []
         for element in sorted(values.items()):
             x_values.append(element[0])
-            y_values.append(element[1])
+            y_values.append(element[1] * 100 / self.total_sentences)
 
         return [x_values, y_values]
 
     # ------- Functionaliyt concerning the marker dictionary with the single markers
 
-    def get_total_marker_values(self):
+    def get_total_marker_values(self, average=False):
         """
         Creates a dictionary with the markers as keys and their total number of occurrence in this dataset as value
         :return:
         """
         markers = {}
         for marker in self.marker_dict:
-            markers[marker] = self.marker_dict[marker]['total']
+            if average == 'Sent':
+                markers[marker] = self.marker_dict[marker]['total']/self.total_sentences
+            elif average == 'Doc':
+                markers[marker] = self.marker_dict[marker]['total']/self.total_docs
+            else:
+                markers[marker] = self.marker_dict[marker]['total']
 
         return markers
 
@@ -317,7 +322,7 @@ class DatasetScores:
         elif not position and perc:
             marker_count = Counter(self.get_total_marker_percents())
         else:
-            marker_count = Counter(self.get_total_marker_values())
+            marker_count = Counter(self.get_total_marker_values(average=average))
         markers = []
         marker_values = []
         for item in marker_count.most_common(number):
