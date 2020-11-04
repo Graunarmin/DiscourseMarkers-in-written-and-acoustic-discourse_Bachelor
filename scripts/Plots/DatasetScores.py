@@ -182,7 +182,7 @@ class DatasetScores:
         for marker in self.marker_dict:
             if average == 'Sent':
                 markers[marker] = self.marker_dict[marker]['total']/self.total_sentences
-            elif average == 'Doc':
+            elif average == 'Doc' or average == True:
                 markers[marker] = self.marker_dict[marker]['total']/self.total_docs
             else:
                 markers[marker] = self.marker_dict[marker]['total']
@@ -230,60 +230,42 @@ class DatasetScores:
     def get_marker_values_at_position(self, position, average=False, perc=False):
         """
         Creates a dict with the marker as key and the position value as value
+        :param perc:
+        :param average:
         :param position: the position to get the values for: sb, sm, se, db, dm, de
         :return:
         """
 
-        markers = {}
         if position == "sb":
-            for marker in self.marker_dict:
-                if average:
-                    markers[marker] = self.marker_dict[marker]['sent_begin'] / self.total_sentences
-                elif perc:
-                    markers[marker] = self.marker_dict[marker]['sent_begin'] * 100 / self.total_sb
-                else:
-                    markers[marker] = self.marker_dict[marker]['sent_begin']
+            flag = 'sent_begin'
+            perc_total = self.total_sb
         elif position == "sm":
-            for marker in self.marker_dict:
-                if average:
-                    markers[marker] = self.marker_dict[marker]['sent_middle'] / self.total_sentences
-                elif perc:
-                    markers[marker] = self.marker_dict[marker]['sent_middle'] * 100 / self.total_sm
-                else:
-                    markers[marker] = self.marker_dict[marker]['sent_middle']
+            flag = 'sent_middle'
+            perc_total = self.total_sm
         elif position == "se":
-            for marker in self.marker_dict:
-                if average:
-                    markers[marker] = self.marker_dict[marker]['sent_end'] / self.total_sentences
-                elif perc:
-                    markers[marker] = self.marker_dict[marker]['sent_end'] * 100 / self.total_se
-                else:
-                    markers[marker] = self.marker_dict[marker]['sent_end']
-
+            flag = 'sent_end'
+            perc_total = self.total_se
         elif position == "db":
-            for marker in self.marker_dict:
-                if average:
-                    markers[marker] = self.marker_dict[marker]['doc_begin'] / self.total_sentences
-                elif perc:
-                    markers[marker] = self.marker_dict[marker]['doc_begin'] * 100 / self.total_db
-                else:
-                    markers[marker] = self.marker_dict[marker]['doc_begin']
+            flag = 'doc_begin'
+            perc_total = self.total_db
         elif position == "dm":
-            for marker in self.marker_dict:
-                if average:
-                    markers[marker] = self.marker_dict[marker]['doc_middle'] / self.total_sentences
-                elif perc:
-                    markers[marker] = self.marker_dict[marker]['doc_middle'] * 100 / self.total_dm
-                else:
-                    markers[marker] = self.marker_dict[marker]['doc_middle']
+            flag = 'doc_middle'
+            perc_total = self.total_dm
         elif position == "de":
-            for marker in self.marker_dict:
-                if average:
-                    markers[marker] = self.marker_dict[marker]['doc_end'] / self.total_sentences
-                elif perc:
-                    markers[marker] = self.marker_dict[marker]['doc_end'] * 100 / self.total_de
-                else:
-                    markers[marker] = self.marker_dict[marker]['doc_end']
+            flag = 'doc_end'
+            perc_total = self.total_de
+        else:
+            print("Wrong Position!")
+            return None
+
+        markers = {}
+        for marker in self.marker_dict:
+            if average:
+                markers[marker] = self.marker_dict[marker][flag] / self.total_docs
+            elif perc:
+                markers[marker] = self.marker_dict[marker][flag] * 100 / perc_total
+            else:
+                markers[marker] = self.marker_dict[marker][flag]
 
         return markers
 

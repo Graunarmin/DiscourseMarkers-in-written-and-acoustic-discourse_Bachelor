@@ -48,12 +48,12 @@ def main():
     min/mean/max(dm_words_perc)
     '''
 
-    # dm_per_text_perc = [data.news.get_percent_dm_count_statistics(),
-    #                     data.discussion.get_percent_dm_count_statistics(),
-    #                     data.science.get_percent_dm_count_statistics(),
-    #                     data.documentary.get_percent_dm_count_statistics(),
-    #                     data.speech.get_percent_dm_count_statistics()]
-    #
+    dm_per_text_perc = [data.news.get_percent_dm_count_statistics(),
+                        data.discussion.get_percent_dm_count_statistics(),
+                        data.science.get_percent_dm_count_statistics(),
+                        data.documentary.get_percent_dm_count_statistics(),
+                        data.speech.get_percent_dm_count_statistics()]
+
     # cp.plot_vertical_barchart("Percent Discourse Markers per Text",
     #                           dm_per_text_perc,
     #                           ["Min", "Mean", "Mode", "Max"],
@@ -65,12 +65,16 @@ def main():
     #                           color_3=data.science_color, color_4=data.documentary_color,
     #                           color_5=data.speech_color)
     #
-    # hp.show_dataframe(['min', 'mean', 'mode', 'max'],
+    # hp.show_dataframe("Percent Discourse Markers per Text", ['min', 'mean', 'mode', 'max'],
     #                   dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
     #                   data4=dm_per_text_perc[3], data5=dm_per_text_perc[4],
     #                   label1="News", label2="Discussion/Opinion",
     #                   label3="Science/Education", label4="Documentary",
     #                   label5="Speech")
+
+    hp.effectsize_and_significance("Percent Discourse Markers per Text",
+                                   dm_per_text_perc,
+                                   ["News", "Discussion", "Science", "Documentary", "Speech"])
 
     '''02:
     Anzahl der DM pro Text, über alle Texte (nicht sehr aussagekräftig)
@@ -320,14 +324,14 @@ def main():
     '''
 
     '''
-    Most Common Markers per Genre - Average per Doc
+    01_a: Most Common Markers per Genre - Average per Doc
     '''
     # most_common_markers = [data.news.get_most_common_markers(15, average='Doc'),
     #                        data.discussion.get_most_common_markers(15, average='Doc'),
     #                        data.science.get_most_common_markers(15, average='Doc'),
     #                        data.documentary.get_most_common_markers(15, average='Doc'),
     #                        data.speech.get_most_common_markers(15, average='Doc')]
-
+    #
     # mp.most_common_markers_plot("Most Common Markers per Genre", "Average Number of Occurences per Document",
     #                             most_common_markers[0],
     #                             "News", data.news_color,
@@ -340,7 +344,7 @@ def main():
     #                             data5=most_common_markers[4],
     #                             label5="Speech", color5=data.speech_color,
     #                             share=True)
-
+    #
     # markers, x_values = hp.compile_most_common_marker_list(most_common_markers,
     #                                                        ["News", "Discussion", "Science", "Documentary", "Speech"])
     #
@@ -350,7 +354,7 @@ def main():
     #                             color_3=data.science_color, color_4=data.documentary_color, color_5=data.speech_color)
 
     '''
-    Most Common Markers per Genre - Average per Sentence
+    01_b: Most Common Markers per Genre - Average per Sentence
     '''
 
     # most_common_markers = [data.news.get_most_common_markers(15, average='Sent'),
@@ -367,34 +371,39 @@ def main():
     #                             color_3=data.science_color, color_4=data.documentary_color)
 
     '''
-    Most Common Markers per Genre - In Percent
+    02: Most Common Markers per Genre - In Percent
     '''
-    most_common_markers_perc = [data.news.get_most_common_markers(15, perc=True),
-                                data.discussion.get_most_common_markers(15, perc=True),
-                                data.science.get_most_common_markers(15, perc=True),
-                                data.documentary.get_most_common_markers(15, perc=True),
-                                data.speech.get_most_common_markers(15, perc=True)]
-
-    mp.most_common_markers_plot("Most Common Markers per Genre in %", "Share in all Markers",
-                                most_common_markers_perc[0],
-                                "News", data.news_color,
-                                data2=most_common_markers_perc[1],
-                                label2="Discussion/Opinion", color2=data.discussion_color,
-                                data3=most_common_markers_perc[2],
-                                label3="Science", color3=data.science_color,
-                                data4=most_common_markers_perc[3],
-                                label4="Documentary", color4=data.documentary_color,
-                                data5=most_common_markers_perc[4],
-                                label5="Speech", color5=data.speech_color, share=True)
-
-    markers, x_values = hp.compile_most_common_marker_list(most_common_markers_perc,
-                                                           ["News", "Discussion", "Science", "Documentary", "Speech"])
-
-    cp.plot_horizontal_barchart("Most Common Markers in %", markers, x_values, "Share in all Markers",
-                                "News", label_2="Discussion", label_3="Science", label_4="Documentary", label_5="Speech",
-                                color_1=data.news_color, color_2=data.discussion_color,
-                                color_3=data.science_color, color_4=data.documentary_color, color_5=data.speech_color)
+    # most_common_markers_perc = [data.news.get_most_common_markers(15, perc=True),
+    #                             data.discussion.get_most_common_markers(15, perc=True),
+    #                             data.science.get_most_common_markers(15, perc=True),
+    #                             data.documentary.get_most_common_markers(15, perc=True),
+    #                             data.speech.get_most_common_markers(15, perc=True)]
     #
+    # # mp.most_common_markers_plot("Most Common Markers per Genre in %", "Share in all Markers",
+    # #                             most_common_markers_perc[0],
+    # #                             "News", data.news_color,
+    # #                             data2=most_common_markers_perc[1],
+    # #                             label2="Discussion/Opinion", color2=data.discussion_color,
+    # #                             data3=most_common_markers_perc[2],
+    # #                             label3="Science", color3=data.science_color,
+    # #                             data4=most_common_markers_perc[3],
+    # #                             label4="Documentary", color4=data.documentary_color,
+    # #                             data5=most_common_markers_perc[4],
+    # #                             label5="Speech", color5=data.speech_color,
+    # #                             share=True)
+    #
+    # markers, x_values = hp.compile_most_common_marker_list(most_common_markers_perc,
+    #                                                        ["News", "Discussion", "Science", "Documentary", "Speech"])
+    #
+    # cp.plot_horizontal_barchart("Most Common Markers per Genre in %", markers, x_values, "Share in all Markers",
+    #                             "News", label_2="Discussion", label_3="Science", label_4="Documentary",
+    #                             label_5="Speech",
+    #                             color_1=data.news_color, color_2=data.discussion_color,
+    #                             color_3=data.science_color, color_4=data.documentary_color, color_5=data.speech_color)
+
+    '''
+    03_a: Most Common Markers per Genre - Sentence Begin
+    '''
     # mp.most_common_markers_plot("Most Common Markers: Sentence Begin", "Share in all Markers at Sent. Begin",
     #                             data.spotify.get_most_common_markers(15, position="sb", perc=True),
     #                             "Spotify", data.spotify_color,
@@ -402,7 +411,9 @@ def main():
     #                             label2="NYTimes", color2=data.ny_color,
     #                             data3=data.gig.get_most_common_markers(15, position="sb", perc=True),
     #                             label3="Gigaword", color3=data.gig_color, share=True)
-    #
+    '''
+    03_b: Most Common Markers per Genre - Sentence Middle
+    '''
     # mp.most_common_markers_plot("Most Common Markers: Sentence Middle", "Share in all Markers at Sent. Middle",
     #                             data.spotify.get_most_common_markers(15, position="sm", perc=True),
     #                             "Spotify", data.spotify_color,
@@ -410,7 +421,9 @@ def main():
     #                             label2="NYTimes", color2=data.ny_color,
     #                             data3=data.gig.get_most_common_markers(15, position="sm", perc=True),
     #                             label3="Gigaword", color3=data.gig_color, share=True)
-    #
+    '''
+    03_c: Most Common Markers per Genre - Sentence End
+    '''
     # mp.most_common_markers_plot("Most Common Markers: Sentence End", "Share in all Markers at Sent. End",
     #                             data.spotify.get_most_common_markers(15, position="se", perc=True),
     #                             "Spotify", data.spotify_color,
@@ -418,7 +431,9 @@ def main():
     #                             label2="NYTimes", color2=data.ny_color,
     #                             data3=data.gig.get_most_common_markers(15, position="se", perc=True),
     #                             label3="Gigaword", color3=data.gig_color, share=True)
-    #
+    '''
+    04_a: Most Common Markers per Genre - Document Begin
+    '''
     # mp.most_common_markers_plot("Most Common Markers: Document Begin", "Share in all Markers at Doc. Begin",
     #                             data.spotify.get_most_common_markers(15, position="db", perc=True),
     #                             "Spotify", data.spotify_color,
@@ -428,7 +443,9 @@ def main():
     #                             label3="NYTimes", color3=data.ny_color,
     #                             data4=data.gig.get_most_common_markers(15, position="db", perc=True),
     #                             label4="Gigaword", color4=data.gig_color, share=True)
-    #
+    '''
+    04_b: Most Common Markers per Genre - Document Middle
+    '''
     # mp.most_common_markers_plot("Most Common Markers: Document Middle", "Share in all Markers at Doc. Middle",
     #                             data.spotify.get_most_common_markers(15, position="dm", perc=True),
     #                             "Spotify", data.spotify_color,
@@ -438,7 +455,9 @@ def main():
     #                             label3="NYTimes", color3=data.ny_color,
     #                             data4=data.gig.get_most_common_markers(15, position="dm", perc=True),
     #                             label4="Gigaword", color4=data.gig_color, share=True)
-    #
+    '''
+    04_c: Most Common Markers per Genre - Document End
+    '''
     # mp.most_common_markers_plot("Most Common Markers: Document End", "Share in all Markers at Doc. End",
     #                             data.spotify.get_most_common_markers(15, position="de", perc=True),
     #                             "Spotify", data.spotify_color,
