@@ -24,7 +24,7 @@ class MarkerTypes:
         :param marker: the marker of which to get the type
         :return:
         """
-        return self.data[marker]['main-sense']
+        return self.data[marker]['main_sense']
 
     def get_all_types(self, marker):
         """

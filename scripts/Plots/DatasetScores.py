@@ -38,6 +38,7 @@ class DatasetScores:
         """
         return hp.compute_statistics(self.scores['dm_count_doc'].dropna())
 
+
     def get_percent_dm_count_statistics(self):
         """
         Computes the min, mean, max of the percentage share that the DM
