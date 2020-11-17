@@ -11,6 +11,7 @@ class DatasetScores:
     def __init__(self, scorefile, jsonfile, markertypes=None):
         self.scores = pd.read_csv(scorefile)
         self.total_sentences = sum(self.scores['sentence_count_doc'])
+        self.total_words = sum(self.scores['word_count_doc'])
 
         if markertypes:
             self.marker_types = mt.MarkerTypes(markertypes)
@@ -48,8 +49,7 @@ class DatasetScores:
 
     def get_percent_dm_per_text(self):
         """
-        Computes two arrays: the first one contains the % of DM per Text, the second one
-        the percentage of texts that contain as many DM (per position)
+        Gets a List of the percantages of DM per Document
         :return:
         """
         return list(self.scores['dm_words_perc'])
@@ -181,23 +181,26 @@ class DatasetScores:
 
     # ------- Functionaliyt concerning the marker dictionary with the single markers
 
-    def get_total_marker_values(self, average=False):
+    def get_total_marker_values(self, average=False, share=None):
         """
         Creates a dictionary with the markers as keys and their total number of occurrence in this dataset as value
         :return:
         """
         markers = {}
         for marker in self.marker_dict:
-            if average == 'Sent':
-                markers[marker] = self.marker_dict[marker]['total']/self.total_sentences
-            elif average == 'Doc' or average == True:
-                markers[marker] = self.marker_dict[marker]['total']/self.total_docs
+            if average:
+                if share == 'Sent':
+                    markers[marker] = self.marker_dict[marker]['total'] / self.total_sentences
+                elif share == 'Word':
+                    markers[marker] = self.marker_dict[marker]['total'] / self.total_words
+                elif share == 'Doc':
+                    markers[marker] = self.marker_dict[marker]['total'] / self.total_docs
             else:
                 markers[marker] = self.marker_dict[marker]['total']
 
         return markers
 
-    def get_total_marker_percents(self):
+    def get_total_marker_percents(self, share='Marker'):
         """
         Creates a dictionary with the markers as keys
         and their percentage-share in all the markers in this dataset as value
@@ -205,7 +208,10 @@ class DatasetScores:
         """
         percents = {}
         for marker in self.marker_dict:
-            percents[marker] = (self.marker_dict[marker]['total'] * 100) / self.total_markers
+            if share == 'Word':
+                percents[marker] = (self.marker_dict[marker]['total'] * 100) / self.total_words
+            else:
+                percents[marker] = (self.marker_dict[marker]['total'] * 100) / self.total_markers
 
         return percents
 
@@ -235,9 +241,10 @@ class DatasetScores:
             markers.append(marker)
         return markers
 
-    def get_marker_values_at_position(self, position, average=False, perc=False):
+    def get_marker_values_at_position(self, position, average=False, perc=False, share=None):
         """
         Creates a dict with the marker as key and the position value as value
+        :param share:
         :param perc:
         :param average:
         :param position: the position to get the values for: sb, sm, se, db, dm, de
@@ -269,7 +276,10 @@ class DatasetScores:
         markers = {}
         for marker in self.marker_dict:
             if average:
-                markers[marker] = self.marker_dict[marker][flag] / self.total_docs
+                if share == 'Doc':
+                    markers[marker] = self.marker_dict[marker][flag] / self.total_docs
+                elif share == 'Word':
+                    markers[marker] = self.marker_dict[marker][flag] / self.total_words
             elif perc:
                 markers[marker] = self.marker_dict[marker][flag] * 100 / perc_total
             else:
@@ -306,13 +316,25 @@ class DatasetScores:
         else:
             return 0
 
-    def get_most_common_markers(self, number, position=None, perc=False, average=False):
+    def get_most_common_markers(self, number, perc=False, average=False, share=None, position=None):
+        """
+        :param number: How many markers to get (the top most x)
+        :param perc: if the result is supposed to be a percentage: True, Default is False
+        :param average: if the result is supposed to be an average: True, Default is False
+        :param share: on which base to compute the average or share - 'Sent', 'Doc' or 'Word'
+        :param position: most common marker at which position: 'sb', 'sm', 'se', 'db', 'dm', 'de'
+        :return:
+        """
+        # averages or percentages at certain positions
         if position:
             marker_count = Counter(self.get_marker_values_at_position(position, average=average, perc=perc))
-        elif not position and perc:
-            marker_count = Counter(self.get_total_marker_percents())
+        # total percentages
+        elif perc:
+            marker_count = Counter(self.get_total_marker_percents(share=share))
+        # total averages
         else:
-            marker_count = Counter(self.get_total_marker_values(average=average))
+            marker_count = Counter(self.get_total_marker_values(average=average, share=share))
+
         markers = []
         marker_values = []
         for item in marker_count.most_common(number):

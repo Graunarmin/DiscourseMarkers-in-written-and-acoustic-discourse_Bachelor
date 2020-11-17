@@ -1,32 +1,28 @@
-from plots import CreatePlots as cp
-from datasets import ConversationTypeData as dtd
+from plotting import CreatePlots as cp
+from datasets import ConversationTypeData as ctd
 from helpers import Helpers as hp
 
 
 def main():
-    data = dtd.DiscourseTypeData(
-        "../../../bigData/listenability-tools/Spotify/discourse-types/scores/dialog-scores_short"
-        ".csv",
-        "../../../bigData/listenability-tools/Spotify/discourse-types/dict/dialog_dict.json",
-        "../../../bigData/listenability-tools/Spotify/discourse-types/scores/monolog"
-        "-scores_short.csv",
-        "../../../bigData/listenability-tools/Spotify/discourse-types/dict/monolog_dict.json",
-        "../../../bigData/listenability-tools/Spotify/discourse-types/scores/cooperative-monolog"
-        "-scores_short.csv",
-        "../../../bigData/listenability-tools/Spotify/discourse-types/dict/cooperative"
-        "-monolog_dict.json",
-        "../../../bigData/listenability-tools/datasets/scores/ted-scores_short.csv",
-        "../../../bigData/listenability-tools/datasets/dict/ted-dict.json",
-        markertypes="../../../data/listenability-tools/main-senses/words_main-sense.json")
+    c_data = ctd.ConversationTypeData(
+        "../../bigData/listenability-tools/Spotify/discourse-types/scores/dialog-scores_short.csv",
+        "../../bigData/listenability-tools/Spotify/discourse-types/dict/dialog_dict.json",
+        "../../bigData/listenability-tools/Spotify/discourse-types/scores/monolog-scores_short.csv",
+        "../../bigData/listenability-tools/Spotify/discourse-types/dict/monolog_dict.json",
+        "../../bigData/listenability-tools/Spotify/discourse-types/scores/cooperative-monolog-scores_short.csv",
+        "../../bigData/listenability-tools/Spotify/discourse-types/dict/cooperative-monolog_dict.json",
+        "../../bigData/listenability-tools/datasets/scores/ted-scores_short.csv",
+        "../../bigData/listenability-tools/datasets/dict/ted-dict.json",
+        markertypes="../../data/listenability-tools/main-senses/words_main-sense.json")
 
     '''01:
     Prozentualer Anteil der DM an den Texten, über alle Texte
     min/mean/max(dm_words_perc)
     '''
-    dm_per_text_perc = [data.dialog.get_percent_dm_count_statistics(),
-                        data.monolog.get_percent_dm_count_statistics(),
-                        data.cmonolog.get_percent_dm_count_statistics(),
-                        data.speech.get_percent_dm_count_statistics()]
+    dm_per_text_perc = [c_data.dialog.get_percent_dm_count_statistics(),
+                        c_data.monolog.get_percent_dm_count_statistics(),
+                        c_data.cmonolog.get_percent_dm_count_statistics(),
+                        c_data.speech.get_percent_dm_count_statistics()]
 
     cp.plot_vertical_barchart("Percent Discourse Markers per Text",
                               dm_per_text_perc,
@@ -34,28 +30,41 @@ def main():
                               "Percent Markers",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog", label_4="Speech",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color, color_4=data.speech_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
-    hp.show_dataframe("Percent Discourse Markers per Text",
+    hp.show_dataframe("Percent Discourse Markers per Text - Values",
                       ['Min', 'Mean', 'Mode', 'Max'],
                       dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
                       data4=dm_per_text_perc[3],
                       label1="Dialog", label2="Monolog",
                       label3="Cooperative-Monolog", label4="Speech")
 
-    hp.effectsize_and_significance("Percent Discourse Markers per Text",
+    hp.effectsize_and_significance("Percent Discourse Markers per Text - Statistics",
                                    dm_per_text_perc,
                                    ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
+
+    '''
+    Empirical Distribution Function
+    '''
+    dm_percents = [c_data.dialog.get_percent_dm_per_text(),
+                   c_data.monolog.get_percent_dm_per_text(),
+                   c_data.cmonolog.get_percent_dm_per_text(),
+                   c_data.speech.get_percent_dm_per_text()]
+
+    cp.plot_ecdf(dm_percents,
+                 "ECDF for % of Discourse Markers per Text", "% DM per Text", "ECDF (% of Texts)",
+                 ["Monolog", "Dialog", "Cooperative Monolog", "Speech"],
+                 [c_data.dialog_color, c_data.monolog_color, c_data.cmonolog_color, c_data.speech_color])
 
     '''02:
     Anzahl der DM pro Text, über alle Texte (nicht sehr aussagekräftig)
     min/mean/max(dm_count_doc)
     '''
-    total_dm_count = [data.dialog.get_total_dm_count_statistics(),
-                      data.monolog.get_total_dm_count_statistics(),
-                      data.cmonolog.get_total_dm_count_statistics(),
-                      data.speech.get_total_dm_count_statistics()]
+    total_dm_count = [c_data.dialog.get_total_dm_count_statistics(),
+                      c_data.monolog.get_total_dm_count_statistics(),
+                      c_data.cmonolog.get_total_dm_count_statistics(),
+                      c_data.speech.get_total_dm_count_statistics()]
 
     cp.plot_vertical_barchart("Number Discourse Markers per Text",
                               total_dm_count,
@@ -63,8 +72,8 @@ def main():
                               "Number Markers",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog", label_4="Speech",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color, color_4=data.speech_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.show_dataframe("Number Discourse Markers per Text",
                       ['Min', 'Mean', 'Mode', 'Max'],
@@ -81,9 +90,9 @@ def main():
     Prozentualer Anteil der Sätze, die DM enthalten, an den Texten, über alle Texte
     min/mean/max(dm_sentences_perc)
     '''
-    dm_sentences_perc = [data.dialog.get_percent_dm_sentences_statistics(),
-                         data.monolog.get_percent_dm_sentences_statistics(),
-                         data.cmonolog.get_percent_dm_sentences_statistics()]
+    dm_sentences_perc = [c_data.dialog.get_percent_dm_sentences_statistics(),
+                         c_data.monolog.get_percent_dm_sentences_statistics(),
+                         c_data.cmonolog.get_percent_dm_sentences_statistics()]
 
     cp.plot_vertical_barchart("Percent of Sentences with DM per Text",
                               dm_sentences_perc,
@@ -91,8 +100,8 @@ def main():
                               "% Sentences containing DM",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color)
 
     hp.show_dataframe("Percent of Sentences with DM per Text",
                       ['Min', 'Mean', 'Mode', 'Max'],
@@ -108,9 +117,9 @@ def main():
     Anzahl der Sätze, die DM enthalten, über alle Texte (nicht sehr aussagekräftig)
     min/mean/max(dm_sentences)
     '''
-    dm_sentences_total = [data.dialog.get_total_dm_sentences_statistics(),
-                          data.monolog.get_total_dm_sentences_statistics(),
-                          data.cmonolog.get_total_dm_sentences_statistics()]
+    dm_sentences_total = [c_data.dialog.get_total_dm_sentences_statistics(),
+                          c_data.monolog.get_total_dm_sentences_statistics(),
+                          c_data.cmonolog.get_total_dm_sentences_statistics()]
 
     cp.plot_vertical_barchart("Number of Sentences with DM per Text",
                               dm_sentences_total,
@@ -118,8 +127,8 @@ def main():
                               "# Sentences containing DM",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color)
 
     hp.show_dataframe("Number of Sentences with DM per Text",
                       ['Min', 'Mean', 'Mode', 'Max'],
@@ -135,9 +144,9 @@ def main():
     '''
     05_a: Number of DM per sentence
     '''
-    dm_per_sent_total = [data.dialog.get_total_dm_per_sentence_statistics(),
-                         data.monolog.get_total_dm_per_sentence_statistics(),
-                         data.cmonolog.get_total_dm_per_sentence_statistics()]
+    dm_per_sent_total = [c_data.dialog.get_total_dm_per_sentence_statistics(),
+                         c_data.monolog.get_total_dm_per_sentence_statistics(),
+                         c_data.cmonolog.get_total_dm_per_sentence_statistics()]
 
     cp.plot_vertical_barchart("Number of Discourse Markers per Sentence",
                               dm_per_sent_total,
@@ -145,8 +154,8 @@ def main():
                               "# Markers per Sentence",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color)
 
     hp.show_dataframe("Number of Discourse Markers per Sentence",
                       ['Min', 'Mean', 'Mode', 'Max'],
@@ -162,14 +171,14 @@ def main():
     '''
     05_b: Histogram with Number of DM per Sentence per Dataset
     '''
-    dm_per_sent = [data.dialog.compute_dm_per_sentence(),
-                   data.monolog.compute_dm_per_sentence(),
-                   data.cmonolog.compute_dm_per_sentence()]
+    dm_per_sent = [c_data.dialog.compute_dm_per_sentence(),
+                   c_data.monolog.compute_dm_per_sentence(),
+                   c_data.cmonolog.compute_dm_per_sentence()]
 
     cp.draw_simple_barchart("Number of Discourse Markers per Sentence",
                             ["Monolog", "Dialog", "Cooperative Monolog"],
                             dm_per_sent,
-                            [data.dialog_color, data.monolog_color, data.cmonolog_color])
+                            [c_data.dialog_color, c_data.monolog_color, c_data.cmonolog_color])
 
     '''
     ---- Sentence Positions ----
@@ -178,9 +187,9 @@ def main():
     '''
     06: Percentage of DM at certain positions in a sentence
     '''
-    dm_pos_sent = [data.dialog.get_percent_dm_positions_sentence(),
-                   data.monolog.get_percent_dm_positions_sentence(),
-                   data.cmonolog.get_percent_dm_positions_sentence()]
+    dm_pos_sent = [c_data.dialog.get_percent_dm_positions_sentence(),
+                   c_data.monolog.get_percent_dm_positions_sentence(),
+                   c_data.cmonolog.get_percent_dm_positions_sentence()]
 
     cp.plot_vertical_barchart("% of DM in a Position in a Sentence",
                               dm_pos_sent,
@@ -188,8 +197,8 @@ def main():
                               "% DM at Postion",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color)
 
     hp.show_dataframe("% of DM in a Position in a Sentence",
                       ['Begin', 'Middle', 'End'],
@@ -204,9 +213,9 @@ def main():
     '''
     07: Number of DM at certain positions in a sentence
     '''
-    dm_pos_sent_total = [data.dialog.get_total_dm_positions_sentence(),
-                         data.monolog.get_total_dm_positions_sentence(),
-                         data.cmonolog.get_total_dm_positions_sentence()]
+    dm_pos_sent_total = [c_data.dialog.get_total_dm_positions_sentence(),
+                         c_data.monolog.get_total_dm_positions_sentence(),
+                         c_data.cmonolog.get_total_dm_positions_sentence()]
 
     cp.plot_vertical_barchart("Number of DM at a certain Position in a Sentence",
                               dm_pos_sent_total,
@@ -214,8 +223,8 @@ def main():
                               "# DM at Postion",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color)
 
     hp.show_dataframe("Number of DM at a certain Position in a Sentence",
                       ["Begin", "Middle", "End"],
@@ -247,10 +256,10 @@ def main():
     '''08:
     Percentage of DM at certain positions in a document
     '''
-    dm_pos_doc_perc = [data.dialog.get_percent_dm_positions_document(),
-                       data.monolog.get_percent_dm_positions_document(),
-                       data.cmonolog.get_percent_dm_positions_document(),
-                       data.speech.get_percent_dm_positions_document()]
+    dm_pos_doc_perc = [c_data.dialog.get_percent_dm_positions_document(),
+                       c_data.monolog.get_percent_dm_positions_document(),
+                       c_data.cmonolog.get_percent_dm_positions_document(),
+                       c_data.speech.get_percent_dm_positions_document()]
 
     cp.plot_vertical_barchart("% of DM in a Position in a Document",
                               dm_pos_doc_perc,
@@ -258,8 +267,8 @@ def main():
                               "% DM at Postion",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog", label_4="Speech",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color, color_4=data.speech_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.show_dataframe("% of DM in a Position in a Document",
                       ["Begin", "Middle", "End"],
@@ -275,10 +284,10 @@ def main():
     '''
     09: Number of DM at certain positions in a document
     '''
-    dm_pos_doc_total = [data.dialog.get_total_dm_positions_document(),
-                        data.monolog.get_total_dm_positions_document(),
-                        data.cmonolog.get_total_dm_positions_document(),
-                        data.speech.get_percent_dm_positions_document()]
+    dm_pos_doc_total = [c_data.dialog.get_total_dm_positions_document(),
+                        c_data.monolog.get_total_dm_positions_document(),
+                        c_data.cmonolog.get_total_dm_positions_document(),
+                        c_data.speech.get_percent_dm_positions_document()]
 
     cp.plot_vertical_barchart("Number of DM at a certain Position in a Document",
                               dm_pos_doc_total,
@@ -286,8 +295,8 @@ def main():
                               "# DM at Postion",
                               label_1="Dialog", label_2="Monolog",
                               label_3="Cooperative-Monolog", label_4="Speech",
-                              color_1=data.dialog_color, color_2=data.monolog_color,
-                              color_3=data.cmonolog_color, color_4=data.speech_color)
+                              color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                              color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.show_dataframe("Number of DM at a certain Position in a Document",
                       ["Begin", "Middle", "End"],
@@ -323,10 +332,10 @@ def main():
     '''
     01_a: Most Common Markers per Genre - Average per Doc
     '''
-    most_common_markers = [data.dialog.get_most_common_markers(15, average='Doc'),
-                           data.monolog.get_most_common_markers(15, average='Doc'),
-                           data.cmonolog.get_most_common_markers(15, average='Doc'),
-                           data.speech.get_most_common_markers(15, average='Doc')]
+    most_common_markers = [c_data.dialog.get_most_common_markers(15, average='Doc'),
+                           c_data.monolog.get_most_common_markers(15, average='Doc'),
+                           c_data.cmonolog.get_most_common_markers(15, average='Doc'),
+                           c_data.speech.get_most_common_markers(15, average='Doc')]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers - Average per Document",
                                                            most_common_markers,
@@ -334,8 +343,8 @@ def main():
 
     cp.plot_horizontal_barchart("Most Common Markers", markers, x_values, "Average Occurrences per Document",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog", label_4="Speech",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color, color_4=data.speech_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages",
                              most_common_markers,
@@ -357,9 +366,9 @@ def main():
     '''
     01_b: Most Common Markers per Genre - Average per Sentence
     '''
-    most_common_markers = [data.dialog.get_most_common_markers(15, average='Sent'),
-                           data.monolog.get_most_common_markers(15, average='Sent'),
-                           data.cmonolog.get_most_common_markers(15, average='Sent')]
+    most_common_markers = [c_data.dialog.get_most_common_markers(15, average='Sent'),
+                           c_data.monolog.get_most_common_markers(15, average='Sent'),
+                           c_data.cmonolog.get_most_common_markers(15, average='Sent')]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers - Average per Sentence",
                                                            most_common_markers,
@@ -367,8 +376,8 @@ def main():
 
     cp.plot_horizontal_barchart("Most Common Markers", markers, x_values, "Average Occurrences per Sentence",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages",
                              most_common_markers,
@@ -377,10 +386,10 @@ def main():
     '''
     02: Most Common Markers per Genre - In Percent
     '''
-    most_common_markers_perc = [data.dialog.get_most_common_markers(15, perc=True),
-                                data.monolog.get_most_common_markers(15, perc=True),
-                                data.cmonolog.get_most_common_markers(15, perc=True),
-                                data.speech.get_most_common_markers(15, perc=True)]
+    most_common_markers_perc = [c_data.dialog.get_most_common_markers(15, perc=True),
+                                c_data.monolog.get_most_common_markers(15, perc=True),
+                                c_data.cmonolog.get_most_common_markers(15, perc=True),
+                                c_data.speech.get_most_common_markers(15, perc=True)]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers in %",
                                                            most_common_markers_perc,
@@ -389,8 +398,8 @@ def main():
     cp.plot_horizontal_barchart("Most Common Markers in %", markers, x_values, "Share in all Markers",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog", label_4="Speech",
                                 label_5="Speech",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color, color_4=data.speech_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages",
                              most_common_markers_perc,
@@ -412,9 +421,9 @@ def main():
     '''
     03_a: Most Common Markers per Genre - Sentence Begin
     '''
-    mc_sent_begin = [data.dialog.get_most_common_markers(15, position="sb", average=True),
-                     data.monolog.get_most_common_markers(15, position="sb", average=True),
-                     data.cmonolog.get_most_common_markers(15, position="sb", average=True)]
+    mc_sent_begin = [c_data.dialog.get_most_common_markers(15, position="sb", average=True),
+                     c_data.monolog.get_most_common_markers(15, position="sb", average=True),
+                     c_data.cmonolog.get_most_common_markers(15, position="sb", average=True)]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers Sentence Begin",
                                                            mc_sent_begin,
@@ -423,8 +432,8 @@ def main():
     cp.plot_horizontal_barchart("Most Common Markers: Sentence Begin", markers, x_values,
                                 "Average per Document",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages : Sentence Begin",
                              mc_sent_begin,
@@ -440,9 +449,9 @@ def main():
     '''
     03_b: Most Common Markers per Genre - Sentence Middle
     '''
-    mc_sent_middle = [data.dialog.get_most_common_markers(15, position="sm", average=True),
-                      data.monolog.get_most_common_markers(15, position="sm", average=True),
-                      data.cmonolog.get_most_common_markers(15, position="sm", average=True)]
+    mc_sent_middle = [c_data.dialog.get_most_common_markers(15, position="sm", average=True),
+                      c_data.monolog.get_most_common_markers(15, position="sm", average=True),
+                      c_data.cmonolog.get_most_common_markers(15, position="sm", average=True)]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers Sentence Middle",
                                                            mc_sent_middle,
@@ -451,8 +460,8 @@ def main():
     cp.plot_horizontal_barchart("Most Common Markers: Sentence Middle", markers, x_values,
                                 "Average per Document",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages : Sentence Middle",
                              mc_sent_middle,
@@ -468,9 +477,9 @@ def main():
     '''
     03_c: Most Common Markers per Genre - Sentence End
     '''
-    mc_sent_end = [data.dialog.get_most_common_markers(15, position="se", average=True),
-                   data.monolog.get_most_common_markers(15, position="se", average=True),
-                   data.cmonolog.get_most_common_markers(15, position="se", average=True)]
+    mc_sent_end = [c_data.dialog.get_most_common_markers(15, position="se", average=True),
+                   c_data.monolog.get_most_common_markers(15, position="se", average=True),
+                   c_data.cmonolog.get_most_common_markers(15, position="se", average=True)]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers Sentence End",
                                                            mc_sent_end,
@@ -479,8 +488,8 @@ def main():
     cp.plot_horizontal_barchart("Most Common Markers: Sentence End", markers, x_values,
                                 "Average per Document",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages : Sentence End",
                              mc_sent_end,
@@ -496,10 +505,10 @@ def main():
     '''
     04_a: Most Common Markers per Genre - Document Begin
     '''
-    mc_doc_begin = [data.dialog.get_most_common_markers(15, position="db", average=True),
-                    data.monolog.get_most_common_markers(15, position="db", average=True),
-                    data.cmonolog.get_most_common_markers(15, position="db", average=True),
-                    data.speech.get_most_common_markers(15, position="db", average=True)]
+    mc_doc_begin = [c_data.dialog.get_most_common_markers(15, position="db", average=True),
+                    c_data.monolog.get_most_common_markers(15, position="db", average=True),
+                    c_data.cmonolog.get_most_common_markers(15, position="db", average=True),
+                    c_data.speech.get_most_common_markers(15, position="db", average=True)]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers Document Begin",
                                                            mc_doc_begin,
@@ -508,8 +517,8 @@ def main():
     cp.plot_horizontal_barchart("Most Common Markers: Document Begin", markers, x_values,
                                 "Average per Document",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog", label_4="Speech",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color, color_4=data.speech_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages : Document Begin",
                              mc_doc_begin,
@@ -527,10 +536,10 @@ def main():
     '''
     04_b: Most Common Markers per Genre - Document Middle
     '''
-    mc_doc_middle = [data.dialog.get_most_common_markers(15, position="dm", average=True),
-                     data.monolog.get_most_common_markers(15, position="dm", average=True),
-                     data.cmonolog.get_most_common_markers(15, position="dm", average=True),
-                     data.speech.get_most_common_markers(15, position="dm", average=True)]
+    mc_doc_middle = [c_data.dialog.get_most_common_markers(15, position="dm", average=True),
+                     c_data.monolog.get_most_common_markers(15, position="dm", average=True),
+                     c_data.cmonolog.get_most_common_markers(15, position="dm", average=True),
+                     c_data.speech.get_most_common_markers(15, position="dm", average=True)]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers Document Middle",
                                                            mc_doc_middle,
@@ -539,8 +548,8 @@ def main():
     cp.plot_horizontal_barchart("Most Common Markers: Document Middle", markers, x_values,
                                 "Average per Document",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog", label_4="Speech",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color, color_4=data.speech_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages : Document Middle",
                              mc_doc_middle,
@@ -558,10 +567,10 @@ def main():
     '''
     04_c: Most Common Markers per Genre - Document End
     '''
-    mc_doc_end = [data.dialog.get_most_common_markers(15, position="de", average=True),
-                  data.monolog.get_most_common_markers(15, position="de", average=True),
-                  data.cmonolog.get_most_common_markers(15, position="de", average=True),
-                  data.speech.get_most_common_markers(15, position="de", average=True)]
+    mc_doc_end = [c_data.dialog.get_most_common_markers(15, position="de", average=True),
+                  c_data.monolog.get_most_common_markers(15, position="de", average=True),
+                  c_data.cmonolog.get_most_common_markers(15, position="de", average=True),
+                  c_data.speech.get_most_common_markers(15, position="de", average=True)]
 
     markers, x_values = hp.compile_most_common_marker_list("Most Common Markers Document End",
                                                            mc_doc_end,
@@ -570,8 +579,8 @@ def main():
     cp.plot_horizontal_barchart("Most Common Markers: Document End", markers, x_values,
                                 "Average per Document",
                                 "Dialog", label_2="Monolog", label_3="Cooperative-Monolog", label_4="Speech",
-                                color_1=data.dialog_color, color_2=data.monolog_color,
-                                color_3=data.cmonolog_color, color_4=data.speech_color)
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     hp.compute_marker_deltas("Differences between Marker Averages : Document End",
                              mc_doc_end,

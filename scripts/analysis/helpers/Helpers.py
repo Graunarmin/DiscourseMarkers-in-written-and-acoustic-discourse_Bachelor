@@ -104,14 +104,23 @@ def list_all_markers(data1, data2=None, data3=None, data4=None):
     return markers
 
 
-def compile_most_common_marker_list(title, datalist, names):
+def create_marker_table(title, datalist, names):
+    """
+    Create a list of all the markers that occur in the given datasets and
+    print the list with the occurrence-values as a pandas dataframe
+    :param title:
+    :param datalist:
+    :param names:
+    :return:
+    """
     markers = []
-
+    # create a list of all the markers that occur in the datasets
     for i in range(len(datalist)):
         for j in range(2):
             if j % 2 == 0:
                 markers = markers + [m for m in datalist[i][j] if m not in markers]
 
+    # then create a dictionary in form of a pandas dataframe to store the values for each marker for each dataset
     marker_frame = {}
     for marker in markers:
         marker_frame[marker] = []
@@ -132,12 +141,40 @@ def compile_most_common_marker_list(title, datalist, names):
     print(title)
     print(values_dataframe)
 
+    compute_marker_deltas(title, marker_frame)
+    return markers, marker_frame
+
+
+def compute_marker_deltas(title, data):
+    deltas = {}
+    labels = data['Data']
+    deltas['Data'] = []
+
+    data.drop('Data', axis=1, inplace=True)
+    for column in data:
+        pass
+
+
+def compile_most_common_marker_list(title, datalist, names):
+    """
+    Create a List of all the markers that appear in the given datasets
+    and return one list with all the markers and up to five additional lists with the
+    respective numbers of occurences in each dataset
+    :param title:
+    :param datalist:
+    :param names:
+    :return:
+    """
+    markers, marker_frame = create_marker_table(title, datalist, names)
+
     values1 = []
     values2 = None
     values3 = None
     values4 = None
     values5 = None
 
+    # split up the marker_frame dict into four lists, each of which contains
+    # the marker values for the specific dataset
     for marker in markers:
         values1.append(marker_frame[marker][0])
     if len(datalist) > 1:
@@ -167,9 +204,7 @@ def compute_cohens_d(x1, x2):
     :param x2:
     :return:
     """
-    return (statistics.mean(x1) - statistics.mean(x2)) / (math.sqrt((
-        statistics.stdev(x1) ** 2 + statistics.stdev(x2) ** 2) / 2
-    ))
+    return (statistics.mean(x1) - statistics.mean(x2)) / (math.sqrt((statistics.stdev(x1) ** 2 + statistics.stdev(x2) ** 2) / 2))
 
 
 def compute_t_test(x1, x2):
@@ -187,14 +222,13 @@ def compute_t_test(x1, x2):
 
 
 def effectsize_and_significance(title, data, labels):
-
     effectsize = []
     t_statistics = []
     p_values = []
     names = []
 
-    for i in range(len(data)-1):
-        for j in range(i+1, len(data)):
+    for i in range(len(data) - 1):
+        for j in range(i + 1, len(data)):
             effectsize.append(compute_cohens_d(data[i], data[j]))
             t_statistic, p_value = compute_t_test(data[i], data[j])
             t_statistics.append(t_statistic)
@@ -207,10 +241,10 @@ def effectsize_and_significance(title, data, labels):
                                      "Data": names})
     values_dataframe.set_index('Data', inplace=True)
     pd.set_option('display.max_columns', 25)
-    print("\n" * 2)
+    print("\n" * 1)
     print(title)
     print(values_dataframe)
 
 
-def compute_marker_deltas(title, data, labels):
-    print("TODO: Write Function to compute deltas between marker averages")
+
+

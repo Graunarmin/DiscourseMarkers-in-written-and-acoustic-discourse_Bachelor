@@ -424,7 +424,7 @@ def compute_y_values_statics(data_1, label_1=None, data_2=None, label_2=None, da
 # ------------- DM per Sentence (Histogram) ----------------
 def compute_dm_per_sentence(data, title, color):
     """
-    Computes the number of DM per sentence and plots a histogram with a bar for each number of DM
+    Computes the number of DM per sentence and plotting a histogram with a bar for each number of DM
     :param data: dictionary with that contains the numbers of DMs as key and the number of sentences that contain the
     respective number of DM as value
     :param title: the title of the dataset
