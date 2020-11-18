@@ -32,6 +32,13 @@ class DatasetScores:
 
             del dictionary
 
+    def get_percent_dm_per_text(self):
+        """
+        Gets the 'dm_words_perc' column of the scores as a list
+        :return:
+        """
+        return list(self.scores['dm_words_perc'])
+
     def get_total_dm_count_statistics(self):
         """
         Computes the min, mean, max of the total number of DM per Text
@@ -47,12 +54,12 @@ class DatasetScores:
         """
         return hp.compute_statistics(self.scores['dm_words_perc'].dropna())
 
-    def get_percent_dm_per_text(self):
+    def get_percent_dm_sentences(self):
         """
-        Gets a List of the percantages of DM per Document
+        Gets the 'dm_sentences_perc' column of the scores as a list
         :return:
         """
-        return list(self.scores['dm_words_perc'])
+        return list(self.scores['dm_sentences_perc'])
 
     def get_total_dm_sentences_statistics(self):
         """
@@ -178,6 +185,22 @@ class DatasetScores:
             y_values.append(element[1] * 100 / self.total_sentences)
 
         return [x_values, y_values]
+
+    def get_dm_per_sentence(self):
+        """
+        Returns a list with the values for how many dm there
+        are per each sentence
+        :return:
+        """
+        counts = []
+
+        for doc in self.scores['dm_count_sent'].dropna():
+            doc_counts = ast.literal_eval(doc)
+
+            for dm_counter in doc_counts:
+                counts.extend([dm_counter for i in range(int(doc_counts[dm_counter]))])
+
+        return counts
 
     # ------- Functionaliyt concerning the marker dictionary with the single markers
 
@@ -327,7 +350,7 @@ class DatasetScores:
         """
         # averages or percentages at certain positions
         if position:
-            marker_count = Counter(self.get_marker_values_at_position(position, average=average, perc=perc))
+            marker_count = Counter(self.get_marker_values_at_position(position, average=average, perc=perc, share=share))
         # total percentages
         elif perc:
             marker_count = Counter(self.get_total_marker_percents(share=share))

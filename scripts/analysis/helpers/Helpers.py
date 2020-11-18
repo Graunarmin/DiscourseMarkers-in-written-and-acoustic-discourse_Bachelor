@@ -2,6 +2,7 @@ import statistics
 import math
 import pandas as pd
 from scipy import stats
+from tabulate import tabulate
 
 
 def compute_statistics(values):
@@ -79,8 +80,7 @@ def show_dataframe(title, columns, data1, data2=None, data3=None, data4=None, da
 
     values_dataframe = pd.DataFrame(frame_dict)
     values_dataframe.set_index('names', inplace=True)
-    print(title)
-    print(values_dataframe)
+    print_dataframe(title, values_dataframe)
 
 
 def list_all_markers(data1, data2=None, data3=None, data4=None):
@@ -102,6 +102,19 @@ def list_all_markers(data1, data2=None, data3=None, data4=None):
                 markers.append(marker)
 
     return markers
+
+
+def print_dataframe(title, data):
+
+    data.to_csv("../../data/listenability-tools/tables/genres/" + title + ".csv")
+
+    # pd.set_option('display.max_columns', 25)
+    # pd.options.display.width = None
+    # pdtabulate = lambda df: tabulate(df, headers='keys', tablefmt='psql')
+    #
+    # print("\n" * 1)
+    # print(title)
+    # print(pdtabulate(data))
 
 
 def create_marker_table(title, datalist, names):
@@ -137,22 +150,30 @@ def create_marker_table(title, datalist, names):
     marker_frame['Data'] = names
     values_dataframe = pd.DataFrame(marker_frame)
     values_dataframe.set_index('Data', inplace=True)
-    pd.set_option('display.max_columns', 25)
-    print(title)
-    print(values_dataframe)
+    print_dataframe(title, values_dataframe)
 
-    compute_marker_deltas(title, marker_frame)
+    compute_marker_deltas(title, values_dataframe)
     return markers, marker_frame
 
 
 def compute_marker_deltas(title, data):
-    deltas = {}
-    labels = data['Data']
-    deltas['Data'] = []
+    names = []
+    for i in range(len(data.index) - 1):
+        for j in range(i + 1, len(data.index)):
+            names.append("Δ (" + data.index[i] + ", " + data.index[j] + ")")
 
-    data.drop('Data', axis=1, inplace=True)
-    for column in data:
-        pass
+    deltas = {'Data': names}
+
+    for marker in data:
+        deltas[marker] = []
+        for i in range(len(data[marker]) - 1):
+            for j in range(i + 1, len(data[marker])):
+                delta = abs(data[marker][i] - data[marker][j])
+                deltas[marker].append(delta)
+
+    deltas_dataframe = pd.DataFrame(deltas)
+    deltas_dataframe.set_index('Data', inplace=True)
+    print_dataframe("Deltas of " + title, deltas_dataframe)
 
 
 def compile_most_common_marker_list(title, datalist, names):
@@ -204,7 +225,8 @@ def compute_cohens_d(x1, x2):
     :param x2:
     :return:
     """
-    return (statistics.mean(x1) - statistics.mean(x2)) / (math.sqrt((statistics.stdev(x1) ** 2 + statistics.stdev(x2) ** 2) / 2))
+    return (statistics.mean(x1) - statistics.mean(x2)) / (
+        math.sqrt((statistics.stdev(x1) ** 2 + statistics.stdev(x2) ** 2) / 2))
 
 
 def compute_t_test(x1, x2):
@@ -239,12 +261,6 @@ def effectsize_and_significance(title, data, labels):
                                      "T-Statistic": t_statistics,
                                      "P-Value": p_values,
                                      "Data": names})
+
     values_dataframe.set_index('Data', inplace=True)
-    pd.set_option('display.max_columns', 25)
-    print("\n" * 1)
-    print(title)
-    print(values_dataframe)
-
-
-
-
+    print_dataframe(title, values_dataframe)
