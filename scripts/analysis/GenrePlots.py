@@ -394,7 +394,7 @@ def main():
                            g_data.documentary.get_most_common_markers(15, average=True, share='Doc'),
                            g_data.speech.get_most_common_markers(15, average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_Average-per-Document",
+    markers, x_values = hp.compile_most_common_marker_list("Average-per-Document_mcm",
                                                            most_common_markers,
                                                            ["News", "Discussion", "Science/Education", "Documentary",
                                                             "Presentation"])
@@ -426,7 +426,7 @@ def main():
                            g_data.science.get_most_common_markers(15, average=True, share='Sent'),
                            g_data.documentary.get_most_common_markers(15, average=True, share='Sent')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_Average-per-Sentence",
+    markers, x_values = hp.compile_most_common_marker_list("Average-per-Sentence_mcm",
                                                            most_common_markers,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -443,7 +443,7 @@ def main():
                            g_data.science.get_most_common_markers(15, average=True, share='Word'),
                            g_data.documentary.get_most_common_markers(15, average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_Average-per-total-Wordcount",
+    markers, x_values = hp.compile_most_common_marker_list("Average-per-total-Wordcount_mcm",
                                                            most_common_markers,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -461,7 +461,7 @@ def main():
                                 g_data.documentary.get_most_common_markers(15, perc=True, share='Marker'),
                                 g_data.speech.get_most_common_markers(15, perc=True, share='Marker')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_percent_Marker-share",
+    markers, x_values = hp.compile_most_common_marker_list("Marker-share-percent_mcm",
                                                            most_common_markers_perc,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])
@@ -482,7 +482,7 @@ def main():
                                 g_data.documentary.get_most_common_markers(15, perc=True, share='Word'),
                                 g_data.speech.get_most_common_markers(15, perc=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_percent_Wordcount-share",
+    markers, x_values = hp.compile_most_common_marker_list("Wordcount-share-percent_mcm",
                                                            most_common_markers_perc,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])
@@ -515,7 +515,7 @@ def main():
                      g_data.science.get_most_common_markers(15, position="sb", average=True, share='Doc'),
                      g_data.documentary.get_most_common_markers(15, position="sb", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SB_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("SB_per-doc_mcm",
                                                            mc_sent_begin,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -533,7 +533,7 @@ def main():
                      g_data.science.get_most_common_markers(15, position="sb", average=True, share='Word'),
                      g_data.documentary.get_most_common_markers(15, position="sb", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SB_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("SB_per-wc_mcm",
                                                            mc_sent_begin,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -558,7 +558,7 @@ def main():
                       g_data.science.get_most_common_markers(15, position="sm", average=True, share='Doc'),
                       g_data.documentary.get_most_common_markers(15, position="sm", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SM_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("SM_per-doc_mcm",
                                                            mc_sent_middle,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -576,7 +576,7 @@ def main():
                       g_data.science.get_most_common_markers(15, position="sm", average=True, share='Word'),
                       g_data.documentary.get_most_common_markers(15, position="sm", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SM_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("SM_per-wc_mcm",
                                                            mc_sent_middle,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -601,7 +601,7 @@ def main():
                    g_data.science.get_most_common_markers(15, position="se", average=True, share='Doc'),
                    g_data.documentary.get_most_common_markers(15, position="se", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SE_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("SE_per-doc_mcm",
                                                            mc_sent_end,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -619,7 +619,7 @@ def main():
                    g_data.science.get_most_common_markers(15, position="se", average=True, share='Word'),
                    g_data.documentary.get_most_common_markers(15, position="se", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SE_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("SE_per-wc_mcm",
                                                            mc_sent_end,
                                                            ["News", "Discussion", "Science/Education", "Documentary"])
 
@@ -645,7 +645,7 @@ def main():
                     g_data.documentary.get_most_common_markers(15, position="db", average=True, share='Doc'),
                     g_data.speech.get_most_common_markers(15, position="db", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DB_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("DB_per-doc_mcm",
                                                            mc_doc_begin,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])
@@ -667,7 +667,7 @@ def main():
                     g_data.documentary.get_most_common_markers(15, position="db", average=True, share='Word'),
                     g_data.speech.get_most_common_markers(15, position="db", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DB_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("DB_per-wc_mcm",
                                                            mc_doc_begin,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])
@@ -698,7 +698,7 @@ def main():
                      g_data.documentary.get_most_common_markers(15, position="dm", average=True, share='Doc'),
                      g_data.speech.get_most_common_markers(15, position="dm", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DM_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("DM_per-doc_mcm",
                                                            mc_doc_middle,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])
@@ -720,7 +720,7 @@ def main():
                      g_data.documentary.get_most_common_markers(15, position="dm", average=True, share='Word'),
                      g_data.speech.get_most_common_markers(15, position="dm", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DM_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("DM_per-wc_mcm",
                                                            mc_doc_middle,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])
@@ -751,7 +751,7 @@ def main():
                   g_data.documentary.get_most_common_markers(15, position="de", average=True, share='Doc'),
                   g_data.speech.get_most_common_markers(15, position="de", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DE_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("DE_per-doc_mcm",
                                                            mc_doc_end,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])
@@ -773,7 +773,7 @@ def main():
                   g_data.documentary.get_most_common_markers(15, position="de", average=True, share='Word'),
                   g_data.speech.get_most_common_markers(15, position="de", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DE_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("DE_per-wc_mcm",
                                                            mc_doc_end,
                                                            ["News", "Discussion", "Science/Education",
                                                             "Documentary", "Presentation"])

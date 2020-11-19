@@ -106,7 +106,7 @@ def list_all_markers(data1, data2=None, data3=None, data4=None):
 
 def print_dataframe(title, data):
 
-    data.to_csv("../../data/listenability-tools/tables/genres/" + title + ".csv")
+    data.to_csv("../../data/listenability-tools/tables/" + title + ".csv")
 
     # pd.set_option('display.max_columns', 25)
     # pd.options.display.width = None
@@ -150,7 +150,7 @@ def create_marker_table(title, datalist, names):
     marker_frame['Data'] = names
     values_dataframe = pd.DataFrame(marker_frame)
     values_dataframe.set_index('Data', inplace=True)
-    print_dataframe(title, values_dataframe)
+    print_dataframe(title, values_dataframe.transpose())
 
     compute_marker_deltas(title, values_dataframe)
     return markers, marker_frame
@@ -173,7 +173,8 @@ def compute_marker_deltas(title, data):
 
     deltas_dataframe = pd.DataFrame(deltas)
     deltas_dataframe.set_index('Data', inplace=True)
-    print_dataframe("Deltas of " + title, deltas_dataframe)
+    deltas_dataframe = deltas_dataframe
+    print_dataframe("deltas_" + title, deltas_dataframe.transpose())
 
 
 def compile_most_common_marker_list(title, datalist, names):

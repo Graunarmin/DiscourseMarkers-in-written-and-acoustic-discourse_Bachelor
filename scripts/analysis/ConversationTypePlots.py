@@ -359,12 +359,12 @@ def main():
     '''
     01_a: Most Common Markers per Genre - Average per Doc
     '''
-    most_common_markers = [c_data.dialog.get_most_common_markers(15, average='Doc'),
-                           c_data.monolog.get_most_common_markers(15, average='Doc'),
-                           c_data.cmonolog.get_most_common_markers(15, average='Doc'),
-                           c_data.speech.get_most_common_markers(15, average='Doc')]
+    most_common_markers = [c_data.dialog.get_most_common_markers(15, average=True, share='Doc'),
+                           c_data.monolog.get_most_common_markers(15, average=True, share='Doc'),
+                           c_data.cmonolog.get_most_common_markers(15, average=True, share='Doc'),
+                           c_data.speech.get_most_common_markers(15, average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_Average-per-Document",
+    markers, x_values = hp.compile_most_common_marker_list("Average-per-Document_mcm",
                                                            most_common_markers,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
@@ -389,11 +389,11 @@ def main():
     '''
     01_b: Most Common Markers per Genre - Average per Sentence
     '''
-    most_common_markers = [c_data.dialog.get_most_common_markers(15, average='Sent'),
-                           c_data.monolog.get_most_common_markers(15, average='Sent'),
-                           c_data.cmonolog.get_most_common_markers(15, average='Sent')]
+    most_common_markers = [c_data.dialog.get_most_common_markers(15, average=True, share='Sent'),
+                           c_data.monolog.get_most_common_markers(15, average=True, share='Sent'),
+                           c_data.cmonolog.get_most_common_markers(15, average=True, share='Sent')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_Average-per-Sentence",
+    markers, x_values = hp.compile_most_common_marker_list("Average-per-Sentence_mcm",
                                                            most_common_markers,
                                                            ["Monolog", "Dialog", "Cooperative Monolog"])
 
@@ -407,15 +407,17 @@ def main():
     '''
     most_common_markers_sent = [c_data.dialog.get_most_common_markers(15, average=True, share='Word'),
                                 c_data.monolog.get_most_common_markers(15, average=True, share='Word'),
-                                c_data.cmonolog.get_most_common_markers(15, average=True, share='Word')]
+                                c_data.cmonolog.get_most_common_markers(15, average=True, share='Word'),
+                                c_data.speech.get_most_common_markers(15, average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_Average-per-total-Wordcount",
+    markers, x_values = hp.compile_most_common_marker_list("Average-per-total-Wordcount_mcm",
                                                            most_common_markers_sent,
-                                                           ["Spotify", "NYTimes", "Gigaword"])
+                                                           ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
     cp.plot_horizontal_barchart("Most Common Markers", markers, x_values, "Average Occurrences per total Wordcount",
-                                "Spotify", label_2="NYTimes", label_3="Gigaword",
-                                color_1=c_data.dialog_color, color_2=c_data.monolog_color, color_3=c_data.cmonolog_color)
+                                "Dialog", label_2="Monolog", label_3="Cooperative-Monolog", label_4="Speech",
+                                color_1=c_data.dialog_color, color_2=c_data.monolog_color,
+                                color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
     '''
     02_a: Most Common Markers per Genre - In Percent (share in all Markers)
@@ -425,7 +427,7 @@ def main():
                                 c_data.cmonolog.get_most_common_markers(15, perc=True, share='Marker'),
                                 c_data.speech.get_most_common_markers(15, perc=True, share='Marker')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_percent_Marker-share",
+    markers, x_values = hp.compile_most_common_marker_list("Marker-share-percent_mcm",
                                                            most_common_markers_perc,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
@@ -443,12 +445,12 @@ def main():
                                 c_data.cmonolog.get_most_common_markers(15, perc=True, share='Word'),
                                 c_data.speech.get_most_common_markers(15, perc=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_percent_Wordcount-share",
+    markers, x_values = hp.compile_most_common_marker_list("Wordcount-share-percent_mcm",
                                                            most_common_markers_perc,
-                                                           ["Spotify", "TED", "NYTimes", "Gigaword"])
+                                                           ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
     cp.plot_horizontal_barchart("Most Common Markers in %", markers, x_values, "Share in all Words",
-                                "Spotify", label_2="TED", label_3="NYTimes", label_4="Gigaword",
+                                "Dialog", label_2="Monolog", label_3="Cooperative-Monolog", label_4="Speech",
                                 color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                                 color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
@@ -472,7 +474,7 @@ def main():
                      c_data.monolog.get_most_common_markers(15, position="sb", average=True, share='Doc'),
                      c_data.cmonolog.get_most_common_markers(15, position="sb", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SB_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("SB_per-doc_mcm",
                                                            mc_sent_begin,
                                                            ["Monolog", "Dialog", "Cooperative Monolog"])
 
@@ -489,7 +491,7 @@ def main():
                      c_data.monolog.get_most_common_markers(15, position="sb", average=True, share='Word'),
                      c_data.cmonolog.get_most_common_markers(15, position="sb", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SB_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("SB_per-wc_mcm",
                                                            mc_sent_begin,
                                                            ["Monolog", "Dialog", "Cooperative Monolog"])
 
@@ -512,7 +514,7 @@ def main():
                       c_data.monolog.get_most_common_markers(15, position="sm", average=True, share='Doc'),
                       c_data.cmonolog.get_most_common_markers(15, position="sm", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SM_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("SM_per-doc_mcm",
                                                            mc_sent_middle,
                                                            ["Monolog", "Dialog", "Cooperative Monolog"])
 
@@ -529,7 +531,7 @@ def main():
                       c_data.monolog.get_most_common_markers(15, position="sm", average=True, share='Word'),
                       c_data.cmonolog.get_most_common_markers(15, position="sm", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SM_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("SM_per-wc_mcm",
                                                            mc_sent_middle,
                                                            ["Monolog", "Dialog", "Cooperative Monolog"])
 
@@ -552,7 +554,7 @@ def main():
                    c_data.monolog.get_most_common_markers(15, position="se", average=True, share='Doc'),
                    c_data.cmonolog.get_most_common_markers(15, position="se", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SE_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("SE_per-doc_mcm",
                                                            mc_sent_end,
                                                            ["Monolog", "Dialog", "Cooperative Monolog"])
 
@@ -569,7 +571,7 @@ def main():
                    c_data.monolog.get_most_common_markers(15, position="se", average=True, share='Word'),
                    c_data.cmonolog.get_most_common_markers(15, position="se", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_SE_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("SE_per-wc_mcm",
                                                            mc_sent_end,
                                                            ["Monolog", "Dialog", "Cooperative Monolog"])
 
@@ -588,12 +590,12 @@ def main():
     '''
     04_a_1: Most Common Markers per Genre - Document Begin (per Doc)
     '''
-    mc_doc_begin = [c_data.dialog.get_most_common_markers(15, position="db", average=True),
-                    c_data.monolog.get_most_common_markers(15, position="db", average=True),
-                    c_data.cmonolog.get_most_common_markers(15, position="db", average=True),
-                    c_data.speech.get_most_common_markers(15, position="db", average=True)]
+    mc_doc_begin = [c_data.dialog.get_most_common_markers(15, position="db", average=True, share='Doc'),
+                    c_data.monolog.get_most_common_markers(15, position="db", average=True, share='Doc'),
+                    c_data.cmonolog.get_most_common_markers(15, position="db", average=True, share='Doc'),
+                    c_data.speech.get_most_common_markers(15, position="db", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DB_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("DB_per-doc_mcm",
                                                            mc_doc_begin,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
@@ -611,7 +613,7 @@ def main():
                     c_data.cmonolog.get_most_common_markers(15, position="db", average=True, share='Word'),
                     c_data.speech.get_most_common_markers(15, position="db", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DB_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("DB_per-wc_mcm",
                                                            mc_doc_begin,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
@@ -633,12 +635,12 @@ def main():
     '''
     04_b_1: Most Common Markers per Genre - Document Middle (per Doc)
     '''
-    mc_doc_middle = [c_data.dialog.get_most_common_markers(15, position="dm", average=True),
-                     c_data.monolog.get_most_common_markers(15, position="dm", average=True),
-                     c_data.cmonolog.get_most_common_markers(15, position="dm", average=True),
-                     c_data.speech.get_most_common_markers(15, position="dm", average=True)]
+    mc_doc_middle = [c_data.dialog.get_most_common_markers(15, position="dm", average=True, share='Doc'),
+                     c_data.monolog.get_most_common_markers(15, position="dm", average=True, share='Doc'),
+                     c_data.cmonolog.get_most_common_markers(15, position="dm", average=True, share='Doc'),
+                     c_data.speech.get_most_common_markers(15, position="dm", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DM_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("DM_per-doc_mcm",
                                                            mc_doc_middle,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
@@ -656,7 +658,7 @@ def main():
                      c_data.cmonolog.get_most_common_markers(15, position="dm", average=True, share='Word'),
                      c_data.speech.get_most_common_markers(15, position="dm", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DM_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("DM_per-wc_mcm",
                                                            mc_doc_middle,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
@@ -678,12 +680,12 @@ def main():
     '''
     04_c_1: Most Common Markers per Genre - Document End (per Doc)
     '''
-    mc_doc_end = [c_data.dialog.get_most_common_markers(15, position="de", average=True),
-                  c_data.monolog.get_most_common_markers(15, position="de", average=True),
-                  c_data.cmonolog.get_most_common_markers(15, position="de", average=True),
-                  c_data.speech.get_most_common_markers(15, position="de", average=True)]
+    mc_doc_end = [c_data.dialog.get_most_common_markers(15, position="de", average=True, share='Doc'),
+                  c_data.monolog.get_most_common_markers(15, position="de", average=True, share='Doc'),
+                  c_data.cmonolog.get_most_common_markers(15, position="de", average=True, share='Doc'),
+                  c_data.speech.get_most_common_markers(15, position="de", average=True, share='Doc')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DE_per-doc",
+    markers, x_values = hp.compile_most_common_marker_list("DE_per-doc_mcm",
                                                            mc_doc_end,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 
@@ -701,7 +703,7 @@ def main():
                   c_data.cmonolog.get_most_common_markers(15, position="de", average=True, share='Word'),
                   c_data.speech.get_most_common_markers(15, position="de", average=True, share='Word')]
 
-    markers, x_values = hp.compile_most_common_marker_list("Most-Common-Markers_DE_per-wc",
+    markers, x_values = hp.compile_most_common_marker_list("DE_per-wc_mcm",
                                                            mc_doc_end,
                                                            ["Monolog", "Dialog", "Cooperative Monolog", "Speech"])
 

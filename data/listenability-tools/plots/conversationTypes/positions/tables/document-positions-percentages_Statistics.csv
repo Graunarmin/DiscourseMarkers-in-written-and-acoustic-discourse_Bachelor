@@ -1,0 +1,7 @@
+Data,Effectsize,T-Statistic,P-Value
+"Monolog, Dialog",0.0,0.0,1.0
+"Monolog, Cooperative Monolog",-2.2276528527616835e-16,0.0,1.0
+"Monolog, Speech",-2.2289134871199777e-16,0.0,1.0
+"Dialog, Cooperative Monolog",-2.249393706156348e-16,0.0,1.0
+"Dialog, Speech",-2.250691633132325e-16,0.0,1.0
+"Cooperative Monolog, Speech",0.0,0.0,1.0

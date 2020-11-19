@@ -13,10 +13,10 @@ class ConversationTypeData:
         self.speech = ds.DatasetScores(ted_scores, ted_dict, markertypes=markertypes)
 
         # Colors:   [base, darker, lighter]
-        self.dialog_color = '#5d7bd4'
-        self.dialog_shades = ['#5d7bd4', '#415694', '#8da2e0']
-        self.monolog_color = '#d45d7b'
-        self.monolog_shades = ['#d45d7b', '#944156', '#e08da2']
+        self.dialog_color = '#9a1cff'
+        self.dialog_shades = ['#9a1cff', '#6b13b2', '#b860ff']
+        self.monolog_color = '#1cff9a'
+        self.monolog_shades = ['#1cff9a', '#13b26b', '#60ffb8']
         self.cmonolog_color = '#ff9a1c'
         self.cmonolog_shades = ['#FFE494', '#b26b13', '#ffb860']
         self.speech_color = '#e62b1e'
