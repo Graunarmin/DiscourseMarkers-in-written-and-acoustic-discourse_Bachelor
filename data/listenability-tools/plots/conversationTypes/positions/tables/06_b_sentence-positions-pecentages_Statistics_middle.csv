@@ -1,0 +1,4 @@
+Data,Effectsize,T-Statistic,P-Value,0.05 significant,0.1 significant
+"Dialog, Monolog",0.541313674036906,6.868853705125648,1.6110267178005018e-11,yes,yes
+"Dialog, Cooperative Monolog",-0.7544791532690475,-11.602720804314796,6.722696182633184e-27,yes,yes
+"Monolog, Cooperative Monolog",-1.234427378703544,-17.705594186065976,1.1971653583527484e-50,yes,yes

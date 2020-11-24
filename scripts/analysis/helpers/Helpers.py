@@ -2,7 +2,7 @@ import statistics
 import math
 import pandas as pd
 from scipy import stats
-from tabulate import tabulate
+# from tabulate import tabulate
 
 
 def compute_statistics(values):
@@ -44,6 +44,7 @@ def show_dataframe(title, columns, data1, data2=None, data3=None, data4=None, da
                    label1=None, label2=None, label3=None, label4=None, label5=None):
     """
     Prints a pandas dataframe
+    :param title:
     :param columns:
     :param data1:
     :param data2:
@@ -105,7 +106,6 @@ def list_all_markers(data1, data2=None, data3=None, data4=None):
 
 
 def print_dataframe(title, data):
-
     data.to_csv("../../data/listenability-tools/tables/" + title + ".csv")
 
     # pd.set_option('display.max_columns', 25)
@@ -157,10 +157,15 @@ def create_marker_table(title, datalist, names):
 
 
 def compute_marker_deltas(title, data):
+    """
+    :param title:
+    :param data:
+    :return:
+    """
     names = []
     for i in range(len(data.index) - 1):
         for j in range(i + 1, len(data.index)):
-            names.append("Δ (" + data.index[i] + ", " + data.index[j] + ")")
+            names.append("Δ (" + data.index[i] + "/ " + data.index[j] + ")")
 
     deltas = {'Data': names}
 
@@ -168,7 +173,8 @@ def compute_marker_deltas(title, data):
         deltas[marker] = []
         for i in range(len(data[marker]) - 1):
             for j in range(i + 1, len(data[marker])):
-                delta = abs(data[marker][i] - data[marker][j])
+                # delta = abs(data[marker][i] - data[marker][j])
+                delta = abs(data[marker][i]) / abs(data[marker][j])
                 deltas[marker].append(delta)
 
     deltas_dataframe = pd.DataFrame(deltas)
@@ -244,23 +250,42 @@ def compute_t_test(x1, x2):
     return stats.ttest_ind(x1, x2, equal_var=False)
 
 
+def gaussian_sum(stop):
+    g_sum = 0
+    for i in range(1, stop):
+        g_sum += i
+    return g_sum
+
+
 def effectsize_and_significance(title, data, labels):
     effectsize = []
     t_statistics = []
     p_values = []
+    alpha_small = 0.05
+    significant_for_alpha_small = []
+    alpha_medium = 0.1
+    significant_for_alpha_medium = []
     names = []
 
+    number_of_tests = gaussian_sum(len(data))
     for i in range(len(data) - 1):
         for j in range(i + 1, len(data)):
             effectsize.append(compute_cohens_d(data[i], data[j]))
             t_statistic, p_value = compute_t_test(data[i], data[j])
             t_statistics.append(t_statistic)
             p_values.append(p_value)
+
+            '''Bonferroni correction'''
+            significant_for_alpha_small.append("yes" if p_value < (alpha_small / number_of_tests) else "no")
+            significant_for_alpha_medium.append("yes" if p_value < (alpha_medium / number_of_tests) else "no")
+
             names.append(labels[i] + ", " + labels[j])
 
     values_dataframe = pd.DataFrame({"Effectsize": effectsize,
                                      "T-Statistic": t_statistics,
                                      "P-Value": p_values,
+                                     "0.05 significant": significant_for_alpha_small,
+                                     "0.1 significant": significant_for_alpha_medium,
                                      "Data": names})
 
     values_dataframe.set_index('Data', inplace=True)

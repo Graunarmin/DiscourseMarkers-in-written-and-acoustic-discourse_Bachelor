@@ -3,14 +3,15 @@ from classes import DatasetScores as ds
 
 class ConversationTypeData:
     def __init__(self,
-                 dialog_scores, dialog_dict, monolog_scores, monolog_dict,
-                 cmonolog_scores, cmonolog_dict,
-                 ted_scores, ted_dict,
+                 dialog_scores, dialog_sentences, dialog_dict,
+                 monolog_scores, monolog_sentences, monolog_dict,
+                 cmonolog_scores, cmonolog_sentences, cmonolog_dict,
+                 ted_scores, ted_sentences, ted_dict,
                  markertypes=None):
-        self.dialog = ds.DatasetScores(dialog_scores, dialog_dict, markertypes=markertypes)
-        self.monolog = ds.DatasetScores(monolog_scores, monolog_dict, markertypes=markertypes)
-        self.cmonolog = ds.DatasetScores(cmonolog_scores, cmonolog_dict, markertypes=markertypes)
-        self.speech = ds.DatasetScores(ted_scores, ted_dict, markertypes=markertypes)
+        self.dialog = ds.DatasetScores(dialog_scores, dialog_sentences, dialog_dict, markertypes=markertypes)
+        self.monolog = ds.DatasetScores(monolog_scores, monolog_sentences, monolog_dict, markertypes=markertypes)
+        self.cmonolog = ds.DatasetScores(cmonolog_scores, cmonolog_sentences, cmonolog_dict, markertypes=markertypes)
+        self.speech = ds.DatasetScores(ted_scores, ted_sentences, ted_dict, markertypes=markertypes)
 
         # Colors:   [base, darker, lighter]
         self.dialog_color = '#9a1cff'

@@ -4,15 +4,17 @@ from classes import DatasetScores as ds
 # -------- Read in data ----------
 class GenreData:
     def __init__(self,
-                 news_scores, news_dict, discussion_scores, discussion_dict,
-                 science_scores, science_dict, documentary_scores, documentary_dict,
-                 ted_scores, ted_dict,
+                 news_scores, news_sentences, news_dict,
+                 discussion_scores, discussion_sentences, discussion_dict,
+                 science_scores, science_sentences, science_dict,
+                 documentary_scores, documentary_sentences, documentary_dict,
+                 ted_scores, ted_sentences, ted_dict,
                  markertypes=None):
-        self.news = ds.DatasetScores(news_scores, news_dict, markertypes=markertypes)
-        self.discussion = ds.DatasetScores(discussion_scores, discussion_dict, markertypes=markertypes)
-        self.science = ds.DatasetScores(science_scores, science_dict, markertypes=markertypes)
-        self.documentary = ds.DatasetScores(documentary_scores, documentary_dict, markertypes=markertypes)
-        self.speech = ds.DatasetScores(ted_scores, ted_dict, markertypes=markertypes)
+        self.news = ds.DatasetScores(news_scores, news_sentences, news_dict, markertypes=markertypes)
+        self.discussion = ds.DatasetScores(discussion_scores, discussion_sentences, discussion_dict, markertypes=markertypes)
+        self.science = ds.DatasetScores(science_scores, science_sentences, science_dict, markertypes=markertypes)
+        self.documentary = ds.DatasetScores(documentary_scores, documentary_sentences, documentary_dict, markertypes=markertypes)
+        self.speech = ds.DatasetScores(ted_scores, ted_sentences, ted_dict, markertypes=markertypes)
 
         # Colors:   [base, darker, lighter]
         self.news_color = '#7bd45d'

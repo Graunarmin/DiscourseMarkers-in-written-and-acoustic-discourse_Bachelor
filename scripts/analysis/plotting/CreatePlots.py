@@ -6,12 +6,29 @@ def plot_ecdf(data, title, xlabel, ylabel, datalabels, colors):
     plt.style.use('fivethirtyeight')
     for dataset, color, label in zip(data, colors, datalabels):
         xaxis = np.sort(dataset)
-        yaxis = np.arange(1, len(dataset)+1)/len(dataset)
+        yaxis = np.arange(1, len(dataset)+1)/len(dataset) * 100
         plt.plot(xaxis, yaxis, linestyle='none', marker='.', color=color, label=label)
     plt.title(title),
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.legend()
+    plt.margins(0.02)
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_edf(title, xlabel, ylabel, datasets, labels, colors):
+    plt.style.use('fivethirtyeight')
+
+    for data, label, color in zip(datasets, labels, colors):
+        plt.plot(data[0], data[1], color=color, label=label)
+
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.title(title)
+
+    plt.legend()
+
     plt.margins(0.02)
     plt.tight_layout()
     plt.show()

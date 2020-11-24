@@ -3,15 +3,16 @@ from classes import DatasetScores as ds
 
 class CorpusData:
     def __init__(self,
-                 spotify_scores, spotify_dict,
-                 ted_scores, ted_dict,
-                 ny_scores, ny_dict,
-                 gig_scores, gig_dict,
+                 spotify_scores, spotify_sentences, spotify_dict,
+                 ted_scores, ted_sentences, ted_dict,
+                 ny_scores, ny_sentences, ny_dict,
+                 gig_scores, gig_sentences, gig_dict,
                  markertypes=None):
-        self.spotify = ds.DatasetScores(spotify_scores, spotify_dict, markertypes=markertypes)
-        self.ted = ds.DatasetScores(ted_scores, ted_dict, markertypes=markertypes)
-        self.ny = ds.DatasetScores(ny_scores, ny_dict, markertypes=markertypes)
-        self.gig = ds.DatasetScores(gig_scores, gig_dict, markertypes=markertypes)
+        
+        self.spotify = ds.DatasetScores(spotify_scores, spotify_sentences, spotify_dict, markertypes=markertypes)
+        self.ted = ds.DatasetScores(ted_scores, ted_sentences, ted_dict, markertypes=markertypes)
+        self.ny = ds.DatasetScores(ny_scores, ny_sentences, ny_dict, markertypes=markertypes)
+        self.gig = ds.DatasetScores(gig_scores, gig_sentences, gig_dict, markertypes=markertypes)
 
         # Colors:   [base, darker, lighter]
         self.spotify_color = '#1DB954'
