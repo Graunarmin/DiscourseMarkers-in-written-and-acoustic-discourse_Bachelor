@@ -6,378 +6,377 @@ from helpers import Helpers as hp
 def main():
     g_data = gd.GenreData(
         "../../bigData/listenability-tools/Spotify/genres/scores/news-scores_short.csv",
-        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/news-sentence-scores.json",
-        "../../bigData/listenability-tools/Spotify/genres/dict/news_dict.json",
         "../../bigData/listenability-tools/Spotify/genres/scores/discussion-scores_short.csv",
-        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/discussion-sentence-scores.json",
-        "../../bigData/listenability-tools/Spotify/genres/dict/discussion_dict.json",
         "../../bigData/listenability-tools/Spotify/genres/scores/science-scores_short.csv",
-        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/science-sentence-scores.json",
-        "../../bigData/listenability-tools/Spotify/genres/dict/science_dict.json",
         "../../bigData/listenability-tools/Spotify/genres/scores/documentary-scores_short.csv",
-        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/documentary-sentence-scores.json",
-        "../../bigData/listenability-tools/Spotify/genres/dict/documentary_dict.json",
         "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv",
-        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json",
-        "../../bigData/listenability-tools/discourse-types/dict/ted-dict.json",
-        markertypes="../../data/listenability-tools/main-senses/words_main-sense.json")
+        news_sentences=
+        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/news-sentence-scores.json",
+        discussion_sentences=
+        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/discussion-sentence-scores.json",
+        science_sentences=
+        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/science-sentence-scores.json",
+        documentary_sentences=
+        "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/documentary-sentence-scores.json",
+        ted_sentences=
+        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json")
 
-    # '''01:
-    # Prozentualer Anteil der DM an den Texten, über alle Texte
-    # min/mean/max(dm_words_perc)
-    # '''
-    # dm_per_text_perc = [g_data.news.get_percent_dm_per_text_statistics(),
-    #                     g_data.discussion.get_percent_dm_per_text_statistics(),
-    #                     g_data.science.get_percent_dm_per_text_statistics(),
-    #                     g_data.documentary.get_percent_dm_per_text_statistics(),
-    #                     g_data.speech.get_percent_dm_per_text_statistics()]
-    #
-    # cp.plot_vertical_barchart("Percent Discourse Markers per Text",
-    #                           dm_per_text_perc,
-    #                           ["Min", "Mean", "Mode", "Max"],
-    #                           "Percentage of Markers in all Words of a Text",
-    #                           label_1="News", label_2="Discussion",
-    #                           label_3="Science/Education", label_4="Documentary",
-    #                           label_5="Presentation",
-    #                           color_1=g_data.news_color, color_2=g_data.discussion_color,
-    #                           color_3=g_data.science_color, color_4=g_data.documentary_color,
-    #                           color_5=g_data.speech_color)
-    #
-    # hp.show_dataframe("DM-per-text-percent_Values",
-    #                   ['Min', 'Mean', 'Mode', 'Max'],
-    #                   dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
-    #                   data4=dm_per_text_perc[3], data5=dm_per_text_perc[4],
-    #                   label1="News", label2="Discussion",
-    #                   label3="Science/Education", label4="Documentary",
-    #                   label5="Presentation")
-    #
-    # ecdf_dm_per_text_perc = [g_data.news.get_percent_dm_per_text_column(),
-    #                          g_data.discussion.get_percent_dm_per_text_column(),
-    #                          g_data.science.get_percent_dm_per_text_column(),
-    #                          g_data.documentary.get_percent_dm_per_text_column(),
-    #                          g_data.speech.get_percent_dm_per_text_column()]
-    #
-    # hp.effectsize_and_significance("DM-per-text-percent_Statistics",
-    #                                ecdf_dm_per_text_perc,
-    #                                ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
-    #
-    # '''
-    # Empirical Distribution Function
-    # '''
-    # cp.plot_edf("EDF for % of Discourse Markers per Text",
-    #             "% DM per Text", "% of Texts",
-    #             [g_data.news.get_percent_dm_per_text_column(collected=True),
-    #              g_data.discussion.get_percent_dm_per_text_column(collected=True),
-    #              g_data.science.get_percent_dm_per_text_column(collected=True),
-    #              g_data.documentary.get_percent_dm_per_text_column(collected=True),
-    #              g_data.speech.get_percent_dm_per_text_column(collected=True)],
-    #             ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
-    #             [g_data.news_color, g_data.discussion_color, g_data.science_color,
-    #              g_data.documentary_color, g_data.speech_color])
-    #
-    # cp.plot_ecdf(ecdf_dm_per_text_perc,
-    #              "ECDF for % of Discourse Markers per Text", "% DM per Text", "ECDF (% of Texts)",
-    #              ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
-    #              [g_data.news_color, g_data.discussion_color, g_data.science_color,
-    #               g_data.documentary_color, g_data.speech_color])
-    #
-    # '''02:
-    # Anzahl der DM pro Text, über alle Texte (nicht sehr aussagekräftig)
-    # min/mean/max(dm_count_doc)
-    # '''
-    # total_dm_count = [g_data.news.get_total_dm_per_text_statistics(),
-    #                   g_data.discussion.get_total_dm_per_text_statistics(),
-    #                   g_data.science.get_total_dm_per_text_statistics(),
-    #                   g_data.documentary.get_total_dm_per_text_statistics(),
-    #                   g_data.speech.get_total_dm_per_text_statistics()]
-    #
-    # cp.plot_vertical_barchart("Number Discourse Markers per Text",
-    #                           total_dm_count,
-    #                           ["Min", "Mean", "Mode", "Max"],
-    #                           "Marker Occurrences Total",
-    #                           label_1="News", label_2="Discussion",
-    #                           label_3="Science/Education", label_4="Documentary",
-    #                           label_5="Presentation",
-    #                           color_1=g_data.news_color, color_2=g_data.discussion_color,
-    #                           color_3=g_data.science_color, color_4=g_data.documentary_color,
-    #                           color_5=g_data.speech_color)
-    #
-    # hp.show_dataframe("DM-per-text-total_Values",
-    #                   ['Min', 'Mean', 'Mode', 'Max'],
-    #                   total_dm_count[0], data2=total_dm_count[1], data3=total_dm_count[2],
-    #                   data4=total_dm_count[3], data5=total_dm_count[4],
-    #                   label1="News", label2="Discussion",
-    #                   label3="Science/Education", label4="Documentary",
-    #                   label5="Presentation")
-    #
-    # total_dm_count_columns = [g_data.news.get_total_dm_per_text_column(),
-    #                           g_data.discussion.get_total_dm_per_text_column(),
-    #                           g_data.science.get_total_dm_per_text_column(),
-    #                           g_data.documentary.get_total_dm_per_text_column(),
-    #                           g_data.speech.get_total_dm_per_text_column()]
-    #
-    # hp.effectsize_and_significance("DM-per-text-total_Statistics",
-    #                                total_dm_count_columns,
-    #                                ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
-    #
-    # '''
-    # 03: Prozentualer Anteil der Sätze, die DM enthalten, an den Texten, über alle Texte
-    # min/mean/max(dm_sentences_perc)
-    # '''
-    # dm_sentences_perc = [g_data.news.get_percent_dm_sentences_statistics(),
-    #                      g_data.discussion.get_percent_dm_sentences_statistics(),
-    #                      g_data.science.get_percent_dm_sentences_statistics(),
-    #                      g_data.documentary.get_percent_dm_sentences_statistics()]
-    #
-    # cp.plot_vertical_barchart("Percent of Sentences with DM per Text",
-    #                           dm_sentences_perc,
-    #                           ["Min", "Mean", "Mode", "Max"],
-    #                           "% Sentences containing DM per Text",
-    #                           label_1="News", label_2="Discussion",
-    #                           label_3="Science/Education", label_4="Documentary",
-    #                           color_1=g_data.news_color, color_2=g_data.discussion_color,
-    #                           color_3=g_data.science_color, color_4=g_data.documentary_color)
-    #
-    # hp.show_dataframe("DM-sentences-percent_Values",
-    #                   ['Min', 'Mean', 'Mode', 'Max'],
-    #                   dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
-    #                   data4=dm_sentences_perc[3],
-    #                   label1="News", label2="Discussion",
-    #                   label3="Science/Education", label4="Documentary")
-    #
-    # dm_sentences_perc_column = [g_data.news.get_percent_dm_sentences_column(),
-    #                             g_data.discussion.get_percent_dm_sentences_column(),
-    #                             g_data.science.get_percent_dm_sentences_column(),
-    #                             g_data.documentary.get_percent_dm_sentences_column()]
-    #
-    # hp.effectsize_and_significance("DM-sentences-percent_Statistics",
-    #                                dm_sentences_perc_column,
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    #
-    # '''
-    # Empirical Distribution Function
-    # '''
-    # cp.plot_edf("EDF for % of Sentences containing Discourse Markers per Text",
-    #             "% DM Sentences per Text", "% of Texts",
-    #             [g_data.news.get_percent_dm_sentences_column(collected=True),
-    #              g_data.discussion.get_percent_dm_sentences_column(collected=True),
-    #              g_data.science.get_percent_dm_sentences_column(collected=True),
-    #              g_data.documentary.get_percent_dm_sentences_column(collected=True)],
-    #             ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
-    #             [g_data.news_color, g_data.discussion_color, g_data.science_color,
-    #              g_data.documentary_color]
-    #             )
-    #
-    # cp.plot_ecdf(dm_sentences_perc_column,
-    #              "ECDF for % of Sentences containing Discourse Markers per Text",
-    #              "% DM Sentences per Text", "ECDF (% of Texts)",
-    #              ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
-    #              [g_data.news_color, g_data.discussion_color, g_data.science_color,
-    #               g_data.documentary_color])
-    #
-    # '''
-    # 04: Anzahl der Sätze, die DM enthalten, über alle Texte (nicht sehr aussagekräftig)
-    # min/mean/max(dm_sentences)
-    # '''
-    # dm_sentences_total = [g_data.news.get_total_dm_sentences_statistics(),
-    #                       g_data.discussion.get_total_dm_sentences_statistics(),
-    #                       g_data.science.get_total_dm_sentences_statistics(),
-    #                       g_data.documentary.get_total_dm_sentences_statistics()]
-    #
-    # cp.plot_vertical_barchart("Number of Sentences containing  DM per Text",
-    #                           dm_sentences_total,
-    #                           ["Min", "Mean", "Mode", "Max"],
-    #                           "Number of Sentences containing DM",
-    #                           label_1="News", label_2="Discussion",
-    #                           label_3="Science/Education", label_4="Documentary",
-    #                           color_1=g_data.news_color, color_2=g_data.discussion_color,
-    #                           color_3=g_data.science_color, color_4=g_data.documentary_color)
-    #
-    # hp.show_dataframe("DM-sentences-total_Values",
-    #                   ['Min', 'Mean', 'Mode', 'Max'],
-    #                   dm_sentences_total[0], data2=dm_sentences_total[1],
-    #                   data3=dm_sentences_total[2], data4=dm_sentences_total[3],
-    #                   label1="News", label2="Discussion",
-    #                   label3="Science/Education", label4="Documentary")
-    #
-    # dm_sentences_total_column = [g_data.news.get_total_dm_sentences_column(),
-    #                              g_data.discussion.get_total_dm_sentences_column(),
-    #                              g_data.science.get_total_dm_sentences_column(),
-    #                              g_data.documentary.get_total_dm_sentences_column()]
-    #
-    # hp.effectsize_and_significance("DM-sentences-total_Statistics",
-    #                                dm_sentences_total_column,
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    #
-    # '''
-    # 05_a: Number of DM per sentence
-    # '''
-    # dm_per_sent_total = [g_data.news.get_total_dm_per_sentence_statistics(),
-    #                      g_data.discussion.get_total_dm_per_sentence_statistics(),
-    #                      g_data.science.get_total_dm_per_sentence_statistics(),
-    #                      g_data.documentary.get_total_dm_per_sentence_statistics()]
-    #
-    # cp.plot_vertical_barchart("Number of Discourse Markers per Sentence",
-    #                           dm_per_sent_total,
-    #                           ["Min", "Mean", "Mode", "Max"],
-    #                           "Number of Markers per Sentence",
-    #                           label_1="News", label_2="Discussion",
-    #                           label_3="Science/Education", label_4="Documentary",
-    #                           color_1=g_data.news_color, color_2=g_data.discussion_color,
-    #                           color_3=g_data.science_color, color_4=g_data.documentary_color)
-    #
-    # hp.show_dataframe("DM-per-sentence_Values",
-    #                   ['Min', 'Mean', 'Mode', 'Max'],
-    #                   dm_per_sent_total[0], data2=dm_per_sent_total[1],
-    #                   data3=dm_per_sent_total[2], data4=dm_per_sent_total[3],
-    #                   label1="News", label2="Discussion",
-    #                   label3="Science/Education", label4="Documentary")
-    #
-    # dm_per_sentence_column = [g_data.news.get_dm_per_sentence(),
-    #                           g_data.discussion.get_dm_per_sentence(),
-    #                           g_data.science.get_dm_per_sentence(),
-    #                           g_data.documentary.get_dm_per_sentence()]
-    #
-    # hp.effectsize_and_significance("DM-per-sentence_Statistics",
-    #                                dm_per_sentence_column,
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    #
-    # '''
-    # 05_b: Histogram with Number of DM per Sentence per Dataset
-    # '''
-    # dm_per_sent = [g_data.news.compute_dm_per_sentence(),
-    #                g_data.discussion.compute_dm_per_sentence(),
-    #                g_data.science.compute_dm_per_sentence(),
-    #                g_data.documentary.compute_dm_per_sentence()]
-    #
-    # cp.draw_simple_barchart("Number of Discourse Markers per Sentence",
-    #                         ["News", "Discussion", "Science/Education", "Documentary"],
-    #                         dm_per_sent,
-    #                         [g_data.news_color, g_data.discussion_color, g_data.science_color,
-    #                          g_data.documentary_color])
-    #
-    # '''
-    # Empirical Distribution Function
-    # '''
-    # cp.plot_edf("EDF for % Discourse Markers per Sentence",
-    #             "DM per Sentence", "% of Sentences",
-    #             dm_per_sent,
-    #             ["News", "Discussion", "Science/Education", "Documentary"],
-    #             [g_data.news_color, g_data.discussion_color, g_data.science_color,
-    #              g_data.documentary_color])
-    #
-    # cp.plot_ecdf(dm_per_sentence_column,
-    #              "ECDF for % Discourse Markers per Sentence",
-    #              "DM per Sentence", "ECDF (% of Sentences)",
-    #              ["News", "Discussion", "Science/Education", "Documentary"],
-    #              [g_data.news_color, g_data.discussion_color, g_data.science_color,
-    #               g_data.documentary_color])
-    #
-    # '''
-    # ---- Sentence Positions ----
-    # '''
-    #
-    # '''
-    # 06: Percentage of DM at certain positions in a sentence
-    # '''
-    # dm_pos_sent = [g_data.news.get_percent_dm_positions_sentence(),
-    #                g_data.discussion.get_percent_dm_positions_sentence(),
-    #                g_data.science.get_percent_dm_positions_sentence(),
-    #                g_data.documentary.get_percent_dm_positions_sentence()]
-    #
-    # cp.plot_vertical_barchart("% of DM in a Position in a Sentence",
-    #                           dm_pos_sent,
-    #                           ['Begin', 'Middle', 'End'],
-    #                           "% DM at Postion",
-    #                           label_1="News", label_2="Discussion",
-    #                           label_3="Science/Education", label_4="Documentary",
-    #                           color_1=g_data.news_color, color_2=g_data.discussion_color,
-    #                           color_3=g_data.science_color, color_4=g_data.documentary_color)
-    #
-    # hp.show_dataframe("sentence-positions-pecentages_Values",
-    #                   ['Begin', 'Middle', 'End'],
-    #                   dm_pos_sent[0], data2=dm_pos_sent[1],
-    #                   data3=dm_pos_sent[2], data4=dm_pos_sent[3],
-    #                   label1="News", label2="Discussion",
-    #                   label3="Science/Education", label4="Documentary")
-    #
-    # hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
-    #                                [g_data.news.get_sent_begin_column(perc=True),
-    #                                 g_data.discussion.get_sent_begin_column(perc=True),
-    #                                 g_data.science.get_sent_begin_column(perc=True),
-    #                                 g_data.documentary.get_sent_begin_column(perc=True)],
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    #
-    # hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
-    #                                [g_data.news.get_sent_middle_column(perc=True),
-    #                                 g_data.discussion.get_sent_middle_column(perc=True),
-    #                                 g_data.science.get_sent_middle_column(perc=True),
-    #                                 g_data.documentary.get_sent_middle_column(perc=True)],
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    #
-    # hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
-    #                                [g_data.news.get_sent_end_column(perc=True),
-    #                                 g_data.discussion.get_sent_end_column(perc=True),
-    #                                 g_data.science.get_sent_end_column(perc=True),
-    #                                 g_data.documentary.get_sent_end_column(perc=True)],
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    # '''
-    # 07: Number of DM at certain positions in a sentence
-    # '''
-    # dm_pos_sent_total = [g_data.news.get_total_dm_positions_sentence(),
-    #                      g_data.discussion.get_total_dm_positions_sentence(),
-    #                      g_data.science.get_total_dm_positions_sentence(),
-    #                      g_data.documentary.get_total_dm_positions_sentence()]
-    #
-    # cp.plot_vertical_barchart("Number of DM at a certain Position in a Sentence",
-    #                           dm_pos_sent_total,
-    #                           ["Begin", "Middle", "End"],
-    #                           "# DM at Postion",
-    #                           label_1="News", label_2="Discussion",
-    #                           label_3="Science/Education", label_4="Documentary",
-    #                           color_1=g_data.news_color, color_2=g_data.discussion_color,
-    #                           color_3=g_data.science_color, color_4=g_data.documentary_color)
-    #
-    # hp.show_dataframe("sentence-positions-totals_Values",
-    #                   ["Begin", "Middle", "End"],
-    #                   dm_pos_sent_total[0], data2=dm_pos_sent_total[1],
-    #                   data3=dm_pos_sent_total[2], data4=dm_pos_sent_total[3],
-    #                   label1="News", label2="Discussion",
-    #                   label3="Science/Education", label4="Documentary")
-    #
-    # hp.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
-    #                                [g_data.news.get_sent_begin_column(),
-    #                                 g_data.discussion.get_sent_begin_column(),
-    #                                 g_data.science.get_sent_begin_column(),
-    #                                 g_data.documentary.get_sent_begin_column()],
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    #
-    # hp.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
-    #                                [g_data.news.get_sent_middle_column(),
-    #                                 g_data.discussion.get_sent_middle_column(),
-    #                                 g_data.science.get_sent_middle_column(),
-    #                                 g_data.documentary.get_sent_middle_column()],
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
-    #
-    # hp.effectsize_and_significance("sentence-positions-totals_Statistics_end",
-    #                                [g_data.news.get_sent_end_column(),
-    #                                 g_data.discussion.get_sent_end_column(),
-    #                                 g_data.science.get_sent_end_column(),
-    #                                 g_data.documentary.get_sent_end_column()],
-    #                                ["News", "Discussion", "Science/Education", "Documentary"])
+    '''01:
+    Prozentualer Anteil der DM an den Texten, über alle Texte
+    min/mean/max(dm_words_perc)
+    '''
+    dm_per_text_perc = [g_data.news.get_percent_dm_per_text_statistics(),
+                        g_data.discussion.get_percent_dm_per_text_statistics(),
+                        g_data.science.get_percent_dm_per_text_statistics(),
+                        g_data.documentary.get_percent_dm_per_text_statistics(),
+                        g_data.speech.get_percent_dm_per_text_statistics()]
 
-    # # '''
-    # # Piechart of DM at certain positions in a sentence per Dataset
-    # # '''
-    # # cp.plot_dm_position_piechart("Number of DM in a Sentence at Position:",
-    # #                              [data.spotify.get_sentence_position_values(),
-    # #                               data.ny.get_sentence_position_values(),
-    # #                               data.gig.get_sentence_position_values()
-    # #                               ],
-    # #                              ["Spotify Data", "NYTimes Data", "Gigaword Data"],
-    # #                              [data.spotify_shades,
-    # #                               data.ny_shades,
-    # #                               data.gig_shades])
+    cp.plot_vertical_barchart("Percent Discourse Markers per Text",
+                              dm_per_text_perc,
+                              ["Min", "Mean", "Mode", "Max"],
+                              "Percentage of Markers in all Words of a Text",
+                              label_1="News", label_2="Discussion",
+                              label_3="Science/Education", label_4="Documentary",
+                              label_5="Presentation",
+                              color_1=g_data.news_color, color_2=g_data.discussion_color,
+                              color_3=g_data.science_color, color_4=g_data.documentary_color,
+                              color_5=g_data.speech_color)
+
+    hp.show_dataframe("DM-per-text-percent_Values",
+                      ['Min', 'Mean', 'Mode', 'Max'],
+                      dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
+                      data4=dm_per_text_perc[3], data5=dm_per_text_perc[4],
+                      label1="News", label2="Discussion",
+                      label3="Science/Education", label4="Documentary",
+                      label5="Presentation")
+
+    ecdf_dm_per_text_perc = [g_data.news.get_percent_dm_per_text_column(),
+                             g_data.discussion.get_percent_dm_per_text_column(),
+                             g_data.science.get_percent_dm_per_text_column(),
+                             g_data.documentary.get_percent_dm_per_text_column(),
+                             g_data.speech.get_percent_dm_per_text_column()]
+
+    hp.effectsize_and_significance("DM-per-text-percent_Statistics",
+                                   ecdf_dm_per_text_perc,
+                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+
+    '''
+    Empirical Distribution Function
+    '''
+    cp.plot_edf("EDF for % of Discourse Markers per Text",
+                "% DM per Text", "% of Texts",
+                [g_data.news.get_percent_dm_per_text_column(collected=True),
+                 g_data.discussion.get_percent_dm_per_text_column(collected=True),
+                 g_data.science.get_percent_dm_per_text_column(collected=True),
+                 g_data.documentary.get_percent_dm_per_text_column(collected=True),
+                 g_data.speech.get_percent_dm_per_text_column(collected=True)],
+                ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
+                [g_data.news_color, g_data.discussion_color, g_data.science_color,
+                 g_data.documentary_color, g_data.speech_color])
+
+    cp.plot_ecdf(ecdf_dm_per_text_perc,
+                 "ECDF for % of Discourse Markers per Text", "% DM per Text", "ECDF (% of Texts)",
+                 ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
+                 [g_data.news_color, g_data.discussion_color, g_data.science_color,
+                  g_data.documentary_color, g_data.speech_color])
+
+    '''02:
+    Anzahl der DM pro Text, über alle Texte (nicht sehr aussagekräftig)
+    min/mean/max(dm_count_doc)
+    '''
+    total_dm_count = [g_data.news.get_total_dm_per_text_statistics(),
+                      g_data.discussion.get_total_dm_per_text_statistics(),
+                      g_data.science.get_total_dm_per_text_statistics(),
+                      g_data.documentary.get_total_dm_per_text_statistics(),
+                      g_data.speech.get_total_dm_per_text_statistics()]
+
+    cp.plot_vertical_barchart("Number Discourse Markers per Text",
+                              total_dm_count,
+                              ["Min", "Mean", "Mode", "Max"],
+                              "Marker Occurrences Total",
+                              label_1="News", label_2="Discussion",
+                              label_3="Science/Education", label_4="Documentary",
+                              label_5="Presentation",
+                              color_1=g_data.news_color, color_2=g_data.discussion_color,
+                              color_3=g_data.science_color, color_4=g_data.documentary_color,
+                              color_5=g_data.speech_color)
+
+    hp.show_dataframe("DM-per-text-total_Values",
+                      ['Min', 'Mean', 'Mode', 'Max'],
+                      total_dm_count[0], data2=total_dm_count[1], data3=total_dm_count[2],
+                      data4=total_dm_count[3], data5=total_dm_count[4],
+                      label1="News", label2="Discussion",
+                      label3="Science/Education", label4="Documentary",
+                      label5="Presentation")
+
+    total_dm_count_columns = [g_data.news.get_total_dm_per_text_column(),
+                              g_data.discussion.get_total_dm_per_text_column(),
+                              g_data.science.get_total_dm_per_text_column(),
+                              g_data.documentary.get_total_dm_per_text_column(),
+                              g_data.speech.get_total_dm_per_text_column()]
+
+    hp.effectsize_and_significance("DM-per-text-total_Statistics",
+                                   total_dm_count_columns,
+                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+
+    '''
+    03: Prozentualer Anteil der Sätze, die DM enthalten, an den Texten, über alle Texte
+    min/mean/max(dm_sentences_perc)
+    '''
+    dm_sentences_perc = [g_data.news.get_percent_dm_sentences_statistics(),
+                         g_data.discussion.get_percent_dm_sentences_statistics(),
+                         g_data.science.get_percent_dm_sentences_statistics(),
+                         g_data.documentary.get_percent_dm_sentences_statistics()]
+
+    cp.plot_vertical_barchart("Percent of Sentences with DM per Text",
+                              dm_sentences_perc,
+                              ["Min", "Mean", "Mode", "Max"],
+                              "% Sentences containing DM per Text",
+                              label_1="News", label_2="Discussion",
+                              label_3="Science/Education", label_4="Documentary",
+                              color_1=g_data.news_color, color_2=g_data.discussion_color,
+                              color_3=g_data.science_color, color_4=g_data.documentary_color)
+
+    hp.show_dataframe("DM-sentences-percent_Values",
+                      ['Min', 'Mean', 'Mode', 'Max'],
+                      dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
+                      data4=dm_sentences_perc[3],
+                      label1="News", label2="Discussion",
+                      label3="Science/Education", label4="Documentary")
+
+    dm_sentences_perc_column = [g_data.news.get_percent_dm_sentences_column(),
+                                g_data.discussion.get_percent_dm_sentences_column(),
+                                g_data.science.get_percent_dm_sentences_column(),
+                                g_data.documentary.get_percent_dm_sentences_column()]
+
+    hp.effectsize_and_significance("DM-sentences-percent_Statistics",
+                                   dm_sentences_perc_column,
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    '''
+    Empirical Distribution Function
+    '''
+    cp.plot_edf("EDF for % of Sentences containing Discourse Markers per Text",
+                "% DM Sentences per Text", "% of Texts",
+                [g_data.news.get_percent_dm_sentences_column(collected=True),
+                 g_data.discussion.get_percent_dm_sentences_column(collected=True),
+                 g_data.science.get_percent_dm_sentences_column(collected=True),
+                 g_data.documentary.get_percent_dm_sentences_column(collected=True)],
+                ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
+                [g_data.news_color, g_data.discussion_color, g_data.science_color,
+                 g_data.documentary_color]
+                )
+
+    cp.plot_ecdf(dm_sentences_perc_column,
+                 "ECDF for % of Sentences containing Discourse Markers per Text",
+                 "% DM Sentences per Text", "ECDF (% of Texts)",
+                 ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
+                 [g_data.news_color, g_data.discussion_color, g_data.science_color,
+                  g_data.documentary_color])
+
+    '''
+    04: Anzahl der Sätze, die DM enthalten, über alle Texte (nicht sehr aussagekräftig)
+    min/mean/max(dm_sentences)
+    '''
+    dm_sentences_total = [g_data.news.get_total_dm_sentences_statistics(),
+                          g_data.discussion.get_total_dm_sentences_statistics(),
+                          g_data.science.get_total_dm_sentences_statistics(),
+                          g_data.documentary.get_total_dm_sentences_statistics()]
+
+    cp.plot_vertical_barchart("Number of Sentences containing  DM per Text",
+                              dm_sentences_total,
+                              ["Min", "Mean", "Mode", "Max"],
+                              "Number of Sentences containing DM",
+                              label_1="News", label_2="Discussion",
+                              label_3="Science/Education", label_4="Documentary",
+                              color_1=g_data.news_color, color_2=g_data.discussion_color,
+                              color_3=g_data.science_color, color_4=g_data.documentary_color)
+
+    hp.show_dataframe("DM-sentences-total_Values",
+                      ['Min', 'Mean', 'Mode', 'Max'],
+                      dm_sentences_total[0], data2=dm_sentences_total[1],
+                      data3=dm_sentences_total[2], data4=dm_sentences_total[3],
+                      label1="News", label2="Discussion",
+                      label3="Science/Education", label4="Documentary")
+
+    dm_sentences_total_column = [g_data.news.get_total_dm_sentences_column(),
+                                 g_data.discussion.get_total_dm_sentences_column(),
+                                 g_data.science.get_total_dm_sentences_column(),
+                                 g_data.documentary.get_total_dm_sentences_column()]
+
+    hp.effectsize_and_significance("DM-sentences-total_Statistics",
+                                   dm_sentences_total_column,
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    '''
+    05_a: Number of DM per sentence
+    '''
+    dm_per_sent_total = [g_data.news.get_total_dm_per_sentence_statistics(),
+                         g_data.discussion.get_total_dm_per_sentence_statistics(),
+                         g_data.science.get_total_dm_per_sentence_statistics(),
+                         g_data.documentary.get_total_dm_per_sentence_statistics()]
+
+    cp.plot_vertical_barchart("Number of Discourse Markers per Sentence",
+                              dm_per_sent_total,
+                              ["Min", "Mean", "Mode", "Max"],
+                              "Number of Markers per Sentence",
+                              label_1="News", label_2="Discussion",
+                              label_3="Science/Education", label_4="Documentary",
+                              color_1=g_data.news_color, color_2=g_data.discussion_color,
+                              color_3=g_data.science_color, color_4=g_data.documentary_color)
+
+    hp.show_dataframe("DM-per-sentence_Values",
+                      ['Min', 'Mean', 'Mode', 'Max'],
+                      dm_per_sent_total[0], data2=dm_per_sent_total[1],
+                      data3=dm_per_sent_total[2], data4=dm_per_sent_total[3],
+                      label1="News", label2="Discussion",
+                      label3="Science/Education", label4="Documentary")
+
+    dm_per_sentence_column = [g_data.news.get_dm_per_sentence(),
+                              g_data.discussion.get_dm_per_sentence(),
+                              g_data.science.get_dm_per_sentence(),
+                              g_data.documentary.get_dm_per_sentence()]
+
+    hp.effectsize_and_significance("DM-per-sentence_Statistics",
+                                   dm_per_sentence_column,
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    '''
+    05_b: Histogram with Number of DM per Sentence per Dataset
+    '''
+    dm_per_sent = [g_data.news.compute_dm_per_sentence(),
+                   g_data.discussion.compute_dm_per_sentence(),
+                   g_data.science.compute_dm_per_sentence(),
+                   g_data.documentary.compute_dm_per_sentence()]
+
+    cp.draw_simple_barchart("Number of Discourse Markers per Sentence",
+                            ["News", "Discussion", "Science/Education", "Documentary"],
+                            dm_per_sent,
+                            [g_data.news_color, g_data.discussion_color, g_data.science_color,
+                             g_data.documentary_color])
+
+    '''
+    Empirical Distribution Function
+    '''
+    cp.plot_edf("EDF for % Discourse Markers per Sentence",
+                "DM per Sentence", "% of Sentences",
+                dm_per_sent,
+                ["News", "Discussion", "Science/Education", "Documentary"],
+                [g_data.news_color, g_data.discussion_color, g_data.science_color,
+                 g_data.documentary_color])
+
+    cp.plot_ecdf(dm_per_sentence_column,
+                 "ECDF for % Discourse Markers per Sentence",
+                 "DM per Sentence", "ECDF (% of Sentences)",
+                 ["News", "Discussion", "Science/Education", "Documentary"],
+                 [g_data.news_color, g_data.discussion_color, g_data.science_color,
+                  g_data.documentary_color])
+
+    '''
+    ---- Sentence Positions ----
+    '''
+
+    '''
+    06: Percentage of DM at certain positions in a sentence
+    '''
+    dm_pos_sent = [g_data.news.get_percent_dm_positions_sentence(),
+                   g_data.discussion.get_percent_dm_positions_sentence(),
+                   g_data.science.get_percent_dm_positions_sentence(),
+                   g_data.documentary.get_percent_dm_positions_sentence()]
+
+    cp.plot_vertical_barchart("% of DM in a Position in a Sentence",
+                              dm_pos_sent,
+                              ['Begin', 'Middle', 'End'],
+                              "% DM at Postion",
+                              label_1="News", label_2="Discussion",
+                              label_3="Science/Education", label_4="Documentary",
+                              color_1=g_data.news_color, color_2=g_data.discussion_color,
+                              color_3=g_data.science_color, color_4=g_data.documentary_color)
+
+    hp.show_dataframe("sentence-positions-pecentages_Values",
+                      ['Begin', 'Middle', 'End'],
+                      dm_pos_sent[0], data2=dm_pos_sent[1],
+                      data3=dm_pos_sent[2], data4=dm_pos_sent[3],
+                      label1="News", label2="Discussion",
+                      label3="Science/Education", label4="Documentary")
+
+    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
+                                   [g_data.news.get_sent_begin_column(perc=True),
+                                    g_data.discussion.get_sent_begin_column(perc=True),
+                                    g_data.science.get_sent_begin_column(perc=True),
+                                    g_data.documentary.get_sent_begin_column(perc=True)],
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
+                                   [g_data.news.get_sent_middle_column(perc=True),
+                                    g_data.discussion.get_sent_middle_column(perc=True),
+                                    g_data.science.get_sent_middle_column(perc=True),
+                                    g_data.documentary.get_sent_middle_column(perc=True)],
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
+                                   [g_data.news.get_sent_end_column(perc=True),
+                                    g_data.discussion.get_sent_end_column(perc=True),
+                                    g_data.science.get_sent_end_column(perc=True),
+                                    g_data.documentary.get_sent_end_column(perc=True)],
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+    '''
+    07: Number of DM at certain positions in a sentence
+    '''
+    dm_pos_sent_total = [g_data.news.get_total_dm_positions_sentence(),
+                         g_data.discussion.get_total_dm_positions_sentence(),
+                         g_data.science.get_total_dm_positions_sentence(),
+                         g_data.documentary.get_total_dm_positions_sentence()]
+
+    cp.plot_vertical_barchart("Number of DM at a certain Position in a Sentence",
+                              dm_pos_sent_total,
+                              ["Begin", "Middle", "End"],
+                              "# DM at Postion",
+                              label_1="News", label_2="Discussion",
+                              label_3="Science/Education", label_4="Documentary",
+                              color_1=g_data.news_color, color_2=g_data.discussion_color,
+                              color_3=g_data.science_color, color_4=g_data.documentary_color)
+
+    hp.show_dataframe("sentence-positions-totals_Values",
+                      ["Begin", "Middle", "End"],
+                      dm_pos_sent_total[0], data2=dm_pos_sent_total[1],
+                      data3=dm_pos_sent_total[2], data4=dm_pos_sent_total[3],
+                      label1="News", label2="Discussion",
+                      label3="Science/Education", label4="Documentary")
+
+    hp.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
+                                   [g_data.news.get_sent_begin_column(),
+                                    g_data.discussion.get_sent_begin_column(),
+                                    g_data.science.get_sent_begin_column(),
+                                    g_data.documentary.get_sent_begin_column()],
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    hp.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
+                                   [g_data.news.get_sent_middle_column(),
+                                    g_data.discussion.get_sent_middle_column(),
+                                    g_data.science.get_sent_middle_column(),
+                                    g_data.documentary.get_sent_middle_column()],
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    hp.effectsize_and_significance("sentence-positions-totals_Statistics_end",
+                                   [g_data.news.get_sent_end_column(),
+                                    g_data.discussion.get_sent_end_column(),
+                                    g_data.science.get_sent_end_column(),
+                                    g_data.documentary.get_sent_end_column()],
+                                   ["News", "Discussion", "Science/Education", "Documentary"])
+
+    # '''
+    # Piechart of DM at certain positions in a sentence per Dataset
+    # '''
+    # cp.plot_dm_position_piechart("Number of DM in a Sentence at Position:",
+    #                              [data.spotify.get_sentence_position_values(),
+    #                               data.ny.get_sentence_position_values(),
+    #                               data.gig.get_sentence_position_values()
+    #                               ],
+    #                              ["Spotify Data", "NYTimes Data", "Gigaword Data"],
+    #                              [data.spotify_shades,
+    #                               data.ny_shades,
+    #                               data.gig_shades])
     '''
     ---- Document Positions ----
     '''

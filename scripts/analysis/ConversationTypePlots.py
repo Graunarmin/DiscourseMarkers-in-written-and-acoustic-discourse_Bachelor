@@ -6,18 +6,17 @@ from helpers import Helpers as hp
 def main():
     c_data = ctd.ConversationTypeData(
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/dialog-scores_short.csv",
-        "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/dialog-sentence-scores.json",
-        "../../bigData/listenability-tools/Spotify/conversation-types/dict/dialog_dict.json",
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/monolog-scores_short.csv",
-        "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/monolog-sentence-scores.json",
-        "../../bigData/listenability-tools/Spotify/conversation-types/dict/monolog_dict.json",
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/cooperative-monolog-scores_short.csv",
-        "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/cooperative-monolog-sentence-scores.json",
-        "../../bigData/listenability-tools/Spotify/conversation-types/dict/cooperative-monolog_dict.json",
         "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv",
-        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json",
-        "../../bigData/listenability-tools/discourse-types/dict/ted-dict.json",
-        markertypes="../../data/listenability-tools/main-senses/words_main-sense.json")
+        dialog_sentences=
+        "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/dialog-sentence-scores.json",
+        monolog_sentences=
+        "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/monolog-sentence-scores.json",
+        cmonolog_sentences=
+        "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/cooperative-monolog-sentence-scores.json",
+        ted_sentences=
+        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json")
 
     '''01:
     Prozentualer Anteil der DM an den Texten, über alle Texte

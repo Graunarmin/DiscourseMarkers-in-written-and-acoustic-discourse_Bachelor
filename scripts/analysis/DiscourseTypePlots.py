@@ -1,23 +1,22 @@
 from plotting import CreatePlots as cp
-from datasets import CorpusData as cd
+from datasets import DiscourseTypeData as cd
 from helpers import Helpers as hp
 
 
 def main():
-    d_data = cd.CorpusData(
+    d_data = cd.DiscourseTypeData(
         "../../bigData/listenability-tools/discourse-types/scores/spotify-scores_short.csv",
-        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/spotify-sentence-scores.json",
-        "../../bigData/listenability-tools/discourse-types/dict/spotify-dict.json",
         "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv",
-        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json",
-        "../../bigData/listenability-tools/discourse-types/dict/ted-dict.json",
         "../../bigData/listenability-tools/discourse-types/scores/nytimes-scores_short.csv",
-        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/nytimes-sentence-scores.json",
-        "../../bigData/listenability-tools/discourse-types/dict/nytimes-dict.json",
         "../../bigData/listenability-tools/discourse-types/scores/gigaword-scores_short.csv",
-        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/gigaword-sentence-scores.json",
-        "../../bigData/listenability-tools/discourse-types/dict/gigaword-dict.json",
-        markertypes="../../data/listenability-tools/main-senses/words_main-sense.json")
+        spotify_sentences=
+        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/spotify-sentence-scores.json",
+        ted_sentences=
+        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json",
+        ny_sentences=
+        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/nytimes-sentence-scores.json",
+        gig_sentences=
+        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/gigaword-sentence-scores.json")
 
     '''
     01: Prozentualer Anteil der DM an den Texten, über alle Texte
