@@ -29,7 +29,7 @@ def main():
                         g_data.discussion.get_percent_dm_per_text_statistics(),
                         g_data.science.get_percent_dm_per_text_statistics(),
                         g_data.documentary.get_percent_dm_per_text_statistics(),
-                        g_data.speech.get_percent_dm_per_text_statistics()]
+                        g_data.presentation.get_percent_dm_per_text_statistics()]
 
     cp.plot_vertical_barchart("Percent Discourse Markers per Text",
                               dm_per_text_perc,
@@ -40,7 +40,7 @@ def main():
                               label_5="Presentation",
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
-                              color_5=g_data.speech_color)
+                              color_5=g_data.presentation_color)
 
     hp.show_dataframe("DM-per-text-percent_Values",
                       ['Min', 'Mean', 'Mode', 'Max'],
@@ -54,7 +54,7 @@ def main():
                              g_data.discussion.get_percent_dm_per_text_column(),
                              g_data.science.get_percent_dm_per_text_column(),
                              g_data.documentary.get_percent_dm_per_text_column(),
-                             g_data.speech.get_percent_dm_per_text_column()]
+                             g_data.presentation.get_percent_dm_per_text_column()]
 
     hp.effectsize_and_significance("DM-per-text-percent_Statistics",
                                    ecdf_dm_per_text_perc,
@@ -69,16 +69,16 @@ def main():
                  g_data.discussion.get_percent_dm_per_text_column(collected=True),
                  g_data.science.get_percent_dm_per_text_column(collected=True),
                  g_data.documentary.get_percent_dm_per_text_column(collected=True),
-                 g_data.speech.get_percent_dm_per_text_column(collected=True)],
+                 g_data.presentation.get_percent_dm_per_text_column(collected=True)],
                 ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
                 [g_data.news_color, g_data.discussion_color, g_data.science_color,
-                 g_data.documentary_color, g_data.speech_color])
+                 g_data.documentary_color, g_data.presentation_color])
 
     cp.plot_ecdf(ecdf_dm_per_text_perc,
                  "ECDF for % of Discourse Markers per Text", "% DM per Text", "ECDF (% of Texts)",
                  ["News", "Discussion", "Science/Education", "Documentary", "Presentation"],
                  [g_data.news_color, g_data.discussion_color, g_data.science_color,
-                  g_data.documentary_color, g_data.speech_color])
+                  g_data.documentary_color, g_data.presentation_color])
 
     '''02:
     Anzahl der DM pro Text, über alle Texte (nicht sehr aussagekräftig)
@@ -88,7 +88,7 @@ def main():
                       g_data.discussion.get_total_dm_per_text_statistics(),
                       g_data.science.get_total_dm_per_text_statistics(),
                       g_data.documentary.get_total_dm_per_text_statistics(),
-                      g_data.speech.get_total_dm_per_text_statistics()]
+                      g_data.presentation.get_total_dm_per_text_statistics()]
 
     cp.plot_vertical_barchart("Number Discourse Markers per Text",
                               total_dm_count,
@@ -99,7 +99,7 @@ def main():
                               label_5="Presentation",
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
-                              color_5=g_data.speech_color)
+                              color_5=g_data.presentation_color)
 
     hp.show_dataframe("DM-per-text-total_Values",
                       ['Min', 'Mean', 'Mode', 'Max'],
@@ -113,7 +113,7 @@ def main():
                               g_data.discussion.get_total_dm_per_text_column(),
                               g_data.science.get_total_dm_per_text_column(),
                               g_data.documentary.get_total_dm_per_text_column(),
-                              g_data.speech.get_total_dm_per_text_column()]
+                              g_data.presentation.get_total_dm_per_text_column()]
 
     hp.effectsize_and_significance("DM-per-text-total_Statistics",
                                    total_dm_count_columns,
@@ -388,7 +388,7 @@ def main():
                        g_data.discussion.get_percent_dm_positions_document(),
                        g_data.science.get_percent_dm_positions_document(),
                        g_data.documentary.get_percent_dm_positions_document(),
-                       g_data.speech.get_percent_dm_positions_document()]
+                       g_data.presentation.get_percent_dm_positions_document()]
 
     cp.plot_vertical_barchart("% of DM in a Position in a Document",
                               dm_pos_doc_perc,
@@ -399,7 +399,7 @@ def main():
                               label_5="Presentation",
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
-                              color_5=g_data.speech_color)
+                              color_5=g_data.presentation_color)
 
     hp.show_dataframe("document-positions-percentages_Values",
                       ["Begin", "Middle", "End"],
@@ -414,7 +414,7 @@ def main():
                                     g_data.discussion.get_doc_begin_column(perc=True),
                                     g_data.science.get_doc_begin_column(perc=True),
                                     g_data.documentary.get_doc_begin_column(perc=True),
-                                    g_data.speech.get_doc_begin_column(perc=True)],
+                                    g_data.presentation.get_doc_begin_column(perc=True)],
                                    ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     hp.effectsize_and_significance("document-positions-percentages_Statistics_middle",
@@ -422,7 +422,7 @@ def main():
                                     g_data.discussion.get_doc_middle_column(perc=True),
                                     g_data.science.get_doc_middle_column(perc=True),
                                     g_data.documentary.get_doc_middle_column(perc=True),
-                                    g_data.speech.get_doc_middle_column(perc=True)],
+                                    g_data.presentation.get_doc_middle_column(perc=True)],
                                    ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     hp.effectsize_and_significance("document-positions-percentages_Statistics_end",
@@ -430,7 +430,7 @@ def main():
                                     g_data.discussion.get_doc_end_column(perc=True),
                                     g_data.science.get_doc_end_column(perc=True),
                                     g_data.documentary.get_doc_end_column(perc=True),
-                                    g_data.speech.get_doc_end_column(perc=True)],
+                                    g_data.presentation.get_doc_end_column(perc=True)],
                                    ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     '''
@@ -440,7 +440,7 @@ def main():
                         g_data.discussion.get_total_dm_positions_document(),
                         g_data.science.get_total_dm_positions_document(),
                         g_data.documentary.get_total_dm_positions_document(),
-                        g_data.speech.get_total_dm_positions_document()]
+                        g_data.presentation.get_total_dm_positions_document()]
 
     cp.plot_vertical_barchart("Number of DM at a certain Position in a Document",
                               dm_pos_doc_total,
@@ -451,7 +451,7 @@ def main():
                               label_5="Presentation",
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
-                              color_5=g_data.speech_color)
+                              color_5=g_data.presentation_color)
 
     hp.show_dataframe("document-positions-totals_Values",
                       ["Begin", "Middle", "End"],
@@ -466,7 +466,7 @@ def main():
                                     g_data.discussion.get_doc_begin_column(),
                                     g_data.science.get_doc_begin_column(),
                                     g_data.documentary.get_doc_begin_column(),
-                                    g_data.speech.get_doc_begin_column()],
+                                    g_data.presentation.get_doc_begin_column()],
                                    ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     hp.effectsize_and_significance("document-positions-totals_Statistics_middle",
@@ -474,7 +474,7 @@ def main():
                                     g_data.discussion.get_doc_middle_column(),
                                     g_data.science.get_doc_middle_column(),
                                     g_data.documentary.get_doc_middle_column(),
-                                    g_data.speech.get_doc_middle_column()],
+                                    g_data.presentation.get_doc_middle_column()],
                                    ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     hp.effectsize_and_significance("document-positions-totals_Statistics_end",
@@ -482,7 +482,7 @@ def main():
                                     g_data.discussion.get_doc_end_column(),
                                     g_data.science.get_doc_end_column(),
                                     g_data.documentary.get_doc_end_column(),
-                                    g_data.speech.get_doc_end_column()],
+                                    g_data.presentation.get_doc_end_column()],
                                    ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
     # # '''
     # # Piechart of DM at certain positions in a document per Dataset

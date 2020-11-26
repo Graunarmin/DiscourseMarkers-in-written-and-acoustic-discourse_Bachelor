@@ -105,6 +105,18 @@ def list_all_markers(data1, data2=None, data3=None, data4=None):
     return markers
 
 
+def marker_dataframe(title, columns, datasets, labels):
+    frame_dict = {}
+    for column, data in zip(columns, datasets):
+        frame_dict[column] = data
+
+    frame_dict['Data'] = labels
+
+    values_dataframe = pd.DataFrame(frame_dict)
+    values_dataframe.set_index('Data', inplace=True)
+    print_dataframe(title, values_dataframe)
+
+
 def print_dataframe(title, data):
     data.to_csv("../../data/listenability-tools/tables/" + title + ".csv")
 

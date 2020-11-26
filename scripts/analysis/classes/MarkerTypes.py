@@ -7,6 +7,11 @@ class MarkerTypes:
         with open(filepath, 'r', encoding='utf-8') as datafile:
             self.data = json.load(datafile)
 
+        self.temporal_color = '#f4d078'
+        self.contingency_color = '#ec6262'
+        self.comparison_color = '#8aa8bf'
+        self.expansion_color = '#A8BF8A'
+
     def get_type_dict(self):
         """
         Creates and returns a dictionary with the markers as keys

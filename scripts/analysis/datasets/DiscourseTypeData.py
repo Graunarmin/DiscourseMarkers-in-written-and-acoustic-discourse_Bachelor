@@ -36,5 +36,5 @@ class DiscourseTypeData:
 
         self.spotify_label = "Spotify"
         self.ted_label = "TED"
-        self.ny_label = "New York Times"
+        self.ny_label = "NYTimes"
         self.gig_label = "Gigaword"

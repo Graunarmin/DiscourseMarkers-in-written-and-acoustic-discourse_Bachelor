@@ -27,6 +27,30 @@ class DatasetMarkerScores:
 
         self.marker_types = markertypes
 
+    def get_total_docs(self):
+        return self.total_docs
+
+    def get_total_for_markerclass(self, marker_class=None):
+        total = 0
+        for marker in self.marker_dict:
+            if self.marker_types.get_marker_type(marker) == marker_class:
+                total += self.marker_dict[marker]['total']
+        return total
+
+    def get_average_for_markerclass(self, marker_class=None, average='word'):
+        if average == 'doc':
+            return self.get_total_for_markerclass(marker_class) / self.total_docs
+        else:
+            return self.get_total_for_markerclass(marker_class) / self.total_words
+
+    def get_percentage_for_markerclass(self, marker_class=None, perc='word'):
+        if perc == 'doc':
+            return self.get_total_for_markerclass(marker_class) * 100 / self.total_docs
+        else:
+            return self.get_total_for_markerclass(marker_class) * 100 / self.total_words
+
+
+
 # ------- Functionaliyt concerning the marker dictionary with the single markers
 
     def get_total_marker_values(self, average=False, share=None):

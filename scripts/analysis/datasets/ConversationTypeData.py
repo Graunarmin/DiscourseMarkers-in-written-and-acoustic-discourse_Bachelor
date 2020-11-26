@@ -30,3 +30,8 @@ class ConversationTypeData:
         self.cmonolog_shades = ['#FFE494', '#b26b13', '#ffb860']
         self.speech_color = '#e62b1e'
         self.speech_shades = ['#e62b1e', '#73150f', '#f2958e']
+
+        self.dialog_label = "Dialog"
+        self.monolog_label = "Monolog"
+        self.cmonolog_label = "Cooperative-Monolog"
+        self.speech_label = "Speech"
