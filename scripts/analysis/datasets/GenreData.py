@@ -7,24 +7,24 @@ class GenreData:
     def __init__(self,
                  news_scores, discussion_scores, science_scores,
                  documentary_scores, ted_scores,
-                 news_sentences=None, discussion_sentences=None, science_sentences=None,
-                 documentary_sentences=None, ted_sentences=None,
+                 news_scores_opt=None, discussion_scores_opt=None, science_scores_opt=None,
+                 documentary_scores_opt=None, ted_scores_opt=None,
                  general=True,
                  markertypes=None):
 
         if general:
-            self.news = ds.DatasetScores(news_scores, news_sentences)
-            self.discussion = ds.DatasetScores(discussion_scores, discussion_sentences)
-            self.science = ds.DatasetScores(science_scores, science_sentences)
-            self.documentary = ds.DatasetScores(documentary_scores, documentary_sentences)
-            self.presentation = ds.DatasetScores(ted_scores, ted_sentences)
+            self.news = ds.DatasetScores(news_scores, news_scores_opt)
+            self.discussion = ds.DatasetScores(discussion_scores, discussion_scores_opt)
+            self.science = ds.DatasetScores(science_scores, science_scores_opt)
+            self.documentary = ds.DatasetScores(documentary_scores, documentary_scores_opt)
+            self.presentation = ds.DatasetScores(ted_scores, ted_scores_opt)
 
         else:
-            self.news = dms.DatasetMarkerScores(news_scores, markertypes)
-            self.discussion = dms.DatasetMarkerScores(discussion_scores, markertypes)
-            self.science = dms.DatasetMarkerScores(science_scores, markertypes)
-            self.documentary = dms.DatasetMarkerScores(documentary_scores, markertypes)
-            self.presentation = dms.DatasetMarkerScores(ted_scores, markertypes)
+            self.news = dms.DatasetMarkerScores(news_scores, news_scores_opt, markertypes)
+            self.discussion = dms.DatasetMarkerScores(discussion_scores, discussion_scores_opt, markertypes)
+            self.science = dms.DatasetMarkerScores(science_scores, science_scores_opt, markertypes)
+            self.documentary = dms.DatasetMarkerScores(documentary_scores, documentary_scores_opt, markertypes)
+            self.presentation = dms.DatasetMarkerScores(ted_scores, ted_scores_opt, markertypes)
 
         # Colors:   [base, darker, lighter]
         self.news_color = '#7bd45d'

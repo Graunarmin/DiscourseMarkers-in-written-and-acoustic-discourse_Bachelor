@@ -14,6 +14,7 @@ def main():
         "../../bigData/listenability-tools/Spotify/genres/dict/science_dict.json",
         "../../bigData/listenability-tools/Spotify/genres/dict/documentary_dict.json",
         "../../bigData/listenability-tools/discourse-types/dict/ted-dict.json",
+        news_scores_opt="../../bigData/listenability-tools/Spotify/genres/marker-scores/news_dict.json",
         general=False,
         markertypes=markertypes)
 

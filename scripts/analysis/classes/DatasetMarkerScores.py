@@ -5,7 +5,7 @@ from collections import Counter
 
 class DatasetMarkerScores:
 
-    def __init__(self, markerdict, markertypes):
+    def __init__(self, markerdict, marker_per_doc, markertypes):
 
         with open(markerdict, 'r', encoding='utf-8') as data_json:
             dictionary = json.load(data_json)

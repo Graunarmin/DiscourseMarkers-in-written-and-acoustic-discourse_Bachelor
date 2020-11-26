@@ -16,101 +16,101 @@ def main():
         general=False,
         markertypes=markertypes)
 
-    # '''
-    # 01: Durchschnittliches Vorkommen jedes Markertypes pro total Wordcount
-    # '''
-    # markertype_per_text_average_wc = [[data.spotify.get_average_for_markerclass('Temporal'),
-    #                                    data.ted.get_average_for_markerclass('Temporal'),
-    #                                    data.ny.get_average_for_markerclass('Temporal'),
-    #                                    data.gig.get_average_for_markerclass('Temporal')],
-    #                                   [data.spotify.get_average_for_markerclass('Contingency'),
-    #                                    data.ted.get_average_for_markerclass('Contingency'),
-    #                                    data.ny.get_average_for_markerclass('Contingency'),
-    #                                    data.gig.get_average_for_markerclass('Contingency')],
-    #                                   [data.spotify.get_average_for_markerclass('Comparison'),
-    #                                    data.ted.get_average_for_markerclass('Comparison'),
-    #                                    data.ny.get_average_for_markerclass('Comparison'),
-    #                                    data.gig.get_average_for_markerclass('Comparison')],
-    #                                   [data.spotify.get_average_for_markerclass('Expansion'),
-    #                                    data.ted.get_average_for_markerclass('Expansion'),
-    #                                    data.ny.get_average_for_markerclass('Expansion'),
-    #                                    data.gig.get_average_for_markerclass('Expansion')],
-    #                                   ]
-    #
-    # mtp.draw_barchart_subplots("Average Occurence of Markertypes per total Wordcount",
-    #                            ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                            [data.spotify_label, data.ted_label, data.ny_label, data.gig_label],
-    #                            markertype_per_text_average_wc,
-    #                            [data.spotify_color, data.ted_color, data.ny_color, data.gig_color])
-    #
-    # hp.marker_dataframe("01_markertypes_average-per-wc",
-    #                     ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                     markertype_per_text_average_wc,
-    #                     [data.spotify_label, data.ted_label, data.ny_label, data.gig_label])
-    #
-    # '''
-    # 02: Durchschnittliches Vorkommen jedes Markertypes pro Text
-    # '''
-    # markertype_per_text_average_text = [[data.spotify.get_average_for_markerclass('Temporal', average='doc'),
-    #                                      data.ted.get_average_for_markerclass('Temporal', average='doc'),
-    #                                      data.ny.get_average_for_markerclass('Temporal', average='doc'),
-    #                                      data.gig.get_average_for_markerclass('Temporal', average='doc')],
-    #                                     [data.spotify.get_average_for_markerclass('Contingency', average='doc'),
-    #                                      data.ted.get_average_for_markerclass('Contingency', average='doc'),
-    #                                      data.ny.get_average_for_markerclass('Contingency', average='doc'),
-    #                                      data.gig.get_average_for_markerclass('Contingency', average='doc')],
-    #                                     [data.spotify.get_average_for_markerclass('Comparison', average='doc'),
-    #                                      data.ted.get_average_for_markerclass('Comparison', average='doc'),
-    #                                      data.ny.get_average_for_markerclass('Comparison', average='doc'),
-    #                                      data.gig.get_average_for_markerclass('Comparison', average='doc')],
-    #                                     [data.spotify.get_average_for_markerclass('Expansion', average='doc'),
-    #                                      data.ted.get_average_for_markerclass('Expansion', average='doc'),
-    #                                      data.ny.get_average_for_markerclass('Expansion', average='doc'),
-    #                                      data.gig.get_average_for_markerclass('Expansion', average='doc')],
-    #                                     ]
-    #
-    # mtp.draw_barchart_subplots("Average Occurence of Markertypes per Text",
-    #                            ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                            [data.spotify_label, data.ted_label, data.ny_label, data.gig_label],
-    #                            markertype_per_text_average_text,
-    #                            [data.spotify_color, data.ted_color, data.ny_color, data.gig_color])
-    #
-    # hp.marker_dataframe("02_markertypes_average-per-text",
-    #                     ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                     markertype_per_text_average_text,
-    #                     [data.spotify_label, data.ted_label, data.ny_label, data.gig_label])
-    #
-    # '''
-    # 03: Vorkommen jedes Markertypes pro Datensatz in %
-    # '''
-    # markertype_per_text_average_text = [[data.spotify.get_percentage_for_markerclass('Temporal'),
-    #                                      data.ted.get_percentage_for_markerclass('Temporal'),
-    #                                      data.ny.get_percentage_for_markerclass('Temporal'),
-    #                                      data.gig.get_percentage_for_markerclass('Temporal')],
-    #                                     [data.spotify.get_percentage_for_markerclass('Contingency'),
-    #                                      data.ted.get_percentage_for_markerclass('Contingency'),
-    #                                      data.ny.get_percentage_for_markerclass('Contingency'),
-    #                                      data.gig.get_percentage_for_markerclass('Contingency')],
-    #                                     [data.spotify.get_percentage_for_markerclass('Comparison'),
-    #                                      data.ted.get_percentage_for_markerclass('Comparison'),
-    #                                      data.ny.get_percentage_for_markerclass('Comparison'),
-    #                                      data.gig.get_percentage_for_markerclass('Comparison')],
-    #                                     [data.spotify.get_percentage_for_markerclass('Expansion'),
-    #                                      data.ted.get_percentage_for_markerclass('Expansion'),
-    #                                      data.ny.get_percentage_for_markerclass('Expansion'),
-    #                                      data.gig.get_percentage_for_markerclass('Expansion')],
-    #                                     ]
-    #
-    # mtp.draw_barchart_subplots("Share of Markertypes in Wordcount (%)",
-    #                            ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                            [data.spotify_label, data.ted_label, data.ny_label, data.gig_label],
-    #                            markertype_per_text_average_text,
-    #                            [data.spotify_color, data.ted_color, data.ny_color, data.gig_color])
-    #
-    # hp.marker_dataframe("03_markertypes_percentage",
-    #                     ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                     markertype_per_text_average_text,
-    #                     [data.spotify_label, data.ted_label, data.ny_label, data.gig_label])
+    '''
+    01: Durchschnittliches Vorkommen jedes Markertypes pro total Wordcount
+    '''
+    markertype_per_text_average_wc = [[data.spotify.get_average_for_markerclass('Temporal'),
+                                       data.ted.get_average_for_markerclass('Temporal'),
+                                       data.ny.get_average_for_markerclass('Temporal'),
+                                       data.gig.get_average_for_markerclass('Temporal')],
+                                      [data.spotify.get_average_for_markerclass('Contingency'),
+                                       data.ted.get_average_for_markerclass('Contingency'),
+                                       data.ny.get_average_for_markerclass('Contingency'),
+                                       data.gig.get_average_for_markerclass('Contingency')],
+                                      [data.spotify.get_average_for_markerclass('Comparison'),
+                                       data.ted.get_average_for_markerclass('Comparison'),
+                                       data.ny.get_average_for_markerclass('Comparison'),
+                                       data.gig.get_average_for_markerclass('Comparison')],
+                                      [data.spotify.get_average_for_markerclass('Expansion'),
+                                       data.ted.get_average_for_markerclass('Expansion'),
+                                       data.ny.get_average_for_markerclass('Expansion'),
+                                       data.gig.get_average_for_markerclass('Expansion')],
+                                      ]
+
+    mtp.draw_barchart_subplots("Average Occurence of Markertypes per total Wordcount",
+                               ["Temporal", "Contingency", "Comparison", "Expansion"],
+                               [data.spotify_label, data.ted_label, data.ny_label, data.gig_label],
+                               markertype_per_text_average_wc,
+                               [data.spotify_color, data.ted_color, data.ny_color, data.gig_color])
+
+    hp.marker_dataframe("01_markertypes_average-per-wc",
+                        ["Temporal", "Contingency", "Comparison", "Expansion"],
+                        markertype_per_text_average_wc,
+                        [data.spotify_label, data.ted_label, data.ny_label, data.gig_label])
+
+    '''
+    02: Durchschnittliches Vorkommen jedes Markertypes pro Text
+    '''
+    markertype_per_text_average_text = [[data.spotify.get_average_for_markerclass('Temporal', average='doc'),
+                                         data.ted.get_average_for_markerclass('Temporal', average='doc'),
+                                         data.ny.get_average_for_markerclass('Temporal', average='doc'),
+                                         data.gig.get_average_for_markerclass('Temporal', average='doc')],
+                                        [data.spotify.get_average_for_markerclass('Contingency', average='doc'),
+                                         data.ted.get_average_for_markerclass('Contingency', average='doc'),
+                                         data.ny.get_average_for_markerclass('Contingency', average='doc'),
+                                         data.gig.get_average_for_markerclass('Contingency', average='doc')],
+                                        [data.spotify.get_average_for_markerclass('Comparison', average='doc'),
+                                         data.ted.get_average_for_markerclass('Comparison', average='doc'),
+                                         data.ny.get_average_for_markerclass('Comparison', average='doc'),
+                                         data.gig.get_average_for_markerclass('Comparison', average='doc')],
+                                        [data.spotify.get_average_for_markerclass('Expansion', average='doc'),
+                                         data.ted.get_average_for_markerclass('Expansion', average='doc'),
+                                         data.ny.get_average_for_markerclass('Expansion', average='doc'),
+                                         data.gig.get_average_for_markerclass('Expansion', average='doc')],
+                                        ]
+
+    mtp.draw_barchart_subplots("Average Occurence of Markertypes per Text",
+                               ["Temporal", "Contingency", "Comparison", "Expansion"],
+                               [data.spotify_label, data.ted_label, data.ny_label, data.gig_label],
+                               markertype_per_text_average_text,
+                               [data.spotify_color, data.ted_color, data.ny_color, data.gig_color])
+
+    hp.marker_dataframe("02_markertypes_average-per-text",
+                        ["Temporal", "Contingency", "Comparison", "Expansion"],
+                        markertype_per_text_average_text,
+                        [data.spotify_label, data.ted_label, data.ny_label, data.gig_label])
+
+    '''
+    03: Vorkommen jedes Markertypes pro Datensatz in %
+    '''
+    markertype_per_text_average_text = [[data.spotify.get_percentage_for_markerclass('Temporal'),
+                                         data.ted.get_percentage_for_markerclass('Temporal'),
+                                         data.ny.get_percentage_for_markerclass('Temporal'),
+                                         data.gig.get_percentage_for_markerclass('Temporal')],
+                                        [data.spotify.get_percentage_for_markerclass('Contingency'),
+                                         data.ted.get_percentage_for_markerclass('Contingency'),
+                                         data.ny.get_percentage_for_markerclass('Contingency'),
+                                         data.gig.get_percentage_for_markerclass('Contingency')],
+                                        [data.spotify.get_percentage_for_markerclass('Comparison'),
+                                         data.ted.get_percentage_for_markerclass('Comparison'),
+                                         data.ny.get_percentage_for_markerclass('Comparison'),
+                                         data.gig.get_percentage_for_markerclass('Comparison')],
+                                        [data.spotify.get_percentage_for_markerclass('Expansion'),
+                                         data.ted.get_percentage_for_markerclass('Expansion'),
+                                         data.ny.get_percentage_for_markerclass('Expansion'),
+                                         data.gig.get_percentage_for_markerclass('Expansion')],
+                                        ]
+
+    mtp.draw_barchart_subplots("Share of Markertypes in Wordcount (%)",
+                               ["Temporal", "Contingency", "Comparison", "Expansion"],
+                               [data.spotify_label, data.ted_label, data.ny_label, data.gig_label],
+                               markertype_per_text_average_text,
+                               [data.spotify_color, data.ted_color, data.ny_color, data.gig_color])
+
+    hp.marker_dataframe("03_markertypes_percentage",
+                        ["Temporal", "Contingency", "Comparison", "Expansion"],
+                        markertype_per_text_average_text,
+                        [data.spotify_label, data.ted_label, data.ny_label, data.gig_label])
 
     '''
     04: Total Occurence per Markertype

@@ -15,13 +15,13 @@ def read_csv(in_file, out_file):
     marker_frame = {'document': names,
                     'dm_counts_dict': []}
     for doc in data:
+        marker_occurences = {}
         if doc != "{}":
-            marker_occurences = {}
             dm_dict = ast.literal_eval(doc)
             for marker in dm_dict:
                 marker_occurences[marker] = int(dm_dict[marker]['sent_begin']) + int(dm_dict[marker]['sent_middle']) + int(dm_dict[marker]['sent_end'])
 
-            marker_frame['dm_counts_dict'].append(str(marker_occurences))
+        marker_frame['dm_counts_dict'].append(str(marker_occurences))
 
     values_dataframe = pd.DataFrame(marker_frame)
     values_dataframe.set_index('document', inplace=True)

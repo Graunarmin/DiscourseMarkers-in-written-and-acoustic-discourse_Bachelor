@@ -10,15 +10,15 @@ def main():
         "../../bigData/listenability-tools/Spotify/genres/scores/science-scores_short.csv",
         "../../bigData/listenability-tools/Spotify/genres/scores/documentary-scores_short.csv",
         "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv",
-        news_sentences=
+        news_scores_opt=
         "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/news-sentence-scores.json",
-        discussion_sentences=
+        discussion_scores_opt=
         "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/discussion-sentence-scores.json",
-        science_sentences=
+        science_scores_opt=
         "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/science-sentence-scores.json",
-        documentary_sentences=
+        documentary_scores_opt=
         "../../bigData/listenability-tools/Spotify/genres/scores/sentence-scores/documentary-sentence-scores.json",
-        ted_sentences=
+        ted_scores_opt=
         "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json")
 
     '''01:
