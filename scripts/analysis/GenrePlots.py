@@ -1,3 +1,5 @@
+import helpers.DataFrames
+import helpers.Statistics
 from plotting import CreatePlots as cp
 from datasets import GenreData as gd
 from helpers import Helpers as hp
@@ -42,13 +44,13 @@ def main():
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
                               color_5=g_data.presentation_color)
 
-    hp.show_dataframe("DM-per-text-percent_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
-                      data4=dm_per_text_perc[3], data5=dm_per_text_perc[4],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary",
-                      label5="Presentation")
+    helpers.DataFrames.create_dataframe("DM-per-text-percent_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
+                                        data4=dm_per_text_perc[3], data5=dm_per_text_perc[4],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary",
+                                        label5="Presentation")
 
     ecdf_dm_per_text_perc = [g_data.news.get_percent_dm_per_text_column(),
                              g_data.discussion.get_percent_dm_per_text_column(),
@@ -56,9 +58,9 @@ def main():
                              g_data.documentary.get_percent_dm_per_text_column(),
                              g_data.presentation.get_percent_dm_per_text_column()]
 
-    hp.effectsize_and_significance("DM-per-text-percent_Statistics",
-                                   ecdf_dm_per_text_perc,
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+    helpers.Statistics.effectsize_and_significance("DM-per-text-percent_Statistics",
+                                                   ecdf_dm_per_text_perc,
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     '''
     Empirical Distribution Function
@@ -101,13 +103,13 @@ def main():
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
                               color_5=g_data.presentation_color)
 
-    hp.show_dataframe("DM-per-text-total_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      total_dm_count[0], data2=total_dm_count[1], data3=total_dm_count[2],
-                      data4=total_dm_count[3], data5=total_dm_count[4],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary",
-                      label5="Presentation")
+    helpers.DataFrames.create_dataframe("DM-per-text-total_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        total_dm_count[0], data2=total_dm_count[1], data3=total_dm_count[2],
+                                        data4=total_dm_count[3], data5=total_dm_count[4],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary",
+                                        label5="Presentation")
 
     total_dm_count_columns = [g_data.news.get_total_dm_per_text_column(),
                               g_data.discussion.get_total_dm_per_text_column(),
@@ -115,9 +117,9 @@ def main():
                               g_data.documentary.get_total_dm_per_text_column(),
                               g_data.presentation.get_total_dm_per_text_column()]
 
-    hp.effectsize_and_significance("DM-per-text-total_Statistics",
-                                   total_dm_count_columns,
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+    helpers.Statistics.effectsize_and_significance("DM-per-text-total_Statistics",
+                                                   total_dm_count_columns,
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     '''
     03: Prozentualer Anteil der Sätze, die DM enthalten, an den Texten, über alle Texte
@@ -137,21 +139,21 @@ def main():
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color)
 
-    hp.show_dataframe("DM-sentences-percent_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
-                      data4=dm_sentences_perc[3],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary")
+    helpers.DataFrames.create_dataframe("DM-sentences-percent_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
+                                        data4=dm_sentences_perc[3],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary")
 
     dm_sentences_perc_column = [g_data.news.get_percent_dm_sentences_column(),
                                 g_data.discussion.get_percent_dm_sentences_column(),
                                 g_data.science.get_percent_dm_sentences_column(),
                                 g_data.documentary.get_percent_dm_sentences_column()]
 
-    hp.effectsize_and_significance("DM-sentences-percent_Statistics",
-                                   dm_sentences_perc_column,
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+    helpers.Statistics.effectsize_and_significance("DM-sentences-percent_Statistics",
+                                                   dm_sentences_perc_column,
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
     '''
     Empirical Distribution Function
@@ -192,21 +194,21 @@ def main():
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color)
 
-    hp.show_dataframe("DM-sentences-total_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_sentences_total[0], data2=dm_sentences_total[1],
-                      data3=dm_sentences_total[2], data4=dm_sentences_total[3],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary")
+    helpers.DataFrames.create_dataframe("DM-sentences-total_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_sentences_total[0], data2=dm_sentences_total[1],
+                                        data3=dm_sentences_total[2], data4=dm_sentences_total[3],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary")
 
     dm_sentences_total_column = [g_data.news.get_total_dm_sentences_column(),
                                  g_data.discussion.get_total_dm_sentences_column(),
                                  g_data.science.get_total_dm_sentences_column(),
                                  g_data.documentary.get_total_dm_sentences_column()]
 
-    hp.effectsize_and_significance("DM-sentences-total_Statistics",
-                                   dm_sentences_total_column,
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+    helpers.Statistics.effectsize_and_significance("DM-sentences-total_Statistics",
+                                                   dm_sentences_total_column,
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
     '''
     05_a: Number of DM per sentence
@@ -225,21 +227,21 @@ def main():
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color)
 
-    hp.show_dataframe("DM-per-sentence_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_per_sent_total[0], data2=dm_per_sent_total[1],
-                      data3=dm_per_sent_total[2], data4=dm_per_sent_total[3],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary")
+    helpers.DataFrames.create_dataframe("DM-per-sentence_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_per_sent_total[0], data2=dm_per_sent_total[1],
+                                        data3=dm_per_sent_total[2], data4=dm_per_sent_total[3],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary")
 
     dm_per_sentence_column = [g_data.news.get_dm_per_sentence(),
                               g_data.discussion.get_dm_per_sentence(),
                               g_data.science.get_dm_per_sentence(),
                               g_data.documentary.get_dm_per_sentence()]
 
-    hp.effectsize_and_significance("DM-per-sentence_Statistics",
-                                   dm_per_sentence_column,
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+    helpers.Statistics.effectsize_and_significance("DM-per-sentence_Statistics",
+                                                   dm_per_sentence_column,
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
     '''
     05_b: Histogram with Number of DM per Sentence per Dataset
@@ -293,33 +295,33 @@ def main():
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color)
 
-    hp.show_dataframe("sentence-positions-pecentages_Values",
-                      ['Begin', 'Middle', 'End'],
-                      dm_pos_sent[0], data2=dm_pos_sent[1],
-                      data3=dm_pos_sent[2], data4=dm_pos_sent[3],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary")
+    helpers.DataFrames.create_dataframe("sentence-positions-pecentages_Values",
+                                        ['Begin', 'Middle', 'End'],
+                                        dm_pos_sent[0], data2=dm_pos_sent[1],
+                                        data3=dm_pos_sent[2], data4=dm_pos_sent[3],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary")
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
-                                   [g_data.news.get_sent_begin_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
+                                                   [g_data.news.get_sent_begin_column(perc=True),
                                     g_data.discussion.get_sent_begin_column(perc=True),
                                     g_data.science.get_sent_begin_column(perc=True),
                                     g_data.documentary.get_sent_begin_column(perc=True)],
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
-                                   [g_data.news.get_sent_middle_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
+                                                   [g_data.news.get_sent_middle_column(perc=True),
                                     g_data.discussion.get_sent_middle_column(perc=True),
                                     g_data.science.get_sent_middle_column(perc=True),
                                     g_data.documentary.get_sent_middle_column(perc=True)],
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
-                                   [g_data.news.get_sent_end_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
+                                                   [g_data.news.get_sent_end_column(perc=True),
                                     g_data.discussion.get_sent_end_column(perc=True),
                                     g_data.science.get_sent_end_column(perc=True),
                                     g_data.documentary.get_sent_end_column(perc=True)],
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
     '''
     07: Number of DM at certain positions in a sentence
     '''
@@ -337,33 +339,33 @@ def main():
                               color_1=g_data.news_color, color_2=g_data.discussion_color,
                               color_3=g_data.science_color, color_4=g_data.documentary_color)
 
-    hp.show_dataframe("sentence-positions-totals_Values",
-                      ["Begin", "Middle", "End"],
-                      dm_pos_sent_total[0], data2=dm_pos_sent_total[1],
-                      data3=dm_pos_sent_total[2], data4=dm_pos_sent_total[3],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary")
+    helpers.DataFrames.create_dataframe("sentence-positions-totals_Values",
+                                        ["Begin", "Middle", "End"],
+                                        dm_pos_sent_total[0], data2=dm_pos_sent_total[1],
+                                        data3=dm_pos_sent_total[2], data4=dm_pos_sent_total[3],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary")
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
-                                   [g_data.news.get_sent_begin_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
+                                                   [g_data.news.get_sent_begin_column(),
                                     g_data.discussion.get_sent_begin_column(),
                                     g_data.science.get_sent_begin_column(),
                                     g_data.documentary.get_sent_begin_column()],
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
-                                   [g_data.news.get_sent_middle_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
+                                                   [g_data.news.get_sent_middle_column(),
                                     g_data.discussion.get_sent_middle_column(),
                                     g_data.science.get_sent_middle_column(),
                                     g_data.documentary.get_sent_middle_column()],
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_end",
-                                   [g_data.news.get_sent_end_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_end",
+                                                   [g_data.news.get_sent_end_column(),
                                     g_data.discussion.get_sent_end_column(),
                                     g_data.science.get_sent_end_column(),
                                     g_data.documentary.get_sent_end_column()],
-                                   ["News", "Discussion", "Science/Education", "Documentary"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary"])
 
     # '''
     # Piechart of DM at certain positions in a sentence per Dataset
@@ -401,37 +403,37 @@ def main():
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
                               color_5=g_data.presentation_color)
 
-    hp.show_dataframe("document-positions-percentages_Values",
-                      ["Begin", "Middle", "End"],
-                      dm_pos_doc_perc[0], data2=dm_pos_doc_perc[1], data3=dm_pos_doc_perc[2],
-                      data4=dm_pos_doc_perc[3], data5=dm_pos_doc_perc[4],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary",
-                      label5="Presentation")
+    helpers.DataFrames.create_dataframe("document-positions-percentages_Values",
+                                        ["Begin", "Middle", "End"],
+                                        dm_pos_doc_perc[0], data2=dm_pos_doc_perc[1], data3=dm_pos_doc_perc[2],
+                                        data4=dm_pos_doc_perc[3], data5=dm_pos_doc_perc[4],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary",
+                                        label5="Presentation")
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_begin",
-                                   [g_data.news.get_doc_begin_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_begin",
+                                                   [g_data.news.get_doc_begin_column(perc=True),
                                     g_data.discussion.get_doc_begin_column(perc=True),
                                     g_data.science.get_doc_begin_column(perc=True),
                                     g_data.documentary.get_doc_begin_column(perc=True),
                                     g_data.presentation.get_doc_begin_column(perc=True)],
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_middle",
-                                   [g_data.news.get_doc_middle_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_middle",
+                                                   [g_data.news.get_doc_middle_column(perc=True),
                                     g_data.discussion.get_doc_middle_column(perc=True),
                                     g_data.science.get_doc_middle_column(perc=True),
                                     g_data.documentary.get_doc_middle_column(perc=True),
                                     g_data.presentation.get_doc_middle_column(perc=True)],
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_end",
-                                   [g_data.news.get_doc_end_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_end",
+                                                   [g_data.news.get_doc_end_column(perc=True),
                                     g_data.discussion.get_doc_end_column(perc=True),
                                     g_data.science.get_doc_end_column(perc=True),
                                     g_data.documentary.get_doc_end_column(perc=True),
                                     g_data.presentation.get_doc_end_column(perc=True)],
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
     '''
     09: Number of DM at certain positions in a document
@@ -453,37 +455,37 @@ def main():
                               color_3=g_data.science_color, color_4=g_data.documentary_color,
                               color_5=g_data.presentation_color)
 
-    hp.show_dataframe("document-positions-totals_Values",
-                      ["Begin", "Middle", "End"],
-                      dm_pos_doc_total[0], data2=dm_pos_doc_total[1], data3=dm_pos_doc_total[2],
-                      data4=dm_pos_doc_total[3], data5=dm_pos_doc_total[4],
-                      label1="News", label2="Discussion",
-                      label3="Science/Education", label4="Documentary",
-                      label5="Presentation")
+    helpers.DataFrames.create_dataframe("document-positions-totals_Values",
+                                        ["Begin", "Middle", "End"],
+                                        dm_pos_doc_total[0], data2=dm_pos_doc_total[1], data3=dm_pos_doc_total[2],
+                                        data4=dm_pos_doc_total[3], data5=dm_pos_doc_total[4],
+                                        label1="News", label2="Discussion",
+                                        label3="Science/Education", label4="Documentary",
+                                        label5="Presentation")
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_begin",
-                                   [g_data.news.get_doc_begin_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_begin",
+                                                   [g_data.news.get_doc_begin_column(),
                                     g_data.discussion.get_doc_begin_column(),
                                     g_data.science.get_doc_begin_column(),
                                     g_data.documentary.get_doc_begin_column(),
                                     g_data.presentation.get_doc_begin_column()],
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_middle",
-                                   [g_data.news.get_doc_middle_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_middle",
+                                                   [g_data.news.get_doc_middle_column(),
                                     g_data.discussion.get_doc_middle_column(),
                                     g_data.science.get_doc_middle_column(),
                                     g_data.documentary.get_doc_middle_column(),
                                     g_data.presentation.get_doc_middle_column()],
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_end",
-                                   [g_data.news.get_doc_end_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_end",
+                                                   [g_data.news.get_doc_end_column(),
                                     g_data.discussion.get_doc_end_column(),
                                     g_data.science.get_doc_end_column(),
                                     g_data.documentary.get_doc_end_column(),
                                     g_data.presentation.get_doc_end_column()],
-                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
+                                                   ["News", "Discussion", "Science/Education", "Documentary", "Presentation"])
     # # '''
     # # Piechart of DM at certain positions in a document per Dataset
     # # '''

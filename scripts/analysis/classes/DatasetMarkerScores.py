@@ -1,4 +1,6 @@
-from helpers import Helpers as hp
+import ast
+import pandas as pd
+import numpy as np
 import json
 from collections import Counter
 
@@ -27,6 +29,8 @@ class DatasetMarkerScores:
 
         self.marker_types = markertypes
 
+        self.marker_per_doc = pd.read_csv(marker_per_doc)
+
     def get_total_docs(self):
         return self.total_docs
 
@@ -46,12 +50,54 @@ class DatasetMarkerScores:
     def get_percentage_for_markerclass(self, marker_class=None, perc='word'):
         if perc == 'doc':
             return self.get_total_for_markerclass(marker_class) * 100 / self.total_docs
+        elif perc == 'marker':
+            return self.get_total_for_markerclass(marker_class) * 100 / self.total_markers
         else:
             return self.get_total_for_markerclass(marker_class) * 100 / self.total_words
 
+    def get_markerclass_columns(self):
+        temporal = {}
+        contingency = {}
+        comparison = {}
+        expansion = {}
 
+        for doc, count in zip(self.marker_per_doc['document'],
+                              self.marker_per_doc['dm_counts_dict']):
+            doc_counts = ast.literal_eval(count)
+            for marker in doc_counts:
+                temporal[doc] = 0
+                contingency[doc] = 0
+                comparison[doc] = 0
+                expansion[doc] = 0
+                if self.marker_types.get_marker_type(marker) == 'Temporal':
+                    temporal[doc] += int(doc_counts[marker])
+                elif self.marker_types.get_marker_type(marker) == 'Contingency':
+                    contingency[doc] += int(doc_counts[marker])
+                elif self.marker_types.get_marker_type(marker) == 'Comparison':
+                    comparison[doc] += int(doc_counts[marker])
+                elif self.marker_types.get_marker_type(marker) == 'Expansion':
+                    expansion[doc] += int(doc_counts[marker])
 
-# ------- Functionaliyt concerning the marker dictionary with the single markers
+        return{'temporal': list(temporal.values()),
+               'contingency': list(contingency.values()),
+               'comparison': list(comparison.values()),
+               'expansion': list(expansion.values())}
+
+    def get_percentages_of_markers_in_classes(self,  marker_type=None):
+        markers = {}
+        total = self.get_total_for_markerclass(marker_type)
+        for marker in self.marker_dict:
+            if self.marker_types.get_marker_type(marker) == marker_type:
+                markers[marker] = self.marker_dict[marker]['total'] * 100 / total
+
+        return markers
+
+    def get_most_common_markers(self, marker_type=None):
+        marker_count = Counter(self.get_percentages_of_markers_in_classes(marker_type))
+
+        return marker_count
+
+    # ------- Functionaliyt concerning the marker dictionary with the single markers
 
     def get_total_marker_values(self, average=False, share=None):
         """
@@ -188,30 +234,30 @@ class DatasetMarkerScores:
         else:
             return 0
 
-    def get_most_common_markers(self, number, perc=False, average=False, share=None, position=None):
-        """
-        :param number: How many markers to get (the top most x)
-        :param perc: if the result is supposed to be a percentage: True, Default is False
-        :param average: if the result is supposed to be an average: True, Default is False
-        :param share: on which base to compute the average or share - 'Sent', 'Doc' or 'Word'
-        :param position: most common marker at which position: 'sb', 'sm', 'se', 'db', 'dm', 'de'
-        :return:
-        """
-        # averages or percentages at certain positions
-        if position:
-            marker_count = Counter(
-                self.get_marker_values_at_position(position, average=average, perc=perc, share=share))
-        # total percentages
-        elif perc:
-            marker_count = Counter(self.get_total_marker_percents(share=share))
-        # total averages
-        else:
-            marker_count = Counter(self.get_total_marker_values(average=average, share=share))
-
-        markers = []
-        marker_values = []
-        for item in marker_count.most_common(number):
-            markers.append(item[0])
-            marker_values.append(item[1])
-
-        return markers, marker_values
+    # def get_most_common_markers(self, number, perc=False, average=False, share=None, position=None):
+    #     """
+    #     :param number: How many markers to get (the top most x)
+    #     :param perc: if the result is supposed to be a percentage: True, Default is False
+    #     :param average: if the result is supposed to be an average: True, Default is False
+    #     :param share: on which base to compute the average or share - 'Sent', 'Doc' or 'Word'
+    #     :param position: most common marker at which position: 'sb', 'sm', 'se', 'db', 'dm', 'de'
+    #     :return:
+    #     """
+    #     # averages or percentages at certain positions
+    #     if position:
+    #         marker_count = Counter(
+    #             self.get_marker_values_at_position(position, average=average, perc=perc, share=share))
+    #     # total percentages
+    #     elif perc:
+    #         marker_count = Counter(self.get_total_marker_percents(share=share))
+    #     # total averages
+    #     else:
+    #         marker_count = Counter(self.get_total_marker_values(average=average, share=share))
+    #
+    #     markers = []
+    #     marker_values = []
+    #     for item in marker_count.most_common(number):
+    #         markers.append(item[0])
+    #         marker_values.append(item[1])
+    #
+    #     return markers, marker_values

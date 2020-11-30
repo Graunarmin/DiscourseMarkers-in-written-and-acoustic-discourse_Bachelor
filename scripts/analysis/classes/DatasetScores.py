@@ -1,4 +1,6 @@
 import pandas as pd
+
+import helpers.Statistics
 from helpers import Helpers as hp
 import json
 
@@ -28,7 +30,7 @@ class DatasetScores:
         Computes the min, mean, max of the total number of DM per Text
         :return: a list of [min, a_mean, h_mean, median, mode, max] values
         """
-        return hp.compute_statistics(self.scores['dm_count_doc'].dropna())
+        return helpers.Statistics.compute_statistics(self.scores['dm_count_doc'].dropna())
 
     def get_percent_dm_per_text_column(self, collected=False):
         """
@@ -59,7 +61,7 @@ class DatasetScores:
         have in a text
         :return: a list of [min, a_mean, h_mean, median, mode, max] values
         """
-        return hp.compute_statistics(self.scores['dm_words_perc'].dropna())
+        return helpers.Statistics.compute_statistics(self.scores['dm_words_perc'].dropna())
 
 # ---- DM sentences ----
 
@@ -76,7 +78,7 @@ class DatasetScores:
         that contain at least one DM per Text
         :return: a list of [min, a_mean, h_mean, median, mode, max] values
         """
-        return hp.compute_statistics(self.scores['dm_sentences'].dropna())
+        return helpers.Statistics.compute_statistics(self.scores['dm_sentences'].dropna())
 
     def get_percent_dm_sentences_column(self, collected=False):
         """
@@ -105,7 +107,7 @@ class DatasetScores:
         containing at least one DM have of a text
         :return:
         """
-        return hp.compute_statistics(self.scores['dm_sentences_perc'].dropna())
+        return helpers.Statistics.compute_statistics(self.scores['dm_sentences_perc'].dropna())
 
 # --- DM per Sentence ---
 
@@ -114,7 +116,7 @@ class DatasetScores:
         Computes the min, mean, max of dm per sentence per text
         :return:
         """
-        return hp.compute_statistics(self.get_dm_per_sentence())
+        return helpers.Statistics.compute_statistics(self.get_dm_per_sentence())
 
     def compute_dm_per_sentence(self):
         """
@@ -190,9 +192,9 @@ class DatasetScores:
         values = self.get_total_dm_positions_sentence()
         whole = sum(values)
 
-        return [hp.percentage(values[0], whole),
-                hp.percentage(values[1], whole),
-                hp.percentage(values[2], whole)]
+        return [helpers.Statistics.percentage(values[0], whole),
+                helpers.Statistics.percentage(values[1], whole),
+                helpers.Statistics.percentage(values[2], whole)]
 
     def get_sentence_position_values(self):
         return [self.get_sent_begin_column(),
@@ -238,9 +240,9 @@ class DatasetScores:
         values = self.get_total_dm_positions_document()
         whole = sum(values)
 
-        return [hp.percentage(values[0], whole),
-                hp.percentage(values[1], whole),
-                hp.percentage(values[2], whole)]
+        return [helpers.Statistics.percentage(values[0], whole),
+                helpers.Statistics.percentage(values[1], whole),
+                helpers.Statistics.percentage(values[2], whole)]
 
     def get_document_position_values(self):
         return [self.get_doc_begin_column(),

@@ -46,3 +46,19 @@ class MarkerTypes:
         :return:
         """
         return self.data[marker]['error_rate']
+
+    def get_number_of_markers(self):
+
+        temporal, contingency, comparison, expansion = 0, 0, 0, 0
+        type_dict = self.get_type_dict()
+        for marker in type_dict:
+            if type_dict[marker] == 'Temporal':
+                temporal += 1
+            elif type_dict[marker] == 'Contingency':
+                contingency += 1
+            elif type_dict[marker] == 'Comparison':
+                comparison += 1
+            elif type_dict[marker] == 'Expansion':
+                expansion += 1
+
+        return temporal, contingency, comparison, expansion

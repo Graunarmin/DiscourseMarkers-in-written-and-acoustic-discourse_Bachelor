@@ -1,3 +1,5 @@
+import helpers.DataFrames
+import helpers.Statistics
 from plotting import CreatePlots as cp
 from datasets import DiscourseTypeData as cd
 from helpers import Helpers as hp
@@ -9,13 +11,13 @@ def main():
         "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv",
         "../../bigData/listenability-tools/discourse-types/scores/nytimes-scores_short.csv",
         "../../bigData/listenability-tools/discourse-types/scores/gigaword-scores_short.csv",
-        spotify_sentences=
+        spotify_scores_opt=
         "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/spotify-sentence-scores.json",
-        ted_sentences=
+        ted_scores_opt=
         "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json",
-        ny_sentences=
+        ny_scores_opt=
         "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/nytimes-sentence-scores.json",
-        gig_sentences=
+        gig_scores_opt=
         "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/gigaword-sentence-scores.json")
 
     '''
@@ -38,22 +40,22 @@ def main():
 
     # Add a plot with spoken vs. written
 
-    hp.show_dataframe("DM-per-text-percent_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_count_perc[0], data2=dm_count_perc[1], data3=dm_count_perc[2],
-                      data4=dm_count_perc[3],
-                      label1="Spotify", label2="TED",
-                      label3="NYTimes", label4="Gigaword")
+    helpers.DataFrames.create_dataframe("DM-per-text-percent_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_count_perc[0], data2=dm_count_perc[1], data3=dm_count_perc[2],
+                                        data4=dm_count_perc[3],
+                                        label1="Spotify", label2="TED",
+                                        label3="NYTimes", label4="Gigaword")
 
     ecdfd_dm_percents = [d_data.spotify.get_percent_dm_per_text_column(),
                          d_data.ted.get_percent_dm_per_text_column(),
                          d_data.ny.get_percent_dm_per_text_column(),
                          d_data.gig.get_percent_dm_per_text_column()]
 
-    hp.effectsize_and_significance("DM-per-text-percent_Statistics",
-                                   [[*ecdfd_dm_percents[0], *ecdfd_dm_percents[1]],
+    helpers.Statistics.effectsize_and_significance("DM-per-text-percent_Statistics",
+                                                   [[*ecdfd_dm_percents[0], *ecdfd_dm_percents[1]],
                                     [*ecdfd_dm_percents[2], *ecdfd_dm_percents[3]]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
     '''
     Empirical Distribution Function
@@ -93,22 +95,22 @@ def main():
                               color_1=d_data.spotify_color, color_2=d_data.ted_color,
                               color_3=d_data.ny_color, color_4=d_data.gig_color)
 
-    hp.show_dataframe("DM-per-text-total_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_count_total[0], data2=dm_count_total[1], data3=dm_count_total[2],
-                      data4=dm_count_total[3],
-                      label1="Spotify", label2="TED",
-                      label3="NYTimes", label4="Gigaword")
+    helpers.DataFrames.create_dataframe("DM-per-text-total_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_count_total[0], data2=dm_count_total[1], data3=dm_count_total[2],
+                                        data4=dm_count_total[3],
+                                        label1="Spotify", label2="TED",
+                                        label3="NYTimes", label4="Gigaword")
 
     dm_count_total_column = [d_data.spotify.get_total_dm_per_text_column(),
                              d_data.ted.get_total_dm_per_text_column(),
                              d_data.ny.get_total_dm_per_text_column(),
                              d_data.gig.get_total_dm_per_text_column()]
 
-    hp.effectsize_and_significance("DM-per-text-total_Statistics",
-                                   [[*dm_count_total_column[0], *dm_count_total_column[1]],
+    helpers.Statistics.effectsize_and_significance("DM-per-text-total_Statistics",
+                                                   [[*dm_count_total_column[0], *dm_count_total_column[1]],
                                     [*dm_count_total_column[2], *dm_count_total_column[3]]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
     '''
     03: Prozentualer Anteil der Sätze, die DM enthalten, an den Texten, über alle Texte
@@ -125,20 +127,20 @@ def main():
                               label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
                               color_1=d_data.spotify_color, color_2=d_data.ny_color, color_3=d_data.gig_color)
 
-    hp.show_dataframe("DM-sentences-percent_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
-                      label1="Spotify",
-                      label2="NYTimes", label3="Gigaword")
+    helpers.DataFrames.create_dataframe("DM-sentences-percent_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
+                                        label1="Spotify",
+                                        label2="NYTimes", label3="Gigaword")
 
     dm_sentences_perc_column = [d_data.spotify.get_percent_dm_sentences_column(),
                                 d_data.ny.get_percent_dm_sentences_column(),
                                 d_data.gig.get_percent_dm_sentences_column()]
 
-    hp.effectsize_and_significance("DM-sentences-percent_Statistics",
-                                   [dm_sentences_perc_column[0],
+    helpers.Statistics.effectsize_and_significance("DM-sentences-percent_Statistics",
+                                                   [dm_sentences_perc_column[0],
                                     [*dm_sentences_perc_column[1], *dm_sentences_perc_column[2]]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
     '''
     Empirical Distribution Function
@@ -174,20 +176,20 @@ def main():
                               label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
                               color_1=d_data.spotify_color, color_2=d_data.ny_color, color_3=d_data.gig_color)
 
-    hp.show_dataframe("DM-sentences-total_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_sentences_total[0], data2=dm_sentences_total[1], data3=dm_sentences_total[2],
-                      label1="Spotify",
-                      label2="NYTimes", label3="Gigaword")
+    helpers.DataFrames.create_dataframe("DM-sentences-total_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_sentences_total[0], data2=dm_sentences_total[1], data3=dm_sentences_total[2],
+                                        label1="Spotify",
+                                        label2="NYTimes", label3="Gigaword")
 
     dm_sentences_total_column = [d_data.spotify.get_total_dm_sentences_column(),
                                  d_data.ny.get_total_dm_sentences_column(),
                                  d_data.gig.get_total_dm_sentences_column()]
 
-    hp.effectsize_and_significance("DM-sentences-total_Statistics",
-                                   [dm_sentences_total_column[0],
+    helpers.Statistics.effectsize_and_significance("DM-sentences-total_Statistics",
+                                                   [dm_sentences_total_column[0],
                                     [*dm_sentences_total_column[1], *dm_sentences_total_column[2]]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
     '''
     05_a: Number of DM per sentence
@@ -203,20 +205,20 @@ def main():
                               label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
                               color_1=d_data.spotify_color, color_2=d_data.ny_color, color_3=d_data.gig_color)
 
-    hp.show_dataframe("DM-per-sentence_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_per_sentence[0], data2=dm_per_sentence[1], data3=dm_per_sentence[2],
-                      label1="Spotify",
-                      label2="NYTimes", label3="Gigaword")
+    helpers.DataFrames.create_dataframe("DM-per-sentence_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_per_sentence[0], data2=dm_per_sentence[1], data3=dm_per_sentence[2],
+                                        label1="Spotify",
+                                        label2="NYTimes", label3="Gigaword")
 
     dm_per_sentence_column = [d_data.spotify.get_dm_per_sentence(),
                               d_data.ny.get_dm_per_sentence(),
                               d_data.gig.get_dm_per_sentence()]
 
-    hp.effectsize_and_significance("DM-per-sentence_Statistics",
-                                   [dm_per_sentence_column[0],
+    helpers.Statistics.effectsize_and_significance("DM-per-sentence_Statistics",
+                                                   [dm_per_sentence_column[0],
                                     [*dm_per_sentence_column[1], *dm_per_sentence_column[2]]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
     '''
     05_b: Histogram with Number of DM per Sentence per Dataset
@@ -263,29 +265,29 @@ def main():
                               label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
                               color_1=d_data.spotify_color, color_2=d_data.ny_color, color_3=d_data.gig_color)
 
-    hp.show_dataframe("sentence-positions-pecentages_Values",
-                      ['Begin', 'Middle', 'End'],
-                      dm_pos_sent_perc[0], data2=dm_pos_sent_perc[1], data3=dm_pos_sent_perc[2],
-                      label1="Spotify",
-                      label2="NYTimes", label3="Gigaword")
+    helpers.DataFrames.create_dataframe("sentence-positions-pecentages_Values",
+                                        ['Begin', 'Middle', 'End'],
+                                        dm_pos_sent_perc[0], data2=dm_pos_sent_perc[1], data3=dm_pos_sent_perc[2],
+                                        label1="Spotify",
+                                        label2="NYTimes", label3="Gigaword")
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
-                                   [d_data.spotify.get_sent_begin_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
+                                                   [d_data.spotify.get_sent_begin_column(perc=True),
                                     [*d_data.ny.get_sent_begin_column(perc=True),
                                      *d_data.gig.get_sent_begin_column(perc=True)]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
-                                   [d_data.spotify.get_sent_middle_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
+                                                   [d_data.spotify.get_sent_middle_column(perc=True),
                                     [*d_data.ny.get_sent_middle_column(perc=True),
                                      *d_data.gig.get_sent_middle_column(perc=True)]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
-                                   [d_data.spotify.get_sent_end_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
+                                                   [d_data.spotify.get_sent_end_column(perc=True),
                                     [*d_data.ny.get_sent_end_column(perc=True),
                                      *d_data.gig.get_sent_end_column(perc=True)]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
     '''
     07: Number of DM at certain positions in a sentence
@@ -301,29 +303,29 @@ def main():
                               label_1="Spotify", label_2="NYTimes", label_3="Gigaword",
                               color_1=d_data.spotify_color, color_2=d_data.ny_color, color_3=d_data.gig_color)
 
-    hp.show_dataframe("sentence-positions-totals_Values",
-                      ['Begin', 'Middle', 'End'],
-                      dm_pos_sent_total[0], data2=dm_pos_sent_total[1], data3=dm_pos_sent_total[2],
-                      label1="Spotify",
-                      label2="NYTimes", label3="Gigaword")
+    helpers.DataFrames.create_dataframe("sentence-positions-totals_Values",
+                                        ['Begin', 'Middle', 'End'],
+                                        dm_pos_sent_total[0], data2=dm_pos_sent_total[1], data3=dm_pos_sent_total[2],
+                                        label1="Spotify",
+                                        label2="NYTimes", label3="Gigaword")
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
-                                   [d_data.spotify.get_sent_begin_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
+                                                   [d_data.spotify.get_sent_begin_column(),
                                     [*d_data.ny.get_sent_begin_column(),
                                      *d_data.gig.get_sent_begin_column()]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
-                                   [d_data.spotify.get_sent_middle_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
+                                                   [d_data.spotify.get_sent_middle_column(),
                                     [*d_data.ny.get_sent_middle_column(),
                                      *d_data.gig.get_sent_middle_column()]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_end",
-                                   [d_data.spotify.get_sent_end_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_end",
+                                                   [d_data.spotify.get_sent_end_column(),
                                     [*d_data.ny.get_sent_end_column(),
                                      *d_data.gig.get_sent_end_column()]],
-                                   ["Spotify", "Written"])
+                                                   ["Spotify", "Written"])
 
     # '''
     # Piechart of DM at certain positions in a sentence per Dataset
@@ -357,32 +359,32 @@ def main():
                               color_1=d_data.spotify_color, color_2=d_data.ted_color,
                               color_3=d_data.ny_color, color_4=d_data.gig_color)
 
-    hp.show_dataframe("document-positions-percentages_Values",
-                      ['Begin', 'Middle', 'End'],
-                      dm_pos_doc_perc[0], data2=dm_pos_doc_perc[1], data3=dm_pos_doc_perc[2], data4=dm_pos_doc_perc[3],
-                      label1="Spotify", label2="TED",
-                      label3="NYTimes", label4="Gigaword")
+    helpers.DataFrames.create_dataframe("document-positions-percentages_Values",
+                                        ['Begin', 'Middle', 'End'],
+                                        dm_pos_doc_perc[0], data2=dm_pos_doc_perc[1], data3=dm_pos_doc_perc[2], data4=dm_pos_doc_perc[3],
+                                        label1="Spotify", label2="TED",
+                                        label3="NYTimes", label4="Gigaword")
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_begin",
-                                   [[*d_data.spotify.get_doc_begin_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_begin",
+                                                   [[*d_data.spotify.get_doc_begin_column(perc=True),
                                      *d_data.ted.get_doc_begin_column(perc=True)],
                                     [*d_data.ny.get_doc_begin_column(perc=True),
                                      *d_data.gig.get_doc_begin_column(perc=True)]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_middle",
-                                   [[*d_data.spotify.get_doc_middle_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_middle",
+                                                   [[*d_data.spotify.get_doc_middle_column(perc=True),
                                      *d_data.ted.get_doc_middle_column(perc=True)],
                                     [*d_data.ny.get_doc_middle_column(perc=True),
                                      *d_data.gig.get_doc_middle_column(perc=True)]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_end",
-                                   [[*d_data.spotify.get_doc_end_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_end",
+                                                   [[*d_data.spotify.get_doc_end_column(perc=True),
                                      *d_data.ted.get_doc_end_column(perc=True)],
                                     [*d_data.ny.get_doc_end_column(perc=True),
                                      *d_data.gig.get_doc_end_column(perc=True)]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
     '''
     09: Number of DM at certain positions in a Document
@@ -400,33 +402,33 @@ def main():
                               color_1=d_data.spotify_color, color_2=d_data.ted_color,
                               color_3=d_data.ny_color, color_4=d_data.gig_color)
 
-    hp.show_dataframe("document-positions-totals_Values",
-                      ['Begin', 'Middle', 'End'],
-                      dm_pos_doc_total[0], data2=dm_pos_doc_total[1], data3=dm_pos_doc_total[2],
-                      data4=dm_pos_doc_total[3],
-                      label1="Spotify", label2="TED",
-                      label3="NYTimes", label4="Gigaword")
+    helpers.DataFrames.create_dataframe("document-positions-totals_Values",
+                                        ['Begin', 'Middle', 'End'],
+                                        dm_pos_doc_total[0], data2=dm_pos_doc_total[1], data3=dm_pos_doc_total[2],
+                                        data4=dm_pos_doc_total[3],
+                                        label1="Spotify", label2="TED",
+                                        label3="NYTimes", label4="Gigaword")
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_begin",
-                                   [[*d_data.spotify.get_doc_begin_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_begin",
+                                                   [[*d_data.spotify.get_doc_begin_column(),
                                      *d_data.ted.get_doc_begin_column()],
                                     [*d_data.ny.get_doc_begin_column(),
                                      *d_data.gig.get_doc_begin_column()]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_middle",
-                                   [[*d_data.spotify.get_doc_middle_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_middle",
+                                                   [[*d_data.spotify.get_doc_middle_column(),
                                      *d_data.ted.get_doc_middle_column()],
                                     [*d_data.ny.get_doc_middle_column(),
                                      *d_data.gig.get_doc_middle_column()]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_end",
-                                   [[*d_data.spotify.get_doc_end_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_end",
+                                                   [[*d_data.spotify.get_doc_end_column(),
                                      *d_data.ted.get_doc_end_column()],
                                     [*d_data.ny.get_doc_end_column(),
                                      *d_data.gig.get_doc_end_column()]],
-                                   ["Spoken", "Written"])
+                                                   ["Spoken", "Written"])
 
     # cp.plot_dm_position_piechart("Positions of Discourse Markers in the Documents",
     #                              [data.spotify.get_document_position_values(),

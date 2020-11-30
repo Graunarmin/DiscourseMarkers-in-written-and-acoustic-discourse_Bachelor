@@ -5,24 +5,22 @@ from classes import DatasetMarkerScores as dms
 class DiscourseTypeData:
     def __init__(self,
                  spotify_scores, ted_scores, ny_scores, gig_scores,
-                 spotify_sentences=None,
-                 ted_sentences=None,
-                 ny_sentences=None,
-                 gig_sentences=None,
+                 spotify_scores_opt=None, ted_scores_opt=None,
+                 ny_scores_opt=None, gig_scores_opt=None,
                  general=True,
                  markertypes=None):
 
         if general:
-            self.spotify = ds.DatasetScores(spotify_scores, spotify_sentences)
-            self.ted = ds.DatasetScores(ted_scores, ted_sentences)
-            self.ny = ds.DatasetScores(ny_scores, ny_sentences)
-            self.gig = ds.DatasetScores(gig_scores, gig_sentences)
+            self.spotify = ds.DatasetScores(spotify_scores, spotify_scores_opt)
+            self.ted = ds.DatasetScores(ted_scores, ted_scores_opt)
+            self.ny = ds.DatasetScores(ny_scores, ny_scores_opt)
+            self.gig = ds.DatasetScores(gig_scores, gig_scores_opt)
 
         else:
-            self.spotify = dms.DatasetMarkerScores(spotify_scores, markertypes)
-            self.ted = dms.DatasetMarkerScores(ted_scores, markertypes)
-            self.ny = dms.DatasetMarkerScores(ny_scores, markertypes)
-            self.gig = dms.DatasetMarkerScores(gig_scores, markertypes)
+            self.spotify = dms.DatasetMarkerScores(spotify_scores, spotify_scores_opt, markertypes)
+            self.ted = dms.DatasetMarkerScores(ted_scores, ted_scores_opt, markertypes)
+            self.ny = dms.DatasetMarkerScores(ny_scores, ny_scores_opt, markertypes)
+            self.gig = dms.DatasetMarkerScores(gig_scores, gig_scores_opt, markertypes)
 
         # Colors:   [base, darker, lighter]
         self.spotify_color = '#1DB954'

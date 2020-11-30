@@ -1,3 +1,5 @@
+import helpers.DataFrames
+import helpers.Statistics
 from plotting import CreatePlots as cp
 from datasets import ConversationTypeData as ctd
 from helpers import Helpers as hp
@@ -9,13 +11,13 @@ def main():
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/monolog-scores_short.csv",
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/cooperative-monolog-scores_short.csv",
         "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv",
-        dialog_sentences=
+        dialog_scores_opt=
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/dialog-sentence-scores.json",
-        monolog_sentences=
+        monolog_scores_opt=
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/monolog-sentence-scores.json",
-        cmonolog_sentences=
+        cmonolog_scores_opt=
         "../../bigData/listenability-tools/Spotify/conversation-types/scores/sentence-scores/cooperative-monolog-sentence-scores.json",
-        ted_sentences=
+        ted_scores_opt=
         "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/ted-sentence-scores.json")
 
     '''01:
@@ -36,21 +38,21 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
-    hp.show_dataframe("DM-per-text-percent_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
-                      data4=dm_per_text_perc[3],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog", label4="Speech")
+    helpers.DataFrames.create_dataframe("DM-per-text-percent_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_per_text_perc[0], data2=dm_per_text_perc[1], data3=dm_per_text_perc[2],
+                                        data4=dm_per_text_perc[3],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog", label4="Speech")
 
     ecdf_dm_percents = [c_data.dialog.get_percent_dm_per_text_column(),
                         c_data.monolog.get_percent_dm_per_text_column(),
                         c_data.cmonolog.get_percent_dm_per_text_column(),
                         c_data.speech.get_percent_dm_per_text_column()]
 
-    hp.effectsize_and_significance("DM-per-text-percent_Statistics",
-                                   ecdf_dm_percents,
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+    helpers.Statistics.effectsize_and_significance("DM-per-text-percent_Statistics",
+                                                   ecdf_dm_percents,
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
 
     '''
     Empirical Distribution Function
@@ -87,21 +89,21 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
-    hp.show_dataframe("DM-per-text-total_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      total_dm_count[0], data2=total_dm_count[1], data3=total_dm_count[2],
-                      data4=total_dm_count[3],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog", label4="Speech")
+    helpers.DataFrames.create_dataframe("DM-per-text-total_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        total_dm_count[0], data2=total_dm_count[1], data3=total_dm_count[2],
+                                        data4=total_dm_count[3],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog", label4="Speech")
 
     total_dm_count_columns = [c_data.dialog.get_total_dm_per_text_column(),
                               c_data.monolog.get_total_dm_per_text_column(),
                               c_data.cmonolog.get_total_dm_per_text_column(),
                               c_data.speech.get_total_dm_per_text_column()]
 
-    hp.effectsize_and_significance("DM-per-text-total_Statistics",
-                                   total_dm_count_columns,
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+    helpers.Statistics.effectsize_and_significance("DM-per-text-total_Statistics",
+                                                   total_dm_count_columns,
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
 
     '''03:
     Prozentualer Anteil der Sätze, die DM enthalten, an den Texten, über alle Texte
@@ -120,19 +122,19 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color)
 
-    hp.show_dataframe("DM-sentences-percent_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog")
+    helpers.DataFrames.create_dataframe("DM-sentences-percent_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_sentences_perc[0], data2=dm_sentences_perc[1], data3=dm_sentences_perc[2],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog")
 
     dm_sentences_perc_column = [c_data.dialog.get_percent_dm_sentences_column(),
                                 c_data.monolog.get_percent_dm_sentences_column(),
                                 c_data.cmonolog.get_percent_dm_sentences_column()]
 
-    hp.effectsize_and_significance("DM-sentences-percent_Statistics",
-                                   dm_sentences_perc_column,
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+    helpers.Statistics.effectsize_and_significance("DM-sentences-percent_Statistics",
+                                                   dm_sentences_perc_column,
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
     '''
     Empirical Distribution Function
@@ -170,19 +172,19 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color)
 
-    hp.show_dataframe("DM-sentences-total_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_sentences_total[0], data2=dm_sentences_total[1],
-                      data3=dm_sentences_total[2],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog")
+    helpers.DataFrames.create_dataframe("DM-sentences-total_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_sentences_total[0], data2=dm_sentences_total[1],
+                                        data3=dm_sentences_total[2],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog")
 
     dm_sentences_total_column = [c_data.dialog.get_total_dm_sentences_column(),
                                  c_data.monolog.get_total_dm_sentences_column(),
                                  c_data.cmonolog.get_total_dm_sentences_column()]
-    hp.effectsize_and_significance("DM-sentences-total_Statistics",
-                                   dm_sentences_total_column,
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+    helpers.Statistics.effectsize_and_significance("DM-sentences-total_Statistics",
+                                                   dm_sentences_total_column,
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
     '''
     05_a: Number of DM per sentence
@@ -200,20 +202,20 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color)
 
-    hp.show_dataframe("DM-per-sentence_Values",
-                      ['Min', 'Mean', 'Mode', 'Max'],
-                      dm_per_sent_total[0], data2=dm_per_sent_total[1],
-                      data3=dm_per_sent_total[2],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog")
+    helpers.DataFrames.create_dataframe("DM-per-sentence_Values",
+                                        ['Min', 'Mean', 'Mode', 'Max'],
+                                        dm_per_sent_total[0], data2=dm_per_sent_total[1],
+                                        data3=dm_per_sent_total[2],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog")
 
     dm_per_sentence_column = [c_data.dialog.get_dm_per_sentence(),
                               c_data.monolog.get_dm_per_sentence(),
                               c_data.cmonolog.get_dm_per_sentence()]
 
-    hp.effectsize_and_significance("DM-per-sentence_Statistics",
-                                   dm_per_sentence_column,
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+    helpers.Statistics.effectsize_and_significance("DM-per-sentence_Statistics",
+                                                   dm_per_sentence_column,
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
     '''
     05_b: Histogram with Number of DM per Sentence per Dataset
@@ -262,30 +264,30 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color)
 
-    hp.show_dataframe("sentence-positions-pecentages_Values",
-                      ['Begin', 'Middle', 'End'],
-                      dm_pos_sent[0], data2=dm_pos_sent[1],
-                      data3=dm_pos_sent[2],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog")
+    helpers.DataFrames.create_dataframe("sentence-positions-pecentages_Values",
+                                        ['Begin', 'Middle', 'End'],
+                                        dm_pos_sent[0], data2=dm_pos_sent[1],
+                                        data3=dm_pos_sent[2],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog")
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
-                                   [c_data.dialog.get_sent_begin_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_begin",
+                                                   [c_data.dialog.get_sent_begin_column(perc=True),
                                     c_data.monolog.get_sent_begin_column(perc=True),
                                     c_data.cmonolog.get_sent_begin_column(perc=True)],
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
-                                   [c_data.dialog.get_sent_middle_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_middle",
+                                                   [c_data.dialog.get_sent_middle_column(perc=True),
                                     c_data.monolog.get_sent_middle_column(perc=True),
                                     c_data.cmonolog.get_sent_middle_column(perc=True)],
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
-    hp.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
-                                   [c_data.dialog.get_sent_end_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-pecentages_Statistics_end",
+                                                   [c_data.dialog.get_sent_end_column(perc=True),
                                     c_data.monolog.get_sent_end_column(perc=True),
                                     c_data.cmonolog.get_sent_end_column(perc=True)],
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
     '''
     07: Number of DM at certain positions in a sentence
     '''
@@ -302,30 +304,30 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color)
 
-    hp.show_dataframe("sentence-positions-totals_Values",
-                      ["Begin", "Middle", "End"],
-                      dm_pos_sent_total[0], data2=dm_pos_sent_total[1],
-                      data3=dm_pos_sent_total[2],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog")
+    helpers.DataFrames.create_dataframe("sentence-positions-totals_Values",
+                                        ["Begin", "Middle", "End"],
+                                        dm_pos_sent_total[0], data2=dm_pos_sent_total[1],
+                                        data3=dm_pos_sent_total[2],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog")
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
-                                   [c_data.dialog.get_sent_begin_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_begin",
+                                                   [c_data.dialog.get_sent_begin_column(),
                                     c_data.monolog.get_sent_begin_column(),
                                     c_data.cmonolog.get_sent_begin_column()],
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
-                                   [c_data.dialog.get_sent_middle_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_middle",
+                                                   [c_data.dialog.get_sent_middle_column(),
                                     c_data.monolog.get_sent_middle_column(),
                                     c_data.cmonolog.get_sent_middle_column()],
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
-    hp.effectsize_and_significance("sentence-positions-totals_Statistics_end",
-                                   [c_data.dialog.get_sent_end_column(),
+    helpers.Statistics.effectsize_and_significance("sentence-positions-totals_Statistics_end",
+                                                   [c_data.dialog.get_sent_end_column(),
                                     c_data.monolog.get_sent_end_column(),
                                     c_data.cmonolog.get_sent_end_column()],
-                                   ["Dialog", "Monolog", "Cooperative Monolog"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog"])
 
     # '''
     # Piechart of DM at certain positions in a sentence per Dataset
@@ -360,33 +362,33 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
-    hp.show_dataframe("document-positions-percentages_Values",
-                      ["Begin", "Middle", "End"],
-                      dm_pos_doc_perc[0], data2=dm_pos_doc_perc[1], data3=dm_pos_doc_perc[2],
-                      data4=dm_pos_doc_perc[3],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog", label4="Speech")
+    helpers.DataFrames.create_dataframe("document-positions-percentages_Values",
+                                        ["Begin", "Middle", "End"],
+                                        dm_pos_doc_perc[0], data2=dm_pos_doc_perc[1], data3=dm_pos_doc_perc[2],
+                                        data4=dm_pos_doc_perc[3],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog", label4="Speech")
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_begin",
-                                   [c_data.dialog.get_doc_begin_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_begin",
+                                                   [c_data.dialog.get_doc_begin_column(perc=True),
                                     c_data.monolog.get_doc_begin_column(perc=True),
                                     c_data.cmonolog.get_doc_begin_column(perc=True),
                                     c_data.speech.get_doc_begin_column(perc=True)],
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_middle",
-                                   [c_data.dialog.get_doc_middle_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_middle",
+                                                   [c_data.dialog.get_doc_middle_column(perc=True),
                                     c_data.monolog.get_doc_middle_column(perc=True),
                                     c_data.cmonolog.get_doc_middle_column(perc=True),
                                     c_data.speech.get_doc_middle_column(perc=True)],
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
 
-    hp.effectsize_and_significance("document-positions-percentages_Statistics_end",
-                                   [c_data.dialog.get_doc_end_column(perc=True),
+    helpers.Statistics.effectsize_and_significance("document-positions-percentages_Statistics_end",
+                                                   [c_data.dialog.get_doc_end_column(perc=True),
                                     c_data.monolog.get_doc_end_column(perc=True),
                                     c_data.cmonolog.get_doc_end_column(perc=True),
                                     c_data.speech.get_doc_end_column(perc=True)],
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
 
     '''
     09: Number of DM at certain positions in a document
@@ -405,34 +407,34 @@ def main():
                               color_1=c_data.dialog_color, color_2=c_data.monolog_color,
                               color_3=c_data.cmonolog_color, color_4=c_data.speech_color)
 
-    hp.show_dataframe("document-positions-totals_Values",
-                      ["Begin", "Middle", "End"],
-                      dm_pos_doc_total[0], data2=dm_pos_doc_total[1], data3=dm_pos_doc_total[2],
-                      data4=dm_pos_doc_total[3],
-                      label1="Dialog", label2="Monolog",
-                      label3="Cooperative-Monolog", label4="Speech"
-                      )
+    helpers.DataFrames.create_dataframe("document-positions-totals_Values",
+                                        ["Begin", "Middle", "End"],
+                                        dm_pos_doc_total[0], data2=dm_pos_doc_total[1], data3=dm_pos_doc_total[2],
+                                        data4=dm_pos_doc_total[3],
+                                        label1="Dialog", label2="Monolog",
+                                        label3="Cooperative-Monolog", label4="Speech"
+                                        )
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_begin",
-                                   [c_data.dialog.get_doc_begin_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_begin",
+                                                   [c_data.dialog.get_doc_begin_column(),
                                     c_data.monolog.get_doc_begin_column(),
                                     c_data.cmonolog.get_doc_begin_column(),
                                     c_data.speech.get_doc_begin_column()],
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_middle",
-                                   [c_data.dialog.get_doc_middle_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_middle",
+                                                   [c_data.dialog.get_doc_middle_column(),
                                     c_data.monolog.get_doc_middle_column(),
                                     c_data.cmonolog.get_doc_middle_column(),
                                     c_data.speech.get_doc_middle_column()],
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
 
-    hp.effectsize_and_significance("document-positions-totals_Statistics_end",
-                                   [c_data.dialog.get_doc_end_column(),
+    helpers.Statistics.effectsize_and_significance("document-positions-totals_Statistics_end",
+                                                   [c_data.dialog.get_doc_end_column(),
                                     c_data.monolog.get_doc_end_column(),
                                     c_data.cmonolog.get_doc_end_column(),
                                     c_data.speech.get_doc_end_column()],
-                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
+                                                   ["Dialog", "Monolog", "Cooperative Monolog", "Speech"])
     # # '''
     # # Piechart of DM at certain positions in a document per Dataset
     # # '''
