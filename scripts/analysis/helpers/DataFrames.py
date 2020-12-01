@@ -84,10 +84,13 @@ def markers_dataframe(title, names, marker, values):
     values_dataframe.set_index('Marker', inplace=True)
     save_dataframe(title, values_dataframe)
 
-    percentage = lambda x: round(x * 100, 2)
+    from helpers import Statistics
+    Statistics.compute_marker_deltas(title, values_dataframe)
 
-    deltas = values_dataframe.pct_change(axis='columns').applymap(percentage)
-    save_dataframe(title + "_deltas", deltas)
+    # percentage = lambda x: round(x * 100, 2)
+    #
+    # deltas = values_dataframe.pct_change(axis='columns').applymap(percentage)
+    # save_dataframe(title + "_deltas", deltas)
 
 
 

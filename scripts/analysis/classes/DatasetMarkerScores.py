@@ -97,6 +97,48 @@ class DatasetMarkerScores:
 
         return marker_count
 
+    def get_marker_numbers_per_doc(self, mc_temporal, mc_contingency, mc_comparison, mc_expansion):
+        temporal = {}
+        contingency = {}
+        comparison = {}
+        expansion = {}
+
+        for doc, count in zip(self.marker_per_doc['document'],
+                              self.marker_per_doc['dm_counts_dict']):
+            doc_counts = ast.literal_eval(count)
+            for temp_m, cont_m, comp_m, exp_m in zip(mc_temporal, mc_contingency,
+                                                     mc_comparison, mc_expansion):
+                temporal[doc] = []
+                contingency[doc] = []
+                comparison[doc] = []
+                expansion[doc] = []
+
+                if temp_m in doc_counts:
+                    temporal[doc].append(int(doc_counts[temp_m]))
+                else:
+                    temporal[doc].append(0)
+
+                if cont_m in doc_counts:
+                    contingency[doc].append(int(doc_counts[cont_m]))
+                else:
+                    contingency[doc].append(0)
+
+                if comp_m in doc_counts:
+                    comparison[doc].append(int(doc_counts[comp_m]))
+                else:
+                    comparison[doc].append(0)
+
+                if exp_m in doc_counts:
+                    expansion[doc].append(int(doc_counts[exp_m]))
+                else:
+                    expansion[doc].append(0)
+
+        # returns a dictionary with lists of one list per document
+        return {'temporal': list(temporal.values()),
+                'contingency': list(contingency.values()),
+                'comparison': list(comparison.values()),
+                'expansion': list(expansion.values())}
+
     # ------- Functionaliyt concerning the marker dictionary with the single markers
 
     def get_total_marker_values(self, average=False, share=None):

@@ -107,9 +107,10 @@ def compute_marker_deltas(title, data):
     :return:
     """
     names = []
-    for i in range(len(data.index) - 1):
-        for j in range(i + 1, len(data.index)):
-            names.append("Δ (" + data.index[i] + "/ " + data.index[j] + ")")
+    data = data.transpose()
+    for i in range(data.shape[0] - 1):
+        for j in range(i + 1, data.shape[0]):
+            names.append(data.index[i] + " → " + data.index[j])
 
     deltas = {'Data': names}
 
@@ -118,10 +119,14 @@ def compute_marker_deltas(title, data):
         for i in range(len(data[marker]) - 1):
             for j in range(i + 1, len(data[marker])):
                 # delta = abs(data[marker][i] - data[marker][j])
-                delta = abs(data[marker][i]) / abs(data[marker][j])
+                delta = round(((data[marker][j] / data[marker][i]) - 1) * 100, 2)
                 deltas[marker].append(delta)
 
     deltas_dataframe = pd.DataFrame(deltas)
     deltas_dataframe.set_index('Data', inplace=True)
     deltas_dataframe = deltas_dataframe
-    save_dataframe("deltas_" + title, deltas_dataframe.transpose())
+    save_dataframe(title + "_deltas", deltas_dataframe.transpose())
+
+
+
+

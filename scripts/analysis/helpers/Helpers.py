@@ -125,3 +125,11 @@ def most_common_markers_list(title, datalist, names, top_x=15):
 
     return most_common_markers, valuelists
 
+
+def preprocess_markervalues_for_ttest(mc_marker, data):
+
+    markers = {marker: [] for marker in mc_marker}
+
+    for doc in data:
+        for markervalue, marker in zip(doc, markers):
+            markers[marker].append(markervalue)
