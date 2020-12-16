@@ -1,4 +1,4 @@
 names,Min,Mean,Mode,Max
-Dialog,1,2.7820576458519475,1,39
-Monolog,1,2.6998644986449865,1,31
-Cooperative-Monolog,1,2.6358098494258244,1,31
+Dialog,1,2.78,1,39
+Monolog,1,2.7,1,31
+Cooperative-Monolog,1,2.64,1,31

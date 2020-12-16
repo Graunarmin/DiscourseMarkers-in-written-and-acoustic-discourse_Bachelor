@@ -1,4 +1,4 @@
 names,Min,Mean,Mode,Max
-Spotify,1,2.6667252283907237,1,39
-NYTimes,1,2.1351947344810513,1,204
-Gigaword,1,2.0450513035815594,1,355
+Spotify,1,2.67,1,39
+NYTimes,1,2.14,1,204
+Gigaword,1,2.05,1,355
