@@ -1,12 +1,12 @@
 import helpers.DataFrames
 import helpers.Statistics
 from plotting import CreatePlots as cp
-from datasets import DiscourseTypeData as cd
+from datasets import CorpusData as cd
 from helpers import Helpers as hp
 
 
 def main():
-    d_data = cd.DiscourseTypeData(
+    d_data = cd.CorpusData(
         "../../bigData/listenability-tools/discourse-types/scores/spotify-scores_short.csv",
         "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv",
         "../../bigData/listenability-tools/discourse-types/scores/nytimes-scores_short.csv",
@@ -18,7 +18,8 @@ def main():
         ny_scores_opt=
         "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/nytimes-sentence-scores.json",
         gig_scores_opt=
-        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/gigaword-sentence-scores.json")
+        "../../bigData/listenability-tools/discourse-types/scores/sentence-scores/gigaword-sentence-scores.json"
+    )
 
     '''
     01: Prozentualer Anteil der DM an den Texten, über alle Texte

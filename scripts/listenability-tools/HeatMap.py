@@ -1,6 +1,8 @@
 import pandas as pd
 
-
+"""
+Get Data for the Heatmaps in Chapter 5
+"""
 def read_data():
 
     dialog = pd.read_csv("../../bigData/listenability-tools/Spotify/conversation-types/scores/dialog-scores_short.csv")

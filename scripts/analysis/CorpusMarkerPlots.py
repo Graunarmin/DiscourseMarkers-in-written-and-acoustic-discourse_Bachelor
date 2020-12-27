@@ -1,6 +1,6 @@
 import helpers.DataFrames
 import helpers.Statistics
-from datasets import DiscourseTypeData as cd
+from datasets import CorpusData as cd
 from classes import MarkerTypes as mt
 from plotting import MarkerTypePlots as mtp
 from helpers import Helpers as hp
@@ -10,7 +10,7 @@ def main():
     markertypes = mt.MarkerTypes(
         "../../data/listenability-tools/main-senses/words_main-sense.json")
 
-    data = cd.DiscourseTypeData(
+    data = cd.CorpusData(
         "../../bigData/listenability-tools/discourse-types/dict/spotify-dict.json",
         "../../bigData/listenability-tools/discourse-types/dict/ted-dict.json",
         "../../bigData/listenability-tools/discourse-types/dict/nytimes-dict.json",
