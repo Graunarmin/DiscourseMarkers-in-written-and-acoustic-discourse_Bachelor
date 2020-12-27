@@ -24,8 +24,8 @@ class DiscourseTypeData:
         # Colors:   [base, darker, lighter]
         self.spotify_color = '#1DB954'
         self.spotify_shades = ['#1DB954', '#0e5c2a', '#8edca9']
-        self.acoustic_color = '#11654C'
-        self.written_color = '#881166'
+        self.acoustic_color = '#22a6b3'
+        self.written_color = '#be2edd'
 
         self.spotify_label = "Spotify"
         self.acoustic_label = "Oral-Acoustic"
