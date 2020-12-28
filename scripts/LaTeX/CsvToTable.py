@@ -1,5 +1,9 @@
 import pandas as pd
 
+"""
+Read in CSV and create the content of a latex-Table from it
+"""
+
 
 def read_data(file, outfile):
     data = pd.read_csv(file, sep=';')

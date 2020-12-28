@@ -15,9 +15,17 @@ def main():
     #            "../../bigData/listenability-tools/discourse-types/scores/ted-scores_short.csv"],
     #           "../../bigData/listenability-tools/discourse-types/scores/acustic-scores_short.csv")
 
-    read_data(["../../bigData/listenability-tools/discourse-types/scores/nytimes-scores_short.csv",
-               "../../bigData/listenability-tools/discourse-types/scores/gigaword-scores_short.csv"],
-              "../../bigData/listenability-tools/discourse-types/scores/written-scores_short.csv")
+    # read_data(["../../bigData/listenability-tools/discourse-types/scores/nytimes-scores_short.csv",
+    #            "../../bigData/listenability-tools/discourse-types/scores/gigaword-scores_short.csv"],
+    #           "../../bigData/listenability-tools/discourse-types/scores/written-scores_short.csv")
+
+    # read_data(["../../bigData/listenability-tools/discourse-types/scores/marker-scores/spotify-marker.csv",
+    #            "../../bigData/listenability-tools/discourse-types/scores/marker-scores/ted-marker.csv"],
+    #           "../../bigData/listenability-tools/discourse-types/scores/marker-scores/acoustic-marker.csv")
+
+    read_data(["../../bigData/listenability-tools/discourse-types/scores/marker-scores/nytimes-marker.csv",
+               "../../bigData/listenability-tools/discourse-types/scores/marker-scores/gigaword-marker.csv"],
+              "../../bigData/listenability-tools/discourse-types/scores/marker-scores/written-marker.csv")
 
 
 if __name__ == '__main__':

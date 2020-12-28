@@ -65,6 +65,30 @@ def draw_simple_barchart(figuretitle, titles, data, colors):
     plt.show()
 
 
+def draw_one_row_simple_barchart(figuretitle, titles, data, colors):
+    """
+    Creates subplots, each a simple barchart for one set of y values over x values in the specified color
+    :param figuretitle:
+    :param titles: list of titles
+    :param data: list of [[xvalues1, yvalues1],[xvalues2, yvalues2], ...] for each dataset
+    :param colors: list of colors
+    :return:
+    """
+    plt.style.use('fivethirtyeight')
+
+    fig, axes = plt.subplots(ncols=2, nrows=1, sharex=True, sharey=True)
+    axes[0][0].bar(data[0][0], data[0][1], color=colors[0])
+    axes[0][0].set_title(titles[0])
+    axes[0][0].set_ylabel("% of all Sentences")
+
+    axes[0][1].bar(data[1][0], data[1][1], color=colors[1])
+    axes[0][1].set_title(titles[1])
+
+    fig.suptitle(figuretitle)
+    plt.tight_layout()
+    plt.show()
+
+
 def draw_barchart(title, x, y_1, y_1_label,
                   y_2=None, y_2_label=None, y_3=None, y_3_label=None, y_4=None, y_4_label=None,
                   y_5=None, y_5_label=None,
