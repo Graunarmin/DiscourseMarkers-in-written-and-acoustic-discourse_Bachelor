@@ -76,7 +76,7 @@ def draw_one_row_simple_barchart(figuretitle, titles, data, colors):
     """
     plt.style.use('fivethirtyeight')
 
-    fig, axes = plt.subplots(ncols=2, nrows=1, sharex=True, sharey=True)
+    fig, axes = plt.subplots(ncols=2, nrows=1, sharex=True, sharey=True, squeeze=False)
     axes[0][0].bar(data[0][0], data[0][1], color=colors[0])
     axes[0][0].set_title(titles[0])
     axes[0][0].set_ylabel("% of all Sentences")

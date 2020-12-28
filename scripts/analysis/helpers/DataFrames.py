@@ -1,19 +1,19 @@
 import pandas as pd
-from tabulate import tabulate
+#from tabulate import tabulate
 
 
 def save_dataframe(title, data):
     data.to_csv("../../data/listenability-tools/tables/" + title + ".csv")
 
 
-def print_dataframe(title, data):
-    pd.set_option('display.max_columns', 25)
-    pd.options.display.width = None
-    pdtabulate = lambda df: tabulate(df, headers='keys', tablefmt='psql')
-
-    print("\n" * 1)
-    print(title)
-    print(pdtabulate(data))
+# def print_dataframe(title, data):
+#     pd.set_option('display.max_columns', 25)
+#     pd.options.display.width = None
+#     pdtabulate = lambda df: tabulate(df, headers='keys', tablefmt='psql')
+#
+#     print("\n" * 1)
+#     print(title)
+#     print(pdtabulate(data))
 
 
 def add_value_to_dataframe(names, frame_dict, columns, label, data):

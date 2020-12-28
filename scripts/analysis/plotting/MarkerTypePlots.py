@@ -23,7 +23,7 @@ def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2):
 
     plt.style.use('fivethirtyeight')
     width = 0.5
-    fig, axes = plt.subplots(ncols=2, nrows=rows, sharex=True, sharey=True)
+    fig, axes = plt.subplots(ncols=2, nrows=rows, sharex=True, sharey=True, squeeze=False)
 
     row, column = 0, 0
     x_indexes = np.arange(len(xlabels))
