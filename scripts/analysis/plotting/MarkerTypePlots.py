@@ -10,7 +10,7 @@ def increase_row_column(row, column, max_columns):
     return row, column
 
 
-def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2):
+def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2, rotated=True):
     """
     :param rows:
     :param figuretitle: Title of the whole figure
@@ -33,7 +33,7 @@ def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2):
                                   width=width, color=colors[textcategory])
             axes[row][column].set_title(titles[markertype])
             for tick in axes[row][column].get_xticklabels():
-                if rows != 1:
+                if rotated:
                     tick.set_rotation(15)
                 tick.set_size(12)
 

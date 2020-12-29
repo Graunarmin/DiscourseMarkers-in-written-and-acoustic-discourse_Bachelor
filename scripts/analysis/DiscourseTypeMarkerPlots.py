@@ -46,103 +46,103 @@ def main():
                                                    [acoustic['expansion'], written['expansion']],
                                                    [data.acoustic_label, data.written_label])
 
-    # '''
-    # 01: Total Occurence per Markertype
-    # '''
-    # total_docs = (data.acoustic.get_total_docs() + data.written.get_total_docs())
-    #
-    # markertype_total = [(data.acoustic.get_total_for_markerclass('Temporal') +
-    #                      data.written.get_total_for_markerclass('Temporal')) / total_docs,
-    #                     (data.acoustic.get_total_for_markerclass('Contingency') +
-    #                      data.written.get_total_for_markerclass('Contingency')) / total_docs,
-    #                     (data.acoustic.get_total_for_markerclass('Comparison') +
-    #                      data.written.get_total_for_markerclass('Comparison')) / total_docs,
-    #                     (data.acoustic.get_total_for_markerclass('Expansion') +
-    #                      data.written.get_total_for_markerclass('Expansion')) / total_docs,
-    #                     ]
-    #
-    # mtp.draw_barchart(markertype_total, "Average Occurrences of Markertypes per Text in all Data",
-    #                   ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                   [markertypes.temporal_color, markertypes.contingency_color,
-    #                    markertypes.comparison_color, markertypes.expansion_color],
-    #                   "Average Occurrences per Text")
-    #
-    # helpers.DataFrames.markertype_dataframe("01_mt-average-all-data_dt",
-    #                                         ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                                         markertype_total,
-    #                                         ["Discourse Type Data"])
-    #
-    # '''
-    # 02: Durchschnittliches Vorkommen jedes Markertypes pro Text
-    # '''
-    # markertype_per_text_average_text = [[data.acoustic.get_average_for_markerclass('Temporal', average='doc'),
-    #                                      data.written.get_average_for_markerclass('Temporal', average='doc')],
-    #                                     [data.acoustic.get_average_for_markerclass('Contingency', average='doc'),
-    #                                      data.written.get_average_for_markerclass('Contingency', average='doc')],
-    #                                     [data.acoustic.get_average_for_markerclass('Comparison', average='doc'),
-    #                                      data.written.get_average_for_markerclass('Comparison', average='doc')],
-    #                                     [data.acoustic.get_average_for_markerclass('Expansion', average='doc'),
-    #                                      data.written.get_average_for_markerclass('Expansion', average='doc')],
-    #                                     ]
-    #
-    # mtp.draw_barchart_subplots("Average Occurence of Markertypes per Text",
-    #                            ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                            [data.acoustic_label, data.written_label],
-    #                            markertype_per_text_average_text,
-    #                            [data.acoustic_color, data.written_color])
-    #
-    # helpers.DataFrames.markertype_dataframe("02_markertypes_average-per-text_dt",
-    #                                         ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                                         markertype_per_text_average_text,
-    #                                         [data.acoustic_label, data.written_label])
-    #
-    # '''
-    # 03: Vorkommen jedes Markertypes pro Datensatz in %
-    # '''
-    # markertype_per_text_perc = [[data.acoustic.get_percentage_for_markerclass('Temporal'),
-    #                              data.written.get_percentage_for_markerclass('Temporal')],
-    #                             [data.acoustic.get_percentage_for_markerclass('Contingency'),
-    #                              data.written.get_percentage_for_markerclass('Contingency')],
-    #                             [data.acoustic.get_percentage_for_markerclass('Comparison'),
-    #                              data.written.get_percentage_for_markerclass('Comparison')],
-    #                             [data.acoustic.get_percentage_for_markerclass('Expansion'),
-    #                              data.written.get_percentage_for_markerclass('Expansion')],
-    #                             ]
-    #
-    # mtp.draw_barchart_subplots("Share of Markertypes in Wordcount (%)",
-    #                            ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                            [data.acoustic_label, data.written_label],
-    #                            markertype_per_text_perc,
-    #                            [data.acoustic_color, data.written_color])
-    #
-    # helpers.DataFrames.markertype_dataframe("03_markertypes_percentage_dt",
-    #                                         ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                                         markertype_per_text_perc,
-    #                                         [data.acoustic_label, data.written_label])
-    #
-    # '''
-    # 04: Vorkommen jedes Markertypes pro Datensatz in %
-    # '''
-    # markertype_per_text_perc_m = [[data.acoustic.get_percentage_for_markerclass('Temporal', perc='marker'),
-    #                                data.written.get_percentage_for_markerclass('Temporal', perc='marker')],
-    #                               [data.acoustic.get_percentage_for_markerclass('Contingency', perc='marker'),
-    #                                data.written.get_percentage_for_markerclass('Contingency', perc='marker')],
-    #                               [data.acoustic.get_percentage_for_markerclass('Comparison', perc='marker'),
-    #                                data.written.get_percentage_for_markerclass('Comparison', perc='marker')],
-    #                               [data.acoustic.get_percentage_for_markerclass('Expansion', perc='marker'),
-    #                                data.written.get_percentage_for_markerclass('Expansion', perc='marker')]
-    #                               ]
-    #
-    # mtp.draw_barchart_subplots("Share of Markertypes in all Markers of a Texttype (%)",
-    #                            ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                            [data.acoustic_label, data.written_label],
-    #                            markertype_per_text_perc_m,
-    #                            [data.acoustic_color, data.written_color])
-    #
-    # helpers.DataFrames.markertype_dataframe("04_markertypes_percentage-marker_dt",
-    #                                         ["Temporal", "Contingency", "Comparison", "Expansion"],
-    #                                         markertype_per_text_perc_m,
-    #                                         [data.acoustic_label, data.written_label])
+    '''
+    01: Total Occurence per Markertype
+    '''
+    total_docs = (data.acoustic.get_total_docs() + data.written.get_total_docs())
+
+    markertype_total = [(data.acoustic.get_total_for_markerclass('Temporal') +
+                         data.written.get_total_for_markerclass('Temporal')) / total_docs,
+                        (data.acoustic.get_total_for_markerclass('Contingency') +
+                         data.written.get_total_for_markerclass('Contingency')) / total_docs,
+                        (data.acoustic.get_total_for_markerclass('Comparison') +
+                         data.written.get_total_for_markerclass('Comparison')) / total_docs,
+                        (data.acoustic.get_total_for_markerclass('Expansion') +
+                         data.written.get_total_for_markerclass('Expansion')) / total_docs,
+                        ]
+
+    mtp.draw_barchart(markertype_total, "Average Occurrences of Markertypes per Text in all Data",
+                      ["Temporal", "Contingency", "Comparison", "Expansion"],
+                      [markertypes.temporal_color, markertypes.contingency_color,
+                       markertypes.comparison_color, markertypes.expansion_color],
+                      "Average Occurrences per Text")
+
+    helpers.DataFrames.markertype_dataframe("01_mt-average-all-data_dt",
+                                            ["Temporal", "Contingency", "Comparison", "Expansion"],
+                                            markertype_total,
+                                            ["Discourse Type Data"])
+
+    '''
+    02: Durchschnittliches Vorkommen jedes Markertypes pro Text
+    '''
+    markertype_per_text_average_text = [[data.acoustic.get_average_for_markerclass('Temporal', average='doc'),
+                                         data.written.get_average_for_markerclass('Temporal', average='doc')],
+                                        [data.acoustic.get_average_for_markerclass('Contingency', average='doc'),
+                                         data.written.get_average_for_markerclass('Contingency', average='doc')],
+                                        [data.acoustic.get_average_for_markerclass('Comparison', average='doc'),
+                                         data.written.get_average_for_markerclass('Comparison', average='doc')],
+                                        [data.acoustic.get_average_for_markerclass('Expansion', average='doc'),
+                                         data.written.get_average_for_markerclass('Expansion', average='doc')],
+                                        ]
+
+    mtp.draw_barchart_subplots("Average Occurence of Markertypes per Text",
+                               ["Temporal", "Contingency", "Comparison", "Expansion"],
+                               [data.acoustic_label, data.written_label],
+                               markertype_per_text_average_text,
+                               [data.acoustic_color, data.written_color], rotated=False)
+
+    helpers.DataFrames.markertype_dataframe("02_markertypes_average-per-text_dt",
+                                            ["Temporal", "Contingency", "Comparison", "Expansion"],
+                                            markertype_per_text_average_text,
+                                            [data.acoustic_label, data.written_label])
+
+    '''
+    03: Vorkommen jedes Markertypes pro Datensatz in %
+    '''
+    markertype_per_text_perc = [[data.acoustic.get_percentage_for_markerclass('Temporal'),
+                                 data.written.get_percentage_for_markerclass('Temporal')],
+                                [data.acoustic.get_percentage_for_markerclass('Contingency'),
+                                 data.written.get_percentage_for_markerclass('Contingency')],
+                                [data.acoustic.get_percentage_for_markerclass('Comparison'),
+                                 data.written.get_percentage_for_markerclass('Comparison')],
+                                [data.acoustic.get_percentage_for_markerclass('Expansion'),
+                                 data.written.get_percentage_for_markerclass('Expansion')],
+                                ]
+
+    mtp.draw_barchart_subplots("Share of Markertypes in Wordcount (%)",
+                               ["Temporal", "Contingency", "Comparison", "Expansion"],
+                               [data.acoustic_label, data.written_label],
+                               markertype_per_text_perc,
+                               [data.acoustic_color, data.written_color], rotated=False)
+
+    helpers.DataFrames.markertype_dataframe("03_markertypes_percentage_dt",
+                                            ["Temporal", "Contingency", "Comparison", "Expansion"],
+                                            markertype_per_text_perc,
+                                            [data.acoustic_label, data.written_label])
+
+    '''
+    04: Vorkommen jedes Markertypes pro Datensatz in %
+    '''
+    markertype_per_text_perc_m = [[data.acoustic.get_percentage_for_markerclass('Temporal', perc='marker'),
+                                   data.written.get_percentage_for_markerclass('Temporal', perc='marker')],
+                                  [data.acoustic.get_percentage_for_markerclass('Contingency', perc='marker'),
+                                   data.written.get_percentage_for_markerclass('Contingency', perc='marker')],
+                                  [data.acoustic.get_percentage_for_markerclass('Comparison', perc='marker'),
+                                   data.written.get_percentage_for_markerclass('Comparison', perc='marker')],
+                                  [data.acoustic.get_percentage_for_markerclass('Expansion', perc='marker'),
+                                   data.written.get_percentage_for_markerclass('Expansion', perc='marker')]
+                                  ]
+
+    mtp.draw_barchart_subplots("Share of Markertypes in all Markers of a Texttype (%)",
+                               ["Temporal", "Contingency", "Comparison", "Expansion"],
+                               [data.acoustic_label, data.written_label],
+                               markertype_per_text_perc_m,
+                               [data.acoustic_color, data.written_color], rotated=False)
+
+    helpers.DataFrames.markertype_dataframe("04_markertypes_percentage-marker_dt",
+                                            ["Temporal", "Contingency", "Comparison", "Expansion"],
+                                            markertype_per_text_perc_m,
+                                            [data.acoustic_label, data.written_label])
 
     '''
     05: Vorkommen jedes Markertypes pro Datensatz in %
@@ -162,7 +162,7 @@ def main():
                                ["Temporal", "Contingency", "Comparison", "Expansion"],
                                markertype_per_text_perc_m,
                                [markertypes.temporal_color, markertypes.contingency_color,
-                                markertypes.comparison_color, markertypes.expansion_color], rows=1)
+                                markertypes.comparison_color, markertypes.expansion_color], rows=1, rotated=False)
 
     helpers.DataFrames.markertype_dataframe("05_markertypes_percentage-marker_dt",
                                             [data.acoustic_label, data.written_label],
