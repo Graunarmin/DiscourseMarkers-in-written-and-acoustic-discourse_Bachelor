@@ -29,4 +29,4 @@ class DiscourseTypeData:
 
         self.spotify_label = "Spotify"
         self.acoustic_label = "Oral-Acoustic"
-        self.written_label = "Literat-Written"
+        self.written_label = "Literate-Written"

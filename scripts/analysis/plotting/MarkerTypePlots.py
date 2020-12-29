@@ -33,7 +33,8 @@ def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2):
                                   width=width, color=colors[textcategory])
             axes[row][column].set_title(titles[markertype])
             for tick in axes[row][column].get_xticklabels():
-                tick.set_rotation(15)
+                if rows != 1:
+                    tick.set_rotation(15)
                 tick.set_size(12)
 
         row, column = increase_row_column(row, column, 2)
