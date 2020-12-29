@@ -97,7 +97,7 @@ def effectsize_and_significance(title, data, labels):
                                      "Data": names})
 
     values_dataframe.set_index('Data', inplace=True)
-    values_dataframe.to_csv("../../data/listenability-tools/tables/statistics" + title + ".csv")
+    values_dataframe.to_csv("../../data/listenability-tools/tables/statistics_" + title + ".csv")
 
 
 def compute_marker_deltas(title, data):
