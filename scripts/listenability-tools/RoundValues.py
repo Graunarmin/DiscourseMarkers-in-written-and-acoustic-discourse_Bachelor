@@ -24,7 +24,7 @@ def rounder(x):
 
 
 def main():
-    get_csv_files("../../bigData/listenability-tools/plots/")
+    get_csv_files("../../data/listenability-tools/plots/discourseTypes/")
 
 
 if __name__ == '__main__':

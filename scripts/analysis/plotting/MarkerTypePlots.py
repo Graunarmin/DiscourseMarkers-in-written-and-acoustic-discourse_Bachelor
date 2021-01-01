@@ -12,6 +12,7 @@ def increase_row_column(row, column, max_columns):
 
 def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2, rotated=True):
     """
+    :param rotated:
     :param rows:
     :param figuretitle: Title of the whole figure
     :param titles: the titles for the subplots, i.e. the names of the marker-types
@@ -20,7 +21,7 @@ def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2, r
     :param colors: the color for each text-category
     :return: /
     """
-
+    rotation = 15 if rotated else 0
     plt.style.use('fivethirtyeight')
     width = 0.5
     fig, axes = plt.subplots(ncols=2, nrows=rows, sharex=True, sharey=True, squeeze=False)
@@ -33,8 +34,7 @@ def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2, r
                                   width=width, color=colors[textcategory])
             axes[row][column].set_title(titles[markertype])
             for tick in axes[row][column].get_xticklabels():
-                if rotated:
-                    tick.set_rotation(15)
+                tick.set_rotation(rotation)
                 tick.set_size(12)
 
         row, column = increase_row_column(row, column, 2)
@@ -42,7 +42,7 @@ def draw_barchart_subplots(figuretitle, titles, xlabels, data, colors, rows=2, r
     # in case there is an odd number of plots:
     if len(data) % 2 != 0:
         # move the labels of the last (empty) plot to the one above it, so that the ticks don' show, only the labels
-        axes[row - 1][column].xaxis.set_tick_params(labelbottom=True, rotation=15, labelsize=12, width=0)
+        axes[row - 1][column].xaxis.set_tick_params(labelbottom=True, rotation=rotation, labelsize=12, width=0)
         # and then delete the last (empty) plot
         fig.delaxes(axes[row][column])
 

@@ -44,7 +44,7 @@ def main():
 
     helpers.Statistics.effectsize_and_significance("DM-per-text-percent_Statistics",
                                                    [ecdfd_dm_percents[0], ecdfd_dm_percents[1]],
-                                                   [d_data.acoustic_color, d_data.written_label])
+                                                   [d_data.acoustic_label, d_data.written_label])
 
     '''
     Empirical Distribution Function
