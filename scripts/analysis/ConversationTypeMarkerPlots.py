@@ -27,37 +27,37 @@ def main():
         general=False,
         markertypes=markertypes)
 
-    # '''
-    # T-Test for total values per Document
-    # '''
-    # dialog = data.dialog.get_markerclass_columns()
-    # monolog = data.monolog.get_markerclass_columns()
-    # cmonolog = data.cmonolog.get_markerclass_columns()
-    # speech = data.speech.get_markerclass_columns()
-    #
-    # helpers.Statistics.effectsize_and_significance("temporal-per-document_statistics_conversation-types_ct",
-    #                                                [dialog['temporal'], monolog['temporal'],
-    #                                                 cmonolog['temporal'], speech['temporal']],
-    #                                                [data.dialog_label, data.monolog_label,
-    #                                                 data.cmonolog_label, data.speech_label])
-    #
-    # helpers.Statistics.effectsize_and_significance("contingency-per-document_statistics_conversation-types_ct",
-    #                                                [dialog['contingency'], monolog['contingency'],
-    #                                                 cmonolog['contingency'], speech['contingency']],
-    #                                                [data.dialog_label, data.monolog_label,
-    #                                                 data.cmonolog_label, data.speech_label])
-    #
-    # helpers.Statistics.effectsize_and_significance("comparison-per-document_statistics_conversation-types_ct",
-    #                                                [dialog['comparison'], monolog['comparison'],
-    #                                                 cmonolog['comparison'], speech['comparison']],
-    #                                                [data.dialog_label, data.monolog_label,
-    #                                                 data.cmonolog_label, data.speech_label])
-    #
-    # helpers.Statistics.effectsize_and_significance("expansion-per-document_statistics_conversation-types_ct",
-    #                                                [dialog['expansion'], monolog['expansion'],
-    #                                                 cmonolog['expansion'], speech['expansion']],
-    #                                                [data.dialog_label, data.monolog_label,
-    #                                                 data.cmonolog_label, data.speech_label])
+    '''
+    T-Test for total values per Document
+    '''
+    dialog = data.dialog.get_markerclass_columns()
+    monolog = data.monolog.get_markerclass_columns()
+    cmonolog = data.cmonolog.get_markerclass_columns()
+    speech = data.speech.get_markerclass_columns()
+
+    helpers.Statistics.effectsize_and_significance("temporal-per-document_statistics_conversation-types_ct",
+                                                   [dialog['temporal'], monolog['temporal'],
+                                                    cmonolog['temporal'], speech['temporal']],
+                                                   [data.dialog_label, data.monolog_label,
+                                                    data.cmonolog_label, data.speech_label])
+
+    helpers.Statistics.effectsize_and_significance("contingency-per-document_statistics_conversation-types_ct",
+                                                   [dialog['contingency'], monolog['contingency'],
+                                                    cmonolog['contingency'], speech['contingency']],
+                                                   [data.dialog_label, data.monolog_label,
+                                                    data.cmonolog_label, data.speech_label])
+
+    helpers.Statistics.effectsize_and_significance("comparison-per-document_statistics_conversation-types_ct",
+                                                   [dialog['comparison'], monolog['comparison'],
+                                                    cmonolog['comparison'], speech['comparison']],
+                                                   [data.dialog_label, data.monolog_label,
+                                                    data.cmonolog_label, data.speech_label])
+
+    helpers.Statistics.effectsize_and_significance("expansion-per-document_statistics_conversation-types_ct",
+                                                   [dialog['expansion'], monolog['expansion'],
+                                                    cmonolog['expansion'], speech['expansion']],
+                                                   [data.dialog_label, data.monolog_label,
+                                                    data.cmonolog_label, data.speech_label])
 
     '''
     01: Total Occurence per Markertype

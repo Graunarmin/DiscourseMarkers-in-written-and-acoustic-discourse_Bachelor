@@ -244,8 +244,6 @@ def main():
                             [data.spotify_label, data.ted_label, data.ny_label, data.gig_label],
                             "Share in all Temporal Markers")
 
-
-
     '''Contingency'''
     contingency = [data.spotify.get_most_common_markers(marker_type="Contingency"),
                    data.ted.get_most_common_markers(marker_type="Contingency"),

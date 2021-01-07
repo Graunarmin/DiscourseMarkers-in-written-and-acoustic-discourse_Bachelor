@@ -2,7 +2,7 @@ import json
 import sys
 
 """
-quickly read in the (a bit messy) genres.json and simply make a sorted list 
+quickly read in the (a bit messy) genres.json and create a sorted list 
 of all the genres
 """
 
