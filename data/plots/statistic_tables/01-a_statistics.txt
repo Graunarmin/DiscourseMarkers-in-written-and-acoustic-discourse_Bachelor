@@ -1,0 +1,34 @@
+Oral-Acoustic, Literate-Written & \color{green}\cmark & < 0.001 & 1.636 \\
+\hline
+News, Discussion & \color{red}\xmark & 0.168 & 0.17 \\
+\hline
+News, Science/Education & \color{red}\xmark & 0.969 & -0.004 \\
+\hline
+News, Documentary & \color{green}\cmark & < 0.001 & 0.8640000000000001 \\
+\hline
+News, Presentation & \color{red}\xmark & 0.501 & 0.062 \\
+\hline
+Discussion, Science/Education & \color{red}\xmark & 0.065 & -0.163 \\
+\hline
+Discussion, Documentary & \color{green}\cmark & < 0.001 & 0.6890000000000001 \\
+\hline
+Discussion, Presentation & \color{red}\xmark & 0.178 & -0.085 \\
+\hline
+Science/Education, Documentary & \color{green}\cmark & < 0.001 & 0.7979999999999999 \\
+\hline
+Science/Education, Presentation & \color{red}\xmark & 0.294 & 0.063 \\
+\hline
+Documentary, Presentation & \color{green}\cmark & < 0.001 & -0.667 \\
+\hline
+Dialog, Monolog & \color{green}\cmark & 0.006 & -0.215 \\
+\hline
+Dialog, Cooperative Monolog & \color{green}\cmark & < 0.001 & 0.754 \\
+\hline
+Dialog, Speech & \color{red}\xmark & 0.442 & -0.042 \\
+\hline
+Monolog, Cooperative Monolog & \color{green}\cmark & < 0.001 & 0.992 \\
+\hline
+Monolog, Speech & \color{green}\cmark & 0.008 & 0.15 \\
+\hline
+Cooperative Monolog, Speech & \color{green}\cmark & < 0.001 & -0.6970000000000001 \\
+\hline

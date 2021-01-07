@@ -1,0 +1,31 @@
+Data,< 0.05,P-Value,Effectsize,Statistic
+"Spotify, Literate-Written",yes,< 0.001,0.381,SB
+"Spotify, Literate-Written",yes,< 0.001,-0.337,SM
+"Spotify, Literate-Written",no,0.313,0.006,SE
+"News, Discussion",yes,< 0.001,0.545,SB
+"News, Science/Education",no,0.866,0.019,SB
+"News, Documentary",yes,< 0.001,1.469,SB
+"Discussion, Science/Education",yes,< 0.001,-0.485,SB
+"Discussion, Documentary",yes,< 0.001,1.23,SB
+"Science/Education, Documentary",yes,< 0.001,1.34,SB
+"News, Discussion",yes,< 0.001,-0.684,SM
+"News, Science/Education",no,0.878,0.018,SM
+"News, Documentary",yes,< 0.001,-1.14,SM
+"Discussion, Science/Education",yes,< 0.001,0.672,SM
+"Discussion, Documentary",yes,< 0.001,-0.535,SM
+"Science/Education, Documentary",yes,< 0.001,-1.105,SM
+"News, Discussion",no,0.121,0.198,SE
+"News, Science/Education",no,0.494,-0.079,SE
+"News, Documentary",yes,< 0.001,-0.77,SE
+"Discussion, Science/Education",yes,0.002,-0.273,SE
+"Discussion, Documentary",yes,< 0.001,-1.082,SE
+"Science/Education, Documentary",yes,< 0.001,-0.647,SE
+"Dialog, Monolog",yes,< 0.001,-0.473,SB
+"Dialog, Cooperative Monolog",yes,< 0.001,1.353,SB
+"Monolog, Cooperative Monolog",yes,< 0.001,1.621,SB
+"Dialog, Monolog",yes,< 0.001,0.541,SM
+"Dialog, Cooperative Monolog",yes,< 0.001,-0.754,SM
+"Monolog, Cooperative Monolog",yes,< 0.001,-1.234,SM
+"Dialog, Monolog",no,0.281,-0.085,SE
+"Dialog, Cooperative Monolog",yes,< 0.001,-1.017,SE
+"Monolog, Cooperative Monolog",yes,< 0.001,-0.825,SE

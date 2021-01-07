@@ -1,0 +1,136 @@
+Oral-Acoustic, Literate-Written & \color{red}\xmark & 0.937 & 0.001 & Temporal \\
+\hline
+Oral-Acoustic, Literate-Written & \color{green}\cmark & < 0.001 & 0.322 & Contingency \\
+\hline
+Oral-Acoustic, Literate-Written & \color{green}\cmark & < 0.001 & 0.375 & Comparison \\
+\hline
+Oral-Acoustic, Literate-Written & \color{red}\xmark & 0.432 & -0.009000000000000001 & Expansion \\
+\hline
+News, Discussion & \color{red}\xmark & 0.391 & 0.10400000000000001 & Temporal \\
+\hline
+News, Science/Education & \color{red}\xmark & 0.243 & -0.115 & Temporal \\
+\hline
+News, Documentary & \color{red}\xmark & 0.124 & -0.111 & Temporal \\
+\hline
+News, Presentation & \color{red}\xmark & 0.079 & -0.11800000000000001 & Temporal \\
+\hline
+Discussion, Science/Education & \color{red}\xmark & 0.034 & -0.183 & Temporal \\
+\hline
+Discussion, Documentary & \color{green}\cmark & < 0.001 & -0.18 & Temporal \\
+\hline
+Discussion, Presentation & \color{green}\cmark & < 0.001 & -0.179 & Temporal \\
+\hline
+Science/Education, Documentary & \color{red}\xmark & 0.948 & 0.004 & Temporal \\
+\hline
+Science/Education, Presentation & \color{red}\xmark & 0.853 & -0.011000000000000001 & Temporal \\
+\hline
+Documentary, Presentation & \color{red}\xmark & 0.632 & -0.015 & Temporal \\
+\hline
+News, Discussion & \color{red}\xmark & 0.75 & -0.04 & Contingency \\
+\hline
+News, Science/Education & \color{red}\xmark & 0.516 & -0.073 & Contingency \\
+\hline
+News, Documentary & \color{red}\xmark & 0.465 & 0.08 & Contingency \\
+\hline
+News, Presentation & \color{green}\cmark & < 0.001 & -0.336 & Contingency \\
+\hline
+Discussion, Science/Education & \color{red}\xmark & 0.646 & -0.04 & Contingency \\
+\hline
+Discussion, Documentary & \color{red}\xmark & 0.075 & 0.127 & Contingency \\
+\hline
+Discussion, Presentation & \color{green}\cmark & < 0.001 & -0.316 & Contingency \\
+\hline
+Science/Education, Documentary & \color{red}\xmark & 0.033 & 0.147 & Contingency \\
+\hline
+Science/Education, Presentation & \color{green}\cmark & < 0.001 & -0.261 & Contingency \\
+\hline
+Documentary, Presentation & \color{green}\cmark & < 0.001 & -0.402 & Contingency \\
+\hline
+News, Discussion & \color{green}\cmark & < 0.001 & -0.65 & Comparison \\
+\hline
+News, Science/Education & \color{green}\cmark & < 0.001 & -0.32799999999999996 & Comparison \\
+\hline
+News, Documentary & \color{green}\cmark & < 0.001 & -0.44 & Comparison \\
+\hline
+News, Presentation & \color{red}\xmark & 0.746 & 0.035 & Comparison \\
+\hline
+Discussion, Science/Education & \color{green}\cmark & < 0.001 & 0.426 & Comparison \\
+\hline
+Discussion, Documentary & \color{green}\cmark & < 0.001 & 0.36700000000000005 & Comparison \\
+\hline
+Discussion, Presentation & \color{green}\cmark & < 0.001 & 0.665 & Comparison \\
+\hline
+Science/Education, Documentary & \color{red}\xmark & 0.151 & -0.08900000000000001 & Comparison \\
+\hline
+Science/Education, Presentation & \color{green}\cmark & < 0.001 & 0.354 & Comparison \\
+\hline
+Documentary, Presentation & \color{green}\cmark & < 0.001 & 0.466 & Comparison \\
+\hline
+News, Discussion & \color{green}\cmark & < 0.001 & 0.547 & Expansion \\
+\hline
+News, Science/Education & \color{red}\xmark & 0.181 & 0.149 & Expansion \\
+\hline
+News, Documentary & \color{red}\xmark & 0.408 & 0.09 & Expansion \\
+\hline
+News, Presentation & \color{green}\cmark & 0.001 & 0.446 & Expansion \\
+\hline
+Discussion, Science/Education & \color{green}\cmark & 0.002 & -0.258 & Expansion \\
+\hline
+Discussion, Documentary & \color{green}\cmark & < 0.001 & -0.47100000000000003 & Expansion \\
+\hline
+Discussion, Presentation & \color{green}\cmark & 0.005 & -0.161 & Expansion \\
+\hline
+Science/Education, Documentary & \color{red}\xmark & 0.279 & -0.075 & Expansion \\
+\hline
+Science/Education, Presentation & \color{red}\xmark & 0.018 & 0.188 & Expansion \\
+\hline
+Documentary, Presentation & \color{green}\cmark & < 0.001 & 0.363 & Expansion \\
+\hline
+Dialog, Monolog & \color{red}\xmark & 0.646 & -0.036000000000000004 & Temporal \\
+\hline
+Dialog, Cooperative-Monolog & \color{red}\xmark & 0.051 & -0.111 & Temporal \\
+\hline
+Dialog, Speech & \color{red}\xmark & 0.04 & -0.111 & Temporal \\
+\hline
+Monolog, Cooperative-Monolog & \color{red}\xmark & 0.036 & -0.096 & Temporal \\
+\hline
+Monolog, Speech & \color{red}\xmark & 0.029 & -0.098 & Temporal \\
+\hline
+Cooperative-Monolog, Speech & \color{red}\xmark & 0.796 & -0.008 & Temporal \\
+\hline
+Dialog, Monolog & \color{red}\xmark & 0.296 & -0.081 & Contingency \\
+\hline
+Dialog, Cooperative-Monolog & \color{red}\xmark & 0.143 & 0.08900000000000001 & Contingency \\
+\hline
+Dialog, Speech & \color{green}\cmark & < 0.001 & -0.33799999999999997 & Contingency \\
+\hline
+Monolog, Cooperative-Monolog & \color{green}\cmark & 0.016 & 0.16 & Contingency \\
+\hline
+Monolog, Speech & \color{green}\cmark & < 0.001 & -0.253 & Contingency \\
+\hline
+Cooperative-Monolog, Speech & \color{green}\cmark & < 0.001 & -0.40299999999999997 & Contingency \\
+\hline
+Dialog, Monolog & \color{green}\cmark & < 0.001 & 0.502 & Comparison \\
+\hline
+Dialog, Cooperative-Monolog & \color{green}\cmark & < 0.001 & 0.309 & Comparison \\
+\hline
+Dialog, Speech & \color{green}\cmark & < 0.001 & 0.621 & Comparison \\
+\hline
+Monolog, Cooperative-Monolog & \color{green}\cmark & < 0.001 & -0.268 & Comparison \\
+\hline
+Monolog, Speech & \color{green}\cmark & 0.001 & 0.221 & Comparison \\
+\hline
+Cooperative-Monolog, Speech & \color{green}\cmark & < 0.001 & 0.465 & Comparison \\
+\hline
+Dialog, Monolog & \color{green}\cmark & < 0.001 & -0.281 & Expansion \\
+\hline
+Dialog, Cooperative-Monolog & \color{green}\cmark & < 0.001 & -0.401 & Expansion \\
+\hline
+Dialog, Speech & \color{red}\xmark & 0.409 & -0.047 & Expansion \\
+\hline
+Monolog, Cooperative-Monolog & \color{red}\xmark & 0.823 & -0.015 & Expansion \\
+\hline
+Monolog, Speech & \color{green}\cmark & < 0.001 & 0.258 & Expansion \\
+\hline
+Cooperative-Monolog, Speech & \color{green}\cmark & < 0.001 & 0.366 & Expansion \\
+\hline

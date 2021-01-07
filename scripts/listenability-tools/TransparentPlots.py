@@ -30,7 +30,7 @@ def transparent(myimage):
 
 
 def main():
-    get_png_files("../../data/listenability-tools/plots/discourseTypes/")
+    get_png_files("../../data/listenability-tools/plots/conversationTypes/markertypes/")
 
 
 if __name__ == '__main__':

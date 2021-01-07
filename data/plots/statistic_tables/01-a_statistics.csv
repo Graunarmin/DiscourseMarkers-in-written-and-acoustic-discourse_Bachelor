@@ -1,0 +1,18 @@
+Data,< 0.05,P-Value,Effectsize
+"Oral-Acoustic, Literate-Written",yes,< 0.001,1.636
+"News, Discussion",no,0.168,0.17
+"News, Science/Education",no,0.969,-0.004
+"News, Documentary",yes,< 0.001,0.864
+"News, Presentation",no,0.501,0.062
+"Discussion, Science/Education",no,0.065,-0.163
+"Discussion, Documentary",yes,< 0.001,0.689
+"Discussion, Presentation",no,0.178,-0.085
+"Science/Education, Documentary",yes,< 0.001,0.798
+"Science/Education, Presentation",no,0.294,0.063
+"Documentary, Presentation",yes,< 0.001,-0.667
+"Dialog, Monolog",yes,0.006,-0.215
+"Dialog, Cooperative Monolog",yes,< 0.001,0.754
+"Dialog, Speech",no,0.442,-0.042
+"Monolog, Cooperative Monolog",yes,< 0.001,0.992
+"Monolog, Speech",yes,0.008,0.15
+"Cooperative Monolog, Speech",yes,< 0.001,-0.697

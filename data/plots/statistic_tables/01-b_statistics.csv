@@ -1,0 +1,11 @@
+Data,< 0.05,P-Value,Effectsize
+"Spotify, Literate-Written",yes,< 0.001,0.347
+"News, Discussion",no,0.051,-0.018
+"News, Science/Education",no,0.117,0.015
+"News, Documentary",yes,< 0.001,0.047
+"Discussion, Science/Education",yes,< 0.001,0.033
+"Discussion, Documentary",yes,< 0.001,0.064
+"Science/Education, Documentary",yes,< 0.001,0.032
+"Dialog, Monolog",yes,< 0.001,0.036
+"Dialog, Cooperative Monolog",yes,< 0.001,0.066
+"Monolog, Cooperative Monolog",yes,< 0.001,0.03

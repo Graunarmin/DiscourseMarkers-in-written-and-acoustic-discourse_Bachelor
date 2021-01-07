@@ -1,0 +1,102 @@
+Oral-Acoustic, Literate-Written & \color{green}\cmark & < 0.001 & 0.11199999999999999 & DB \\
+\hline
+Oral-Acoustic, Literate-Written & \color{green}\cmark & < 0.001 & -0.13699999999999998 & DM \\
+\hline
+Oral-Acoustic, Literate-Written & \color{green}\cmark & < 0.001 & 0.057999999999999996 & DE \\
+\hline
+News, Discussion & \color{red}\xmark & 0.213 & -0.152 & DB \\
+\hline
+News, Science/Education & \color{red}\xmark & 0.213 & 0.146 & DB \\
+\hline
+News, Documentary & \color{red}\xmark & 0.033 & 0.217 & DB \\
+\hline
+News, Presentation & \color{red}\xmark & 0.274 & -0.092 & DB \\
+\hline
+Discussion, Science/Education & \color{green}\cmark & < 0.001 & 0.297 & DB \\
+\hline
+Discussion, Documentary & \color{green}\cmark & < 0.001 & 0.361 & DB \\
+\hline
+Discussion, Presentation & \color{red}\xmark & 0.643 & 0.0279 & DB \\
+\hline
+Science/Education, Documentary & \color{red}\xmark & 0.214 & 0.075 & DB \\
+\hline
+Science/Education, Presentation & \color{green}\cmark & < 0.001 & -0.207 & DB \\
+\hline
+Documentary, Presentation & \color{green}\cmark & < 0.001 & -0.262 & DB \\
+\hline
+News, Discussion & \color{red}\xmark & 0.499 & -0.085 & DM \\
+\hline
+News, Science/Education & \color{red}\xmark & 0.099 & 0.20199999999999999 & DM \\
+\hline
+News, Documentary & \color{red}\xmark & 0.263 & 0.131 & DM \\
+\hline
+News, Presentation & \color{red}\xmark & 0.404 & 0.08 & DM \\
+\hline
+Discussion, Science/Education & \color{green}\cmark & < 0.001 & 0.316 & DM \\
+\hline
+Discussion, Documentary & \color{green}\cmark & < 0.001 & 0.247 & DM \\
+\hline
+Discussion, Presentation & \color{green}\cmark & 0.008 & 0.163 & DM \\
+\hline
+Science/Education, Documentary & \color{red}\xmark & 0.168 & -0.091 & DM \\
+\hline
+Science/Education, Presentation & \color{red}\xmark & 0.078 & -0.096 & DM \\
+\hline
+Documentary, Presentation & \color{red}\xmark & 0.371 & -0.027000000000000003 & DM \\
+\hline
+News, Discussion & \color{red}\xmark & 0.085 & 0.23 & DE \\
+\hline
+News, Science/Education & \color{green}\cmark & 0.007 & -0.34 & DE \\
+\hline
+News, Documentary & \color{green}\cmark & 0.008 & -0.33 & DE \\
+\hline
+News, Presentation & \color{red}\xmark & 0.859 & -0.018000000000000002 & DE \\
+\hline
+Discussion, Science/Education & \color{green}\cmark & < 0.001 & -0.7120000000000001 & DE \\
+\hline
+Discussion, Documentary & \color{green}\cmark & < 0.001 & -0.753 & DE \\
+\hline
+Discussion, Presentation & \color{green}\cmark & < 0.001 & -0.251 & DE \\
+\hline
+Science/Education, Documentary & \color{red}\xmark & 0.563 & 0.039 & DE \\
+\hline
+Science/Education, Presentation & \color{green}\cmark & < 0.001 & 0.317 & DE \\
+\hline
+Documentary, Presentation & \color{green}\cmark & < 0.001 & 0.306 & DE \\
+\hline
+Dialog, Monolog & \color{green}\cmark & 0.006 & 0.218 & DB \\
+\hline
+Dialog, Cooperative Monolog & \color{green}\cmark & < 0.001 & 0.344 & DB \\
+\hline
+Dialog, Speech & \color{red}\xmark & 0.96 & -0.003 & DB \\
+\hline
+Monolog, Cooperative Monolog & \color{red}\xmark & 0.069 & 0.111 & DB \\
+\hline
+Monolog, Speech & \color{green}\cmark & 0.001 & -0.174 & DB \\
+\hline
+Cooperative Monolog, Speech & \color{green}\cmark & < 0.001 & -0.27 & DB \\
+\hline
+Dialog, Monolog & \color{green}\cmark & < 0.001 & 0.303 & DM \\
+\hline
+Dialog, Cooperative Monolog & \color{green}\cmark & 0.003 & 0.192 & DM \\
+\hline
+Dialog, Speech & \color{green}\cmark & 0.016 & 0.129 & DM \\
+\hline
+Monolog, Cooperative Monolog & \color{red}\xmark & 0.03 & -0.142 & DM \\
+\hline
+Monolog, Speech & \color{red}\xmark & 0.017 & -0.13 & DM \\
+\hline
+Cooperative Monolog, Speech & \color{red}\xmark & 0.501 & -0.021 & DM \\
+\hline
+Dialog, Monolog & \color{green}\cmark & < 0.001 & -0.562 & DE \\
+\hline
+Dialog, Cooperative Monolog & \color{green}\cmark & < 0.001 & -0.584 & DE \\
+\hline
+Dialog, Speech & \color{green}\cmark & 0.002 & -0.165 & DE \\
+\hline
+Monolog, Cooperative Monolog & \color{red}\xmark & 0.332 & 0.064 & DE \\
+\hline
+Monolog, Speech & \color{green}\cmark & < 0.001 & 0.327 & DE \\
+\hline
+Cooperative Monolog, Speech & \color{green}\cmark & < 0.001 & 0.306 & DE \\
+\hline

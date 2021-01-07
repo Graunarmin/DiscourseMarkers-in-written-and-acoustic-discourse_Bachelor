@@ -1,0 +1,69 @@
+Data,< 0.05,P-Value,Effectsize,Statistic
+"Oral-Acoustic, Literate-Written",no,0.937,0.001,Temporal
+"Oral-Acoustic, Literate-Written",yes,< 0.001,0.322,Contingency
+"Oral-Acoustic, Literate-Written",yes,< 0.001,0.375,Comparison
+"Oral-Acoustic, Literate-Written",no,0.432,-0.009,Expansion
+"News, Discussion",no,0.391,0.104,Temporal
+"News, Science/Education",no,0.243,-0.115,Temporal
+"News, Documentary",no,0.124,-0.111,Temporal
+"News, Presentation",no,0.079,-0.118,Temporal
+"Discussion, Science/Education",no,0.034,-0.183,Temporal
+"Discussion, Documentary",yes,< 0.001,-0.18,Temporal
+"Discussion, Presentation",yes,< 0.001,-0.179,Temporal
+"Science/Education, Documentary",no,0.948,0.004,Temporal
+"Science/Education, Presentation",no,0.853,-0.011,Temporal
+"Documentary, Presentation",no,0.632,-0.015,Temporal
+"News, Discussion",no,0.75,-0.04,Contingency
+"News, Science/Education",no,0.516,-0.073,Contingency
+"News, Documentary",no,0.465,0.08,Contingency
+"News, Presentation",yes,< 0.001,-0.336,Contingency
+"Discussion, Science/Education",no,0.646,-0.04,Contingency
+"Discussion, Documentary",no,0.075,0.127,Contingency
+"Discussion, Presentation",yes,< 0.001,-0.316,Contingency
+"Science/Education, Documentary",no,0.033,0.147,Contingency
+"Science/Education, Presentation",yes,< 0.001,-0.261,Contingency
+"Documentary, Presentation",yes,< 0.001,-0.402,Contingency
+"News, Discussion",yes,< 0.001,-0.650,Comparison
+"News, Science/Education",yes,< 0.001,-0.328,Comparison
+"News, Documentary",yes,< 0.001,-0.44,Comparison
+"News, Presentation",no,0.746,0.035,Comparison
+"Discussion, Science/Education",yes,< 0.001,0.426,Comparison
+"Discussion, Documentary",yes,< 0.001,0.367,Comparison
+"Discussion, Presentation",yes,< 0.001,0.665,Comparison
+"Science/Education, Documentary",no,0.151,-0.089,Comparison
+"Science/Education, Presentation",yes,< 0.001,0.354,Comparison
+"Documentary, Presentation",yes,< 0.001,0.466,Comparison
+"News, Discussion",yes,< 0.001,0.547,Expansion
+"News, Science/Education",no,0.181,0.149,Expansion
+"News, Documentary",no,0.408,0.09,Expansion
+"News, Presentation",yes,0.001,0.446,Expansion
+"Discussion, Science/Education",yes,0.002,-0.258,Expansion
+"Discussion, Documentary",yes,< 0.001,-0.471,Expansion
+"Discussion, Presentation",yes,0.005,-0.161,Expansion
+"Science/Education, Documentary",no,0.279,-0.075,Expansion
+"Science/Education, Presentation",no,0.018,0.188,Expansion
+"Documentary, Presentation",yes,< 0.001,0.363,Expansion
+"Dialog, Monolog",no,0.646,-0.036,Temporal
+"Dialog, Cooperative-Monolog",no,0.051,-0.111,Temporal
+"Dialog, Speech",no,0.04,-0.111,Temporal
+"Monolog, Cooperative-Monolog",no,0.036,-0.096,Temporal
+"Monolog, Speech",no,0.029,-0.098,Temporal
+"Cooperative-Monolog, Speech",no,0.796,-0.008,Temporal
+"Dialog, Monolog",no,0.296,-0.081,Contingency
+"Dialog, Cooperative-Monolog",no,0.143,0.089,Contingency
+"Dialog, Speech",yes,< 0.001,-0.338,Contingency
+"Monolog, Cooperative-Monolog",yes,0.016,0.16,Contingency
+"Monolog, Speech",yes,< 0.001,-0.253,Contingency
+"Cooperative-Monolog, Speech",yes,< 0.001,-0.403,Contingency
+"Dialog, Monolog",yes,< 0.001,0.502,Comparison
+"Dialog, Cooperative-Monolog",yes,< 0.001,0.309,Comparison
+"Dialog, Speech",yes,< 0.001,0.621,Comparison
+"Monolog, Cooperative-Monolog",yes,< 0.001,-0.268,Comparison
+"Monolog, Speech",yes,0.001,0.221,Comparison
+"Cooperative-Monolog, Speech",yes,< 0.001,0.465,Comparison
+"Dialog, Monolog",yes,< 0.001,-0.281,Expansion
+"Dialog, Cooperative-Monolog",yes,< 0.001,-0.401,Expansion
+"Dialog, Speech",no,0.409,-0.047,Expansion
+"Monolog, Cooperative-Monolog",no,0.823,-0.015,Expansion
+"Monolog, Speech",yes,< 0.001,0.258,Expansion
+"Cooperative-Monolog, Speech",yes,< 0.001,0.366,Expansion
