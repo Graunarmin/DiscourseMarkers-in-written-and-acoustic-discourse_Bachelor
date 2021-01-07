@@ -1,11 +1,11 @@
 import pandas as pd
 
 """
-Read in CSV and create the content of a latex-Table from it
+Read in CSV and create the content of a LaTeX-Table from it
 """
 
 
-def int_data(file, outfile):
+def convert_int_data(file, outfile):
     data = pd.read_csv(file, sep=';')
 
     table = ""
@@ -42,7 +42,7 @@ def is_int(value):
         return False
 
 
-def read_marker_data(file, outfile):
+def convert_marker_data(file, outfile):
     data = pd.read_csv(file, sep=';')
 
     table = ""
@@ -101,29 +101,29 @@ def convert_statistics_data(file, outfile):
 
 
 def main():
-    # int_data("../../data/RadioTalk/radiotalk_relevant-shows.csv",
+    # convert_int_data("../../data/RadioTalk/radiotalk_relevant-shows.csv",
     #           "../../data/RadioTalk/radiotalk_relevant-shows_latex.txt")
 
-    # int_data("../../data/Spotify/relevant_shows/spotify_relevat-shows.csv",
+    # convert_int_data("../../data/Spotify/relevant_shows/spotify_relevat-shows.csv",
     #           "../../data/Spotify/relevant_shows/sptify_relevant-shows_latex.txt")
 
-    # read_marker_data("../../data/listenability-tools/marker-table_er.csv",
+    # convert_marker_data("../../data/listenability-tools/marker-table_er.csv",
     #                  "../../data/listenability-tools/marker-table-er_latex.txt")
 
     # convert_statistics_data("../../data/listenability-tools/plots/questions/statistics/01-a_statistics.csv",
     #                         "../../data/listenability-tools/plots/questions/statistics/01-a_statistics.txt")
 
-    convert_statistics_data("../../data/listenability-tools/plots/questions/statistics/01-b_statistics.csv",
-                            "../../data/listenability-tools/plots/questions/statistics/01-b_statistics.txt")
+    convert_statistics_data("../../../data/plots/statistic_tables/01-b_statistics.csv",
+                            "../../data/plots/statistic_tables/01-b_statistics.txt")
 
-    convert_statistics_data("../../data/listenability-tools/plots/questions/statistics/02_statistics.csv",
-                            "../../data/listenability-tools/plots/questions/statistics/02_statistics.txt")
+    convert_statistics_data("../../../data/plots/statistic_tables/02_statistics.csv",
+                            "../../data/plots/statistic_tables/02_statistics.txt")
 
-    convert_statistics_data("../../data/listenability-tools/plots/questions/statistics/03_statistics.csv",
-                            "../../data/listenability-tools/plots/questions/statistics/03_statistics.txt")
+    convert_statistics_data("../../../data/plots/statistic_tables/03_statistics.csv",
+                            "../../data/plots/statistic_tables/03_statistics.txt")
 
-    convert_statistics_data("../../data/listenability-tools/plots/questions/statistics/04_statistics.csv",
-                            "../../data/listenability-tools/plots/questions/statistics/04_statistics.txt")
+    convert_statistics_data("../../../data/plots/statistic_tables/04_statistics.csv",
+                            "../../data/plots/statistic_tables/04_statistics.txt")
 
 
 if __name__ == '__main__':
