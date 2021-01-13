@@ -1,0 +1,32 @@
+as & 11.9 \\
+\hline
+when & -21.4 \\
+\hline
+then & -52.37 \\
+\hline
+after & 62.21 \\
+\hline
+before & 14.22 \\
+\hline
+next & -12.1 \\
+\hline
+later & -18.93 \\
+\hline
+once & -29.84 \\
+\hline
+until & 18.97 \\
+\hline
+eventually & -59.49 \\
+\hline
+at the time & -54.22 \\
+\hline
+upon & -37.11 \\
+\hline
+earlier & 240.02 \\
+\hline
+ultimately & -49.64 \\
+\hline
+meanwhile & 131.57 \\
+\hline
+previously & 104.26 \\
+\hline

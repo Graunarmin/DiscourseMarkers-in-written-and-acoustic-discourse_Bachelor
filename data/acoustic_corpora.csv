@@ -1,0 +1,14 @@
+﻿Title,Type/Genre,Language,Free,Analyzed,Comment,Link
+2002 Rich Transcription Broadcast News and Conversational Telephone Speech,Spontaneous,English,No,No,1500$ for non-Members,https://catalog.ldc.upenn.edu/LDC2004S11
+ABC News Transcripts,News,English,Yes,No,not a corpus yet,https://www.abc.net.au/radionational/transcripts/
+AMI Corpus,Spontaneous,English,Yes,No,"meetings, spontaneous talk",https://www.bbc.co.uk/contact/questions/programme-information/transcript
+Boston University Radio Speech Corpus,News,English,No,No,1200$ for non-Members,https://catalog.ldc.upenn.edu/LDC96S36
+Buckeye Corpus of conversational speech,Interviews,English,Yes,No,only interviews and only with registration + request,https://buckeyecorpus.osu.edu/
+CNN Transcripts,News,English,Yes,No,not a corpus yet,http://transcripts.cnn.com/TRANSCRIPTS/
+Datenbank für gesprochenes Deutsch,Collection,German,Yes,No,"need to register, but only a few corpora can be downloaded (only Mundart)",https://dgd.ids-mannheim.de/DGD2Web/jsp/Welcome.jsp
+RadioTalk: a large-scale corpus of talk radio transcripts,Talk Radio,English,Yes,Yes,automatic transcripts,https://arxiv.org/abs/1907.07073
+Spoken corpora,Collection,Mix,No,No,Collection of 89 spoken corpora,https://www.clarin.eu/resource-families/spoken-corpora
+Spoken Corpora Collection,Collection,Mix,Yes,No,"no news, only interviews and (spontaneous) speeches / conversations / talks",http://martinweisser.org/corpora_site/spoken_corpora.html
+Spotify Podcast Dataset,Podcasts,English,Yes,Yes,Podcasts,https://arxiv.org/pdf/2004.04270.pdf
+TED-LIUM3,Speech,English,Yes,Yes,"Speeches, mostly scripted",webis
+Dataset,,,No,No,,

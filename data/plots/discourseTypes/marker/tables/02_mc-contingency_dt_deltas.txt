@@ -1,0 +1,32 @@
+for & 52.73 \\
+\hline
+so & -72.36 \\
+\hline
+if & -32.97 \\
+\hline
+because & -42.94 \\
+\hline
+since & 237.97 \\
+\hline
+given & 37.76 \\
+\hline
+whatever & -63.04 \\
+\hline
+because of & 195.46 \\
+\hline
+so that & -25.68 \\
+\hline
+now that & -49.17 \\
+\hline
+after all & -35.09 \\
+\hline
+therefore & -16.85 \\
+\hline
+thus & 43.51 \\
+\hline
+as long as & 33.25 \\
+\hline
+in case & -6.08 \\
+\hline
+in response to & 348.62 \\
+\hline

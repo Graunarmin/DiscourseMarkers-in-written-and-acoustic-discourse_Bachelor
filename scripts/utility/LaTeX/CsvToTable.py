@@ -113,9 +113,9 @@ def main():
     # convert_statistics_data("../../data/listenability-tools/plots/questions/statistics/01-a_statistics.csv",
     #                         "../../data/listenability-tools/plots/questions/statistics/01-a_statistics.txt")
 
-    convert_statistics_data("../../../data/plots/statistic_tables/01-b_statistics.csv",
-                            "../../data/plots/statistic_tables/01-b_statistics.txt")
-
+    # convert_statistics_data("../../../data/plots/statistic_tables/01-b_statistics.csv",
+    #                         "../../data/plots/statistic_tables/01-b_statistics.txt")
+    #
     convert_statistics_data("../../../data/plots/statistic_tables/02_statistics.csv",
                             "../../data/plots/statistic_tables/02_statistics.txt")
 
@@ -124,6 +124,8 @@ def main():
 
     convert_statistics_data("../../../data/plots/statistic_tables/04_statistics.csv",
                             "../../data/plots/statistic_tables/04_statistics.txt")
+
+
 
 
 if __name__ == '__main__':

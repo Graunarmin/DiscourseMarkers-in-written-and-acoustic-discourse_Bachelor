@@ -18,19 +18,21 @@ def compute_statistics(values):
     :return: returns a list with [min, a_mean, h_mean, median, mode, max] values
     """
 
-    min_dm_per_sentence = min(values)
-    max_dm_per_sentence = max(values)
+    # min_dm_per_sentence = min(values)
+    # max_dm_per_sentence = max(values)
     arith_mean_dm_per_sentence = statistics.mean(values)
     # harmonic_mean_dem_per_sentence = statistics.harmonic_mean(values)
     # median_dm_per_sentence = statistics.median(values)
     mode_dm_per_sentence = statistics.mode(values)
 
-    return [min_dm_per_sentence,
-            arith_mean_dm_per_sentence,
-            # harmonic_mean_dem_per_sentence,
-            # median_dm_per_sentence,
-            mode_dm_per_sentence,
-            max_dm_per_sentence]
+    return [
+        # min_dm_per_sentence,
+        arith_mean_dm_per_sentence,
+        # harmonic_mean_dem_per_sentence,
+        # median_dm_per_sentence,
+        mode_dm_per_sentence
+        # max_dm_per_sentence
+    ]
 
 
 def compute_cohens_d(x1, x2):
@@ -126,7 +128,3 @@ def compute_marker_deltas(title, data):
     deltas_dataframe.set_index('Data', inplace=True)
     deltas_dataframe = deltas_dataframe
     save_dataframe(title + "_deltas", deltas_dataframe.transpose())
-
-
-
-

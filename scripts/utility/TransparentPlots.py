@@ -26,11 +26,11 @@ def transparent(myimage):
 
     img = Image.fromarray(np.uint8(imgnp))
 
-    img.save(myimage.replace("plots", "transparent"), "PNG")
+    img.save(myimage.replace("new", "transparent"), "PNG")
 
 
 def main():
-    get_png_files("../../data/listenability-tools/plots/conversationTypes/markertypes/")
+    get_png_files("../../data/plots/new/")
 
 
 if __name__ == '__main__':

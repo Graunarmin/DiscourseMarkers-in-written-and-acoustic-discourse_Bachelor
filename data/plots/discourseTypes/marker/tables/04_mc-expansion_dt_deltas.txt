@@ -1,0 +1,38 @@
+and & -5.82 \\
+\hline
+with & 23.64 \\
+\hline
+or & -10.81 \\
+\hline
+also & 58.93 \\
+\hline
+without & 13.22 \\
+\hline
+finally & -70.4 \\
+\hline
+else & -57.95 \\
+\hline
+in fact & -68.14 \\
+\hline
+instead & -47.68 \\
+\hline
+further & 68.57 \\
+\hline
+as well & 96.5 \\
+\hline
+rather & -34.17 \\
+\hline
+particularly & 45.46 \\
+\hline
+anyway & -63.74 \\
+\hline
+essentially & -61.64 \\
+\hline
+overall & 274.34 \\
+\hline
+rather than & 87.78 \\
+\hline
+for example & 40.59 \\
+\hline
+unless & 99.34 \\
+\hline

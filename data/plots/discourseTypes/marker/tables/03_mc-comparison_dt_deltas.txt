@@ -1,0 +1,36 @@
+but & -13.82 \\
+\hline
+still & 3.43 \\
+\hline
+while & 58.79 \\
+\hline
+though & -14.54 \\
+\hline
+however & 39.68 \\
+\hline
+yet & 20.62 \\
+\hline
+despite & 67.77 \\
+\hline
+although & 118.06 \\
+\hline
+even though & -19.87 \\
+\hline
+even if & -5.09 \\
+\hline
+instead of & 21.54 \\
+\hline
+by the way & -81.62 \\
+\hline
+regardless & -27.51 \\
+\hline
+on the other hand & -55.14 \\
+\hline
+as though & -46.79 \\
+\hline
+nevertheless & 42.45 \\
+\hline
+nonetheless & 242.23 \\
+\hline
+in contrast & 288.33 \\
+\hline
